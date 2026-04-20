@@ -1,11 +1,11 @@
-"""Scraper for Facebook Ad Library internal GraphQL API.
+"""Dataset 0: Facebook Ad Library scraper (primary dataset).
 
 Uses browser session cookies captured from Network DevTools.
 Auth tokens (fb_dtsg, lsd, __dyn, __csr, etc.) must be refreshed
 from a live browser session when they expire.
 
 Usage:
-    python -m pipeline.loaders.facebook  # reads config from fb_config.json
+    python -m pipeline.loaders.dataset0  # reads config from fb_config.json
 """
 
 import json
@@ -18,7 +18,7 @@ import httpx
 
 # ── Config ─────────────────────────────────────────────────────────────────
 CONFIG_PATH = Path(__file__).parent.parent / "fb_config.json"
-OUTPUT_PATH = Path(__file__).parent.parent / "data" / "raw_fb.json"
+OUTPUT_PATH = Path(__file__).parent.parent / "data" / "raw_ds0.json"
 
 # Keywords chosen to cover all 10 target categories
 QUERY_KEYWORDS: list[str] = [
