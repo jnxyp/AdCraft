@@ -1,0 +1,63 @@
+# ── Python ──────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+.venv/
+venv/
+env/
+etc/
+.Python
+pip-wheel-metadata/
+
+# mypy / type checkers
+.mypy_cache/
+.dmypy.json
+.pyre/
+.pytype/
+
+# pytest
+.pytest_cache/
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+
+# ── JavaScript / TypeScript ──────────────────────────────
+node_modules/
+dist/
+build/
+.next/
+out/
+.cache/
+*.tsbuildinfo
+
+# package manager locks (keep one, ignore the others)
+# yarn.lock  — uncomment if using npm
+# package-lock.json  — uncomment if using yarn
+
+# ── Environment & secrets ────────────────────────────────
+.env
+.env.local
+.env.*.local
+
+# ── Data & generated files ───────────────────────────────
+backend/data/chromadb/
+backend/data/static/images/
+backend/data/adcraft.db
+backend/data/templates.json
+
+# ── OS / editor ──────────────────────────────────────────
+.DS_Store
+agents.md
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
