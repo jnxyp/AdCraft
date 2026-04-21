@@ -24,8 +24,9 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(mess
 EMBED_MODEL: str = "text-embedding-3-small"
 EMBED_BATCH: int = 200
 MAX_CHARS: int = 24_000
-SIMILARITY_THRESHOLD: float = 0.72
-MIN_CLUSTER_SIZE: int = 2
+SIMILARITY_THRESHOLD: float = 0.60
+MIN_CLUSTER_SIZE: int = 5
+TARGET_CLUSTER_SIZE: int = 6
 
 
 class Ad(TypedDict):
@@ -51,6 +52,7 @@ class ClusterOutput(TypedDict):
     similarity_threshold: float
     distance_threshold: float
     min_cluster_size: int
+    target_cluster_size: int
     clusters: list[Cluster]
 
 
@@ -132,8 +134,10 @@ def cluster_category(
     category: str,
     indices: list[int],
     distance_threshold: float,
+    min_cluster_size: int,
+    target_cluster_size: int,
 ) -> list[Cluster]:
-    if len(indices) < MIN_CLUSTER_SIZE:
+    if len(indices) < min_cluster_size:
         return []
 
     vectors = embeddings[indices]
@@ -145,18 +149,43 @@ def cluster_category(
     clusters: list[Cluster] = []
     serial = 1
     for members in sorted(grouped.values(), key=lambda item: (-len(item), item)):
-        if len(members) < MIN_CLUSTER_SIZE:
-            continue
-        cluster_id = f"{category}-{serial:04d}"
-        serial += 1
-        clusters.append({
-            "cluster_id": cluster_id,
-            "category": category,
-            "size": len(members),
-            "ad_ids": [ads[index]["ad_id"] for index in members],
-            "ad_indices": members,
-        })
+        for chunk in split_members(members, min_cluster_size, target_cluster_size):
+            cluster_id = f"{category}-{serial:04d}"
+            serial += 1
+            clusters.append({
+                "cluster_id": cluster_id,
+                "category": category,
+                "size": len(chunk),
+                "ad_ids": [ads[index]["ad_id"] for index in chunk],
+                "ad_indices": chunk,
+            })
     return clusters
+
+
+def split_members(members: list[int], min_cluster_size: int, target_cluster_size: int) -> list[list[int]]:
+    size = len(members)
+    if size < min_cluster_size:
+        return []
+    if size <= target_cluster_size + 3:
+        return [members]
+
+    chunk_count = max(1, round(size / target_cluster_size))
+    while chunk_count > 1 and size // chunk_count < min_cluster_size:
+        chunk_count -= 1
+
+    chunks: list[list[int]] = []
+    start = 0
+    for chunk_index in range(chunk_count):
+        remaining_items = size - start
+        remaining_chunks = chunk_count - chunk_index
+        chunk_size = round(remaining_items / remaining_chunks)
+        chunks.append(members[start: start + chunk_size])
+        start += chunk_size
+
+    if chunks and len(chunks[-1]) < min_cluster_size:
+        chunks[-2].extend(chunks[-1])
+        chunks.pop()
+    return chunks
 
 
 def average_linkage_labels(vectors: np.ndarray, distance_threshold: float) -> list[int]:
@@ -244,12 +273,22 @@ def build_clusters(
     ads: list[Ad],
     embeddings: np.ndarray,
     similarity_threshold: float,
+    min_cluster_size: int,
+    target_cluster_size: int,
 ) -> list[Cluster]:
     distance_threshold = 1.0 - similarity_threshold
     by_category = category_indices(ads)
     clusters: list[Cluster] = []
     for category, indices in by_category.items():
-        clusters.extend(cluster_category(ads, embeddings, category, indices, distance_threshold))
+        clusters.extend(cluster_category(
+            ads,
+            embeddings,
+            category,
+            indices,
+            distance_threshold,
+            min_cluster_size,
+            target_cluster_size,
+        ))
     print_summary(clusters, by_category)
     return clusters
 
@@ -259,13 +298,16 @@ def write_output(
     source: Path,
     clusters: list[Cluster],
     similarity_threshold: float,
+    min_cluster_size: int,
+    target_cluster_size: int,
 ) -> None:
     output: ClusterOutput = {
         "source": str(source),
         "embedding_model": EMBED_MODEL,
         "similarity_threshold": similarity_threshold,
         "distance_threshold": 1.0 - similarity_threshold,
-        "min_cluster_size": MIN_CLUSTER_SIZE,
+        "min_cluster_size": min_cluster_size,
+        "target_cluster_size": target_cluster_size,
         "clusters": clusters,
     }
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -290,18 +332,32 @@ def main() -> None:
         default=SIMILARITY_THRESHOLD,
         help=f"Cosine similarity cutoff for clustering (default {SIMILARITY_THRESHOLD})",
     )
+    parser.add_argument(
+        "--min-cluster-size",
+        type=int,
+        default=MIN_CLUSTER_SIZE,
+        help=f"Minimum output cluster size (default {MIN_CLUSTER_SIZE})",
+    )
+    parser.add_argument(
+        "--target-cluster-size",
+        type=int,
+        default=TARGET_CLUSTER_SIZE,
+        help=f"Preferred output cluster size (default {TARGET_CLUSTER_SIZE})",
+    )
     args = parser.parse_args()
 
     input_path = Path(args.input)
     output_path = Path(args.output)
     cache_path = Path(args.embedding_cache)
     similarity_threshold = float(args.similarity_threshold)
+    min_cluster_size = int(args.min_cluster_size)
+    target_cluster_size = int(args.target_cluster_size)
 
     ads = load_ads(input_path)
     log.info("Loaded %d annotated ads from %s", len(ads), input_path)
     embeddings = load_or_create_embeddings(ads, input_path, cache_path)
-    clusters = build_clusters(ads, embeddings, similarity_threshold)
-    write_output(output_path, input_path, clusters, similarity_threshold)
+    clusters = build_clusters(ads, embeddings, similarity_threshold, min_cluster_size, target_cluster_size)
+    write_output(output_path, input_path, clusters, similarity_threshold, min_cluster_size, target_cluster_size)
 
 
 if __name__ == "__main__":
