@@ -17,7 +17,8 @@
       "OF",
       "FB",
       "OF",
-      "FB"
+      "FB",
+      "AH"
     ]
   },
   {
@@ -35,15 +36,12 @@
     ],
     "sequence": [
       "OF",
-      "UR",
       "SP",
       "FB",
       "CTA",
       "FB",
       "CTA",
       "AU",
-      "FB",
-      "OF",
       "FB",
       "OF",
       "CTA"
@@ -66,12 +64,16 @@
     "sequence": [
       "OF",
       "FB",
+      "OF",
+      "FB",
       "AH",
       "FB",
-      "BA",
+      "AH",
+      "FB",
       "OF",
       "UR",
-      "CTA"
+      "CTA",
+      "OF"
     ]
   },
   {
@@ -91,7 +93,6 @@
     "sequence": [
       "AH",
       "AU",
-      "SP",
       "OF",
       "FB"
     ]
@@ -114,9 +115,12 @@
       "FB",
       "AU",
       "FB",
-      "PP",
+      "SP",
       "FB",
       "SP",
+      "FB",
+      "SP",
+      "FB",
       "CTA"
     ]
   },
@@ -134,7 +138,7 @@
       "beauty"
     ],
     "sequence": [
-      "AH",
+      "BA",
       "FB",
       "SP"
     ]
@@ -154,7 +158,7 @@
     ],
     "sequence": [
       "AH",
-      "FB",
+      "AG",
       "CTA"
     ]
   },
@@ -193,7 +197,7 @@
     "sequence": [
       "AH",
       "OF",
-      "FB",
+      "SP",
       "CTA"
     ]
   },
@@ -214,7 +218,7 @@
       "OF",
       "BA",
       "FB",
-      "CTA"
+      "SP"
     ]
   },
   {
@@ -254,6 +258,7 @@
     ],
     "sequence": [
       "AH",
+      "FB",
       "OF"
     ]
   },
@@ -272,6 +277,7 @@
     ],
     "sequence": [
       "OF",
+      "CTA",
       "SP",
       "CTA",
       "OF"
@@ -353,7 +359,6 @@
     "sequence": [
       "UR",
       "OF",
-      "SP",
       "AH",
       "FB",
       "OF",
@@ -414,7 +419,6 @@
     ],
     "sequence": [
       "AH",
-      "FB",
       "OF",
       "SP",
       "FB",
@@ -504,6 +508,7 @@
       "PP",
       "AG",
       "FB",
+      "BA",
       "CTA",
       "FB"
     ]
@@ -523,8 +528,8 @@
     ],
     "sequence": [
       "OF",
-      "FB",
-      "UR",
+      "BA",
+      "OF",
       "FB",
       "CTA",
       "SP"
@@ -550,7 +555,7 @@
       "AU",
       "OF",
       "SP",
-      "FB",
+      "AU",
       "OF",
       "SP",
       "UR",
@@ -662,6 +667,7 @@
     "sequence": [
       "AH",
       "CTA",
+      "AH",
       "FB",
       "CTA"
     ]
@@ -720,14 +726,16 @@
     ],
     "sequence": [
       "PP",
-      "BA",
-      "FB",
       "AG",
       "FB",
-      "BA",
+      "AG",
+      "CTA",
+      "FB",
       "AG",
       "BA",
       "AG",
+      "CTA",
+      "OF",
       "CTA"
     ]
   },
@@ -746,6 +754,7 @@
     ],
     "sequence": [
       "CTA",
+      "AH",
       "SP"
     ]
   },
@@ -804,7 +813,6 @@
     "sequence": [
       "AH",
       "PP",
-      "AG",
       "AU",
       "CTA"
     ]
@@ -842,7 +850,7 @@
       "finance"
     ],
     "sequence": [
-      "CTA",
+      "AH",
       "PP",
       "FB",
       "SP",
@@ -865,8 +873,7 @@
     ],
     "sequence": [
       "AH",
-      "FB",
-      "CTA"
+      "FB"
     ]
   },
   {
@@ -886,7 +893,7 @@
       "UR",
       "FB",
       "OF",
-      "FB"
+      "AH"
     ]
   },
   {
@@ -945,7 +952,7 @@
       "finance"
     ],
     "sequence": [
-      "SP",
+      "AU",
       "CTA",
       "SP"
     ]
@@ -964,16 +971,12 @@
       "ecommerce"
     ],
     "sequence": [
-      "OF",
-      "FB",
-      "UR",
-      "OF",
       "FB",
       "OF",
       "FB",
       "UR",
       "CTA",
-      "OF"
+      "FB"
     ]
   },
   {
@@ -990,7 +993,6 @@
       "health"
     ],
     "sequence": [
-      "OF",
       "CTA",
       "FB"
     ]
@@ -1010,8 +1012,7 @@
     ],
     "sequence": [
       "AH",
-      "FB",
-      "CTA"
+      "FB"
     ]
   },
   {
@@ -1032,8 +1033,8 @@
       "PP",
       "AG",
       "FB",
-      "AG",
-      "CTA"
+      "AH",
+      "UR"
     ]
   },
   {
@@ -1080,8 +1081,6 @@
       "CTA",
       "FB",
       "CTA",
-      "FB",
-      "CTA",
       "FB"
     ]
   },
@@ -1119,15 +1118,14 @@
       "beauty"
     ],
     "sequence": [
-      "OF",
+      "CTA",
       "SP",
-      "AU",
       "FB",
       "AH",
       "OF",
       "SP",
       "UR",
-      "FB",
+      "AG",
       "CTA"
     ]
   },
@@ -1146,8 +1144,10 @@
     ],
     "sequence": [
       "AH",
-      "FB",
       "OF",
+      "AH",
+      "OF",
+      "AH",
       "CTA"
     ]
   },
@@ -1166,7 +1166,7 @@
     ],
     "sequence": [
       "AH",
-      "CTA"
+      "UR"
     ]
   },
   {
@@ -1184,10 +1184,8 @@
     ],
     "sequence": [
       "AU",
-      "AH",
-      "SP",
+      "FB",
       "AU",
-      "CTA",
       "FB"
     ]
   },
@@ -1205,9 +1203,8 @@
       "ecommerce"
     ],
     "sequence": [
-      "UR",
       "OF",
-      "FB",
+      "AH",
       "OF",
       "AH",
       "FB",
@@ -1231,6 +1228,7 @@
     ],
     "sequence": [
       "OF",
+      "AH",
       "FB",
       "CTA",
       "OF"
@@ -1288,7 +1286,7 @@
       "health"
     ],
     "sequence": [
-      "SP",
+      "AH",
       "PP",
       "FB"
     ]
@@ -1328,7 +1326,8 @@
     ],
     "sequence": [
       "AH",
-      "FB"
+      "FB",
+      "OF"
     ]
   },
   {
@@ -1387,8 +1386,10 @@
       "entertainment"
     ],
     "sequence": [
-      "AH",
+      "CTA",
       "UR",
+      "FB",
+      "AH",
       "FB",
       "AH",
       "FB",
@@ -1450,6 +1451,8 @@
       "OF",
       "AH",
       "FB",
+      "OF",
+      "FB",
       "UR",
       "FB"
     ]
@@ -1468,7 +1471,8 @@
       "education"
     ],
     "sequence": [
-      "SP",
+      "AH",
+      "FB",
       "AU"
     ]
   },
@@ -1509,7 +1513,8 @@
       "OF",
       "SP",
       "AU",
-      "FB"
+      "AG",
+      "BA"
     ]
   },
   {
@@ -1551,6 +1556,10 @@
       "FB",
       "OF",
       "UR",
+      "OF",
+      "UR",
+      "FB",
+      "AG",
       "FB",
       "OF"
     ]
@@ -1590,8 +1599,7 @@
     "sequence": [
       "AH",
       "FB",
-      "OF",
-      "CTA"
+      "OF"
     ]
   },
   {
@@ -1668,9 +1676,8 @@
     ],
     "sequence": [
       "AH",
-      "BA",
       "FB",
-      "UR",
+      "OF",
       "CTA"
     ]
   },
@@ -1728,6 +1735,7 @@
     "sequence": [
       "AH",
       "SP",
+      "AH",
       "FB",
       "CTA",
       "SP"
@@ -1770,9 +1778,10 @@
     "sequence": [
       "AH",
       "PP",
-      "AU",
+      "FB",
       "AG",
       "CTA",
+      "OF",
       "UR"
     ]
   },
@@ -1791,10 +1800,7 @@
       "tech"
     ],
     "sequence": [
-      "AH",
-      "OF",
-      "SP",
-      "CTA"
+      "AH"
     ]
   },
   {
@@ -1813,6 +1819,7 @@
     "sequence": [
       "CTA",
       "FB",
+      "AH",
       "OF"
     ]
   },
@@ -1832,7 +1839,8 @@
     ],
     "sequence": [
       "SP",
-      "CTA"
+      "CTA",
+      "SP"
     ]
   },
   {
@@ -1891,12 +1899,11 @@
       "ecommerce"
     ],
     "sequence": [
-      "FB",
       "AH",
       "FB",
       "OF",
-      "UR",
-      "CTA"
+      "CTA",
+      "AH"
     ]
   },
   {
@@ -1933,7 +1940,7 @@
       "ecommerce"
     ],
     "sequence": [
-      "FB",
+      "AH",
       "OF",
       "CTA"
     ]
@@ -1952,7 +1959,7 @@
       "ecommerce"
     ],
     "sequence": [
-      "FB",
+      "AH",
       "OF",
       "CTA"
     ]
@@ -1994,8 +2001,6 @@
       "AH",
       "SP",
       "FB",
-      "PP",
-      "FB",
       "CTA",
       "OF",
       "FB",
@@ -2016,9 +2021,8 @@
       "ecommerce"
     ],
     "sequence": [
-      "FB",
-      "CTA",
-      "FB"
+      "AH",
+      "CTA"
     ]
   },
   {
@@ -2038,6 +2042,7 @@
       "AH",
       "FB",
       "CTA",
+      "AH",
       "FB"
     ]
   },
@@ -2078,7 +2083,6 @@
       "ecommerce"
     ],
     "sequence": [
-      "FB",
       "CTA",
       "FB"
     ]
@@ -2098,7 +2102,6 @@
     ],
     "sequence": [
       "AH",
-      "FB",
       "CTA"
     ]
   },
@@ -2120,7 +2123,7 @@
       "FB",
       "UR",
       "CTA",
-      "SP"
+      "AH"
     ]
   },
   {
@@ -2234,9 +2237,9 @@
       "health"
     ],
     "sequence": [
-      "AH",
+      "UR",
       "PP",
-      "FB"
+      "AU"
     ]
   },
   {
@@ -2258,7 +2261,8 @@
       "FB",
       "CTA",
       "FB",
-      "OF"
+      "OF",
+      "FB"
     ]
   },
   {
@@ -2297,7 +2301,7 @@
     "sequence": [
       "OF",
       "FB",
-      "SP",
+      "AH",
       "CTA",
       "FB"
     ]
@@ -2337,11 +2341,9 @@
     "sequence": [
       "AH",
       "AU",
-      "UR",
       "FB",
       "UR",
-      "FB",
-      "UR"
+      "FB"
     ]
   },
   {
@@ -2381,7 +2383,6 @@
     ],
     "sequence": [
       "AH",
-      "FB",
       "CTA"
     ]
   },
@@ -2400,10 +2401,8 @@
     ],
     "sequence": [
       "AH",
-      "PP",
       "FB",
-      "CTA",
-      "SP"
+      "CTA"
     ]
   },
   {
@@ -2420,7 +2419,6 @@
       "ecommerce"
     ],
     "sequence": [
-      "AU",
       "SP",
       "UR",
       "CTA",
@@ -2446,8 +2444,7 @@
       "AH",
       "PP",
       "FB",
-      "CTA",
-      "SP"
+      "CTA"
     ]
   },
   {
@@ -2493,8 +2490,7 @@
       "AH",
       "PP",
       "FB",
-      "CTA",
-      "SP"
+      "CTA"
     ]
   },
   {
@@ -2512,9 +2508,9 @@
     ],
     "sequence": [
       "AH",
-      "PP",
       "FB",
-      "CTA"
+      "CTA",
+      "SP"
     ]
   },
   {
@@ -2533,7 +2529,6 @@
     "sequence": [
       "AH",
       "PP",
-      "AG",
       "FB"
     ]
   },
@@ -2669,7 +2664,6 @@
     ],
     "sequence": [
       "AH",
-      "UR",
       "OF",
       "FB",
       "CTA"
@@ -2689,8 +2683,8 @@
       "ecommerce"
     ],
     "sequence": [
-      "AH",
-      "BA",
+      "CTA",
+      "FB",
       "CTA"
     ]
   },
@@ -2729,7 +2723,7 @@
     "sequence": [
       "AH",
       "FB",
-      "OF"
+      "CTA"
     ]
   },
   {
@@ -2747,8 +2741,7 @@
     ],
     "sequence": [
       "SP",
-      "CTA",
-      "SP"
+      "CTA"
     ]
   },
   {
@@ -2768,8 +2761,8 @@
     "sequence": [
       "AH",
       "FB",
-      "AH",
       "OF",
+      "FB",
       "CTA"
     ]
   },
@@ -2854,10 +2847,14 @@
     "sequence": [
       "AH",
       "PP",
+      "AU",
       "FB",
       "AH",
       "FB",
+      "PP",
+      "FB",
       "AU",
+      "AH",
       "CTA",
       "UR"
     ]
@@ -2901,7 +2898,7 @@
       "UR",
       "CTA",
       "SP",
-      "OF"
+      "FB"
     ]
   },
   {
@@ -2944,7 +2941,6 @@
       "AH",
       "OF",
       "AU",
-      "FB",
       "OF"
     ]
   },
@@ -2965,6 +2961,7 @@
     ],
     "sequence": [
       "AH",
+      "CTA",
       "FB",
       "SP",
       "CTA",
@@ -3027,6 +3024,7 @@
       "OF",
       "PP",
       "FB",
+      "AH",
       "CTA",
       "OF"
     ]
@@ -3048,6 +3046,7 @@
       "OF",
       "SP",
       "FB",
+      "OF",
       "CTA",
       "OF"
     ]
@@ -3066,7 +3065,9 @@
       "ecommerce"
     ],
     "sequence": [
+      "AH",
       "SP",
+      "CTA",
       "AU",
       "FB",
       "CTA"
@@ -3126,7 +3127,6 @@
       "AH",
       "FB",
       "CTA",
-      "AU",
       "SP"
     ]
   },
@@ -3184,6 +3184,7 @@
     ],
     "sequence": [
       "AH",
+      "FB",
       "CTA"
     ]
   },
@@ -3202,6 +3203,7 @@
     ],
     "sequence": [
       "AH",
+      "FB",
       "CTA"
     ]
   },
@@ -3220,8 +3222,6 @@
     ],
     "sequence": [
       "UR",
-      "SP",
-      "FB",
       "SP",
       "OF",
       "UR",
@@ -3243,7 +3243,6 @@
     ],
     "sequence": [
       "SP",
-      "AH",
       "FB",
       "SP",
       "CTA"
@@ -3284,6 +3283,7 @@
     "sequence": [
       "OF",
       "SP",
+      "OF",
       "FB"
     ]
   },
@@ -3463,13 +3463,11 @@
       "ecommerce"
     ],
     "sequence": [
-      "AH",
-      "OF",
-      "AH",
       "OF",
       "FB",
       "CTA",
-      "FB"
+      "FB",
+      "SP"
     ]
   },
   {
@@ -3487,8 +3485,7 @@
     ],
     "sequence": [
       "OF",
-      "CTA",
-      "UR"
+      "CTA"
     ]
   },
   {
@@ -3508,8 +3505,8 @@
       "AU",
       "AH",
       "FB",
-      "SP",
-      "FB"
+      "AH",
+      "AU"
     ]
   },
   {
@@ -3592,7 +3589,7 @@
     "sequence": [
       "FB",
       "SP",
-      "AH"
+      "AU"
     ]
   },
   {
@@ -3651,7 +3648,6 @@
     ],
     "sequence": [
       "CTA",
-      "UR",
       "SP",
       "CTA",
       "AH",
@@ -3678,6 +3674,7 @@
     "sequence": [
       "AH",
       "SP",
+      "AH",
       "PP"
     ]
   },
@@ -3697,7 +3694,8 @@
     ],
     "sequence": [
       "SP",
-      "AH"
+      "AH",
+      "AU"
     ]
   },
   {
@@ -3715,9 +3713,10 @@
     ],
     "sequence": [
       "AH",
+      "AG",
       "PP",
       "AG",
-      "FB"
+      "AU"
     ]
   },
   {
@@ -3737,8 +3736,7 @@
     ],
     "sequence": [
       "AH",
-      "SP",
-      "FB"
+      "SP"
     ]
   },
   {
@@ -3796,8 +3794,6 @@
       "health"
     ],
     "sequence": [
-      "FB",
-      "OF",
       "AH",
       "FB",
       "CTA",
@@ -3862,9 +3858,11 @@
       "SP",
       "FB",
       "SP",
+      "CTA",
       "FB",
-      "AU",
-      "OF",
+      "AH",
+      "CTA",
+      "FB",
       "AU",
       "SP",
       "FB"
@@ -3906,8 +3904,7 @@
     "sequence": [
       "AH",
       "PP",
-      "FB",
-      "BA"
+      "FB"
     ]
   },
   {
@@ -3965,32 +3962,30 @@
     "sequence": [
       "AH",
       "PP",
-      "FB",
+      "AH",
       "AU",
       "PP",
-      "AG",
       "AH",
       "FB",
       "BA",
       "AH",
-      "AG",
       "FB",
       "AU",
       "FB",
       "AH",
       "AG",
       "FB",
-      "AH",
-      "FB",
+      "OF",
       "SP",
       "FB",
+      "AH",
       "BA",
       "FB",
       "CTA",
-      "PP",
+      "AH",
       "UR",
       "OF",
-      "FB",
+      "AH",
       "CTA",
       "BA"
     ]
@@ -4033,7 +4028,9 @@
     "sequence": [
       "AH",
       "SP",
-      "CTA"
+      "FB",
+      "CTA",
+      "SP"
     ]
   },
   {
@@ -4074,13 +4071,13 @@
     "sequence": [
       "SP",
       "PP",
-      "AH",
-      "AG",
+      "CTA",
       "FB",
+      "PP",
       "AU",
       "FB",
       "OF",
-      "UR",
+      "FB",
       "CTA"
     ]
   },
@@ -4120,9 +4117,6 @@
     ],
     "sequence": [
       "AH",
-      "AU",
-      "FB",
-      "AU",
       "FB",
       "OF"
     ]
@@ -4142,8 +4136,6 @@
       "food"
     ],
     "sequence": [
-      "AH",
-      "OF",
       "FB",
       "OF"
     ]
@@ -4164,8 +4156,6 @@
     "sequence": [
       "AH",
       "PP",
-      "FB",
-      "AU",
       "FB",
       "SP"
     ]
@@ -4206,7 +4196,7 @@
     ],
     "sequence": [
       "AH",
-      "SP",
+      "AU",
       "FB",
       "OF",
       "UR",
@@ -4233,7 +4223,7 @@
       "FB",
       "AH",
       "FB",
-      "AG",
+      "PP",
       "FB",
       "AH",
       "FB",
@@ -4257,7 +4247,6 @@
     ],
     "sequence": [
       "SP",
-      "PP",
       "FB",
       "AH",
       "CTA"
@@ -4277,9 +4266,7 @@
       "health"
     ],
     "sequence": [
-      "OF",
       "UR",
-      "PP",
       "FB",
       "CTA",
       "AU"
@@ -4305,7 +4292,7 @@
       "AU",
       "SP",
       "CTA",
-      "AU",
+      "FB",
       "OF"
     ]
   },
@@ -4325,11 +4312,14 @@
       "health"
     ],
     "sequence": [
+      "AH",
       "PP",
+      "AG",
       "FB",
       "SP",
       "FB",
-      "CTA"
+      "CTA",
+      "FB"
     ]
   },
   {
@@ -4368,7 +4358,6 @@
       "AH",
       "SP",
       "FB",
-      "AU",
       "SP",
       "CTA"
     ]
@@ -4485,8 +4474,7 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "health",
-      "ecommerce"
+      "health"
     ],
     "sequence": [
       "AH",
@@ -4494,12 +4482,20 @@
       "AG",
       "AU",
       "AH",
+      "CTA",
       "AG",
       "FB",
       "CTA",
+      "AG",
       "OF",
       "BA",
-      "CTA"
+      "PP",
+      "BA",
+      "SP",
+      "BA",
+      "SP",
+      "CTA",
+      "AH"
     ]
   },
   {
@@ -4513,15 +4509,13 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "health",
-      "beauty"
+      "health"
     ],
     "sequence": [
       "AH",
       "SP",
       "FB",
       "AU",
-      "UR",
       "OF",
       "FB",
       "CTA",
@@ -4562,7 +4556,8 @@
     ],
     "sequence": [
       "AH",
-      "PP",
+      "FB",
+      "AH",
       "FB",
       "CTA",
       "FB"
@@ -4605,7 +4600,7 @@
       "FB",
       "SP",
       "OF",
-      "SP",
+      "AU",
       "OF"
     ]
   },
@@ -4643,7 +4638,6 @@
     ],
     "sequence": [
       "AH",
-      "PP",
       "FB",
       "AH",
       "FB",
@@ -4661,13 +4655,11 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "health",
-      "beauty"
+      "health"
     ],
     "sequence": [
       "AH",
-      "FB",
-      "AU"
+      "FB"
     ]
   },
   {
@@ -4687,7 +4679,8 @@
       "AH",
       "SP",
       "FB",
-      "OF"
+      "OF",
+      "CTA"
     ]
   },
   {
@@ -4724,11 +4717,11 @@
       "health"
     ],
     "sequence": [
-      "FB",
+      "AH",
       "PP",
       "AG",
+      "CTA",
       "FB",
-      "AG",
       "AH",
       "FB",
       "AG",
@@ -4775,7 +4768,8 @@
     ],
     "sequence": [
       "AH",
-      "AU",
+      "FB",
+      "AH",
       "CTA",
       "AU"
     ]
@@ -4795,53 +4789,60 @@
     ],
     "sequence": [
       "AH",
-      "AG",
       "PP",
       "AG",
       "AH",
       "PP",
       "AG",
-      "AU",
-      "AG",
-      "AH",
-      "PP",
-      "AG",
-      "AH",
-      "AG",
-      "AH",
-      "AU",
       "FB",
-      "AG",
-      "AU",
-      "FB",
-      "AU",
-      "FB",
-      "AG",
-      "AH",
-      "AG",
-      "FB",
-      "AU",
-      "AH",
-      "FB",
-      "AU",
       "BA",
-      "FB",
       "PP",
-      "AH",
+      "AG",
+      "PP",
+      "BA",
+      "PP",
+      "AG",
+      "PP",
+      "BA",
+      "AG",
+      "BA",
+      "PP",
+      "AG",
+      "FB",
+      "AU",
+      "FB",
+      "AU",
       "FB",
       "AG",
+      "AH",
+      "AG",
+      "BA",
+      "AG",
+      "BA",
+      "PP",
+      "AG",
+      "BA",
+      "AG",
+      "AH",
+      "AU",
       "FB",
       "AG",
       "FB",
       "AU",
+      "CTA",
       "OF",
       "AG",
       "AH",
       "AG",
       "FB",
+      "BA",
+      "AG",
+      "BA",
+      "AG",
       "CTA",
       "AG",
-      "UR"
+      "UR",
+      "AG"
     ]
   },
   {
@@ -4864,7 +4865,9 @@
       "FB",
       "AH",
       "SP",
-      "OF"
+      "AH",
+      "SP",
+      "CTA"
     ]
   },
   {
@@ -4878,12 +4881,10 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "health",
-      "ecommerce"
+      "health"
     ],
     "sequence": [
       "AH",
-      "PP",
       "FB",
       "BA",
       "CTA",
@@ -4926,7 +4927,9 @@
     ],
     "sequence": [
       "AH",
+      "AU",
       "FB",
+      "AU",
       "SP"
     ]
   },
@@ -4946,9 +4949,14 @@
     "sequence": [
       "AH",
       "SP",
-      "AU",
       "AG",
       "FB",
+      "AU",
+      "AG",
+      "AH",
+      "FB",
+      "AU",
+      "AG",
       "AU",
       "SP",
       "FB"
@@ -4969,8 +4977,7 @@
     ],
     "sequence": [
       "AH",
-      "FB",
-      "CTA",
+      "OF",
       "FB"
     ]
   },
@@ -4988,7 +4995,6 @@
       "health"
     ],
     "sequence": [
-      "AH",
       "OF",
       "AH",
       "FB",
@@ -5053,7 +5059,6 @@
     ],
     "sequence": [
       "AH",
-      "AU",
       "FB"
     ]
   },
@@ -5095,7 +5100,6 @@
       "FB",
       "SP",
       "AU",
-      "OF",
       "CTA"
     ]
   },
@@ -5131,7 +5135,6 @@
       "health"
     ],
     "sequence": [
-      "OF",
       "UR",
       "SP",
       "UR",
@@ -5149,17 +5152,18 @@
     ],
     "_cta_text": "Send message",
     "categories": [
-      "health"
+      "health",
+      "ecommerce"
     ],
     "sequence": [
-      "AH",
       "AU",
-      "FB",
+      "AH",
       "AU",
       "PP",
       "FB",
       "CTA",
-      "FB"
+      "FB",
+      "SP"
     ]
   },
   {
@@ -5179,70 +5183,85 @@
       "AH",
       "PP",
       "AG",
-      "AH",
       "PP",
       "AG",
       "AH",
-      "AG",
+      "PP",
       "AU",
+      "PP",
+      "BA",
       "PP",
       "AG",
       "AU",
-      "AG",
-      "AH",
-      "AG",
-      "AH",
-      "FB",
-      "AH",
-      "AG",
+      "PP",
+      "AU",
+      "PP",
+      "AU",
+      "PP",
+      "AU",
+      "PP",
+      "AU",
+      "PP",
+      "AU",
+      "PP",
+      "AU",
+      "PP",
+      "AU",
+      "PP",
       "AU",
       "AG",
       "AH",
       "AG",
-      "AH",
-      "AG",
-      "AH",
-      "FB",
+      "BA",
       "AU",
-      "AH",
       "AG",
       "FB",
+      "BA",
+      "PP",
+      "BA",
+      "AU",
       "AG",
-      "AH",
       "PP",
       "AG",
+      "AH",
       "FB",
       "AU",
-      "FB",
-      "AU",
-      "AG",
       "AH",
       "AG",
-      "AH",
+      "BA",
+      "PP",
+      "AG",
       "SP",
-      "AH",
+      "AU",
       "AG",
       "FB",
+      "AH",
       "AU",
       "FB",
-      "AU",
       "OF",
-      "AH",
-      "AG",
-      "FB",
-      "AG",
-      "FB",
-      "AH",
-      "FB",
-      "AH",
-      "AG",
-      "SP",
+      "AU",
       "BA",
-      "SP",
+      "AG",
+      "PP",
+      "BA",
+      "OF",
+      "BA",
+      "FB",
+      "BA",
+      "PP",
+      "FB",
+      "BA",
+      "FB",
+      "BA",
+      "FB",
+      "BA",
+      "AU",
       "FB",
       "AH",
-      "BA",
-      "AH",
+      "FB",
+      "AG",
+      "PP",
+      "FB",
       "AG",
       "FB",
       "AG",
@@ -5250,13 +5269,15 @@
       "AH",
       "UR",
       "AG",
-      "SP",
       "AH",
       "PP",
       "UR",
       "CTA",
+      "OF",
+      "CTA",
       "AG",
-      "CTA"
+      "CTA",
+      "AU"
     ]
   },
   {
@@ -5275,8 +5296,7 @@
     "sequence": [
       "AH",
       "SP",
-      "OF",
-      "AU"
+      "OF"
     ]
   },
   {
@@ -5297,7 +5317,7 @@
       "PP",
       "AH",
       "PP",
-      "AG",
+      "AH",
       "PP",
       "FB",
       "SP",
@@ -5320,7 +5340,9 @@
     "sequence": [
       "AH",
       "AU",
-      "OF"
+      "OF",
+      "CTA",
+      "SP"
     ]
   },
   {
@@ -5341,7 +5363,7 @@
       "AH",
       "FB",
       "OF",
-      "CTA"
+      "AU"
     ]
   },
   {
@@ -5421,6 +5443,8 @@
       "BA",
       "PP",
       "AG",
+      "PP",
+      "AG",
       "AH",
       "FB",
       "OF",
@@ -5443,8 +5467,8 @@
     "sequence": [
       "AH",
       "FB",
-      "CTA",
-      "SP"
+      "AH",
+      "CTA"
     ]
   },
   {
@@ -5464,6 +5488,7 @@
     "sequence": [
       "AH",
       "FB",
+      "AH",
       "OF"
     ]
   },
@@ -5478,8 +5503,8 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce",
-      "food"
+      "food",
+      "ecommerce"
     ],
     "sequence": [
       "AH",
@@ -5503,8 +5528,7 @@
     ],
     "sequence": [
       "AH",
-      "FB",
-      "SP"
+      "FB"
     ]
   },
   {
@@ -5522,8 +5546,9 @@
       "ecommerce"
     ],
     "sequence": [
-      "AU",
+      "AH",
       "FB",
+      "SP",
       "PP",
       "CTA",
       "AU",
@@ -5544,7 +5569,7 @@
       "ecommerce"
     ],
     "sequence": [
-      "FB",
+      "AH",
       "OF"
     ]
   },
@@ -5567,7 +5592,7 @@
       "SP",
       "OF",
       "CTA",
-      "SP"
+      "FB"
     ]
   },
   {
@@ -5584,7 +5609,6 @@
       "health"
     ],
     "sequence": [
-      "AU",
       "AH",
       "FB",
       "OF",
@@ -5607,7 +5631,6 @@
       "beauty"
     ],
     "sequence": [
-      "AU",
       "AH",
       "CTA"
     ]
@@ -5626,8 +5649,7 @@
       "beauty"
     ],
     "sequence": [
-      "AH",
-      "AU"
+      "AH"
     ]
   },
   {
@@ -5647,7 +5669,7 @@
     "sequence": [
       "AH",
       "SP",
-      "FB",
+      "OF",
       "SP"
     ]
   },
@@ -5665,7 +5687,7 @@
       "beauty"
     ],
     "sequence": [
-      "AU",
+      "AH",
       "FB"
     ]
   },
@@ -5702,11 +5724,8 @@
       "beauty"
     ],
     "sequence": [
-      "PP",
       "FB",
-      "OF",
-      "CTA",
-      "AU"
+      "CTA"
     ]
   },
   {
@@ -5771,7 +5790,6 @@
     ],
     "sequence": [
       "AH",
-      "CTA",
       "SP",
       "FB",
       "AU",
@@ -5815,7 +5833,6 @@
     ],
     "sequence": [
       "AH",
-      "CTA",
       "SP",
       "AU",
       "FB",
@@ -5862,6 +5879,14 @@
       "AH",
       "AU",
       "CTA",
+      "AU",
+      "CTA",
+      "AU",
+      "CTA",
+      "AU",
+      "CTA",
+      "AU",
+      "CTA",
       "SP"
     ]
   },
@@ -5879,7 +5904,6 @@
       "beauty"
     ],
     "sequence": [
-      "CTA",
       "SP"
     ]
   },
@@ -5899,8 +5923,7 @@
     "sequence": [
       "AU",
       "FB",
-      "CTA",
-      "OF"
+      "CTA"
     ]
   },
   {
@@ -5921,7 +5944,6 @@
       "PP",
       "FB",
       "OF",
-      "UR",
       "CTA",
       "SP",
       "OF"
@@ -5998,7 +6020,6 @@
       "ecommerce"
     ],
     "sequence": [
-      "AH",
       "SP"
     ]
   },
@@ -6017,7 +6038,7 @@
     ],
     "sequence": [
       "AH",
-      "PP",
+      "UR",
       "CTA"
     ]
   },
@@ -6098,7 +6119,8 @@
       "AH",
       "PP",
       "SP",
-      "FB"
+      "FB",
+      "SP"
     ]
   },
   {
@@ -6118,6 +6140,7 @@
       "AH",
       "SP",
       "FB",
+      "AH",
       "AU",
       "FB",
       "AU",
@@ -6139,14 +6162,14 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "health",
-      "beauty"
+      "beauty",
+      "health"
     ],
     "sequence": [
       "AH",
       "AU",
       "FB",
-      "SP"
+      "AU"
     ]
   },
   {
@@ -6184,7 +6207,8 @@
     ],
     "sequence": [
       "SP",
-      "CTA"
+      "CTA",
+      "SP"
     ]
   },
   {
@@ -6201,8 +6225,7 @@
       "beauty"
     ],
     "sequence": [
-      "PP",
-      "FB"
+      "PP"
     ]
   },
   {
@@ -6216,13 +6239,10 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "beauty",
-      "health"
+      "beauty"
     ],
     "sequence": [
       "AH",
-      "FB",
-      "AU",
       "FB",
       "AU",
       "FB",
@@ -6288,11 +6308,7 @@
       "FB",
       "AU",
       "FB",
-      "AG",
-      "AU",
-      "FB",
       "OF",
-      "AG",
       "CTA"
     ]
   },
@@ -6310,6 +6326,7 @@
       "beauty"
     ],
     "sequence": [
+      "AH",
       "SP",
       "CTA"
     ]
@@ -6329,7 +6346,7 @@
     ],
     "sequence": [
       "AH",
-      "SP",
+      "AU",
       "FB",
       "SP",
       "CTA"
@@ -6404,6 +6421,7 @@
     ],
     "sequence": [
       "AH",
+      "PP",
       "FB",
       "CTA"
     ]
@@ -6424,8 +6442,8 @@
     "sequence": [
       "AH",
       "BA",
-      "SP",
-      "FB"
+      "FB",
+      "SP"
     ]
   },
   {
@@ -6443,7 +6461,6 @@
     ],
     "sequence": [
       "AH",
-      "SP",
       "OF"
     ]
   },
@@ -6462,7 +6479,6 @@
     ],
     "sequence": [
       "AU",
-      "SP",
       "FB",
       "SP"
     ]
@@ -6482,7 +6498,7 @@
     ],
     "sequence": [
       "UR",
-      "FB",
+      "AH",
       "SP",
       "FB",
       "CTA",
@@ -6560,8 +6576,8 @@
     "sequence": [
       "BA",
       "SP",
-      "FB",
-      "CTA"
+      "CTA",
+      "SP"
     ]
   },
   {
@@ -6617,13 +6633,15 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "beauty"
+      "beauty",
+      "health"
     ],
     "sequence": [
       "AH",
       "FB",
       "CTA",
-      "AU"
+      "AU",
+      "AH"
     ]
   },
   {
@@ -6641,8 +6659,7 @@
     ],
     "sequence": [
       "AH",
-      "FB",
-      "SP"
+      "FB"
     ]
   },
   {
@@ -6656,14 +6673,15 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "health",
-      "beauty"
+      "ecommerce",
+      "health"
     ],
     "sequence": [
-      "AH",
+      "SP",
       "PP",
       "SP",
       "FB",
+      "AG",
       "CTA"
     ]
   },
@@ -6721,6 +6739,8 @@
       "AH",
       "SP",
       "OF",
+      "FB",
+      "OF",
       "FB"
     ]
   },
@@ -6735,7 +6755,7 @@
     ],
     "_cta_text": "Install now",
     "categories": [
-      "education",
+      "health",
       "tech"
     ],
     "sequence": [
@@ -6778,8 +6798,6 @@
     "sequence": [
       "AH",
       "AU",
-      "FB",
-      "AG",
       "FB"
     ]
   },
@@ -6816,7 +6834,7 @@
       "education"
     ],
     "sequence": [
-      "AU",
+      "FB",
       "AH",
       "AU",
       "FB"
@@ -6838,8 +6856,8 @@
     "sequence": [
       "AU",
       "PP",
-      "AG",
-      "FB"
+      "FB",
+      "PP"
     ]
   },
   {
@@ -6875,7 +6893,6 @@
     ],
     "sequence": [
       "AH",
-      "FB",
       "SP",
       "CTA"
     ]
@@ -6895,8 +6912,7 @@
     ],
     "sequence": [
       "PP",
-      "FB",
-      "SP"
+      "FB"
     ]
   },
   {
@@ -6910,7 +6926,8 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "beauty"
+      "beauty",
+      "health"
     ],
     "sequence": [
       "AH",
@@ -6937,8 +6954,8 @@
     "sequence": [
       "OF",
       "AH",
-      "PP",
       "AG",
+      "PP",
       "SP",
       "FB",
       "OF",
@@ -6959,9 +6976,7 @@
       "beauty"
     ],
     "sequence": [
-      "AU",
       "SP",
-      "AU",
       "FB",
       "CTA",
       "SP"
@@ -7019,8 +7034,7 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "beauty",
-      "health"
+      "beauty"
     ],
     "sequence": [
       "AH",
@@ -7049,10 +7063,9 @@
       "AH",
       "FB",
       "PP",
-      "AG",
       "FB",
-      "AU",
-      "FB",
+      "BA",
+      "AH",
       "CTA",
       "AU",
       "FB"
@@ -7073,28 +7086,50 @@
     ],
     "sequence": [
       "AH",
+      "AG",
+      "AH",
       "PP",
       "AG",
       "FB",
+      "AH",
       "AU",
       "AG",
+      "PP",
+      "AG",
+      "AH",
       "FB",
-      "AU",
+      "AG",
       "FB",
       "AU",
       "FB",
       "BA",
       "FB",
+      "BA",
+      "FB",
+      "BA",
+      "FB",
+      "AU",
+      "AG",
+      "FB",
+      "CTA",
+      "AG",
+      "BA",
+      "AG",
+      "AH",
+      "AU",
+      "PP",
       "AG",
       "AU",
       "SP",
+      "PP",
+      "CTA",
+      "OF",
+      "AG",
+      "FB",
+      "UR",
       "AG",
       "CTA",
-      "FB",
-      "AG",
-      "UR",
-      "OF",
-      "CTA"
+      "OF"
     ]
   },
   {
@@ -7113,8 +7148,6 @@
     "sequence": [
       "AH",
       "FB",
-      "AU",
-      "UR",
       "CTA",
       "SP"
     ]
@@ -7133,7 +7166,6 @@
       "health"
     ],
     "sequence": [
-      "AU",
       "AH",
       "FB",
       "SP"
@@ -7153,9 +7185,7 @@
       "beauty"
     ],
     "sequence": [
-      "AH",
       "CTA",
-      "AH",
       "FB",
       "OF"
     ]
@@ -7214,7 +7244,6 @@
     ],
     "sequence": [
       "AH",
-      "SP",
       "CTA"
     ]
   },
@@ -7232,8 +7261,6 @@
       "beauty"
     ],
     "sequence": [
-      "AH",
-      "FB",
       "SP"
     ]
   },
@@ -7269,9 +7296,9 @@
       "food"
     ],
     "sequence": [
+      "FB",
       "AH",
       "FB",
-      "OF",
       "CTA",
       "AH"
     ]
@@ -7311,7 +7338,7 @@
     "sequence": [
       "PP",
       "FB",
-      "AU"
+      "SP"
     ]
   },
   {
@@ -7328,7 +7355,7 @@
       "beauty"
     ],
     "sequence": [
-      "BA",
+      "FB",
       "CTA",
       "SP"
     ]
@@ -7347,7 +7374,7 @@
       "beauty"
     ],
     "sequence": [
-      "BA",
+      "AH",
       "AG",
       "FB",
       "CTA",
@@ -7369,7 +7396,7 @@
     ],
     "sequence": [
       "AH",
-      "SP",
+      "CTA",
       "OF"
     ]
   },
@@ -7403,12 +7430,11 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "beauty",
-      "health"
+      "beauty"
     ],
     "sequence": [
       "AH",
-      "BA",
+      "FB",
       "AU",
       "SP",
       "AU"
@@ -7457,7 +7483,8 @@
       "AG",
       "FB",
       "OF",
-      "CTA"
+      "CTA",
+      "AH"
     ]
   },
   {
@@ -7476,7 +7503,8 @@
     "sequence": [
       "AH",
       "PP",
-      "FB"
+      "FB",
+      "AH"
     ]
   },
   {
@@ -7498,7 +7526,6 @@
       "AU",
       "SP",
       "CTA",
-      "SP",
       "FB"
     ]
   },
@@ -7516,9 +7543,7 @@
       "beauty"
     ],
     "sequence": [
-      "SP",
-      "FB",
-      "CTA"
+      "SP"
     ]
   },
   {
@@ -7535,6 +7560,7 @@
       "beauty"
     ],
     "sequence": [
+      "AH",
       "FB",
       "AH",
       "AU"
@@ -7616,7 +7642,7 @@
       "AH",
       "FB",
       "OF",
-      "AU"
+      "SP"
     ]
   },
   {
@@ -7633,7 +7659,7 @@
       "beauty"
     ],
     "sequence": [
-      "AH",
+      "BA",
       "UR",
       "FB",
       "AU",
@@ -7694,7 +7720,8 @@
     "sequence": [
       "AH",
       "FB",
-      "CTA"
+      "CTA",
+      "AH"
     ]
   },
   {
@@ -7715,8 +7742,7 @@
       "FB",
       "SP",
       "FB",
-      "SP",
-      "AH",
+      "BA",
       "AU",
       "SP"
     ]
@@ -7735,7 +7761,7 @@
       "beauty"
     ],
     "sequence": [
-      "FB",
+      "AH",
       "PP",
       "FB",
       "AU"
@@ -7757,10 +7783,11 @@
     "sequence": [
       "AH",
       "PP",
+      "CTA",
       "FB",
       "PP",
-      "OF",
-      "FB"
+      "FB",
+      "CTA"
     ]
   },
   {
@@ -7777,8 +7804,6 @@
       "other"
     ],
     "sequence": [
-      "AH",
-      "FB",
       "AH",
       "SP"
     ]
@@ -7802,9 +7827,8 @@
       "FB",
       "CTA",
       "AU",
-      "SP",
       "CTA",
-      "SP"
+      "AH"
     ]
   },
   {
@@ -7841,7 +7865,7 @@
       "beauty"
     ],
     "sequence": [
-      "AH",
+      "OF",
       "SP",
       "FB",
       "OF",
@@ -7860,8 +7884,7 @@
     ],
     "_cta_text": "No button",
     "categories": [
-      "home",
-      "tech"
+      "home"
     ],
     "sequence": [
       "AH",
@@ -7885,6 +7908,8 @@
     ],
     "sequence": [
       "AH",
+      "AU",
+      "FB",
       "AU"
     ]
   },
@@ -7922,6 +7947,7 @@
     ],
     "sequence": [
       "AH",
+      "AU",
       "FB",
       "OF",
       "FB"
@@ -7938,12 +7964,12 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "travel",
       "ecommerce"
     ],
     "sequence": [
       "AH",
-      "FB"
+      "FB",
+      "BA"
     ]
   },
   {
@@ -7964,8 +7990,7 @@
       "FB",
       "AU",
       "CTA",
-      "FB",
-      "PP"
+      "FB"
     ]
   },
   {
@@ -7983,7 +8008,8 @@
       "health"
     ],
     "sequence": [
-      "BA",
+      "SP",
+      "FB",
       "CTA"
     ]
   },
@@ -7998,7 +8024,8 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "health"
+      "health",
+      "beauty"
     ],
     "sequence": [
       "AH",
@@ -8061,7 +8088,7 @@
       "beauty"
     ],
     "sequence": [
-      "SP",
+      "AU",
       "PP",
       "FB",
       "OF",
@@ -8141,10 +8168,9 @@
     ],
     "sequence": [
       "AH",
-      "SP",
       "FB",
       "UR",
-      "AU"
+      "SP"
     ]
   },
   {
@@ -8161,7 +8187,6 @@
       "beauty"
     ],
     "sequence": [
-      "SP",
       "FB",
       "CTA"
     ]
@@ -8183,7 +8208,8 @@
       "AH",
       "FB",
       "SP",
-      "CTA"
+      "OF",
+      "SP"
     ]
   },
   {
@@ -8218,7 +8244,7 @@
       "beauty"
     ],
     "sequence": [
-      "AH",
+      "PP",
       "FB",
       "SP",
       "AU"
@@ -8277,7 +8303,8 @@
     "sequence": [
       "SP",
       "PP",
-      "FB"
+      "FB",
+      "SP"
     ]
   },
   {
@@ -8334,7 +8361,6 @@
     "sequence": [
       "AH",
       "PP",
-      "AG",
       "FB"
     ]
   },
@@ -8354,7 +8380,6 @@
     ],
     "sequence": [
       "CTA",
-      "FB",
       "SP",
       "FB",
       "AU",
@@ -8378,7 +8403,8 @@
       "AU",
       "FB",
       "SP",
-      "CTA"
+      "CTA",
+      "FB"
     ]
   },
   {
@@ -8397,7 +8423,6 @@
     ],
     "sequence": [
       "AH",
-      "AG",
       "PP"
     ]
   },
@@ -8417,12 +8442,10 @@
     "sequence": [
       "AH",
       "PP",
-      "AU",
       "FB",
-      "AU",
+      "AH",
+      "FB",
       "CTA",
-      "FB",
-      "PP",
       "FB"
     ]
   },
@@ -8442,7 +8465,7 @@
     ],
     "sequence": [
       "OF",
-      "SP",
+      "AH",
       "FB",
       "CTA"
     ]
@@ -8464,6 +8487,8 @@
       "AH",
       "SP",
       "FB",
+      "SP",
+      "FB",
       "AH",
       "SP"
     ]
@@ -8482,7 +8507,7 @@
       "beauty"
     ],
     "sequence": [
-      "AU",
+      "AH",
       "FB"
     ]
   },
@@ -8523,8 +8548,6 @@
       "FB",
       "UR",
       "CTA",
-      "FB",
-      "PP",
       "FB"
     ]
   },
@@ -8544,7 +8567,8 @@
     ],
     "sequence": [
       "AH",
-      "SP"
+      "SP",
+      "AU"
     ]
   },
   {
@@ -8577,7 +8601,7 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "home"
+      "ecommerce"
     ],
     "sequence": [
       "UR",
@@ -8602,8 +8626,8 @@
     ],
     "sequence": [
       "AH",
-      "SP",
-      "AG",
+      "FB",
+      "AH",
       "SP"
     ]
   },
@@ -8621,9 +8645,7 @@
       "beauty"
     ],
     "sequence": [
-      "AU",
-      "FB",
-      "PP",
+      "AH",
       "FB",
       "CTA",
       "SP",
@@ -8647,7 +8669,7 @@
       "AH",
       "PP",
       "AG",
-      "BA",
+      "AH",
       "FB",
       "SP",
       "CTA"
@@ -8670,7 +8692,8 @@
       "AH",
       "FB",
       "SP",
-      "CTA"
+      "CTA",
+      "SP"
     ]
   },
   {
@@ -8731,9 +8754,9 @@
     ],
     "sequence": [
       "OF",
-      "PP",
       "FB",
-      "AU"
+      "AU",
+      "FB"
     ]
   },
   {
@@ -8751,8 +8774,6 @@
     ],
     "sequence": [
       "OF",
-      "AH",
-      "OF",
       "FB",
       "CTA"
     ]
@@ -8768,7 +8789,7 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "home"
+      "ecommerce"
     ],
     "sequence": [
       "UR",
@@ -8792,7 +8813,7 @@
     ],
     "sequence": [
       "AH",
-      "AU"
+      "FB"
     ]
   },
   {
@@ -8830,7 +8851,7 @@
     ],
     "sequence": [
       "AH",
-      "SP",
+      "AG",
       "PP",
       "AG",
       "FB",
@@ -8839,9 +8860,13 @@
       "AU",
       "FB",
       "OF",
+      "FB",
+      "PP",
       "AG",
       "CTA",
       "AU",
+      "SP",
+      "PP",
       "SP"
     ]
   },
@@ -8860,7 +8885,8 @@
     ],
     "sequence": [
       "AH",
-      "CTA"
+      "FB",
+      "AH"
     ]
   },
   {
@@ -8879,8 +8905,8 @@
     ],
     "sequence": [
       "AH",
-      "SP",
-      "CTA"
+      "CTA",
+      "AH"
     ]
   },
   {
@@ -9019,6 +9045,7 @@
     "sequence": [
       "AH",
       "PP",
+      "FB",
       "CTA"
     ]
   },
@@ -9033,10 +9060,9 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce"
+      "home"
     ],
     "sequence": [
-      "AH",
       "UR",
       "FB",
       "OF"
@@ -9060,7 +9086,7 @@
       "OF",
       "SP",
       "FB",
-      "CTA",
+      "BA",
       "FB",
       "AU"
     ]
@@ -9080,8 +9106,7 @@
     ],
     "sequence": [
       "AH",
-      "FB",
-      "AU"
+      "FB"
     ]
   },
   {
@@ -9133,11 +9158,12 @@
     ],
     "_cta_text": "Like Page",
     "categories": [
-      "education"
+      "education",
+      "entertainment"
     ],
     "sequence": [
       "AH",
-      "AU"
+      "FB"
     ]
   },
   {
@@ -9172,9 +9198,9 @@
       "education"
     ],
     "sequence": [
-      "AH",
       "FB",
-      "SP"
+      "SP",
+      "FB"
     ]
   },
   {
@@ -9231,6 +9257,8 @@
     "sequence": [
       "PP",
       "CTA",
+      "SP",
+      "AH",
       "SP"
     ]
   },
@@ -9266,15 +9294,14 @@
       "health"
     ],
     "sequence": [
-      "SP",
       "AH",
       "PP",
-      "AG",
+      "SP",
       "FB",
       "AU",
       "CTA",
       "AU",
-      "SP"
+      "AH"
     ]
   },
   {
@@ -9306,14 +9333,14 @@
     ],
     "_cta_text": "Send message",
     "categories": [
-      "tech",
-      "travel"
+      "travel",
+      "tech"
     ],
     "sequence": [
       "SP",
       "FB",
       "CTA",
-      "SP"
+      "AH"
     ]
   },
   {
@@ -9332,7 +9359,6 @@
     "sequence": [
       "AH",
       "CTA",
-      "FB",
       "AU",
       "CTA",
       "AU"
@@ -9356,7 +9382,7 @@
       "PP",
       "FB",
       "CTA",
-      "SP"
+      "AH"
     ]
   },
   {
@@ -9389,7 +9415,8 @@
     ],
     "_cta_text": "Install now",
     "categories": [
-      "entertainment"
+      "entertainment",
+      "tech"
     ],
     "sequence": [
       "AH",
@@ -9412,6 +9439,7 @@
     "sequence": [
       "AH",
       "OF",
+      "CTA",
       "SP"
     ]
   },
@@ -9432,7 +9460,7 @@
       "AH",
       "FB",
       "CTA",
-      "SP"
+      "AH"
     ]
   },
   {
@@ -9473,7 +9501,7 @@
       "AH",
       "CTA",
       "OF",
-      "SP"
+      "AH"
     ]
   },
   {
@@ -9533,7 +9561,6 @@
     ],
     "sequence": [
       "AH",
-      "FB",
       "CTA"
     ]
   },
@@ -9606,7 +9633,7 @@
       "health"
     ],
     "sequence": [
-      "AH",
+      "CTA",
       "PP",
       "FB"
     ]
@@ -9625,8 +9652,6 @@
       "health"
     ],
     "sequence": [
-      "AH",
-      "AG",
       "AH",
       "FB",
       "OF",
@@ -9687,7 +9712,6 @@
     ],
     "sequence": [
       "AH",
-      "PP",
       "FB",
       "CTA",
       "FB"
@@ -9753,7 +9777,7 @@
     "sequence": [
       "AH",
       "AG",
-      "CTA",
+      "AH",
       "AU",
       "CTA"
     ]
@@ -9776,8 +9800,10 @@
       "CTA",
       "AU",
       "SP",
+      "CTA",
       "FB",
       "CTA",
+      "AG",
       "AU",
       "CTA"
     ]
@@ -9796,8 +9822,6 @@
       "education"
     ],
     "sequence": [
-      "AH",
-      "FB",
       "CTA"
     ]
   },
@@ -9819,9 +9843,7 @@
       "OF",
       "CTA",
       "FB",
-      "SP",
       "OF",
-      "FB",
       "CTA"
     ]
   },
@@ -9860,7 +9882,6 @@
     "sequence": [
       "AH",
       "UR",
-      "PP",
       "CTA"
     ]
   },
@@ -9940,7 +9961,6 @@
     ],
     "sequence": [
       "AH",
-      "OF",
       "AU",
       "SP",
       "FB",
@@ -9965,7 +9985,7 @@
     "sequence": [
       "AH",
       "CTA",
-      "FB",
+      "OF",
       "CTA"
     ]
   },
@@ -9980,8 +10000,7 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "finance",
-      "tech"
+      "finance"
     ],
     "sequence": [
       "CTA",
@@ -10041,6 +10060,7 @@
     "sequence": [
       "AH",
       "FB",
+      "AH",
       "CTA"
     ]
   },
@@ -10079,6 +10099,7 @@
     "sequence": [
       "AH",
       "FB",
+      "AU",
       "CTA",
       "FB"
     ]
@@ -10198,6 +10219,7 @@
     "sequence": [
       "AH",
       "PP",
+      "AG",
       "FB"
     ]
   },
@@ -10212,6 +10234,7 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
+      "finance",
       "tech"
     ],
     "sequence": [
@@ -10277,8 +10300,7 @@
     ],
     "sequence": [
       "CTA",
-      "FB",
-      "AU"
+      "FB"
     ]
   },
   {
@@ -10296,7 +10318,6 @@
     ],
     "sequence": [
       "AH",
-      "UR",
       "OF"
     ]
   },
@@ -10335,11 +10356,12 @@
       "education"
     ],
     "sequence": [
+      "AH",
       "AU",
+      "AH",
       "SP",
-      "AU",
       "CTA",
-      "BA"
+      "AH"
     ]
   },
   {
@@ -10358,10 +10380,9 @@
     "sequence": [
       "AH",
       "PP",
-      "UR",
+      "AG",
       "OF",
       "FB",
-      "OF",
       "CTA",
       "FB"
     ]
@@ -10399,7 +10420,7 @@
       "home"
     ],
     "sequence": [
-      "AH",
+      "CTA",
       "FB"
     ]
   },
@@ -10436,6 +10457,7 @@
     ],
     "_cta_text": "Apply now",
     "categories": [
+      "travel",
       "food"
     ],
     "sequence": [
@@ -10458,8 +10480,7 @@
     ],
     "sequence": [
       "AH",
-      "FB",
-      "CTA"
+      "FB"
     ]
   },
   {
@@ -10477,6 +10498,8 @@
     ],
     "sequence": [
       "AH",
+      "FB",
+      "AG",
       "FB",
       "PP",
       "AU",
@@ -10516,7 +10539,7 @@
     ],
     "sequence": [
       "AH",
-      "SP"
+      "FB"
     ]
   },
   {
@@ -10572,11 +10595,11 @@
       "other"
     ],
     "sequence": [
-      "PP",
+      "AH",
       "CTA",
       "FB",
       "CTA",
-      "AG",
+      "PP",
       "CTA"
     ]
   },
@@ -10612,10 +10635,10 @@
       "finance"
     ],
     "sequence": [
-      "SP",
+      "AH",
       "AU",
       "CTA",
-      "SP"
+      "AH"
     ]
   },
   {
@@ -10651,7 +10674,7 @@
       "education"
     ],
     "sequence": [
-      "AU",
+      "AH",
       "FB"
     ]
   },
@@ -10666,13 +10689,15 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "education",
-      "tech"
+      "education"
     ],
     "sequence": [
       "AH",
       "PP",
       "FB",
+      "AH",
+      "FB",
+      "BA",
       "SP",
       "AG",
       "FB",
@@ -10713,8 +10738,7 @@
     "sequence": [
       "AH",
       "FB",
-      "AU",
-      "FB"
+      "AU"
     ]
   },
   {
@@ -10753,10 +10777,9 @@
     ],
     "sequence": [
       "AU",
-      "SP",
+      "FB",
       "CTA",
       "FB",
-      "AG",
       "AU"
     ]
   },
@@ -10793,8 +10816,6 @@
       "ecommerce"
     ],
     "sequence": [
-      "AH",
-      "FB",
       "SP"
     ]
   },
@@ -10814,6 +10835,10 @@
     ],
     "sequence": [
       "AH",
+      "FB",
+      "AH",
+      "FB",
+      "AH",
       "FB"
     ]
   },
@@ -10831,8 +10856,7 @@
       "ecommerce"
     ],
     "sequence": [
-      "AH",
-      "FB"
+      "AH"
     ]
   },
   {
@@ -10903,8 +10927,8 @@
       "ecommerce"
     ],
     "sequence": [
-      "AH",
-      "PP"
+      "AU",
+      "FB"
     ]
   },
   {
@@ -10938,6 +10962,7 @@
       "travel"
     ],
     "sequence": [
+      "AH",
       "FB",
       "CTA",
       "SP"
@@ -10957,7 +10982,7 @@
       "ecommerce"
     ],
     "sequence": [
-      "FB",
+      "AH",
       "PP",
       "FB",
       "OF",
@@ -10979,7 +11004,6 @@
     ],
     "sequence": [
       "AH",
-      "AU",
       "FB"
     ]
   },
@@ -11048,8 +11072,7 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "ecommerce",
-      "food"
+      "ecommerce"
     ],
     "sequence": [
       "AH",
@@ -11070,7 +11093,9 @@
       "entertainment"
     ],
     "sequence": [
-      "PP",
+      "AH",
+      "FB",
+      "AH",
       "FB"
     ]
   },
@@ -11088,7 +11113,7 @@
       "education"
     ],
     "sequence": [
-      "AU",
+      "AH",
       "FB"
     ]
   },
@@ -11103,7 +11128,8 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce"
+      "ecommerce",
+      "health"
     ],
     "sequence": [
       "AH",
@@ -11121,7 +11147,7 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce"
+      "food"
     ],
     "sequence": [
       "AH",
@@ -11161,7 +11187,8 @@
     ],
     "_cta_text": "Sign up",
     "categories": [
-      "education"
+      "education",
+      "travel"
     ],
     "sequence": [
       "AH",
@@ -11185,53 +11212,41 @@
     "sequence": [
       "AH",
       "AG",
-      "BA",
-      "PP",
       "AH",
       "PP",
-      "AG",
-      "PP",
+      "AH",
       "AU",
       "AH",
-      "AG",
+      "FB",
       "SP",
       "CTA",
+      "AG",
+      "PP",
+      "OF",
+      "BA",
+      "AH",
+      "FB",
+      "AH",
       "AG",
       "OF",
-      "AH",
-      "AG",
-      "FB",
       "AG",
       "AH",
       "BA",
-      "FB",
       "AH",
       "BA",
-      "AG",
+      "AH",
       "BA",
       "AH",
-      "AG",
-      "SP",
-      "BA",
-      "SP",
       "BA",
       "AH",
-      "PP",
-      "SP",
       "BA",
-      "SP",
-      "AG",
-      "BA",
-      "FB",
-      "BA",
-      "FB",
       "AU",
       "FB",
       "BA",
-      "FB",
       "CTA",
       "SP",
-      "CTA"
+      "CTA",
+      "AU"
     ]
   },
   {
@@ -11248,7 +11263,8 @@
       "food"
     ],
     "sequence": [
-      "FB"
+      "FB",
+      "SP"
     ]
   },
   {
@@ -11325,13 +11341,14 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "health",
-      "beauty"
+      "health"
     ],
     "sequence": [
+      "SP",
       "AU",
       "SP",
-      "AG",
+      "CTA",
+      "SP",
       "OF",
       "SP"
     ]
@@ -11370,8 +11387,6 @@
     ],
     "sequence": [
       "AH",
-      "SP",
-      "PP",
       "FB"
     ]
   },
@@ -11390,7 +11405,7 @@
     ],
     "sequence": [
       "AH",
-      "FB"
+      "AU"
     ]
   },
   {
@@ -11410,6 +11425,8 @@
       "AH",
       "CTA",
       "FB",
+      "AH",
+      "FB",
       "CTA"
     ]
   },
@@ -11424,7 +11441,8 @@
     ],
     "_cta_text": "Install now",
     "categories": [
-      "ecommerce"
+      "ecommerce",
+      "home"
     ],
     "sequence": [
       "AH",
@@ -11446,12 +11464,9 @@
     ],
     "sequence": [
       "AH",
-      "UR",
-      "AG",
       "FB",
-      "AG",
-      "FB",
-      "CTA"
+      "CTA",
+      "AH"
     ]
   },
   {
@@ -11487,11 +11502,13 @@
       "other"
     ],
     "sequence": [
+      "AU",
       "AH",
       "PP",
       "FB",
       "AU",
-      "CTA"
+      "CTA",
+      "SP"
     ]
   },
   {
@@ -11505,13 +11522,11 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "education",
-      "health"
+      "education"
     ],
     "sequence": [
       "AH",
-      "PP",
-      "FB",
+      "OF",
       "PP",
       "FB"
     ]
@@ -11532,8 +11547,9 @@
     "sequence": [
       "AH",
       "FB",
-      "AG",
-      "CTA"
+      "AH",
+      "CTA",
+      "SP"
     ]
   },
   {
@@ -11590,9 +11606,8 @@
       "food"
     ],
     "sequence": [
-      "AH",
       "FB",
-      "AH"
+      "AU"
     ]
   },
   {
@@ -11610,7 +11625,7 @@
     ],
     "sequence": [
       "AH",
-      "SP",
+      "CTA",
       "AU"
     ]
   },
@@ -11628,8 +11643,7 @@
       "ecommerce"
     ],
     "sequence": [
-      "CTA",
-      "FB"
+      "CTA"
     ]
   },
   {
@@ -11665,15 +11679,12 @@
     "sequence": [
       "AH",
       "SP",
-      "OF",
+      "UR",
       "FB",
       "AG",
       "UR",
-      "OF",
-      "FB",
+      "BA",
       "UR",
-      "AU",
-      "FB",
       "CTA",
       "AH",
       "FB"
@@ -11697,9 +11708,6 @@
       "AH",
       "SP",
       "PP",
-      "AG",
-      "PP",
-      "FB",
       "SP",
       "FB",
       "SP"
@@ -11758,7 +11766,7 @@
     ],
     "sequence": [
       "AH",
-      "PP"
+      "BA"
     ]
   },
   {
@@ -11777,7 +11785,8 @@
     "sequence": [
       "AH",
       "FB",
-      "CTA"
+      "CTA",
+      "SP"
     ]
   },
   {
@@ -11795,7 +11804,6 @@
     ],
     "sequence": [
       "AH",
-      "SP",
       "FB",
       "CTA"
     ]
@@ -11849,14 +11857,14 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "beauty",
-      "health"
+      "health",
+      "beauty"
     ],
     "sequence": [
       "AH",
-      "SP",
       "FB",
-      "OF"
+      "OF",
+      "SP"
     ]
   },
   {
@@ -11870,13 +11878,12 @@
     ],
     "_cta_text": "Download",
     "categories": [
-      "finance",
-      "tech"
+      "finance"
     ],
     "sequence": [
       "CTA",
-      "PP",
-      "AG",
+      "AH",
+      "BA",
       "UR",
       "CTA",
       "FB"
@@ -11898,8 +11905,6 @@
     "sequence": [
       "AH",
       "FB",
-      "OF",
-      "FB",
       "SP"
     ]
   },
@@ -11917,9 +11922,7 @@
       "entertainment"
     ],
     "sequence": [
-      "AH",
-      "CTA",
-      "UR",
+      "OF",
       "CTA",
       "FB",
       "CTA"
@@ -11955,12 +11958,11 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce",
       "finance"
     ],
     "sequence": [
       "AH",
-      "FB"
+      "AU"
     ]
   },
   {
@@ -11980,7 +11982,7 @@
     "sequence": [
       "AH",
       "CTA",
-      "SP",
+      "FB",
       "CTA",
       "AU",
       "UR",
@@ -12026,6 +12028,7 @@
     ],
     "sequence": [
       "SP",
+      "AH",
       "CTA"
     ]
   },
@@ -12046,11 +12049,10 @@
     "sequence": [
       "AH",
       "PP",
+      "AH",
       "FB",
       "AU",
       "FB",
-      "CTA",
-      "UR",
       "CTA"
     ]
   },
@@ -12073,7 +12075,6 @@
       "FB",
       "OF",
       "UR",
-      "CTA",
       "OF",
       "FB"
     ]
@@ -12093,9 +12094,9 @@
       "tech"
     ],
     "sequence": [
-      "AH",
       "FB",
-      "CTA"
+      "CTA",
+      "AH"
     ]
   },
   {
@@ -12112,7 +12113,7 @@
       "finance"
     ],
     "sequence": [
-      "AH",
+      "CTA",
       "FB",
       "CTA"
     ]
@@ -12150,7 +12151,7 @@
     ],
     "sequence": [
       "FB",
-      "SP",
+      "AU",
       "CTA"
     ]
   },
@@ -12173,7 +12174,7 @@
       "SP",
       "FB",
       "OF",
-      "FB",
+      "CTA",
       "UR"
     ]
   },
@@ -12192,13 +12193,20 @@
     ],
     "sequence": [
       "PP",
+      "AH",
       "AU",
+      "FB",
       "AG",
       "FB",
       "PP",
       "AG",
       "FB",
-      "CTA"
+      "AG",
+      "FB",
+      "AU",
+      "FB",
+      "CTA",
+      "FB"
     ]
   },
   {
@@ -12215,12 +12223,11 @@
       "finance"
     ],
     "sequence": [
-      "BA",
-      "PP",
       "FB",
       "PP",
       "FB",
-      "AU",
+      "PP",
+      "FB",
       "CTA"
     ]
   },
@@ -12238,8 +12245,11 @@
       "finance"
     ],
     "sequence": [
-      "PP",
       "AU",
+      "UR",
+      "AU",
+      "FB",
+      "AG",
       "FB",
       "BA",
       "AG",
@@ -12261,8 +12271,7 @@
       "beauty"
     ],
     "sequence": [
-      "AH",
-      "SP"
+      "AH"
     ]
   },
   {
@@ -12276,14 +12285,17 @@
     ],
     "_cta_text": "Apply now",
     "categories": [
-      "automotive"
+      "automotive",
+      "ecommerce"
     ],
     "sequence": [
       "AH",
       "PP",
+      "AG",
       "BA",
       "FB",
       "OF",
+      "CTA",
       "BA",
       "UR",
       "CTA"
@@ -12338,7 +12350,7 @@
     ],
     "_cta_text": "Visit Instagram profile",
     "categories": [
-      "other"
+      "entertainment"
     ],
     "sequence": [
       "AH"
@@ -12361,13 +12373,13 @@
     "sequence": [
       "AH",
       "UR",
+      "AG",
       "FB",
       "AH",
       "FB",
-      "AU",
       "UR",
+      "AG",
       "CTA",
-      "UR",
       "FB",
       "CTA"
     ]
@@ -12426,8 +12438,6 @@
     ],
     "sequence": [
       "AH",
-      "FB",
-      "PP",
       "FB"
     ]
   },
@@ -12448,36 +12458,28 @@
       "AH",
       "AG",
       "AU",
+      "AH",
       "PP",
       "AH",
       "PP",
       "AG",
-      "AU",
-      "AH",
-      "AU",
-      "AH",
-      "SP",
-      "AG",
       "PP",
       "AG",
-      "PP",
-      "AG",
-      "AU",
-      "SP",
-      "AG",
       "AH",
-      "AG",
       "PP",
       "AG",
       "FB",
-      "AU",
+      "CTA",
+      "FB",
+      "AH",
+      "FB",
+      "AG",
       "FB",
       "SP",
-      "FB",
+      "BA",
       "AG",
       "FB",
       "AU",
-      "AG",
       "FB",
       "OF",
       "FB",
@@ -12558,9 +12560,9 @@
     "sequence": [
       "AH",
       "FB",
-      "OF",
+      "AH",
       "FB",
-      "PP",
+      "OF",
       "FB",
       "AH"
     ]
@@ -12580,7 +12582,6 @@
     ],
     "sequence": [
       "AH",
-      "FB",
       "CTA"
     ]
   },
@@ -12600,6 +12601,7 @@
     "sequence": [
       "AH",
       "SP",
+      "CTA",
       "OF",
       "FB"
     ]
@@ -12620,7 +12622,7 @@
     "sequence": [
       "AH",
       "PP",
-      "AU",
+      "AG",
       "FB",
       "OF",
       "AU",
@@ -12643,6 +12645,7 @@
     ],
     "sequence": [
       "AH",
+      "CTA",
       "FB",
       "OF",
       "CTA",
@@ -12679,11 +12682,12 @@
     ],
     "_cta_text": "Get directions",
     "categories": [
-      "education"
+      "education",
+      "health"
     ],
     "sequence": [
       "AH",
-      "FB",
+      "CTA",
       "OF",
       "FB",
       "CTA"
@@ -12704,6 +12708,7 @@
     ],
     "sequence": [
       "AH",
+      "CTA",
       "FB",
       "CTA"
     ]
@@ -12719,9 +12724,10 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "home"
+      "ecommerce"
     ],
     "sequence": [
+      "AH",
       "PP",
       "SP",
       "FB",
@@ -12741,7 +12747,7 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "home"
+      "ecommerce"
     ],
     "sequence": [
       "AH",
@@ -12750,7 +12756,6 @@
       "FB",
       "OF",
       "CTA",
-      "SP",
       "FB"
     ]
   },
@@ -12793,7 +12798,7 @@
     ],
     "sequence": [
       "CTA",
-      "BA",
+      "FB",
       "OF"
     ]
   },
@@ -12812,7 +12817,6 @@
     ],
     "sequence": [
       "AH",
-      "PP",
       "FB"
     ]
   },
@@ -12877,12 +12881,11 @@
     "sequence": [
       "AH",
       "FB",
-      "AU",
+      "CTA",
       "FB",
       "AU",
       "OF",
       "FB",
-      "AU",
       "CTA"
     ]
   },
@@ -12902,7 +12905,9 @@
     "sequence": [
       "AH",
       "PP",
-      "BA",
+      "AH",
+      "FB",
+      "AH",
       "FB",
       "SP",
       "CTA"
@@ -12942,6 +12947,7 @@
     ],
     "sequence": [
       "AU",
+      "AH",
       "FB"
     ]
   },
@@ -12978,8 +12984,7 @@
     ],
     "sequence": [
       "AH",
-      "SP",
-      "FB"
+      "SP"
     ]
   },
   {
@@ -13020,7 +13025,7 @@
       "AH",
       "FB",
       "AU",
-      "PP",
+      "AG",
       "FB"
     ]
   },
@@ -13035,11 +13040,10 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "health",
-      "beauty"
+      "health"
     ],
     "sequence": [
-      "PP",
+      "AH",
       "BA",
       "AH",
       "CTA"
@@ -13067,8 +13071,11 @@
       "AH",
       "AU",
       "AG",
+      "FB",
       "OF",
       "CTA",
+      "FB",
+      "AH",
       "FB",
       "CTA",
       "UR"
@@ -13113,7 +13120,7 @@
       "AH",
       "PP",
       "FB",
-      "AG",
+      "PP",
       "FB",
       "OF",
       "SP",
@@ -13133,15 +13140,12 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "finance",
-      "tech"
+      "finance"
     ],
     "sequence": [
       "AH",
-      "FB",
       "SP",
-      "FB",
-      "SP"
+      "AH"
     ]
   },
   {
@@ -13173,8 +13177,7 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "beauty",
-      "education"
+      "beauty"
     ],
     "sequence": [
       "AH",
@@ -13203,8 +13206,6 @@
       "AH",
       "PP",
       "FB",
-      "SP",
-      "FB",
       "OF"
     ]
   },
@@ -13224,12 +13225,16 @@
     "sequence": [
       "AH",
       "CTA",
+      "AH",
       "UR",
+      "AG",
       "SP",
       "FB",
       "UR",
       "CTA",
+      "AU",
       "SP",
+      "FB",
       "BA",
       "AG"
     ]
@@ -13269,7 +13274,7 @@
     ],
     "sequence": [
       "OF",
-      "FB",
+      "AH",
       "OF",
       "FB"
     ]
@@ -13293,9 +13298,9 @@
       "FB",
       "AU",
       "FB",
-      "AU",
-      "FB",
-      "CTA"
+      "AH",
+      "CTA",
+      "SP"
     ]
   },
   {
@@ -13328,13 +13333,11 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce",
-      "home"
+      "ecommerce"
     ],
     "sequence": [
       "AH",
-      "FB",
-      "CTA"
+      "SP"
     ]
   },
   {
@@ -13352,8 +13355,8 @@
     ],
     "sequence": [
       "AU",
-      "FB",
-      "CTA"
+      "AH",
+      "FB"
     ]
   },
   {
@@ -13374,8 +13377,11 @@
       "FB",
       "AU",
       "FB",
+      "AH",
+      "FB",
       "CTA",
       "UR",
+      "CTA",
       "OF"
     ]
   },
@@ -13391,11 +13397,10 @@
     "_cta_text": "Learn more",
     "categories": [
       "finance",
-      "education"
+      "tech"
     ],
     "sequence": [
       "AH",
-      "FB",
       "CTA",
       "AU",
       "SP"
@@ -13412,15 +13417,14 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "automotive",
-      "health"
+      "automotive"
     ],
     "sequence": [
       "AH",
       "PP",
       "FB",
       "OF",
-      "FB"
+      "AH"
     ]
   },
   {
@@ -13438,7 +13442,6 @@
     ],
     "sequence": [
       "AH",
-      "FB",
       "AU",
       "FB",
       "CTA"
@@ -13473,13 +13476,13 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "finance",
-      "education"
+      "education",
+      "finance"
     ],
     "sequence": [
       "AH",
       "PP",
-      "FB",
+      "AU",
       "SP",
       "AG",
       "OF",
@@ -13522,8 +13525,9 @@
     "sequence": [
       "AH",
       "FB",
-      "PP",
-      "FB"
+      "AH",
+      "FB",
+      "AH"
     ]
   },
   {
@@ -13554,14 +13558,13 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "home"
+      "finance"
     ],
     "sequence": [
       "AH",
       "PP",
       "AH",
       "PP",
-      "SP",
       "AU",
       "CTA",
       "AU",
@@ -13588,6 +13591,8 @@
       "FB",
       "AU",
       "FB",
+      "OF",
+      "FB",
       "UR",
       "CTA",
       "FB",
@@ -13613,7 +13618,7 @@
       "AH",
       "OF",
       "FB",
-      "UR",
+      "AH",
       "CTA",
       "FB"
     ]
@@ -13649,8 +13654,8 @@
     ],
     "_cta_text": "Sign up",
     "categories": [
-      "finance",
-      "health"
+      "health",
+      "finance"
     ],
     "sequence": [
       "OF",
@@ -13677,9 +13682,10 @@
       "AU",
       "FB",
       "AU",
-      "CTA",
+      "FB",
       "AU",
       "SP",
+      "AU",
       "OF",
       "AU",
       "CTA"
@@ -13696,18 +13702,19 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "health",
-      "tech"
+      "health"
     ],
     "sequence": [
       "CTA",
       "FB",
       "AH",
-      "AU",
+      "FB",
       "OF",
       "FB",
       "CTA",
+      "AU",
       "FB",
+      "CTA",
       "AU",
       "OF"
     ]
@@ -13743,7 +13750,7 @@
       "finance"
     ],
     "sequence": [
-      "AH",
+      "CTA",
       "FB",
       "CTA"
     ]
@@ -13759,11 +13766,10 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "health",
-      "finance"
+      "health"
     ],
     "sequence": [
-      "FB",
+      "AH",
       "PP",
       "FB"
     ]
@@ -13779,11 +13785,9 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "health",
-      "tech"
+      "health"
     ],
     "sequence": [
-      "OF",
       "AH",
       "FB",
       "CTA",
@@ -13791,10 +13795,12 @@
       "FB",
       "SP",
       "FB",
+      "PP",
       "BA",
       "FB",
       "CTA",
-      "AH"
+      "AH",
+      "AU"
     ]
   },
   {
@@ -13811,7 +13817,7 @@
       "health"
     ],
     "sequence": [
-      "OF",
+      "AH",
       "FB",
       "SP",
       "FB",
@@ -13835,7 +13841,6 @@
     ],
     "sequence": [
       "OF",
-      "FB",
       "AH",
       "FB",
       "OF",
@@ -13863,7 +13868,7 @@
       "AH",
       "AU",
       "CTA",
-      "AU"
+      "FB"
     ]
   },
   {
@@ -13877,7 +13882,8 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "health"
+      "health",
+      "tech"
     ],
     "sequence": [
       "AH",
@@ -13913,8 +13919,8 @@
     ],
     "_cta_text": "Get quote",
     "categories": [
-      "travel",
-      "finance"
+      "finance",
+      "travel"
     ],
     "sequence": [
       "AH",
@@ -13938,10 +13944,10 @@
     "sequence": [
       "AH",
       "FB",
-      "CTA",
+      "AH",
       "FB",
       "CTA",
-      "FB",
+      "AH",
       "SP",
       "AU"
     ]
@@ -13961,7 +13967,7 @@
     ],
     "sequence": [
       "AH",
-      "PP",
+      "AG",
       "FB"
     ]
   },
@@ -13976,7 +13982,8 @@
     ],
     "_cta_text": "Get quote",
     "categories": [
-      "finance"
+      "finance",
+      "automotive"
     ],
     "sequence": [
       "AH",
@@ -14019,13 +14026,14 @@
     ],
     "sequence": [
       "AH",
-      "FB",
       "AG",
       "OF",
-      "FB",
+      "AG",
+      "AH",
       "AG",
       "BA",
       "AG",
+      "PP",
       "OF",
       "CTA"
     ]
@@ -14041,8 +14049,7 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "finance",
-      "tech"
+      "finance"
     ],
     "sequence": [
       "AH",
@@ -14050,19 +14057,25 @@
       "PP",
       "AH",
       "FB",
+      "AH",
       "SP",
       "AG",
+      "PP",
       "AH",
       "PP",
       "AH",
       "FB",
+      "AH",
       "SP",
+      "AH",
       "FB",
       "SP",
       "FB",
       "SP",
       "FB",
-      "CTA"
+      "SP",
+      "CTA",
+      "FB"
     ]
   },
   {
@@ -14097,7 +14110,6 @@
       "finance"
     ],
     "sequence": [
-      "FB",
       "AH",
       "SP",
       "FB"
@@ -14114,13 +14126,13 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce"
+      "ecommerce",
+      "home"
     ],
     "sequence": [
       "SP",
       "AH",
-      "FB",
-      "BA"
+      "FB"
     ]
   },
   {
@@ -14134,10 +14146,11 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "finance"
+      "finance",
+      "automotive"
     ],
     "sequence": [
-      "FB",
+      "OF",
       "SP"
     ]
   },
@@ -14153,12 +14166,12 @@
     "_cta_text": "Learn more",
     "categories": [
       "health",
-      "tech"
+      "finance"
     ],
     "sequence": [
       "FB",
       "PP",
-      "FB"
+      "AU"
     ]
   },
   {
@@ -14191,7 +14204,7 @@
     "_cta_text": "Get quote",
     "categories": [
       "finance",
-      "health"
+      "travel"
     ],
     "sequence": [
       "AH",
@@ -14213,6 +14226,8 @@
       "finance"
     ],
     "sequence": [
+      "FB",
+      "AH",
       "FB"
     ]
   },
@@ -14246,8 +14261,8 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "automotive",
-      "finance"
+      "finance",
+      "automotive"
     ],
     "sequence": [
       "AH",
@@ -14269,8 +14284,7 @@
     ],
     "sequence": [
       "AH",
-      "FB",
-      "CTA"
+      "FB"
     ]
   },
   {
@@ -14287,7 +14301,7 @@
       "finance"
     ],
     "sequence": [
-      "SP",
+      "AH",
       "PP",
       "FB",
       "CTA"
@@ -14307,10 +14321,8 @@
       "health"
     ],
     "sequence": [
-      "SP",
-      "UR",
-      "FB",
-      "AU",
+      "AH",
+      "CTA",
       "FB",
       "SP",
       "AU"
@@ -14372,7 +14384,8 @@
     "sequence": [
       "AH",
       "CTA",
-      "SP"
+      "FB",
+      "AH"
     ]
   },
   {
@@ -14429,10 +14442,12 @@
     "sequence": [
       "AH",
       "PP",
+      "AH",
       "FB",
       "SP",
       "FB",
       "OF",
+      "CTA",
       "FB",
       "CTA",
       "OF"
@@ -14491,9 +14506,6 @@
     ],
     "sequence": [
       "AH",
-      "PP",
-      "FB",
-      "PP",
       "FB",
       "CTA"
     ]
@@ -14513,8 +14525,8 @@
     ],
     "sequence": [
       "AH",
-      "OF",
       "FB",
+      "OF",
       "CTA"
     ]
   },
@@ -14569,10 +14581,10 @@
     ],
     "_cta_text": "Watch more",
     "categories": [
-      "food"
+      "entertainment"
     ],
     "sequence": [
-      "AH",
+      "SP",
       "AU",
       "CTA"
     ]
@@ -14588,11 +14600,10 @@
     ],
     "_cta_text": "Visit Instagram profile",
     "categories": [
-      "food"
+      "food",
+      "entertainment"
     ],
     "sequence": [
-      "AH",
-      "FB",
       "AH"
     ]
   },
@@ -14611,6 +14622,8 @@
     ],
     "sequence": [
       "AH",
+      "FB",
+      "CTA",
       "FB",
       "SP",
       "FB"
@@ -14648,10 +14661,11 @@
     ],
     "_cta_text": "Get offer",
     "categories": [
-      "tech"
+      "tech",
+      "food"
     ],
     "sequence": [
-      "AH",
+      "OF",
       "FB",
       "OF",
       "CTA"
@@ -14674,7 +14688,8 @@
     "sequence": [
       "AH",
       "FB",
-      "OF",
+      "CTA",
+      "FB",
       "CTA"
     ]
   },
@@ -14714,6 +14729,14 @@
     "sequence": [
       "AH",
       "FB",
+      "AH",
+      "FB",
+      "AH",
+      "FB",
+      "AH",
+      "FB",
+      "AH",
+      "FB",
       "CTA"
     ]
   },
@@ -14750,7 +14773,6 @@
     ],
     "sequence": [
       "AH",
-      "PP",
       "FB",
       "UR",
       "FB"
@@ -14771,7 +14793,8 @@
     ],
     "sequence": [
       "AH",
-      "PP",
+      "FB",
+      "OF",
       "FB"
     ]
   },
@@ -14833,11 +14856,13 @@
     ],
     "sequence": [
       "AH",
-      "FB",
       "OF",
+      "FB",
+      "AH",
+      "OF",
+      "FB",
       "SP",
       "FB",
-      "OF",
       "CTA"
     ]
   },
@@ -14859,8 +14884,9 @@
     "sequence": [
       "AH",
       "FB",
-      "PP",
-      "CTA"
+      "AG",
+      "CTA",
+      "SP"
     ]
   },
   {
@@ -14899,6 +14925,7 @@
     "sequence": [
       "AH",
       "FB",
+      "AU",
       "CTA"
     ]
   },
@@ -14958,8 +14985,6 @@
     ],
     "sequence": [
       "AH",
-      "FB",
-      "AH",
       "AG",
       "FB",
       "CTA"
@@ -14976,7 +15001,8 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "health"
+      "health",
+      "travel"
     ],
     "sequence": [
       "AH",
@@ -14985,6 +15011,9 @@
       "PP",
       "AU",
       "SP",
+      "FB",
+      "CTA",
+      "FB",
       "CTA"
     ]
   },
@@ -15018,12 +15047,11 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "food",
-      "education"
+      "education",
+      "entertainment"
     ],
     "sequence": [
       "AH",
-      "SP",
       "CTA"
     ]
   },
@@ -15044,6 +15072,7 @@
     ],
     "sequence": [
       "AH",
+      "AU",
       "FB",
       "CTA"
     ]
@@ -15083,10 +15112,8 @@
     ],
     "sequence": [
       "AH",
-      "PP",
       "FB",
-      "CTA",
-      "UR"
+      "CTA"
     ]
   },
   {
@@ -15103,7 +15130,6 @@
       "food"
     ],
     "sequence": [
-      "AH",
       "OF"
     ]
   },
@@ -15144,7 +15170,7 @@
     "sequence": [
       "FB",
       "PP",
-      "BA"
+      "SP"
     ]
   },
   {
@@ -15162,6 +15188,7 @@
       "food"
     ],
     "sequence": [
+      "AH",
       "FB",
       "CTA",
       "FB",
@@ -15200,11 +15227,12 @@
     ],
     "_cta_text": "Book now",
     "categories": [
-      "travel"
+      "travel",
+      "food"
     ],
     "sequence": [
       "AH",
-      "AU"
+      "FB"
     ]
   },
   {
@@ -15222,9 +15250,9 @@
     ],
     "sequence": [
       "AH",
-      "AU",
+      "FB",
       "AG",
-      "SP"
+      "AH"
     ]
   },
   {
@@ -15316,7 +15344,8 @@
       "food"
     ],
     "sequence": [
-      "AH",
+      "UR",
+      "FB",
       "CTA"
     ]
   },
@@ -15353,7 +15382,7 @@
     "sequence": [
       "AH",
       "SP",
-      "CTA",
+      "AU",
       "FB"
     ]
   },
@@ -15372,10 +15401,10 @@
     ],
     "sequence": [
       "AH",
+      "FB",
       "SP",
       "FB",
-      "AU",
-      "CTA"
+      "AU"
     ]
   },
   {
@@ -15440,8 +15469,7 @@
     "sequence": [
       "AH",
       "FB",
-      "AU",
-      "CTA"
+      "AU"
     ]
   },
   {
@@ -15478,8 +15506,7 @@
     ],
     "sequence": [
       "AH",
-      "FB",
-      "CTA"
+      "FB"
     ]
   },
   {
@@ -15521,7 +15548,7 @@
     "sequence": [
       "AH",
       "FB",
-      "AG",
+      "AH",
       "CTA"
     ]
   },
@@ -15541,7 +15568,6 @@
     ],
     "sequence": [
       "AH",
-      "FB",
       "CTA"
     ]
   },
@@ -15560,7 +15586,7 @@
       "ecommerce"
     ],
     "sequence": [
-      "AH",
+      "UR",
       "FB",
       "CTA",
       "FB"
@@ -15582,9 +15608,7 @@
     "sequence": [
       "FB",
       "OF",
-      "CTA",
       "AU",
-      "SP",
       "FB",
       "CTA"
     ]
@@ -15604,6 +15628,7 @@
     ],
     "sequence": [
       "AH",
+      "CTA",
       "FB",
       "CTA"
     ]
@@ -15623,7 +15648,7 @@
     ],
     "sequence": [
       "CTA",
-      "FB"
+      "SP"
     ]
   },
   {
@@ -15637,14 +15662,15 @@
     ],
     "_cta_text": "Book now",
     "categories": [
-      "travel",
       "health"
     ],
     "sequence": [
       "AH",
       "FB",
+      "SP",
+      "FB",
       "CTA",
-      "FB"
+      "SP"
     ]
   },
   {
@@ -15696,10 +15722,12 @@
     ],
     "_cta_text": "Install now",
     "categories": [
-      "entertainment"
+      "entertainment",
+      "food"
     ],
     "sequence": [
       "AH",
+      "BA",
       "FB"
     ]
   },
@@ -15714,11 +15742,11 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "home"
+      "ecommerce"
     ],
     "sequence": [
       "SP",
-      "FB"
+      "AH"
     ]
   },
   {
@@ -15737,9 +15765,8 @@
     "sequence": [
       "AH",
       "FB",
-      "OF",
       "CTA",
-      "SP"
+      "AH"
     ]
   },
   {
@@ -15756,10 +15783,9 @@
       "food"
     ],
     "sequence": [
-      "UR",
+      "AH",
       "FB",
-      "CTA",
-      "FB"
+      "CTA"
     ]
   },
   {
@@ -15779,7 +15805,7 @@
     "sequence": [
       "AH",
       "PP",
-      "FB"
+      "BA"
     ]
   },
   {
@@ -15832,8 +15858,7 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "food",
-      "ecommerce"
+      "food"
     ],
     "sequence": [
       "AU",
@@ -15856,12 +15881,15 @@
       "food"
     ],
     "sequence": [
-      "AH",
+      "SP",
       "FB",
       "SP",
       "FB",
+      "SP",
+      "FB",
+      "SP",
       "CTA",
-      "FB"
+      "SP"
     ]
   },
   {
@@ -15879,11 +15907,15 @@
     ],
     "sequence": [
       "AH",
+      "OF",
       "AU",
       "FB",
       "OF",
       "FB",
-      "CTA"
+      "OF",
+      "FB",
+      "CTA",
+      "SP"
     ]
   },
   {
@@ -15938,28 +15970,77 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "ecommerce"
+      "home",
+      "health"
     ],
     "sequence": [
       "AH",
       "SP",
       "PP",
+      "BA",
+      "SP",
+      "AG",
+      "AH",
+      "AU",
+      "AH",
+      "SP",
+      "AH",
+      "PP",
+      "SP",
       "AG",
       "SP",
       "PP",
       "AG",
-      "AU",
+      "PP",
+      "AG",
+      "BA",
+      "PP",
+      "FB",
+      "AG",
+      "SP",
+      "OF",
+      "SP",
+      "BA",
+      "AG",
+      "AH",
+      "SP",
+      "PP",
+      "AG",
+      "PP",
       "SP",
       "BA",
       "FB",
-      "AU",
+      "SP",
+      "BA",
       "FB",
+      "AH",
+      "AG",
+      "SP",
+      "FB",
+      "PP",
+      "FB",
+      "BA",
+      "SP",
+      "AG",
+      "BA",
       "SP",
       "AG",
       "FB",
+      "AH",
+      "AG",
+      "SP",
+      "FB",
+      "SP",
       "UR",
+      "SP",
+      "UR",
+      "CTA",
       "OF",
       "SP",
+      "CTA",
+      "FB",
+      "CTA",
+      "FB",
       "CTA"
     ]
   },
@@ -15980,10 +16061,9 @@
       "AH",
       "SP",
       "FB",
-      "AH",
-      "FB",
       "SP",
-      "CTA"
+      "CTA",
+      "SP"
     ]
   },
   {
@@ -16001,8 +16081,6 @@
     ],
     "sequence": [
       "AH",
-      "FB",
-      "CTA",
       "FB"
     ]
   },
@@ -16021,7 +16099,8 @@
     ],
     "sequence": [
       "SP",
-      "FB"
+      "FB",
+      "SP"
     ]
   },
   {
@@ -16038,6 +16117,7 @@
       "ecommerce"
     ],
     "sequence": [
+      "AH",
       "AU",
       "SP"
     ]
@@ -16059,6 +16139,7 @@
       "AH",
       "FB",
       "OF",
+      "FB",
       "CTA"
     ]
   },
@@ -16095,7 +16176,7 @@
     ],
     "sequence": [
       "AH",
-      "UR",
+      "AG",
       "PP",
       "CTA",
       "UR",
@@ -16133,13 +16214,13 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "education"
+      "education",
+      "food"
     ],
     "sequence": [
       "AH",
       "PP",
-      "CTA",
-      "SP"
+      "FB"
     ]
   },
   {
@@ -16212,6 +16293,8 @@
       "food"
     ],
     "sequence": [
+      "AH",
+      "SP",
       "AH",
       "SP",
       "CTA",
@@ -16290,7 +16373,6 @@
     ],
     "_cta_text": "Install now",
     "categories": [
-      "tech",
       "entertainment"
     ],
     "sequence": [
@@ -16330,8 +16412,7 @@
     ],
     "_cta_text": "Book now",
     "categories": [
-      "food",
-      "tech"
+      "food"
     ],
     "sequence": [
       "AH",
@@ -16387,8 +16468,8 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "education",
-      "health"
+      "health",
+      "education"
     ],
     "sequence": [
       "AH",
@@ -16397,7 +16478,6 @@
       "PP",
       "AG",
       "SP",
-      "PP",
       "CTA",
       "AG",
       "SP",
@@ -16419,7 +16499,6 @@
     ],
     "sequence": [
       "AH",
-      "AG",
       "PP",
       "FB",
       "OF"
@@ -16440,7 +16519,7 @@
     ],
     "sequence": [
       "AH",
-      "OF"
+      "FB"
     ]
   },
   {
@@ -16495,7 +16574,8 @@
     ],
     "sequence": [
       "AH",
-      "FB"
+      "FB",
+      "AU"
     ]
   },
   {
@@ -16548,12 +16628,11 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "travel"
+      "travel",
+      "tech"
     ],
     "sequence": [
       "AH",
-      "FB",
-      "SP",
       "FB"
     ]
   },
@@ -16593,13 +16672,16 @@
     ],
     "sequence": [
       "PP",
-      "AG",
+      "AH",
       "CTA",
       "FB",
       "OF",
       "FB",
+      "AU",
+      "FB",
       "UR",
-      "CTA"
+      "CTA",
+      "SP"
     ]
   },
   {
@@ -16618,7 +16700,6 @@
     ],
     "sequence": [
       "AH",
-      "AU",
       "FB"
     ]
   },
@@ -16638,7 +16719,8 @@
     "sequence": [
       "PP",
       "SP",
-      "CTA"
+      "CTA",
+      "SP"
     ]
   },
   {
@@ -16657,7 +16739,6 @@
     "sequence": [
       "AH",
       "FB",
-      "OF",
       "CTA",
       "SP"
     ]
@@ -16676,10 +16757,9 @@
       "ecommerce"
     ],
     "sequence": [
-      "AH",
-      "PP",
-      "FB",
       "OF",
+      "AH",
+      "FB",
       "UR",
       "SP"
     ]
@@ -16699,7 +16779,6 @@
     ],
     "sequence": [
       "AH",
-      "PP",
       "FB",
       "AH"
     ]
@@ -16715,8 +16794,8 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "tech",
-      "travel"
+      "travel",
+      "tech"
     ],
     "sequence": [
       "FB"
@@ -16737,30 +16816,22 @@
     ],
     "sequence": [
       "AH",
-      "AG",
+      "SP",
       "FB",
+      "SP",
       "AG",
       "SP",
       "FB",
-      "AG",
       "SP",
-      "AG",
+      "PP",
+      "SP",
       "AU",
       "FB",
       "SP",
-      "AG",
-      "SP",
-      "AG",
-      "SP",
-      "AG",
-      "SP",
-      "AG",
-      "SP",
       "FB",
       "SP",
+      "AH",
       "AG",
-      "CTA",
-      "UR",
       "CTA",
       "FB"
     ]
@@ -16783,7 +16854,8 @@
       "FB",
       "AH",
       "FB",
-      "CTA"
+      "CTA",
+      "FB"
     ]
   },
   {
@@ -16802,7 +16874,7 @@
     "sequence": [
       "AH",
       "FB",
-      "AH"
+      "SP"
     ]
   },
   {
@@ -16818,7 +16890,7 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce",
+      "tech",
       "entertainment"
     ],
     "sequence": [
@@ -16861,12 +16933,11 @@
       "travel"
     ],
     "sequence": [
-      "CTA",
+      "OF",
       "AH",
       "UR",
       "OF",
       "FB",
-      "SP",
       "CTA"
     ]
   },
@@ -16885,11 +16956,11 @@
     ],
     "sequence": [
       "AH",
-      "PP",
       "FB",
-      "CTA",
+      "AH",
+      "FB",
       "OF",
-      "FB"
+      "CTA"
     ]
   },
   {
@@ -16947,10 +17018,12 @@
     "sequence": [
       "AH",
       "FB",
+      "AU",
       "CTA",
       "FB",
       "AU",
-      "CTA"
+      "CTA",
+      "SP"
     ]
   },
   {
@@ -16964,8 +17037,7 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce",
-      "travel"
+      "ecommerce"
     ],
     "sequence": [
       "SP",
@@ -16993,8 +17065,9 @@
     "sequence": [
       "AH",
       "UR",
+      "CTA",
       "OF",
-      "FB",
+      "UR",
       "CTA",
       "FB"
     ]
@@ -17013,8 +17086,9 @@
       "automotive"
     ],
     "sequence": [
-      "AU",
-      "FB"
+      "AH",
+      "FB",
+      "AU"
     ]
   },
   {
@@ -17034,7 +17108,7 @@
       "AH",
       "PP",
       "FB",
-      "UR",
+      "CTA",
       "SP"
     ]
   },
@@ -17053,6 +17127,7 @@
     ],
     "sequence": [
       "OF",
+      "FB",
       "CTA",
       "OF"
     ]
@@ -17071,8 +17146,10 @@
       "ecommerce"
     ],
     "sequence": [
+      "AH",
       "FB",
-      "CTA"
+      "CTA",
+      "SP"
     ]
   },
   {
@@ -17111,7 +17188,7 @@
       "AH",
       "CTA",
       "FB",
-      "SP"
+      "AH"
     ]
   },
   {
@@ -17252,7 +17329,7 @@
     "sequence": [
       "AH",
       "FB",
-      "CTA",
+      "AU",
       "FB"
     ]
   },
@@ -17290,8 +17367,7 @@
     "sequence": [
       "AH",
       "FB",
-      "AG",
-      "FB",
+      "AH",
       "CTA"
     ]
   },
@@ -17306,12 +17382,12 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "tech",
-      "travel"
+      "tech"
     ],
     "sequence": [
       "AH",
-      "PP",
+      "FB",
+      "AH",
       "AG",
       "FB",
       "BA",
@@ -17334,10 +17410,11 @@
     ],
     "sequence": [
       "AH",
-      "PP",
+      "AG",
       "FB",
       "OF",
       "SP",
+      "AH",
       "CTA",
       "AH"
     ]
@@ -17435,7 +17512,8 @@
     "sequence": [
       "AH",
       "PP",
-      "BA",
+      "AG",
+      "AH",
       "FB",
       "SP",
       "BA",
@@ -17461,7 +17539,6 @@
       "AH",
       "SP",
       "FB",
-      "AU",
       "CTA"
     ]
   },
@@ -17476,7 +17553,7 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "travel"
+      "ecommerce"
     ],
     "sequence": [
       "AH",
@@ -17485,7 +17562,6 @@
       "AU",
       "FB",
       "OF",
-      "UR",
       "FB"
     ]
   },
@@ -17500,16 +17576,15 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce"
+      "ecommerce",
+      "health"
     ],
     "sequence": [
       "OF",
       "PP",
-      "AH",
       "FB",
       "SP",
       "OF",
-      "UR",
       "FB"
     ]
   },
@@ -17586,12 +17661,13 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce",
-      "travel"
+      "ecommerce"
     ],
     "sequence": [
       "OF",
       "UR",
+      "CTA",
+      "AH",
       "FB",
       "SP",
       "OF"
@@ -17633,6 +17709,8 @@
     ],
     "sequence": [
       "OF",
+      "PP",
+      "FB",
       "SP",
       "FB"
     ]
@@ -17673,7 +17751,6 @@
     "sequence": [
       "AH",
       "FB",
-      "AU",
       "OF"
     ]
   },
@@ -17691,7 +17768,6 @@
       "travel"
     ],
     "sequence": [
-      "AU",
       "AH",
       "FB"
     ]
@@ -17729,14 +17805,15 @@
       "finance"
     ],
     "sequence": [
-      "AH",
       "SP",
       "AU",
       "SP",
       "FB",
       "AU",
-      "AH",
       "FB",
+      "SP",
+      "FB",
+      "SP",
       "AU",
       "SP"
     ]
@@ -17772,12 +17849,12 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "home"
+      "ecommerce"
     ],
     "sequence": [
       "FB",
       "CTA",
-      "SP"
+      "AH"
     ]
   },
   {
@@ -17795,6 +17872,9 @@
     ],
     "sequence": [
       "AH",
+      "FB",
+      "CTA",
+      "OF",
       "FB",
       "CTA"
     ]
@@ -17815,6 +17895,8 @@
     ],
     "sequence": [
       "AH",
+      "SP",
+      "FB",
       "SP"
     ]
   },
@@ -17852,7 +17934,6 @@
     ],
     "sequence": [
       "OF",
-      "UR",
       "FB",
       "OF",
       "FB",
@@ -17897,9 +17978,8 @@
       "tech"
     ],
     "sequence": [
-      "AH",
-      "FB",
-      "AU"
+      "AU",
+      "FB"
     ]
   },
   {
@@ -18042,7 +18122,6 @@
     "sequence": [
       "AH",
       "FB",
-      "OF",
       "CTA",
       "SP",
       "FB"
@@ -18059,14 +18138,15 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "education"
+      "education",
+      "tech"
     ],
     "sequence": [
       "AH",
       "PP",
       "CTA",
       "FB",
-      "OF"
+      "CTA"
     ]
   },
   {
@@ -18143,8 +18223,7 @@
     "sequence": [
       "AH",
       "FB",
-      "CTA",
-      "AU"
+      "CTA"
     ]
   },
   {
@@ -18165,9 +18244,9 @@
       "FB",
       "AU",
       "FB",
-      "CTA",
       "AH",
-      "SP"
+      "CTA",
+      "AH"
     ]
   },
   {
@@ -18185,6 +18264,7 @@
     ],
     "sequence": [
       "AH",
+      "OF",
       "FB",
       "CTA",
       "FB"
@@ -18211,11 +18291,13 @@
       "FB",
       "SP",
       "CTA",
+      "AH",
       "FB",
       "SP",
       "AU",
       "CTA",
-      "OF"
+      "OF",
+      "CTA"
     ]
   },
   {
@@ -18229,13 +18311,12 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "finance",
-      "tech"
+      "tech",
+      "finance"
     ],
     "sequence": [
-      "AH",
       "FB",
-      "OF",
+      "CTA",
       "SP"
     ]
   },
@@ -18251,8 +18332,7 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce",
-      "tech"
+      "ecommerce"
     ],
     "sequence": [
       "AH",
@@ -18296,10 +18376,13 @@
       "FB",
       "CTA",
       "SP",
+      "AH",
       "FB",
       "OF",
       "FB",
-      "CTA"
+      "OF",
+      "CTA",
+      "OF"
     ]
   },
   {
@@ -18316,6 +18399,7 @@
       "automotive"
     ],
     "sequence": [
+      "AH",
       "FB",
       "AU"
     ]
@@ -18335,7 +18419,7 @@
     ],
     "sequence": [
       "AH",
-      "BA",
+      "FB",
       "SP"
     ]
   },
@@ -18394,7 +18478,6 @@
     ],
     "sequence": [
       "AH",
-      "PP",
       "FB",
       "CTA"
     ]
@@ -18433,7 +18516,7 @@
       "ecommerce"
     ],
     "sequence": [
-      "AH",
+      "CTA",
       "FB"
     ]
   },
@@ -18453,9 +18536,8 @@
     ],
     "sequence": [
       "AH",
-      "AG",
+      "FB",
       "SP",
-      "AU",
       "OF"
     ]
   },
@@ -18475,8 +18557,7 @@
     "sequence": [
       "AH",
       "AU",
-      "FB",
-      "AU"
+      "FB"
     ]
   },
   {
@@ -18490,17 +18571,18 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "entertainment",
-      "tech"
+      "tech",
+      "entertainment"
     ],
     "sequence": [
+      "AH",
+      "FB",
       "AH",
       "FB",
       "CTA",
       "FB",
       "OF",
       "SP",
-      "FB",
       "CTA",
       "OF"
     ]
@@ -18525,7 +18607,10 @@
       "SP",
       "FB",
       "AU",
-      "CTA"
+      "CTA",
+      "SP",
+      "CTA",
+      "SP"
     ]
   },
   {
@@ -18562,7 +18647,7 @@
     ],
     "_cta_text": "Like Page",
     "categories": [
-      "tech"
+      "entertainment"
     ],
     "sequence": [
       "AH",
@@ -18587,11 +18672,16 @@
       "AH",
       "FB",
       "SP",
+      "AH",
+      "FB",
+      "AH",
       "FB",
       "SP",
+      "AH",
       "FB",
       "AU",
-      "CTA"
+      "CTA",
+      "AH"
     ]
   },
   {
@@ -18609,9 +18699,8 @@
       "entertainment"
     ],
     "sequence": [
+      "CTA",
       "AH",
-      "PP",
-      "FB",
       "SP",
       "CTA"
     ]
@@ -18652,7 +18741,7 @@
     "sequence": [
       "OF",
       "AU",
-      "FB"
+      "AH"
     ]
   },
   {
@@ -18705,15 +18794,18 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "tech",
-      "entertainment"
+      "tech"
     ],
     "sequence": [
       "OF",
-      "FB",
+      "AH",
       "SP",
       "FB",
+      "PP",
+      "FB",
+      "AH",
       "OF",
+      "CTA",
       "FB",
       "CTA",
       "OF"
@@ -18754,11 +18846,13 @@
       "other"
     ],
     "sequence": [
-      "AH",
+      "CTA",
       "AU",
       "CTA",
-      "FB",
-      "OF"
+      "AU",
+      "AH",
+      "AU",
+      "SP"
     ]
   },
   {
@@ -18777,9 +18871,7 @@
     "sequence": [
       "AH",
       "FB",
-      "AU",
-      "FB",
-      "AU"
+      "AH"
     ]
   },
   {
@@ -18822,7 +18914,8 @@
       "AH",
       "FB",
       "CTA",
-      "FB"
+      "FB",
+      "AH"
     ]
   },
   {
@@ -18855,17 +18948,18 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "tech",
-      "entertainment"
+      "tech"
     ],
     "sequence": [
+      "AH",
+      "FB",
       "AH",
       "FB",
       "CTA",
       "FB",
       "OF",
       "SP",
-      "FB",
+      "CTA",
       "OF",
       "CTA",
       "OF"
@@ -18882,13 +18976,13 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "tech"
+      "ecommerce"
     ],
     "sequence": [
       "AH",
       "UR",
       "FB",
-      "CTA",
+      "UR",
       "FB"
     ]
   },
@@ -18910,7 +19004,7 @@
       "AH",
       "PP",
       "FB",
-      "CTA"
+      "UR"
     ]
   },
   {
@@ -18924,8 +19018,8 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "finance",
-      "tech"
+      "tech",
+      "finance"
     ],
     "sequence": [
       "AH",
@@ -18947,7 +19041,7 @@
       "tech"
     ],
     "sequence": [
-      "AU"
+      "FB"
     ]
   },
   {
@@ -18961,8 +19055,7 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "automotive",
-      "tech"
+      "automotive"
     ],
     "sequence": [
       "AH",
@@ -19008,7 +19101,6 @@
       "other"
     ],
     "sequence": [
-      "AH",
       "FB",
       "CTA",
       "FB"
@@ -19025,13 +19117,16 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "tech",
-      "entertainment"
+      "tech"
     ],
     "sequence": [
       "AH",
       "PP",
       "FB",
+      "PP",
+      "FB",
+      "OF",
+      "CTA",
       "OF",
       "FB",
       "CTA",
@@ -19053,8 +19148,9 @@
     ],
     "sequence": [
       "SP",
+      "AU",
       "FB",
-      "PP",
+      "AG",
       "SP"
     ]
   },
@@ -19069,17 +19165,18 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "tech"
+      "tech",
+      "entertainment"
     ],
     "sequence": [
       "AH",
       "FB",
       "CTA",
       "SP",
-      "AH",
       "FB",
       "OF",
-      "CTA"
+      "CTA",
+      "AH"
     ]
   },
   {
@@ -19098,12 +19195,15 @@
     ],
     "sequence": [
       "AH",
+      "FB",
       "PP",
       "FB",
       "AH",
       "AU",
       "FB",
       "AH",
+      "FB",
+      "AG",
       "FB",
       "CTA"
     ]
@@ -19126,8 +19226,11 @@
       "AH",
       "FB",
       "CTA",
-      "AH",
       "FB",
+      "PP",
+      "FB",
+      "CTA",
+      "AH",
       "OF"
     ]
   },
@@ -19185,6 +19288,7 @@
       "education"
     ],
     "sequence": [
+      "FB",
       "AH",
       "FB",
       "OF"
@@ -19202,7 +19306,8 @@
     ],
     "_cta_text": "Get quote",
     "categories": [
-      "tech"
+      "tech",
+      "home"
     ],
     "sequence": [
       "AH",
@@ -19253,6 +19358,7 @@
     "sequence": [
       "AH",
       "PP",
+      "CTA",
       "FB"
     ]
   },
@@ -19270,25 +19376,31 @@
       "tech"
     ],
     "sequence": [
-      "OF",
+      "AH",
       "FB",
       "SP",
       "AH",
       "FB",
       "AH",
       "FB",
-      "AU",
+      "AH",
+      "FB",
+      "AG",
       "FB",
       "SP",
       "FB",
-      "AH",
+      "SP",
+      "FB",
+      "AG",
       "CTA",
       "FB",
       "OF",
+      "AG",
+      "OF",
       "SP",
       "CTA",
       "FB",
-      "UR",
+      "AG",
       "CTA"
     ]
   },
@@ -19310,20 +19422,20 @@
       "PP",
       "SP",
       "PP",
+      "AH",
+      "SP",
       "AG",
       "AH",
-      "AU",
-      "FB",
+      "PP",
       "AH",
-      "PP",
-      "BA",
       "FB",
       "PP",
+      "OF",
+      "AH",
       "FB",
       "OF",
-      "FB",
-      "OF",
-      "CTA"
+      "CTA",
+      "OF"
     ]
   },
   {
@@ -19384,7 +19496,8 @@
     ],
     "sequence": [
       "SP",
-      "CTA"
+      "CTA",
+      "SP"
     ]
   },
   {
@@ -19398,13 +19511,14 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "health",
-      "tech"
+      "tech",
+      "health"
     ],
     "sequence": [
       "AH",
       "FB",
-      "CTA"
+      "CTA",
+      "SP"
     ]
   },
   {
@@ -19477,7 +19591,7 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "entertainment"
+      "tech"
     ],
     "sequence": [
       "AH",
@@ -19486,7 +19600,7 @@
       "FB",
       "AU",
       "PP",
-      "AU",
+      "FB",
       "CTA"
     ]
   },
@@ -19514,7 +19628,7 @@
       "PP",
       "SP",
       "FB",
-      "OF"
+      "CTA"
     ]
   },
   {
@@ -19531,8 +19645,7 @@
       "tech"
     ],
     "sequence": [
-      "BA",
-      "SP"
+      "FB"
     ]
   },
   {
@@ -19574,8 +19687,7 @@
     ],
     "_cta_text": "Book now",
     "categories": [
-      "tech",
-      "ecommerce"
+      "tech"
     ],
     "sequence": [
       "CTA",
@@ -19604,7 +19716,6 @@
       "CTA",
       "FB",
       "CTA",
-      "FB",
       "SP"
     ]
   },
@@ -19624,6 +19735,7 @@
     "sequence": [
       "AH",
       "FB",
+      "AG",
       "SP"
     ]
   },
@@ -19641,7 +19753,6 @@
       "automotive"
     ],
     "sequence": [
-      "AH",
       "FB",
       "AH",
       "FB",
@@ -19663,7 +19774,7 @@
     ],
     "sequence": [
       "AH",
-      "FB"
+      "AU"
     ]
   },
   {
@@ -19682,7 +19793,7 @@
     ],
     "sequence": [
       "AH",
-      "FB"
+      "CTA"
     ]
   },
   {
@@ -19756,7 +19867,7 @@
       "AU",
       "SP",
       "CTA",
-      "SP"
+      "AH"
     ]
   },
   {
@@ -19775,7 +19886,7 @@
     ],
     "sequence": [
       "AH",
-      "CTA"
+      "FB"
     ]
   },
   {
@@ -19789,11 +19900,11 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "automotive",
-      "ecommerce"
+      "automotive"
     ],
     "sequence": [
       "AH",
+      "AU",
       "FB"
     ]
   },
@@ -19830,7 +19941,7 @@
     ],
     "sequence": [
       "AH",
-      "CTA"
+      "FB"
     ]
   },
   {
@@ -19844,7 +19955,6 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce",
       "automotive"
     ],
     "sequence": [
@@ -19884,14 +19994,21 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "health",
       "beauty"
     ],
     "sequence": [
-      "BA",
+      "AH",
       "AU",
       "FB",
+      "BA",
       "CTA",
+      "FB",
+      "AU",
+      "PP",
+      "AG",
+      "PP",
+      "AG",
+      "PP",
       "AU",
       "CTA"
     ]
@@ -19970,7 +20087,15 @@
       "AU",
       "SP",
       "CTA",
-      "AU"
+      "FB",
+      "AU",
+      "PP",
+      "AG",
+      "PP",
+      "AG",
+      "PP",
+      "AU",
+      "AH"
     ]
   },
   {
@@ -20010,11 +20135,11 @@
     ],
     "sequence": [
       "AH",
-      "PP",
+      "BA",
       "FB",
       "CTA",
-      "SP",
-      "AU"
+      "AH",
+      "FB"
     ]
   },
   {
@@ -20032,8 +20157,7 @@
     ],
     "sequence": [
       "AH",
-      "CTA",
-      "FB"
+      "CTA"
     ]
   },
   {
@@ -20052,7 +20176,8 @@
     "sequence": [
       "SP",
       "FB",
-      "CTA"
+      "CTA",
+      "SP"
     ]
   },
   {
@@ -20071,11 +20196,10 @@
     "sequence": [
       "AH",
       "FB",
-      "AG",
-      "SP",
+      "CTA",
       "OF",
       "SP",
-      "OF"
+      "FB"
     ]
   },
   {
@@ -20107,8 +20231,7 @@
     ],
     "_cta_text": "Send WhatsApp message",
     "categories": [
-      "automotive",
-      "travel"
+      "automotive"
     ],
     "sequence": [
       "AH",
@@ -20131,13 +20254,10 @@
     ],
     "sequence": [
       "AH",
-      "SP",
-      "PP",
-      "FB",
-      "BA",
       "AG",
-      "SP",
+      "AH",
       "AG",
+      "AH",
       "CTA"
     ]
   },
@@ -20196,7 +20316,6 @@
     ],
     "sequence": [
       "AH",
-      "FB",
       "PP",
       "AG",
       "FB",
@@ -20253,6 +20372,7 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
+      "ecommerce",
       "automotive"
     ],
     "sequence": [
@@ -20275,8 +20395,6 @@
     ],
     "sequence": [
       "AH",
-      "CTA",
-      "SP",
       "CTA"
     ]
   },
@@ -20299,14 +20417,8 @@
       "SP",
       "CTA",
       "FB",
-      "CTA",
+      "AU",
       "PP",
-      "AG",
-      "CTA",
-      "PP",
-      "AG",
-      "PP",
-      "CTA",
       "AU"
     ]
   },
@@ -20360,6 +20472,7 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
+      "ecommerce",
       "automotive"
     ],
     "sequence": [
@@ -20379,8 +20492,8 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "travel",
-      "automotive"
+      "automotive",
+      "travel"
     ],
     "sequence": [
       "AH",
@@ -20444,10 +20557,8 @@
       "AH",
       "SP",
       "CTA",
-      "UR",
       "FB",
-      "CTA",
-      "FB"
+      "CTA"
     ]
   },
   {
@@ -20485,7 +20596,6 @@
     "sequence": [
       "AH",
       "FB",
-      "OF",
       "CTA"
     ]
   },
@@ -20504,6 +20614,7 @@
     ],
     "sequence": [
       "OF",
+      "AH",
       "FB",
       "CTA"
     ]
@@ -20521,10 +20632,11 @@
     ],
     "_cta_text": null,
     "categories": [
+      "health",
       "entertainment"
     ],
     "sequence": [
-      "AH",
+      "UR",
       "SP"
     ]
   },
@@ -20545,9 +20657,8 @@
       "tech"
     ],
     "sequence": [
-      "PP",
+      "AH",
       "FB",
-      "OF",
       "SP"
     ]
   },
@@ -20586,9 +20697,10 @@
     ],
     "sequence": [
       "OF",
+      "AH",
       "FB",
       "CTA",
-      "FB"
+      "OF"
     ]
   },
   {
@@ -20609,7 +20721,6 @@
       "OF",
       "FB",
       "AH",
-      "FB",
       "OF",
       "AH",
       "FB",
@@ -20635,29 +20746,34 @@
       "AH",
       "FB",
       "AU",
-      "PP",
-      "FB",
-      "SP",
+      "AG",
+      "AH",
       "FB",
       "AU",
       "FB",
-      "OF",
+      "AU",
+      "FB",
+      "AU",
       "AH",
       "SP",
       "AU",
       "FB",
       "AU",
-      "FB",
-      "AG",
-      "FB",
-      "AG",
-      "AU",
+      "SP",
       "FB",
       "PP",
       "FB",
-      "SP",
+      "AU",
       "FB",
-      "SP",
+      "AU",
+      "FB",
+      "AU",
+      "FB",
+      "AU",
+      "FB",
+      "AU",
+      "FB",
+      "AU",
       "FB",
       "CTA",
       "FB"
@@ -20679,8 +20795,10 @@
     "sequence": [
       "AH",
       "FB",
+      "OF",
       "CTA",
-      "SP"
+      "AU",
+      "CTA"
     ]
   },
   {
@@ -20697,10 +20815,11 @@
       "health"
     ],
     "sequence": [
+      "OF",
       "AH",
       "FB",
       "CTA",
-      "OF"
+      "FB"
     ]
   },
   {
@@ -20763,13 +20882,13 @@
       "health"
     ],
     "sequence": [
-      "AH",
+      "OF",
       "FB",
       "OF",
       "FB",
       "SP",
       "FB",
-      "SP",
+      "CTA",
       "FB",
       "CTA",
       "FB"
@@ -20830,8 +20949,8 @@
     ],
     "sequence": [
       "OF",
-      "SP",
-      "OF"
+      "BA",
+      "FB"
     ]
   },
   {
@@ -20851,6 +20970,7 @@
       "AH",
       "FB",
       "CTA",
+      "AH",
       "FB",
       "CTA"
     ]
@@ -20911,7 +21031,8 @@
       "CTA",
       "FB",
       "PP",
-      "FB"
+      "FB",
+      "AH"
     ]
   },
   {
@@ -20925,8 +21046,7 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "health",
-      "tech"
+      "health"
     ],
     "sequence": [
       "AH",
@@ -20945,13 +21065,14 @@
     ],
     "_cta_text": "Visit Instagram profile",
     "categories": [
-      "entertainment"
+      "entertainment",
+      "health"
     ],
     "sequence": [
       "CTA",
       "AU",
       "FB",
-      "UR",
+      "AH",
       "CTA",
       "SP"
     ]
@@ -21012,11 +21133,10 @@
       "health"
     ],
     "sequence": [
-      "AH",
+      "AU",
       "PP",
       "FB",
-      "CTA",
-      "SP"
+      "CTA"
     ]
   },
   {
@@ -21053,7 +21173,6 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce",
       "health"
     ],
     "sequence": [
@@ -21077,13 +21196,13 @@
       "health"
     ],
     "sequence": [
+      "OF",
       "AH",
       "PP",
-      "AG",
       "FB",
       "AG",
       "AU",
-      "AG",
+      "FB",
       "PP",
       "AG",
       "PP",
@@ -21096,7 +21215,8 @@
       "FB",
       "BA",
       "CTA",
-      "AU"
+      "AU",
+      "CTA"
     ]
   },
   {
@@ -21115,7 +21235,6 @@
     "sequence": [
       "CTA",
       "SP",
-      "AH",
       "CTA"
     ]
   },
@@ -21135,7 +21254,6 @@
     "sequence": [
       "AH",
       "UR",
-      "OF",
       "SP",
       "FB",
       "OF",
@@ -21178,11 +21296,11 @@
       "health"
     ],
     "sequence": [
+      "CTA",
       "AH",
       "AU",
-      "SP",
+      "FB",
       "CTA",
-      "SP",
       "AH",
       "CTA",
       "SP"
@@ -21226,7 +21344,7 @@
       "FB",
       "OF",
       "FB",
-      "CTA"
+      "OF"
     ]
   },
   {
@@ -21262,17 +21380,15 @@
     "_cta_text": "Sign up",
     "categories": [
       "health",
-      "ecommerce"
+      "entertainment"
     ],
     "sequence": [
       "AH",
-      "CTA",
       "FB",
-      "AG",
+      "AH",
+      "FB",
       "OF",
-      "FB",
-      "CTA",
-      "FB"
+      "CTA"
     ]
   },
   {
@@ -21308,7 +21424,7 @@
     ],
     "sequence": [
       "CTA",
-      "PP",
+      "AG",
       "FB",
       "SP"
     ]
@@ -21370,11 +21486,29 @@
       "AH",
       "CTA",
       "FB",
+      "AU",
+      "FB",
+      "CTA",
       "SP",
       "AU",
       "CTA",
-      "OF",
+      "AH",
+      "FB",
       "CTA",
+      "AH",
+      "CTA",
+      "AH",
+      "CTA",
+      "AH",
+      "CTA",
+      "AH",
+      "FB",
+      "CTA",
+      "AH",
+      "CTA",
+      "FB",
+      "CTA",
+      "FB",
       "AH",
       "SP"
     ]
@@ -21396,10 +21530,10 @@
       "PP",
       "AH",
       "FB",
-      "AH",
+      "CTA",
       "FB",
+      "AH",
       "PP",
-      "SP",
       "AG",
       "FB",
       "PP",
@@ -21423,10 +21557,18 @@
     "sequence": [
       "AH",
       "FB",
-      "CTA",
+      "OF",
+      "FB",
+      "AH",
+      "FB",
+      "AH",
       "FB",
       "CTA",
       "FB",
+      "AH",
+      "OF",
+      "FB",
+      "OF",
       "UR",
       "CTA"
     ]
@@ -21480,8 +21622,8 @@
     ],
     "_cta_text": "Install now",
     "categories": [
-      "entertainment",
-      "tech"
+      "tech",
+      "entertainment"
     ],
     "sequence": [
       "AH",
@@ -21503,6 +21645,7 @@
       "home"
     ],
     "sequence": [
+      "AH",
       "CTA",
       "AH",
       "FB",
@@ -21528,7 +21671,8 @@
       "OF",
       "PP",
       "FB",
-      "BA",
+      "SP",
+      "FB",
       "CTA",
       "SP"
     ]
@@ -21546,8 +21690,7 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "health",
-      "ecommerce"
+      "health"
     ],
     "sequence": [
       "AH",
@@ -21571,13 +21714,12 @@
     "sequence": [
       "OF",
       "AH",
-      "FB",
-      "SP",
+      "CTA",
+      "AH",
       "FB",
       "CTA",
       "OF",
-      "CTA",
-      "OF"
+      "CTA"
     ]
   },
   {
@@ -21622,7 +21764,7 @@
       "AG",
       "FB",
       "CTA",
-      "FB"
+      "AH"
     ]
   },
   {
@@ -21659,8 +21801,6 @@
     ],
     "sequence": [
       "AH",
-      "FB",
-      "AU",
       "FB",
       "CTA"
     ]
@@ -21721,7 +21861,6 @@
       "AH",
       "OF",
       "FB",
-      "OF",
       "UR",
       "CTA",
       "SP"
@@ -21746,8 +21885,7 @@
       "FB",
       "SP",
       "OF",
-      "FB",
-      "OF"
+      "FB"
     ]
   },
   {
@@ -21761,17 +21899,16 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "tech",
-      "education"
+      "education",
+      "tech"
     ],
     "sequence": [
-      "OF",
+      "UR",
+      "AH",
+      "CTA",
       "AH",
       "FB",
-      "SP",
-      "FB",
-      "OF",
-      "CTA"
+      "OF"
     ]
   },
   {
@@ -21810,7 +21947,6 @@
       "tech"
     ],
     "sequence": [
-      "AH",
       "FB",
       "CTA"
     ]
@@ -21831,10 +21967,13 @@
     "sequence": [
       "AH",
       "FB",
-      "AG",
+      "SP",
       "FB",
-      "AG",
-      "CTA"
+      "AH",
+      "FB",
+      "AH",
+      "CTA",
+      "SP"
     ]
   },
   {
@@ -21852,7 +21991,6 @@
     ],
     "sequence": [
       "AH",
-      "FB",
       "OF",
       "UR"
     ]
@@ -21868,8 +22006,8 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce",
-      "tech"
+      "tech",
+      "ecommerce"
     ],
     "sequence": [
       "AH",
@@ -21891,8 +22029,9 @@
     ],
     "sequence": [
       "SP",
+      "AU",
       "FB",
-      "SP"
+      "CTA"
     ]
   },
   {
@@ -21909,8 +22048,9 @@
       "tech"
     ],
     "sequence": [
-      "AH",
+      "FB",
       "UR",
+      "CTA",
       "FB"
     ]
   },
@@ -21929,7 +22069,7 @@
     ],
     "sequence": [
       "UR",
-      "FB",
+      "AH",
       "SP"
     ]
   },
@@ -22008,9 +22148,7 @@
     ],
     "sequence": [
       "AH",
-      "FB",
-      "CTA",
-      "OF"
+      "CTA"
     ]
   },
   {
@@ -22029,8 +22167,6 @@
     ],
     "sequence": [
       "OF",
-      "FB",
-      "SP",
       "FB",
       "OF",
       "UR",
@@ -22051,7 +22187,6 @@
       "ecommerce"
     ],
     "sequence": [
-      "OF",
       "AH",
       "FB"
     ]
@@ -22074,7 +22209,6 @@
     "sequence": [
       "AH",
       "FB",
-      "SP",
       "AU",
       "FB"
     ]
@@ -22090,10 +22224,11 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "food"
+      "food",
+      "health"
     ],
     "sequence": [
-      "FB",
+      "AH",
       "SP",
       "FB"
     ]
@@ -22131,8 +22266,7 @@
     ],
     "sequence": [
       "AH",
-      "CTA",
-      "PP"
+      "CTA"
     ]
   },
   {
@@ -22154,10 +22288,14 @@
       "OF",
       "FB",
       "SP",
+      "AH",
       "FB",
       "AH",
+      "FB",
+      "AH",
+      "FB",
       "CTA",
-      "AH"
+      "SP"
     ]
   },
   {
@@ -22216,7 +22354,8 @@
     "sequence": [
       "AH",
       "PP",
-      "OF"
+      "FB",
+      "UR"
     ]
   },
   {
@@ -22254,7 +22393,6 @@
     ],
     "sequence": [
       "AH",
-      "FB",
       "AG",
       "FB"
     ]
@@ -22270,8 +22408,8 @@
     ],
     "_cta_text": "Sign up",
     "categories": [
-      "ecommerce",
-      "tech"
+      "tech",
+      "ecommerce"
     ],
     "sequence": [
       "AH",
@@ -22294,7 +22432,7 @@
     ],
     "sequence": [
       "FB",
-      "OF"
+      "UR"
     ]
   },
   {
@@ -22311,6 +22449,8 @@
       "home"
     ],
     "sequence": [
+      "UR",
+      "FB",
       "OF",
       "FB"
     ]
@@ -22347,7 +22487,6 @@
       "ecommerce"
     ],
     "sequence": [
-      "OF",
       "UR",
       "FB"
     ]
@@ -22367,11 +22506,13 @@
     ],
     "sequence": [
       "AH",
-      "FB",
       "CTA",
+      "SP",
       "FB",
       "SP",
-      "CTA"
+      "CTA",
+      "FB",
+      "AH"
     ]
   },
   {
@@ -22388,8 +22529,8 @@
       "ecommerce"
     ],
     "sequence": [
+      "OF",
       "AH",
-      "AG",
       "FB",
       "CTA",
       "OF"
@@ -22431,8 +22572,6 @@
     "sequence": [
       "AH",
       "OF",
-      "UR",
-      "FB",
       "CTA",
       "AU"
     ]
@@ -22451,10 +22590,11 @@
       "ecommerce"
     ],
     "sequence": [
-      "AH",
+      "OF",
       "PP",
+      "BA",
       "FB",
-      "OF"
+      "UR"
     ]
   },
   {
@@ -22513,7 +22653,7 @@
       "tech"
     ],
     "sequence": [
-      "FB",
+      "OF",
       "AU"
     ]
   },
@@ -22572,7 +22712,6 @@
     "sequence": [
       "AH",
       "PP",
-      "CTA",
       "OF"
     ]
   },
@@ -22621,6 +22760,7 @@
       "OF",
       "CTA",
       "FB",
+      "AU",
       "OF"
     ]
   },
@@ -22640,7 +22780,6 @@
     "sequence": [
       "AH",
       "FB",
-      "BA",
       "CTA",
       "OF"
     ]
@@ -22660,7 +22799,6 @@
     ],
     "sequence": [
       "SP",
-      "FB",
       "OF",
       "SP"
     ]
@@ -22695,7 +22833,8 @@
     ],
     "_cta_text": "Sign up",
     "categories": [
-      "finance"
+      "finance",
+      "tech"
     ],
     "sequence": [
       "FB"
@@ -22719,8 +22858,9 @@
       "FB",
       "AH",
       "FB",
+      "AU",
+      "FB",
       "SP",
-      "OF",
       "CTA"
     ]
   },
@@ -22783,7 +22923,6 @@
     ],
     "sequence": [
       "AH",
-      "CTA",
       "OF",
       "CTA"
     ]
@@ -22799,14 +22938,14 @@
     ],
     "_cta_text": "Order now",
     "categories": [
-      "ecommerce",
-      "tech"
+      "ecommerce"
     ],
     "sequence": [
       "AH",
+      "AG",
+      "AU",
       "PP",
       "AG",
-      "PP",
       "FB",
       "AG",
       "BA",
@@ -22830,7 +22969,8 @@
     ],
     "sequence": [
       "AH",
-      "FB"
+      "FB",
+      "CTA"
     ]
   },
   {
@@ -22866,9 +23006,6 @@
       "ecommerce"
     ],
     "sequence": [
-      "OF",
-      "UR",
-      "OF",
       "UR",
       "FB",
       "UR"
@@ -22885,7 +23022,8 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "health"
+      "health",
+      "ecommerce"
     ],
     "sequence": [
       "AH",
@@ -22949,7 +23087,6 @@
     ],
     "sequence": [
       "AH",
-      "UR",
       "OF"
     ]
   },
@@ -22964,14 +23101,13 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "home"
+      "ecommerce"
     ],
     "sequence": [
       "OF",
       "UR",
       "OF",
       "FB",
-      "AU",
       "SP",
       "AU"
     ]
@@ -22990,7 +23126,8 @@
       "home"
     ],
     "sequence": [
-      "AH",
+      "FB",
+      "BA",
       "FB",
       "UR"
     ]
@@ -23012,7 +23149,6 @@
       "AH",
       "FB",
       "OF",
-      "UR",
       "AU"
     ]
   },
@@ -23033,7 +23169,6 @@
     "sequence": [
       "AH",
       "FB",
-      "AH",
       "CTA"
     ]
   },
@@ -23056,7 +23191,7 @@
       "OF",
       "FB",
       "CTA",
-      "UR"
+      "OF"
     ]
   },
   {
@@ -23073,7 +23208,7 @@
       "ecommerce"
     ],
     "sequence": [
-      "AH",
+      "UR",
       "FB"
     ]
   },
@@ -23106,11 +23241,13 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce"
+      "home"
     ],
     "sequence": [
       "OF",
+      "BA",
       "FB",
+      "PP",
       "BA"
     ]
   },
@@ -23131,7 +23268,7 @@
       "OF",
       "SP",
       "FB",
-      "AH"
+      "UR"
     ]
   },
   {
@@ -23150,7 +23287,7 @@
     "sequence": [
       "AH",
       "AU",
-      "FB",
+      "CTA",
       "OF",
       "FB"
     ]
@@ -23170,8 +23307,7 @@
     ],
     "sequence": [
       "OF",
-      "UR",
-      "AH"
+      "CTA"
     ]
   },
   {
@@ -23190,7 +23326,6 @@
     "sequence": [
       "AH",
       "OF",
-      "UR",
       "CTA",
       "UR"
     ]
@@ -23209,7 +23344,6 @@
       "ecommerce"
     ],
     "sequence": [
-      "AH",
       "OF",
       "CTA"
     ]
@@ -23249,7 +23383,7 @@
       "ecommerce"
     ],
     "sequence": [
-      "OF",
+      "AH",
       "FB",
       "SP"
     ]
@@ -23266,10 +23400,10 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce",
       "health"
     ],
     "sequence": [
+      "AH",
       "FB",
       "SP",
       "FB",
@@ -23297,7 +23431,6 @@
     ],
     "sequence": [
       "AH",
-      "AU",
       "FB"
     ]
   },
@@ -23315,8 +23448,10 @@
       "tech"
     ],
     "sequence": [
+      "AH",
       "FB",
       "SP",
+      "OF",
       "FB"
     ]
   },
@@ -23357,7 +23492,7 @@
       "tech"
     ],
     "sequence": [
-      "FB",
+      "AH",
       "OF",
       "AU",
       "UR",
@@ -23379,6 +23514,7 @@
       "home"
     ],
     "sequence": [
+      "CTA",
       "AH",
       "OF",
       "SP"
@@ -23419,10 +23555,14 @@
     ],
     "sequence": [
       "AH",
+      "OF",
+      "FB",
+      "CTA",
       "FB",
       "CTA",
       "UR",
-      "CTA"
+      "CTA",
+      "AH"
     ]
   },
   {
@@ -23442,7 +23582,8 @@
       "SP",
       "FB",
       "SP",
-      "OF"
+      "OF",
+      "AH"
     ]
   },
   {
@@ -23483,10 +23624,10 @@
     "sequence": [
       "AH",
       "PP",
-      "FB",
       "OF",
       "FB",
-      "CTA"
+      "CTA",
+      "AU"
     ]
   },
   {
@@ -23506,7 +23647,7 @@
       "OF",
       "FB",
       "UR",
-      "FB"
+      "AU"
     ]
   },
   {
@@ -23545,8 +23686,7 @@
       "CTA",
       "FB",
       "CTA",
-      "FB",
-      "SP",
+      "AH",
       "FB"
     ]
   },
@@ -23579,11 +23719,13 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "food"
+      "food",
+      "health"
     ],
     "sequence": [
       "FB",
-      "OF"
+      "OF",
+      "AH"
     ]
   },
   {
@@ -23649,9 +23791,10 @@
       "SP",
       "FB",
       "SP",
+      "FB",
+      "AH",
       "PP",
       "SP",
-      "BA",
       "AU",
       "UR",
       "OF",
@@ -23692,8 +23835,7 @@
     ],
     "sequence": [
       "OF",
-      "AH",
-      "SP"
+      "AH"
     ]
   },
   {
@@ -23712,7 +23854,6 @@
     "sequence": [
       "CTA",
       "OF",
-      "FB",
       "SP"
     ]
   },
@@ -23731,8 +23872,7 @@
     ],
     "sequence": [
       "AH",
-      "OF",
-      "CTA"
+      "OF"
     ]
   },
   {
@@ -23752,7 +23892,8 @@
     ],
     "sequence": [
       "AH",
-      "FB"
+      "FB",
+      "OF"
     ]
   },
   {
@@ -23785,7 +23926,8 @@
     ],
     "_cta_text": "Install now",
     "categories": [
-      "ecommerce"
+      "ecommerce",
+      "entertainment"
     ],
     "sequence": [
       "AH",
@@ -23811,7 +23953,7 @@
       "AH",
       "AU",
       "FB",
-      "SP",
+      "AU",
       "FB"
     ]
   },
@@ -23832,7 +23974,8 @@
     "sequence": [
       "PP",
       "FB",
-      "CTA"
+      "CTA",
+      "AH"
     ]
   },
   {
@@ -23869,7 +24012,7 @@
       "ecommerce"
     ],
     "sequence": [
-      "AU",
+      "AH",
       "FB"
     ]
   },
@@ -23910,6 +24053,7 @@
     "sequence": [
       "CTA",
       "OF",
+      "FB",
       "SP"
     ]
   },
@@ -23931,7 +24075,7 @@
       "OF",
       "SP",
       "CTA",
-      "OF"
+      "FB"
     ]
   },
   {
@@ -23948,11 +24092,11 @@
       "ecommerce"
     ],
     "sequence": [
-      "AH",
+      "SP",
       "OF",
-      "FB",
+      "AH",
       "CTA",
-      "OF"
+      "FB"
     ]
   },
   {
@@ -23972,12 +24116,10 @@
       "SP",
       "AH",
       "FB",
-      "OF",
-      "FB",
       "AU",
       "UR",
       "CTA",
-      "OF"
+      "FB"
     ]
   },
   {
@@ -23996,8 +24138,6 @@
     "sequence": [
       "AU",
       "PP",
-      "AG",
-      "SP",
       "BA",
       "SP",
       "FB",
@@ -24021,7 +24161,7 @@
       "AH",
       "SP",
       "FB",
-      "OF",
+      "CTA",
       "SP"
     ]
   },
@@ -24040,7 +24180,7 @@
     ],
     "sequence": [
       "AH",
-      "CTA"
+      "OF"
     ]
   },
   {
@@ -24063,6 +24203,7 @@
       "AU",
       "OF",
       "SP",
+      "CTA",
       "OF",
       "UR"
     ]
@@ -24097,17 +24238,20 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce",
-      "health"
+      "ecommerce"
     ],
     "sequence": [
       "OF",
       "AH",
       "FB",
       "CTA",
+      "OF",
+      "CTA",
       "FB",
       "BA",
-      "AG"
+      "FB",
+      "AG",
+      "FB"
     ]
   },
   {
@@ -24126,7 +24270,7 @@
     "sequence": [
       "OF",
       "SP",
-      "OF",
+      "FB",
       "CTA",
       "OF",
       "UR",
@@ -24172,12 +24316,14 @@
       "OF",
       "UR",
       "CTA",
+      "AG",
       "AU",
       "FB",
       "AU",
       "AG",
       "UR",
-      "CTA"
+      "CTA",
+      "AU"
     ]
   },
   {
@@ -24215,7 +24361,8 @@
       "AH",
       "FB",
       "SP",
-      "FB"
+      "FB",
+      "AU"
     ]
   },
   {
@@ -24237,7 +24384,8 @@
       "FB",
       "SP",
       "FB",
-      "CTA"
+      "CTA",
+      "SP"
     ]
   },
   {
@@ -24276,6 +24424,7 @@
     "sequence": [
       "AH",
       "OF",
+      "AH",
       "FB"
     ]
   },
@@ -24311,6 +24460,7 @@
       "ecommerce"
     ],
     "sequence": [
+      "AH",
       "CTA",
       "FB",
       "AU",
@@ -24359,7 +24509,8 @@
       "PP",
       "FB",
       "OF",
-      "PP"
+      "PP",
+      "AG"
     ]
   },
   {
@@ -24401,6 +24552,7 @@
     "sequence": [
       "OF",
       "SP",
+      "AH",
       "FB",
       "OF",
       "CTA",
@@ -24424,35 +24576,69 @@
       "AH",
       "AU",
       "AG",
+      "AH",
+      "AG",
+      "AH",
+      "PP",
+      "AG",
+      "AH",
+      "AG",
+      "AH",
+      "PP",
+      "AG",
+      "AH",
+      "PP",
+      "AG",
+      "AH",
+      "PP",
+      "AH",
+      "AG",
+      "AH",
+      "AG",
+      "AH",
+      "PP",
+      "AG",
+      "AH",
+      "AG",
+      "AH",
+      "AG",
+      "AH",
       "AU",
       "AG",
       "AU",
       "PP",
       "AG",
+      "AH",
       "AU",
-      "PP",
-      "AG",
-      "PP",
-      "AG",
+      "AH",
       "AU",
-      "PP",
-      "AG",
-      "AU",
-      "PP",
-      "AG",
-      "AU",
-      "AG",
       "SP",
+      "AU",
       "FB",
       "SP",
+      "AH",
+      "AG",
       "FB",
-      "BA",
-      "FB",
+      "AH",
       "SP",
+      "AH",
+      "PP",
+      "FB",
+      "AH",
+      "FB",
+      "PP",
+      "AH",
+      "FB",
+      "AH",
+      "AG",
+      "AH",
+      "AG",
+      "AH",
+      "FB",
       "CTA",
-      "PP",
       "AG",
       "CTA",
+      "AH",
       "AG"
     ]
   },
@@ -24472,7 +24658,7 @@
     "sequence": [
       "AH",
       "FB",
-      "SP"
+      "AH"
     ]
   },
   {
@@ -24509,7 +24695,7 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "home"
+      "ecommerce"
     ],
     "sequence": [
       "SP",
@@ -24590,6 +24776,8 @@
       "ecommerce"
     ],
     "sequence": [
+      "AH",
+      "OF",
       "FB",
       "OF"
     ]
@@ -24626,7 +24814,7 @@
       "ecommerce"
     ],
     "sequence": [
-      "AU",
+      "AH",
       "CTA",
       "FB"
     ]
@@ -24645,6 +24833,7 @@
       "other"
     ],
     "sequence": [
+      "AH",
       "AU",
       "FB",
       "AU",
@@ -24682,10 +24871,11 @@
     ],
     "_cta_text": "Install now",
     "categories": [
-      "ecommerce"
+      "ecommerce",
+      "tech"
     ],
     "sequence": [
-      "FB",
+      "AH",
       "UR"
     ]
   },
@@ -24703,8 +24893,6 @@
       "tech"
     ],
     "sequence": [
-      "UR",
-      "SP",
       "CTA"
     ]
   },
@@ -24758,35 +24946,33 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "health",
-      "ecommerce"
+      "ecommerce",
+      "health"
     ],
     "sequence": [
       "AH",
-      "SP",
-      "AH",
       "AU",
       "AH",
       "SP",
+      "AH",
+      "AU",
+      "AG",
+      "SP",
       "AG",
       "AH",
       "SP",
       "FB",
       "AH",
       "FB",
-      "SP",
-      "AG",
-      "AH",
       "PP",
-      "AG",
       "FB",
       "BA",
-      "SP",
+      "AU",
       "AG",
-      "SP",
       "BA",
       "SP",
-      "AH",
+      "BA",
+      "AG",
       "SP",
       "BA",
       "SP",
@@ -24795,6 +24981,7 @@
       "PP",
       "FB",
       "AU",
+      "OF",
       "UR",
       "CTA",
       "OF",
@@ -24818,7 +25005,6 @@
     ],
     "sequence": [
       "AH",
-      "CTA",
       "FB"
     ]
   },
@@ -24833,13 +25019,13 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "home"
+      "ecommerce"
     ],
     "sequence": [
       "OF",
       "AH",
       "FB",
-      "SP",
+      "AU",
       "FB",
       "AH",
       "CTA",
@@ -24857,12 +25043,12 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce"
+      "home"
     ],
     "sequence": [
       "AH",
       "PP",
-      "SP",
+      "AU",
       "FB",
       "SP",
       "AU"
@@ -24887,7 +25073,7 @@
       "AU",
       "SP",
       "AU",
-      "FB"
+      "CTA"
     ]
   },
   {
@@ -24940,7 +25126,8 @@
     ],
     "_cta_text": "Install now",
     "categories": [
-      "ecommerce"
+      "ecommerce",
+      "tech"
     ],
     "sequence": [
       "AH",
@@ -24960,11 +25147,11 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "ecommerce"
+      "tech"
     ],
     "sequence": [
       "AH",
-      "CTA",
+      "FB",
       "AU"
     ]
   },
@@ -24979,7 +25166,8 @@
     ],
     "_cta_text": "Like Page",
     "categories": [
-      "other"
+      "health",
+      "tech"
     ],
     "sequence": [
       "AH",
@@ -25005,7 +25193,7 @@
       "AH",
       "FB",
       "CTA",
-      "SP",
+      "AU",
       "OF"
     ]
   },
@@ -25025,10 +25213,10 @@
     ],
     "sequence": [
       "AH",
-      "SP",
+      "FB",
       "CTA",
       "AU",
-      "PP",
+      "AH",
       "FB",
       "CTA"
     ]
@@ -25047,7 +25235,7 @@
       "finance"
     ],
     "sequence": [
-      "AH",
+      "CTA",
       "FB",
       "UR"
     ]
@@ -25073,7 +25261,7 @@
       "AU",
       "FB",
       "CTA",
-      "OF",
+      "FB",
       "AU",
       "FB"
     ]
@@ -25094,6 +25282,8 @@
     "sequence": [
       "FB",
       "PP",
+      "FB",
+      "AH",
       "FB",
       "SP"
     ]
@@ -25153,7 +25343,6 @@
     ],
     "sequence": [
       "AH",
-      "FB",
       "AU",
       "CTA"
     ]
@@ -25170,7 +25359,7 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "tech",
+      "ecommerce",
       "home"
     ],
     "sequence": [
@@ -25198,16 +25387,18 @@
     ],
     "sequence": [
       "OF",
-      "SP",
+      "AH",
       "PP",
+      "AG",
+      "AH",
       "AG",
       "PP",
       "AG",
-      "PP",
-      "AG",
+      "AH",
       "FB",
       "SP",
       "AU",
+      "FB",
       "UR",
       "OF",
       "CTA",
@@ -25264,7 +25455,7 @@
     ],
     "_cta_text": "Get offer",
     "categories": [
-      "ecommerce"
+      "home"
     ],
     "sequence": [
       "OF",
@@ -25274,6 +25465,7 @@
       "OF",
       "SP",
       "CTA",
+      "OF",
       "FB"
     ]
   },
@@ -25289,15 +25481,15 @@
     "_cta_text": "Shop now",
     "categories": [
       "education",
-      "entertainment"
+      "ecommerce"
     ],
     "sequence": [
       "AH",
       "SP",
       "FB",
       "SP",
-      "FB",
-      "BA"
+      "BA",
+      "FB"
     ]
   },
   {
@@ -25357,7 +25549,7 @@
       "AH",
       "FB",
       "AU",
-      "FB"
+      "AH"
     ]
   },
   {
@@ -25374,7 +25566,7 @@
       "tech"
     ],
     "sequence": [
-      "SP",
+      "AU",
       "AH",
       "FB",
       "CTA"
@@ -25414,13 +25606,14 @@
       "ecommerce"
     ],
     "sequence": [
+      "AH",
       "PP",
       "AG",
       "SP",
       "FB",
       "CTA",
       "FB",
-      "PP",
+      "AG",
       "FB"
     ]
   },
@@ -25437,8 +25630,7 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "ecommerce",
-      "finance"
+      "ecommerce"
     ],
     "sequence": [
       "AH",
@@ -25467,8 +25659,8 @@
       "AH",
       "OF",
       "FB",
-      "CTA",
       "SP",
+      "AH",
       "FB"
     ]
   },
@@ -25507,11 +25699,15 @@
     ],
     "sequence": [
       "AH",
+      "OF",
       "AU",
       "FB",
+      "AH",
+      "FB",
+      "AH",
+      "FB",
       "OF",
-      "CTA",
-      "SP"
+      "CTA"
     ]
   },
   {
@@ -25529,16 +25725,14 @@
     ],
     "sequence": [
       "AH",
-      "PP",
       "OF",
       "UR",
-      "AU",
       "FB",
       "UR",
       "CTA",
       "FB",
       "OF",
-      "UR"
+      "CTA"
     ]
   },
   {
@@ -25552,12 +25746,12 @@
     ],
     "_cta_text": null,
     "categories": [
-      "automotive",
-      "tech"
+      "tech",
+      "automotive"
     ],
     "sequence": [
       "FB",
-      "SP"
+      "AH"
     ]
   },
   {
@@ -25576,7 +25770,6 @@
     ],
     "sequence": [
       "CTA",
-      "AU",
       "FB"
     ]
   },
@@ -25613,7 +25806,7 @@
       "entertainment"
     ],
     "sequence": [
-      "AH",
+      "AU",
       "FB"
     ]
   },
@@ -25656,7 +25849,7 @@
       "OF",
       "FB",
       "OF",
-      "PP",
+      "UR",
       "FB",
       "UR",
       "CTA",
@@ -25700,7 +25893,7 @@
     "sequence": [
       "AH",
       "CTA",
-      "SP"
+      "AH"
     ]
   },
   {
@@ -25714,12 +25907,11 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce"
+      "beauty"
     ],
     "sequence": [
       "AH",
-      "FB",
-      "AU"
+      "FB"
     ]
   },
   {
@@ -25733,14 +25925,16 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "education"
+      "education",
+      "home"
     ],
     "sequence": [
       "AH",
-      "AU",
-      "AH",
       "PP",
-      "AU",
+      "FB",
+      "AG",
+      "PP",
+      "FB",
       "PP",
       "AG",
       "AU",
@@ -25785,7 +25979,6 @@
     ],
     "sequence": [
       "AH",
-      "PP",
       "OF",
       "FB"
     ]
@@ -25810,35 +26003,52 @@
       "AG",
       "PP",
       "AG",
+      "SP",
+      "AH",
+      "SP",
+      "AG",
       "PP",
       "AG",
       "SP",
       "BA",
+      "FB",
+      "AH",
       "PP",
       "AH",
       "PP",
-      "AG",
-      "AU",
-      "SP",
-      "AG",
-      "SP",
-      "AG",
-      "AH",
       "AU",
       "PP",
+      "AG",
+      "PP",
       "AH",
+      "PP",
+      "AG",
+      "PP",
+      "AH",
+      "PP",
+      "AG",
+      "SP",
+      "PP",
+      "AG",
+      "AH",
+      "AU",
       "AG",
       "FB",
-      "BA",
-      "UR",
+      "AU",
+      "FB",
+      "AH",
+      "FB",
       "BA",
       "AU",
       "SP",
+      "AU",
+      "SP",
+      "AH",
       "UR",
       "CTA",
       "AU",
-      "SP",
       "PP",
+      "AH",
       "FB",
       "OF"
     ]
@@ -25859,6 +26069,11 @@
     "sequence": [
       "AH",
       "PP",
+      "AG",
+      "FB",
+      "AU",
+      "FB",
+      "BA",
       "FB",
       "AU",
       "FB"
@@ -25875,7 +26090,7 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "entertainment"
+      "tech"
     ],
     "sequence": [
       "CTA",
@@ -25915,8 +26130,9 @@
     ],
     "sequence": [
       "OF",
-      "PP",
+      "AH",
       "FB",
+      "AU",
       "OF",
       "SP",
       "CTA",
@@ -25938,8 +26154,8 @@
       "ecommerce"
     ],
     "sequence": [
-      "OF",
-      "PP",
+      "CTA",
+      "AH",
       "OF",
       "FB",
       "PP",
@@ -25957,15 +26173,13 @@
     ],
     "_cta_text": "Visit Instagram profile",
     "categories": [
-      "ecommerce",
-      "tech"
+      "ecommerce"
     ],
     "sequence": [
       "AH",
-      "SP",
       "FB",
       "CTA",
-      "SP"
+      "AH"
     ]
   },
   {
@@ -25979,7 +26193,7 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce"
+      "automotive"
     ],
     "sequence": [
       "AH",
@@ -26003,9 +26217,10 @@
       "AH",
       "FB",
       "SP",
+      "CTA",
       "OF",
       "UR",
-      "SP"
+      "AH"
     ]
   },
   {
@@ -26030,7 +26245,8 @@
       "SP",
       "CTA",
       "FB",
-      "SP"
+      "SP",
+      "FB"
     ]
   },
   {
@@ -26044,11 +26260,11 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "automotive"
+      "ecommerce"
     ],
     "sequence": [
       "AH",
-      "SP",
+      "UR",
       "FB",
       "AU"
     ]
@@ -26068,7 +26284,7 @@
     ],
     "sequence": [
       "AH",
-      "FB",
+      "OF",
       "SP",
       "FB"
     ]
@@ -26106,16 +26322,14 @@
     ],
     "sequence": [
       "AH",
-      "UR",
       "CTA",
       "OF",
-      "FB",
+      "AH",
       "OF",
       "FB",
       "CTA",
       "FB",
-      "CTA",
-      "SP"
+      "AH"
     ]
   },
   {
@@ -26228,7 +26442,7 @@
     ],
     "sequence": [
       "AU",
-      "FB",
+      "AH",
       "CTA"
     ]
   },
@@ -26346,10 +26560,9 @@
       "CTA",
       "UR",
       "FB",
-      "OF",
       "UR",
       "CTA",
-      "SP",
+      "AH",
       "FB"
     ]
   },
@@ -26411,7 +26624,6 @@
     "sequence": [
       "AH",
       "FB",
-      "SP",
       "CTA"
     ]
   },
@@ -26448,7 +26660,7 @@
       "home"
     ],
     "sequence": [
-      "AU",
+      "AH",
       "FB"
     ]
   },
@@ -26469,10 +26681,8 @@
     "sequence": [
       "AH",
       "FB",
-      "OF",
-      "FB",
       "CTA",
-      "SP",
+      "AU",
       "CTA"
     ]
   },
@@ -26512,7 +26722,9 @@
       "FB",
       "PP",
       "FB",
-      "CTA"
+      "AH",
+      "CTA",
+      "SP"
     ]
   },
   {
@@ -26526,7 +26738,8 @@
     ],
     "_cta_text": "Install now",
     "categories": [
-      "tech"
+      "tech",
+      "beauty"
     ],
     "sequence": [
       "AH",
@@ -26549,6 +26762,7 @@
     "sequence": [
       "AH",
       "FB",
+      "AU",
       "CTA"
     ]
   },
@@ -26584,12 +26798,11 @@
       "automotive"
     ],
     "sequence": [
-      "AU",
-      "FB",
-      "AU",
+      "AH",
       "FB",
       "SP",
-      "CTA"
+      "CTA",
+      "AH"
     ]
   },
   {
@@ -26628,9 +26841,8 @@
       "FB",
       "AH",
       "FB",
-      "SP",
       "CTA",
-      "FB"
+      "AH"
     ]
   },
   {
@@ -26650,9 +26862,6 @@
     "sequence": [
       "AH",
       "OF",
-      "UR",
-      "FB",
-      "CTA",
       "UR"
     ]
   },
@@ -26671,6 +26880,7 @@
     ],
     "sequence": [
       "AH",
+      "PP",
       "OF",
       "FB",
       "CTA"
@@ -26687,8 +26897,7 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "home",
-      "tech"
+      "home"
     ],
     "sequence": [
       "AH",
@@ -26697,9 +26906,10 @@
       "FB",
       "AU",
       "FB",
-      "SP",
+      "BA",
       "AH",
       "CTA",
+      "UR",
       "AH"
     ]
   },
@@ -26719,9 +26929,13 @@
     "sequence": [
       "AH",
       "FB",
+      "AU",
+      "FB",
+      "SP",
       "CTA",
       "SP",
-      "FB",
+      "AU",
+      "SP",
       "CTA"
     ]
   },
@@ -26759,7 +26973,6 @@
       "tech"
     ],
     "sequence": [
-      "AH",
       "PP",
       "FB"
     ]
@@ -26781,7 +26994,7 @@
       "AH",
       "SP",
       "OF",
-      "CTA"
+      "FB"
     ]
   },
   {
@@ -26814,14 +27027,13 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "tech",
-      "ecommerce"
+      "tech"
     ],
     "sequence": [
-      "PP",
+      "AG",
       "FB",
       "OF",
-      "CTA"
+      "SP"
     ]
   },
   {
@@ -26840,7 +27052,6 @@
     ],
     "sequence": [
       "AH",
-      "AU",
       "FB",
       "CTA",
       "AH"
@@ -26883,6 +27094,8 @@
       "AH",
       "FB",
       "CTA",
+      "FB",
+      "CTA",
       "AH"
     ]
   },
@@ -26898,19 +27111,25 @@
     "_cta_text": "Shop now",
     "categories": [
       "health",
-      "tech"
+      "ecommerce"
     ],
     "sequence": [
       "AH",
       "PP",
+      "AG",
       "SP",
       "AG",
+      "BA",
       "FB",
-      "AG",
+      "BA",
+      "CTA",
       "FB",
-      "AG",
+      "BA",
+      "CTA",
       "FB",
       "OF",
+      "FB",
+      "SP",
       "FB",
       "SP",
       "FB",
@@ -26932,7 +27151,9 @@
       "ecommerce"
     ],
     "sequence": [
-      "AH",
+      "CTA",
+      "FB",
+      "AU",
       "FB",
       "AU"
     ]
@@ -26956,6 +27177,7 @@
       "PP",
       "SP",
       "FB",
+      "OF",
       "CTA"
     ]
   },
@@ -26970,11 +27192,11 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "ecommerce"
+      "entertainment"
     ],
     "sequence": [
       "AH",
-      "SP",
+      "OF",
       "CTA"
     ]
   },
@@ -27018,6 +27240,7 @@
       "UR",
       "OF",
       "AU",
+      "UR",
       "FB",
       "OF",
       "FB",
@@ -27063,6 +27286,7 @@
     "sequence": [
       "AH",
       "PP",
+      "AH",
       "FB"
     ]
   },
@@ -27081,6 +27305,8 @@
     ],
     "sequence": [
       "AH",
+      "FB",
+      "AH",
       "AG",
       "CTA"
     ]
@@ -27096,10 +27322,12 @@
     ],
     "_cta_text": "Visit Instagram profile",
     "categories": [
-      "home",
-      "tech"
+      "tech",
+      "home"
     ],
     "sequence": [
+      "AH",
+      "FB",
       "AH",
       "FB",
       "UR",
@@ -27141,10 +27369,8 @@
     ],
     "sequence": [
       "AH",
-      "SP",
-      "AU",
       "FB",
-      "OF",
+      "CTA",
       "FB",
       "SP",
       "FB",
@@ -27183,8 +27409,7 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "home",
-      "tech"
+      "home"
     ],
     "sequence": [
       "AH",
@@ -27214,9 +27439,10 @@
       "tech"
     ],
     "sequence": [
-      "SP",
+      "BA",
       "FB",
-      "CTA"
+      "CTA",
+      "SP"
     ]
   },
   {
@@ -27237,11 +27463,15 @@
       "AH",
       "PP",
       "AG",
-      "SP",
+      "FB",
+      "BA",
       "FB",
       "SP",
+      "FB",
+      "AH",
       "FB",
       "CTA",
+      "FB",
       "SP",
       "FB",
       "SP",
@@ -27266,7 +27496,7 @@
       "AH",
       "OF",
       "FB",
-      "UR"
+      "AU"
     ]
   },
   {
@@ -27291,10 +27521,10 @@
       "FB",
       "BA",
       "SP",
-      "FB",
+      "AU",
       "CTA",
       "UR",
-      "CTA"
+      "OF"
     ]
   },
   {
@@ -27327,7 +27557,7 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "ecommerce"
+      "home"
     ],
     "sequence": [
       "AH",
@@ -27389,6 +27619,7 @@
     "sequence": [
       "AH",
       "FB",
+      "CTA",
       "AU",
       "CTA"
     ]
@@ -27408,6 +27639,7 @@
       "tech"
     ],
     "sequence": [
+      "PP",
       "AH",
       "PP",
       "AG",
@@ -27426,10 +27658,13 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "tech"
+      "tech",
+      "entertainment"
     ],
     "sequence": [
       "AH",
+      "SP",
+      "FB",
       "SP",
       "FB",
       "CTA",
@@ -27465,7 +27700,7 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "tech"
+      "ecommerce"
     ],
     "sequence": [
       "AH",
@@ -27493,7 +27728,7 @@
       "home"
     ],
     "sequence": [
-      "FB",
+      "AH",
       "OF"
     ]
   },
@@ -27512,6 +27747,7 @@
     ],
     "sequence": [
       "AH",
+      "UR",
       "FB",
       "UR",
       "CTA"
@@ -27533,7 +27769,7 @@
     "sequence": [
       "OF",
       "AU",
-      "CTA"
+      "FB"
     ]
   },
   {
@@ -27589,8 +27825,8 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce",
-      "tech"
+      "tech",
+      "ecommerce"
     ],
     "sequence": [
       "AH",
@@ -27608,7 +27844,8 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "tech"
+      "tech",
+      "entertainment"
     ],
     "sequence": [
       "AH",
@@ -27637,7 +27874,8 @@
       "OF",
       "FB",
       "CTA",
-      "AU"
+      "PP",
+      "FB"
     ]
   },
   {
@@ -27676,8 +27914,9 @@
     ],
     "sequence": [
       "AH",
+      "FB",
       "OF",
-      "CTA"
+      "FB"
     ]
   },
   {
@@ -27695,9 +27934,8 @@
     ],
     "sequence": [
       "AH",
-      "AU",
-      "CTA",
-      "FB"
+      "SP",
+      "CTA"
     ]
   },
   {
@@ -27716,7 +27954,6 @@
     ],
     "sequence": [
       "AH",
-      "AU",
       "FB"
     ]
   },
@@ -27731,13 +27968,13 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "tech"
+      "tech",
+      "health"
     ],
     "sequence": [
       "AH",
       "PP",
       "FB",
-      "SP",
       "CTA",
       "FB"
     ]
@@ -27777,7 +28014,6 @@
     "sequence": [
       "SP",
       "FB",
-      "OF",
       "CTA"
     ]
   },
@@ -27797,7 +28033,7 @@
     ],
     "sequence": [
       "AH",
-      "FB",
+      "BA",
       "AG",
       "AU",
       "CTA"
@@ -27838,9 +28074,23 @@
       "AH",
       "SP",
       "OF",
+      "AH",
       "FB",
-      "OF",
-      "AU",
+      "AG",
+      "FB",
+      "AG",
+      "FB",
+      "AH",
+      "FB",
+      "AG",
+      "FB",
+      "AH",
+      "FB",
+      "AG",
+      "AH",
+      "FB",
+      "AG",
+      "FB",
       "OF",
       "CTA"
     ]
@@ -27859,7 +28109,6 @@
       "education"
     ],
     "sequence": [
-      "AH",
       "PP",
       "FB",
       "OF",
@@ -27877,11 +28126,10 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "tech"
+      "education"
     ],
     "sequence": [
       "AH",
-      "FB",
       "PP",
       "FB"
     ]
@@ -27901,15 +28149,15 @@
     ],
     "sequence": [
       "AH",
-      "FB",
       "PP",
       "FB",
       "AU",
       "FB",
-      "BA",
+      "AH",
       "FB",
       "AH",
       "CTA",
+      "UR",
       "AH"
     ]
   },
@@ -27946,8 +28194,7 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce",
-      "tech"
+      "ecommerce"
     ],
     "sequence": [
       "AH",
@@ -27975,7 +28222,7 @@
       "AH",
       "SP",
       "OF",
-      "CTA"
+      "FB"
     ]
   },
   {
@@ -28015,6 +28262,8 @@
     ],
     "sequence": [
       "AH",
+      "FB",
+      "AU",
       "FB",
       "CTA",
       "FB"
@@ -28077,11 +28326,11 @@
     "sequence": [
       "AU",
       "OF",
-      "FB",
       "AU",
+      "FB",
       "OF",
       "CTA",
-      "PP"
+      "AH"
     ]
   },
   {
@@ -28120,13 +28369,10 @@
       "entertainment"
     ],
     "sequence": [
-      "SP",
+      "AH",
       "FB",
       "AH",
       "AG",
-      "AH",
-      "PP",
-      "BA",
       "AH",
       "AG",
       "FB",
@@ -28170,12 +28416,8 @@
     "sequence": [
       "SP",
       "AH",
-      "BA",
+      "AG",
       "AH",
-      "AG",
-      "PP",
-      "AG",
-      "UR",
       "AG",
       "CTA"
     ]
@@ -28195,7 +28437,7 @@
     ],
     "sequence": [
       "AH",
-      "FB",
+      "OF",
       "CTA"
     ]
   },
@@ -28214,7 +28456,7 @@
     ],
     "sequence": [
       "AH",
-      "OF",
+      "AG",
       "CTA"
     ]
   },
@@ -28250,16 +28492,17 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "health",
-      "tech"
+      "tech",
+      "health"
     ],
     "sequence": [
+      "AH",
+      "PP",
       "AH",
       "PP",
       "AG",
       "FB",
       "AG",
-      "CTA",
       "OF",
       "FB",
       "SP",
@@ -28304,7 +28547,7 @@
     "sequence": [
       "AH",
       "FB",
-      "UR",
+      "CTA",
       "SP"
     ]
   },
@@ -28319,8 +28562,7 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce",
-      "travel"
+      "ecommerce"
     ],
     "sequence": [
       "OF",
@@ -28365,7 +28607,7 @@
       "CTA",
       "FB",
       "AU",
-      "BA"
+      "FB"
     ]
   },
   {
@@ -28383,8 +28625,6 @@
     ],
     "sequence": [
       "AH",
-      "OF",
-      "CTA",
       "OF",
       "UR",
       "OF",
@@ -28487,6 +28727,7 @@
       "FB",
       "SP",
       "AU",
+      "FB",
       "CTA"
     ]
   },
@@ -28504,11 +28745,10 @@
       "education"
     ],
     "sequence": [
-      "AH",
       "OF",
-      "AU",
       "FB",
-      "CTA"
+      "CTA",
+      "AU"
     ]
   },
   {
@@ -28526,8 +28766,6 @@
     ],
     "sequence": [
       "AH",
-      "FB",
-      "BA",
       "FB"
     ]
   },
@@ -28542,14 +28780,14 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "travel",
-      "tech"
+      "travel"
     ],
     "sequence": [
-      "AU",
+      "AH",
       "PP",
       "AG",
       "SP",
+      "AH",
       "FB",
       "UR",
       "CTA",
@@ -28595,7 +28833,9 @@
       "AG",
       "PP",
       "AG",
+      "PP",
       "FB",
+      "AH",
       "OF",
       "FB",
       "AH",
@@ -28626,7 +28866,7 @@
       "SP",
       "FB",
       "OF",
-      "SP",
+      "AH",
       "UR"
     ]
   },
@@ -28649,6 +28889,7 @@
       "FB",
       "AU",
       "SP",
+      "AH",
       "CTA"
     ]
   },
@@ -28688,8 +28929,8 @@
       "OF",
       "FB",
       "SP",
-      "CTA",
-      "FB"
+      "FB",
+      "AH"
     ]
   },
   {
@@ -28708,7 +28949,7 @@
     "sequence": [
       "AH",
       "FB",
-      "AU"
+      "CTA"
     ]
   },
   {
@@ -28725,7 +28966,7 @@
       "tech"
     ],
     "sequence": [
-      "AH",
+      "FB",
       "PP",
       "FB",
       "SP"
@@ -28748,8 +28989,7 @@
       "CTA",
       "PP",
       "AU",
-      "CTA",
-      "AU"
+      "CTA"
     ]
   },
   {
@@ -28766,7 +29006,7 @@
       "tech"
     ],
     "sequence": [
-      "AH",
+      "CTA",
       "FB"
     ]
   },
@@ -28786,6 +29026,7 @@
     "sequence": [
       "FB",
       "SP",
+      "AH",
       "FB",
       "CTA"
     ]
@@ -28806,8 +29047,7 @@
     ],
     "sequence": [
       "AH",
-      "FB",
-      "CTA"
+      "FB"
     ]
   },
   {
@@ -28826,7 +29066,8 @@
     "sequence": [
       "AH",
       "FB",
-      "CTA"
+      "CTA",
+      "AH"
     ]
   },
   {
@@ -28864,7 +29105,7 @@
     ],
     "sequence": [
       "AH",
-      "FB",
+      "OF",
       "SP"
     ]
   },
@@ -28879,14 +29120,13 @@
     ],
     "_cta_text": "Order now",
     "categories": [
-      "ecommerce",
       "tech"
     ],
     "sequence": [
       "AH",
+      "PP",
       "AG",
-      "BA",
-      "AG",
+      "PP",
       "FB",
       "AG",
       "PP",
@@ -28908,10 +29148,12 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce"
+      "ecommerce",
+      "travel"
     ],
     "sequence": [
       "AH",
+      "UR",
       "OF",
       "FB",
       "UR",
@@ -28930,11 +29172,12 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "home"
+      "tech"
     ],
     "sequence": [
-      "AH",
-      "FB"
+      "CTA",
+      "FB",
+      "AH"
     ]
   },
   {
@@ -28957,22 +29200,22 @@
       "AG",
       "AH",
       "SP",
-      "FB",
-      "AH",
-      "SP",
       "AH",
       "BA",
-      "SP",
       "AH",
+      "SP",
       "AG",
-      "AH",
-      "SP",
-      "AH",
-      "BA",
       "AU",
-      "FB",
       "SP",
       "AG",
+      "SP",
+      "AU",
+      "SP",
+      "AG",
+      "CTA",
+      "BA",
+      "CTA",
+      "FB",
       "CTA"
     ]
   },
@@ -28990,9 +29233,7 @@
       "ecommerce"
     ],
     "sequence": [
-      "AH",
-      "FB",
-      "SP"
+      "AH"
     ]
   },
   {
@@ -29029,7 +29270,6 @@
     "sequence": [
       "SP",
       "UR",
-      "AH",
       "FB",
       "CTA",
       "OF"
@@ -29046,8 +29286,7 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "automotive",
-      "tech"
+      "automotive"
     ],
     "sequence": [
       "AH",
@@ -29086,63 +29325,52 @@
       "health"
     ],
     "sequence": [
-      "PP",
-      "BA",
-      "AG",
-      "BA",
-      "AG",
-      "PP",
-      "AG",
-      "BA",
-      "AG",
-      "AU",
-      "AG",
-      "AU",
-      "AG",
-      "AU",
-      "AG",
-      "AU",
-      "AG",
-      "AU",
-      "FB",
-      "AU",
-      "FB",
       "AH",
-      "AG",
-      "SP",
-      "FB",
-      "SP",
-      "AG",
-      "SP",
-      "AG",
-      "FB",
-      "SP",
-      "BA",
-      "AG",
-      "FB",
-      "BA",
-      "SP",
+      "PP",
       "AG",
       "PP",
       "AG",
+      "AU",
+      "AG",
+      "AU",
+      "AG",
+      "AU",
+      "AG",
+      "FB",
+      "AU",
+      "FB",
+      "AU",
       "BA",
       "AG",
       "BA",
+      "PP",
+      "BA",
+      "SP",
+      "AU",
       "AG",
+      "SP",
+      "FB",
       "BA",
       "AG",
       "BA",
+      "PP",
+      "BA",
+      "AG",
+      "BA",
+      "AH",
       "PP",
       "AG",
       "AU",
       "AG",
       "FB",
-      "SP",
+      "AU",
       "PP",
+      "BA",
       "CTA",
       "SP",
       "UR",
-      "CTA"
+      "CTA",
+      "OF"
     ]
   },
   {
@@ -29185,8 +29413,7 @@
     ],
     "sequence": [
       "CTA",
-      "FB",
-      "AU"
+      "FB"
     ]
   },
   {
@@ -29203,7 +29430,7 @@
       "ecommerce"
     ],
     "sequence": [
-      "OF",
+      "AH",
       "CTA",
       "FB",
       "OF",
@@ -29230,7 +29457,6 @@
     ],
     "sequence": [
       "AH",
-      "AU",
       "FB"
     ]
   },
@@ -29288,13 +29514,15 @@
     ],
     "sequence": [
       "AH",
-      "SP",
+      "BA",
+      "PP",
+      "FB",
+      "BA",
       "FB",
       "SP",
-      "FB",
-      "AG",
+      "UR",
       "OF",
-      "SP",
+      "FB",
       "CTA"
     ]
   },
@@ -29314,6 +29542,7 @@
     "sequence": [
       "AH",
       "FB",
+      "AU",
       "OF",
       "FB",
       "OF",
@@ -29333,7 +29562,7 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce"
+      "travel"
     ],
     "sequence": [
       "UR",
@@ -29359,7 +29588,8 @@
     ],
     "sequence": [
       "AH",
-      "FB"
+      "FB",
+      "AH"
     ]
   },
   {
@@ -29392,8 +29622,8 @@
     ],
     "_cta_text": "Order now",
     "categories": [
-      "ecommerce",
-      "health"
+      "health",
+      "ecommerce"
     ],
     "sequence": [
       "AH",
@@ -29421,12 +29651,10 @@
     ],
     "sequence": [
       "AH",
-      "FB",
       "PP",
       "AG",
       "PP",
       "AG",
-      "FB",
       "AU",
       "AG",
       "PP",
@@ -29449,7 +29677,7 @@
     ],
     "sequence": [
       "CTA",
-      "FB",
+      "AH",
       "SP"
     ]
   },
@@ -29490,7 +29718,6 @@
       "AH",
       "SP",
       "FB",
-      "SP",
       "CTA",
       "OF"
     ]
@@ -29533,7 +29760,7 @@
     ],
     "sequence": [
       "AH",
-      "FB",
+      "CTA",
       "AU"
     ]
   },
@@ -29548,13 +29775,11 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "tech",
-      "home"
+      "home",
+      "tech"
     ],
     "sequence": [
       "AH",
-      "FB",
-      "CTA",
       "FB",
       "CTA"
     ]
@@ -29575,8 +29800,8 @@
     ],
     "sequence": [
       "AH",
-      "SP",
-      "OF",
+      "FB",
+      "UR",
       "CTA"
     ]
   },
@@ -29594,10 +29819,7 @@
       "ecommerce"
     ],
     "sequence": [
-      "AH",
-      "FB",
-      "CTA",
-      "SP"
+      "AH"
     ]
   },
   {
@@ -29614,7 +29836,7 @@
       "home"
     ],
     "sequence": [
-      "AU",
+      "AH",
       "SP",
       "CTA"
     ]
@@ -29650,8 +29872,7 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce",
-      "home"
+      "ecommerce"
     ],
     "sequence": [
       "OF",
@@ -29672,10 +29893,11 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce"
+      "home"
     ],
     "sequence": [
       "AH",
+      "AU",
       "FB",
       "CTA"
     ]
@@ -29691,7 +29913,8 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce"
+      "ecommerce",
+      "entertainment"
     ],
     "sequence": [
       "AH",
@@ -29709,7 +29932,8 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "automotive"
+      "automotive",
+      "tech"
     ],
     "sequence": [
       "AH",
@@ -29791,8 +30015,11 @@
       "home"
     ],
     "sequence": [
+      "AH",
       "FB",
-      "CTA"
+      "AH",
+      "CTA",
+      "FB"
     ]
   },
   {
@@ -29813,7 +30040,7 @@
       "PP",
       "FB",
       "SP",
-      "CTA"
+      "OF"
     ]
   },
   {
@@ -29834,16 +30061,18 @@
       "AU",
       "AG",
       "AU",
-      "AH",
-      "FB",
-      "PP",
       "AG",
       "FB",
       "PP",
       "FB",
       "PP",
       "FB",
+      "PP",
+      "FB",
+      "PP",
+      "FB",
       "AG",
+      "PP",
       "FB",
       "SP",
       "FB",
@@ -29869,7 +30098,6 @@
     ],
     "sequence": [
       "AH",
-      "SP",
       "FB"
     ]
   },
@@ -29891,8 +30119,8 @@
       "CTA",
       "BA",
       "FB",
-      "SP",
-      "CTA"
+      "CTA",
+      "AH"
     ]
   },
   {
@@ -29910,12 +30138,12 @@
     ],
     "sequence": [
       "CTA",
-      "FB",
       "OF",
       "SP",
       "FB",
       "SP",
-      "CTA"
+      "CTA",
+      "AH"
     ]
   },
   {
@@ -29929,11 +30157,11 @@
     ],
     "_cta_text": "Visit Instagram profile",
     "categories": [
-      "automotive"
+      "automotive",
+      "ecommerce"
     ],
     "sequence": [
-      "CTA",
-      "FB"
+      "CTA"
     ]
   },
   {
@@ -29950,10 +30178,9 @@
       "automotive"
     ],
     "sequence": [
-      "AH",
-      "PP",
-      "FB",
       "OF",
+      "AH",
+      "FB",
       "CTA"
     ]
   },
@@ -29989,7 +30216,7 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "home"
+      "ecommerce"
     ],
     "sequence": [
       "CTA",
@@ -30009,18 +30236,28 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "health"
+      "health",
+      "beauty"
     ],
     "sequence": [
       "AH",
       "PP",
       "AG",
       "FB",
+      "AH",
+      "FB",
+      "AG",
+      "FB",
+      "AU",
+      "SP",
       "AU",
       "AG",
       "OF",
+      "CTA",
+      "OF",
       "SP",
-      "BA",
+      "FB",
+      "AG",
       "CTA",
       "OF",
       "SP",
@@ -30042,7 +30279,8 @@
     ],
     "sequence": [
       "AH",
-      "CTA"
+      "CTA",
+      "AH"
     ]
   },
   {
@@ -30061,8 +30299,10 @@
     "sequence": [
       "AH",
       "CTA",
+      "AH",
       "FB",
-      "CTA"
+      "CTA",
+      "AH"
     ]
   },
   {
@@ -30081,14 +30321,15 @@
     ],
     "sequence": [
       "AH",
+      "AG",
       "PP",
       "AG",
+      "PP",
       "SP",
       "AU",
       "FB",
-      "BA",
+      "SP",
       "OF",
-      "CTA",
       "UR",
       "BA"
     ]
@@ -30104,7 +30345,7 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce"
+      "home"
     ],
     "sequence": [
       "CTA",
@@ -30122,14 +30363,10 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "health",
-      "education"
+      "health"
     ],
     "sequence": [
       "AH",
-      "PP",
-      "AG",
-      "AU",
       "AG",
       "PP",
       "AG",
@@ -30137,12 +30374,17 @@
       "AG",
       "AU",
       "AG",
+      "AH",
+      "AU",
+      "AG",
       "PP",
       "AG",
-      "AU",
+      "PP",
+      "AH",
       "BA",
       "PP",
       "AG",
+      "AH",
       "CTA"
     ]
   },
@@ -30161,7 +30403,7 @@
     ],
     "sequence": [
       "AH",
-      "FB",
+      "AU",
       "SP"
     ]
   },
@@ -30181,7 +30423,8 @@
     "sequence": [
       "AH",
       "FB",
-      "CTA"
+      "CTA",
+      "SP"
     ]
   },
   {
@@ -30195,13 +30438,15 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "ecommerce"
+      "ecommerce",
+      "entertainment"
     ],
     "sequence": [
       "AH",
       "CTA",
       "FB",
-      "CTA"
+      "CTA",
+      "FB"
     ]
   },
   {
@@ -30222,6 +30467,8 @@
     "sequence": [
       "AH",
       "FB",
+      "CTA",
+      "FB",
       "CTA"
     ]
   },
@@ -30241,7 +30488,8 @@
     "sequence": [
       "AH",
       "SP",
-      "FB"
+      "FB",
+      "SP"
     ]
   },
   {
@@ -30276,7 +30524,7 @@
       "ecommerce"
     ],
     "sequence": [
-      "FB",
+      "SP",
       "AH",
       "CTA"
     ]
@@ -30319,9 +30567,10 @@
       "AH",
       "PP",
       "FB",
+      "OF",
       "AU",
+      "SP",
       "CTA",
-      "UR",
       "OF"
     ]
   },
@@ -30336,7 +30585,8 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce"
+      "ecommerce",
+      "entertainment"
     ],
     "sequence": [
       "AH",
@@ -30361,8 +30611,8 @@
     "sequence": [
       "CTA",
       "FB",
-      "PP",
-      "CTA"
+      "CTA",
+      "SP"
     ]
   },
   {
@@ -30381,7 +30631,7 @@
     "sequence": [
       "FB",
       "OF",
-      "BA",
+      "FB",
       "UR",
       "SP"
     ]
@@ -30420,9 +30670,8 @@
     ],
     "sequence": [
       "AH",
-      "PP",
       "FB",
-      "OF",
+      "UR",
       "CTA"
     ]
   },
@@ -30437,11 +30686,12 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "home"
+      "ecommerce"
     ],
     "sequence": [
       "AH",
-      "OF"
+      "OF",
+      "SP"
     ]
   },
   {
@@ -30498,8 +30748,7 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "automotive",
-      "tech"
+      "automotive"
     ],
     "sequence": [
       "AH",
@@ -30525,7 +30774,6 @@
       "AH",
       "PP",
       "AG",
-      "PP",
       "FB",
       "UR"
     ]
@@ -30546,7 +30794,7 @@
       "automotive"
     ],
     "sequence": [
-      "AH",
+      "OF",
       "AU",
       "CTA"
     ]
@@ -30562,11 +30810,13 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce"
+      "ecommerce",
+      "home"
     ],
     "sequence": [
       "AH",
       "CTA",
+      "AH",
       "FB",
       "SP"
     ]
@@ -30588,7 +30838,11 @@
       "AH",
       "PP",
       "AG",
+      "PP",
+      "AG",
+      "AH",
       "FB",
+      "AH",
       "BA",
       "SP",
       "CTA",
@@ -30629,7 +30883,7 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "home"
+      "ecommerce"
     ],
     "sequence": [
       "AH",
@@ -30671,7 +30925,8 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce"
+      "ecommerce",
+      "entertainment"
     ],
     "sequence": [
       "FB",
@@ -30693,12 +30948,12 @@
       "ecommerce"
     ],
     "sequence": [
-      "UR",
       "AH",
       "FB",
       "SP",
       "OF",
       "FB",
+      "AH",
       "CTA",
       "OF"
     ]
@@ -30719,8 +30974,7 @@
     "sequence": [
       "AH",
       "FB",
-      "BA",
-      "FB",
+      "AH",
       "CTA",
       "SP"
     ]
@@ -30741,6 +30995,7 @@
     "sequence": [
       "AH",
       "OF",
+      "AH",
       "FB"
     ]
   },
@@ -30760,7 +31015,7 @@
     "sequence": [
       "AH",
       "FB",
-      "UR",
+      "CTA",
       "FB",
       "CTA",
       "FB",
@@ -30802,7 +31057,8 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "automotive"
+      "automotive",
+      "tech"
     ],
     "sequence": [
       "AH",
@@ -30824,7 +31080,7 @@
       "health"
     ],
     "sequence": [
-      "AH",
+      "PP",
       "FB",
       "SP",
       "OF",
@@ -30848,7 +31104,8 @@
       "UR",
       "FB",
       "UR",
-      "SP",
+      "FB",
+      "CTA",
       "OF",
       "CTA",
       "FB"
@@ -30865,14 +31122,13 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "home"
+      "ecommerce"
     ],
     "sequence": [
-      "AH",
+      "SP",
       "UR",
       "FB",
-      "OF",
-      "UR"
+      "OF"
     ]
   },
   {
@@ -30917,43 +31173,58 @@
       "PP",
       "AU",
       "PP",
-      "AG",
       "AU",
-      "AG",
-      "AH",
-      "AU",
-      "FB",
-      "AH",
-      "AG",
-      "AU",
-      "FB",
-      "AU",
-      "SP",
       "PP",
+      "AG",
+      "AU",
+      "AG",
+      "AH",
+      "AU",
+      "AG",
+      "AU",
+      "FB",
+      "AU",
+      "AH",
+      "AG",
+      "AU",
+      "FB",
+      "BA",
+      "FB",
+      "PP",
+      "AH",
+      "SP",
       "FB",
       "AH",
+      "FB",
+      "AU",
+      "FB",
+      "AU",
+      "PP",
+      "AU",
       "FB",
       "AU",
       "BA",
-      "AU",
-      "FB",
-      "AU",
-      "FB",
-      "PP",
-      "AH",
-      "AU",
-      "FB",
+      "AG",
       "AU",
       "SP",
+      "AG",
+      "FB",
+      "AG",
+      "AU",
+      "AG",
+      "AU",
       "FB",
       "AU",
-      "SP",
-      "FB",
-      "AU",
-      "FB",
+      "AG",
       "CTA",
       "AU",
+      "SP",
       "BA",
+      "CTA",
+      "AH",
+      "AU",
+      "AG",
+      "AH",
       "FB",
       "OF",
       "CTA"
@@ -30995,6 +31266,8 @@
       "FB",
       "AH",
       "FB",
+      "AH",
+      "FB",
       "CTA"
     ]
   },
@@ -31009,11 +31282,10 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "health"
+      "ecommerce"
     ],
     "sequence": [
       "AH",
-      "PP",
       "FB",
       "SP"
     ]
@@ -31029,15 +31301,14 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce",
-      "entertainment"
+      "ecommerce"
     ],
     "sequence": [
       "AH",
-      "SP",
+      "UR",
+      "AH",
       "FB",
       "UR",
-      "CTA",
       "OF"
     ]
   },
@@ -31058,6 +31329,7 @@
       "UR",
       "PP",
       "OF",
+      "AU",
       "FB",
       "SP",
       "FB",
@@ -31078,13 +31350,11 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "entertainment",
-      "tech"
+      "entertainment"
     ],
     "sequence": [
       "AH",
-      "FB",
-      "CTA"
+      "FB"
     ]
   },
   {
@@ -31104,7 +31374,8 @@
       "FB",
       "AH",
       "FB",
-      "CTA"
+      "CTA",
+      "AH"
     ]
   },
   {
@@ -31137,7 +31408,8 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "entertainment"
+      "entertainment",
+      "tech"
     ],
     "sequence": [
       "AH",
@@ -31162,7 +31434,8 @@
       "AH",
       "FB",
       "SP",
-      "CTA"
+      "CTA",
+      "SP"
     ]
   },
   {
@@ -31177,6 +31450,7 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
+      "ecommerce",
       "tech"
     ],
     "sequence": [
@@ -31196,11 +31470,12 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce"
+      "home"
     ],
     "sequence": [
       "CTA",
-      "FB"
+      "FB",
+      "SP"
     ]
   },
   {
@@ -31214,8 +31489,7 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "health",
-      "tech"
+      "health"
     ],
     "sequence": [
       "OF",
@@ -31242,6 +31516,7 @@
       "health"
     ],
     "sequence": [
+      "AH",
       "FB",
       "CTA"
     ]
@@ -31257,13 +31532,13 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "education",
-      "health"
+      "health",
+      "education"
     ],
     "sequence": [
       "AH",
       "FB",
-      "CTA"
+      "OF"
     ]
   },
   {
@@ -31298,15 +31573,18 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "health"
+      "health",
+      "home"
     ],
     "sequence": [
       "BA",
       "PP",
       "AG",
       "FB",
+      "AG",
+      "FB",
       "BA",
-      "PP",
+      "FB",
       "UR",
       "CTA"
     ]
@@ -31322,11 +31600,11 @@
     ],
     "_cta_text": "Send message",
     "categories": [
-      "ecommerce",
-      "tech"
+      "ecommerce"
     ],
     "sequence": [
       "AH",
+      "OF",
       "FB",
       "CTA"
     ]
@@ -31345,7 +31623,8 @@
       "home"
     ],
     "sequence": [
-      "CTA"
+      "CTA",
+      "SP"
     ]
   },
   {
@@ -31359,8 +31638,7 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce",
-      "entertainment"
+      "ecommerce"
     ],
     "sequence": [
       "AH",
@@ -31384,7 +31662,8 @@
     "sequence": [
       "AH",
       "FB",
-      "UR"
+      "UR",
+      "SP"
     ]
   },
   {
@@ -31406,7 +31685,9 @@
       "FB",
       "PP",
       "FB",
-      "CTA"
+      "CTA",
+      "AU",
+      "AH"
     ]
   },
   {
@@ -31430,7 +31711,8 @@
       "SP",
       "FB",
       "OF",
-      "UR"
+      "UR",
+      "AU"
     ]
   },
   {
@@ -31444,12 +31726,13 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "beauty"
+      "health"
     ],
     "sequence": [
       "AH",
       "PP",
       "AG",
+      "OF",
       "FB",
       "CTA"
     ]
@@ -31489,7 +31772,8 @@
     ],
     "sequence": [
       "AH",
-      "CTA"
+      "CTA",
+      "AH"
     ]
   },
   {
@@ -31503,10 +31787,11 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
+      "ecommerce",
       "tech"
     ],
     "sequence": [
-      "AH",
+      "FB",
       "SP",
       "OF"
     ]
@@ -31526,9 +31811,11 @@
       "home"
     ],
     "sequence": [
+      "AU",
       "SP",
       "FB",
-      "CTA"
+      "CTA",
+      "AH"
     ]
   },
   {
@@ -31546,9 +31833,9 @@
     ],
     "sequence": [
       "AH",
-      "AG",
       "SP",
-      "CTA"
+      "CTA",
+      "AH"
     ]
   },
   {
@@ -31572,16 +31859,23 @@
       "FB",
       "AG",
       "FB",
+      "OF",
+      "AU",
+      "SP",
       "AU",
       "AG",
       "FB",
+      "AH",
       "PP",
+      "CTA",
       "FB",
-      "AG",
+      "AH",
+      "PP",
       "OF",
       "AG",
-      "OF",
+      "AH",
       "FB",
+      "AH",
       "OF",
       "FB",
       "CTA",
@@ -31604,10 +31898,11 @@
     "sequence": [
       "AH",
       "CTA",
-      "PP",
+      "AG",
       "FB",
       "UR",
-      "CTA"
+      "CTA",
+      "AH"
     ]
   },
   {
@@ -31632,18 +31927,35 @@
       "AU",
       "AG",
       "AU",
+      "PP",
+      "AU",
+      "AG",
+      "PP",
+      "AU",
+      "AG",
+      "PP",
       "AG",
       "AU",
       "AG",
+      "AU",
+      "AG",
+      "AU",
+      "AH",
       "SP",
+      "AG",
+      "SP",
+      "AH",
       "CTA",
       "AG",
       "FB",
+      "AG",
+      "BA",
       "SP",
       "AU",
+      "BA",
       "FB",
       "SP",
-      "PP",
+      "AG",
       "UR",
       "FB",
       "OF",
@@ -31685,7 +31997,7 @@
     "sequence": [
       "AH",
       "FB",
-      "SP",
+      "UR",
       "CTA",
       "SP"
     ]
@@ -31714,7 +32026,7 @@
       "FB",
       "SP",
       "AU",
-      "OF",
+      "UR",
       "SP"
     ]
   },
@@ -31729,8 +32041,7 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "home",
-      "tech"
+      "home"
     ],
     "sequence": [
       "OF",
@@ -31758,16 +32069,10 @@
     "sequence": [
       "OF",
       "AH",
-      "PP",
-      "FB",
-      "PP",
-      "FB",
-      "PP",
-      "FB",
-      "PP",
       "FB",
       "AH",
       "FB",
+      "AH",
       "SP",
       "UR",
       "CTA",
@@ -31785,8 +32090,7 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce",
-      "tech"
+      "ecommerce"
     ],
     "sequence": [
       "AH",
@@ -31856,7 +32160,7 @@
       "FB",
       "SP",
       "OF",
-      "AU",
+      "CTA",
       "OF"
     ]
   },
@@ -31914,13 +32218,12 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce"
+      "home"
     ],
     "sequence": [
       "AH",
       "PP",
       "FB",
-      "BA",
       "CTA"
     ]
   },
@@ -31942,7 +32245,7 @@
       "SP",
       "OF",
       "CTA",
-      "SP"
+      "AH"
     ]
   },
   {
@@ -31985,6 +32288,9 @@
       "AG",
       "PP",
       "AG",
+      "PP",
+      "AG",
+      "AH",
       "FB",
       "AU"
     ]
@@ -32000,7 +32306,6 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "health",
       "beauty"
     ],
     "sequence": [
@@ -32029,6 +32334,7 @@
     "sequence": [
       "AH",
       "FB",
+      "AH",
       "CTA",
       "UR"
     ]
@@ -32065,13 +32371,14 @@
       "tech"
     ],
     "sequence": [
-      "AH",
       "FB",
+      "AU",
       "OF",
       "FB",
       "CTA",
       "FB",
-      "SP",
+      "AH",
+      "FB",
       "AU"
     ]
   },
@@ -32089,14 +32396,12 @@
       "tech"
     ],
     "sequence": [
-      "AH",
+      "FB",
       "CTA",
       "FB",
       "AH",
-      "PP",
       "FB",
-      "SP",
-      "FB"
+      "AU"
     ]
   },
   {
@@ -32115,7 +32420,7 @@
       "tech"
     ],
     "sequence": [
-      "AH",
+      "SP",
       "OF",
       "FB"
     ]
@@ -32152,7 +32457,8 @@
     ],
     "_cta_text": "Install now",
     "categories": [
-      "tech"
+      "tech",
+      "entertainment"
     ],
     "sequence": [
       "AH",
@@ -32176,7 +32482,7 @@
       "OF",
       "AH",
       "AG",
-      "FB"
+      "CTA"
     ]
   },
   {
@@ -32309,8 +32615,7 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "tech",
-      "entertainment"
+      "tech"
     ],
     "sequence": [
       "AH",
@@ -32333,10 +32638,10 @@
     ],
     "sequence": [
       "CTA",
-      "UR",
       "FB",
       "CTA",
-      "SP"
+      "SP",
+      "CTA"
     ]
   },
   {
@@ -32555,7 +32860,8 @@
     ],
     "_cta_text": "Install now",
     "categories": [
-      "tech"
+      "tech",
+      "entertainment"
     ],
     "sequence": [
       "AH",
@@ -32577,7 +32883,8 @@
     ],
     "sequence": [
       "SP",
-      "FB"
+      "FB",
+      "CTA"
     ]
   },
   {
@@ -32647,8 +32954,7 @@
     ],
     "_cta_text": "Install now",
     "categories": [
-      "tech",
-      "entertainment"
+      "tech"
     ],
     "sequence": [
       "AH",
@@ -32733,7 +33039,6 @@
     ],
     "sequence": [
       "AH",
-      "OF",
       "FB"
     ]
   },
@@ -32755,7 +33060,7 @@
       "PP",
       "FB",
       "CTA",
-      "AU"
+      "FB"
     ]
   },
   {
@@ -32772,6 +33077,7 @@
       "tech"
     ],
     "sequence": [
+      "AH",
       "FB"
     ]
   },
@@ -32812,7 +33118,7 @@
       "CTA",
       "PP",
       "FB",
-      "SP",
+      "OF",
       "CTA"
     ]
   },
@@ -32830,6 +33136,7 @@
       "tech"
     ],
     "sequence": [
+      "AH",
       "FB"
     ]
   },
@@ -32862,7 +33169,8 @@
     ],
     "_cta_text": "Install now",
     "categories": [
-      "tech"
+      "tech",
+      "entertainment"
     ],
     "sequence": [
       "AH",
@@ -32922,7 +33230,6 @@
     ],
     "sequence": [
       "AH",
-      "AU",
       "FB",
       "AG",
       "CTA"
@@ -32942,7 +33249,6 @@
       "tech"
     ],
     "sequence": [
-      "AH",
       "FB"
     ]
   },
@@ -33017,15 +33323,16 @@
     ],
     "sequence": [
       "AH",
-      "CTA",
+      "FB",
       "AU",
       "OF",
-      "AG",
-      "CTA",
+      "PP",
+      "FB",
       "SP",
+      "PP",
       "FB",
       "OF",
-      "FB",
+      "CTA",
       "SP"
     ]
   },
@@ -33141,9 +33448,9 @@
     ],
     "sequence": [
       "AH",
-      "PP",
+      "AG",
       "FB",
-      "CTA"
+      "AH"
     ]
   },
   {
@@ -33177,7 +33484,8 @@
     ],
     "_cta_text": "Visit Instagram profile",
     "categories": [
-      "education"
+      "education",
+      "tech"
     ],
     "sequence": [
       "CTA"
@@ -33197,11 +33505,9 @@
       "tech"
     ],
     "sequence": [
-      "AH",
       "FB",
-      "SP",
-      "FB",
-      "CTA"
+      "CTA",
+      "SP"
     ]
   },
   {
@@ -33219,8 +33525,9 @@
     ],
     "sequence": [
       "AH",
-      "FB",
+      "OF",
       "SP",
+      "AH",
       "FB",
       "CTA"
     ]
@@ -33301,6 +33608,9 @@
     "sequence": [
       "AH",
       "AU",
+      "FB",
+      "AU",
+      "FB",
       "SP",
       "FB",
       "CTA"
@@ -33317,7 +33627,8 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "education"
+      "education",
+      "finance"
     ],
     "sequence": [
       "AH",
@@ -33340,10 +33651,13 @@
     "sequence": [
       "AH",
       "SP",
+      "AG",
       "FB",
       "SP",
       "FB",
-      "CTA"
+      "CTA",
+      "UR",
+      "SP"
     ]
   },
   {
@@ -33362,6 +33676,8 @@
     "sequence": [
       "AH",
       "PP",
+      "FB",
+      "AH",
       "FB"
     ]
   },
@@ -33381,7 +33697,8 @@
     "sequence": [
       "AH",
       "FB",
-      "UR",
+      "AH",
+      "CTA",
       "FB",
       "UR"
     ]
@@ -33400,7 +33717,7 @@
       "education"
     ],
     "sequence": [
-      "AU",
+      "AH",
       "SP",
       "AH",
       "CTA"
@@ -33496,7 +33813,7 @@
     "sequence": [
       "AH",
       "FB",
-      "CTA",
+      "AH",
       "FB",
       "CTA",
       "OF"
@@ -33519,7 +33836,7 @@
       "AH",
       "FB",
       "CTA",
-      "AU"
+      "FB"
     ]
   },
   {
@@ -33582,7 +33899,7 @@
     ],
     "sequence": [
       "AH",
-      "AU"
+      "FB"
     ]
   },
   {
@@ -33601,7 +33918,6 @@
     "sequence": [
       "CTA",
       "AH",
-      "FB",
       "CTA"
     ]
   },
@@ -33621,18 +33937,22 @@
     "sequence": [
       "PP",
       "AG",
-      "FB",
+      "AU",
       "AG",
-      "BA",
-      "AG",
-      "FB",
+      "AU",
       "SP",
       "FB",
       "BA",
       "PP",
       "FB",
+      "AU",
+      "FB",
       "AG",
-      "CTA"
+      "FB",
+      "PP",
+      "AG",
+      "CTA",
+      "FB"
     ]
   },
   {
@@ -33650,7 +33970,8 @@
     ],
     "sequence": [
       "AH",
-      "FB"
+      "FB",
+      "OF"
     ]
   },
   {
@@ -33667,8 +33988,8 @@
       "education"
     ],
     "sequence": [
-      "AH",
-      "CTA"
+      "CTA",
+      "AH"
     ]
   },
   {
@@ -33682,13 +34003,13 @@
     ],
     "_cta_text": "No button",
     "categories": [
-      "home",
-      "tech"
+      "home"
     ],
     "sequence": [
       "AH",
       "UR",
       "FB",
+      "AH",
       "AU",
       "BA"
     ]
@@ -33726,8 +34047,8 @@
       "finance"
     ],
     "sequence": [
+      "AH",
       "SP",
-      "AU",
       "CTA"
     ]
   },
@@ -33747,10 +34068,13 @@
     "sequence": [
       "AH",
       "UR",
+      "CTA",
       "PP",
       "FB",
       "CTA",
-      "PP"
+      "SP",
+      "PP",
+      "CTA"
     ]
   },
   {
@@ -33789,6 +34113,8 @@
     ],
     "sequence": [
       "AH",
+      "FB",
+      "CTA",
       "FB"
     ]
   },
@@ -33823,8 +34149,7 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "education",
-      "tech"
+      "education"
     ],
     "sequence": [
       "AH",
@@ -33849,13 +34174,14 @@
     "sequence": [
       "AH",
       "SP",
-      "AH",
+      "BA",
       "CTA",
       "UR",
-      "AH",
+      "BA",
       "FB",
       "CTA",
-      "AU"
+      "AU",
+      "FB"
     ]
   },
   {
@@ -33876,9 +34202,11 @@
       "AH",
       "PP",
       "AG",
+      "AH",
       "FB",
       "UR",
       "CTA",
+      "AH",
       "FB",
       "AU"
     ]
@@ -33899,26 +34227,54 @@
     "sequence": [
       "AH",
       "PP",
-      "AG",
       "BA",
-      "AG",
+      "PP",
       "SP",
       "BA",
+      "PP",
       "AG",
-      "SP",
+      "PP",
+      "AG",
+      "AU",
+      "BA",
+      "AG",
+      "BA",
+      "FB",
+      "BA",
+      "AG",
+      "FB",
+      "PP",
+      "AG",
+      "PP",
+      "AG",
+      "BA",
       "AG",
       "BA",
       "FB",
       "BA",
       "FB",
+      "PP",
       "AG",
-      "SP",
+      "AU",
       "AG",
+      "AU",
+      "AG",
+      "AU",
+      "AG",
+      "AU",
+      "AG",
+      "BA",
+      "AG",
+      "PP",
+      "AU",
+      "AG",
+      "PP",
       "CTA",
       "FB",
       "AG",
       "OF",
       "CTA",
+      "UR",
       "AG",
       "CTA",
       "AU"
@@ -33957,7 +34313,7 @@
     ],
     "sequence": [
       "AH",
-      "PP",
+      "AG",
       "SP",
       "FB"
     ]
@@ -33991,8 +34347,7 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "education",
-      "tech"
+      "education"
     ],
     "sequence": [
       "AH",
@@ -34017,7 +34372,6 @@
     ],
     "sequence": [
       "AH",
-      "FB",
       "SP"
     ]
   },
@@ -34032,8 +34386,7 @@
     ],
     "_cta_text": "Send message",
     "categories": [
-      "education",
-      "tech"
+      "education"
     ],
     "sequence": [
       "AH",
@@ -34076,7 +34429,8 @@
     ],
     "sequence": [
       "AH",
-      "FB"
+      "FB",
+      "AU"
     ]
   },
   {
@@ -34095,19 +34449,23 @@
     ],
     "sequence": [
       "AH",
-      "AG",
+      "AU",
+      "BA",
       "AU",
       "PP",
       "AG",
       "BA",
       "FB",
-      "PP",
       "BA",
+      "PP",
       "FB",
       "SP",
+      "AG",
       "AU",
       "FB",
       "CTA",
+      "OF",
+      "FB",
       "OF"
     ]
   },
@@ -34129,6 +34487,7 @@
       "FB",
       "AH",
       "FB",
+      "AG",
       "CTA",
       "FB"
     ]
@@ -34167,7 +34526,7 @@
     "sequence": [
       "AH",
       "FB",
-      "AU"
+      "CTA"
     ]
   },
   {
@@ -34263,7 +34622,7 @@
       "PP",
       "AG",
       "FB",
-      "AU",
+      "AH",
       "FB",
       "CTA",
       "FB"
@@ -34285,8 +34644,7 @@
     "sequence": [
       "AH",
       "FB",
-      "OF",
-      "CTA"
+      "AH"
     ]
   },
   {
@@ -34300,15 +34658,17 @@
     ],
     "_cta_text": "Visit Instagram profile",
     "categories": [
-      "tech",
-      "entertainment"
+      "entertainment",
+      "tech"
     ],
     "sequence": [
+      "AH",
       "PP",
-      "CTA",
+      "UR",
       "FB",
       "SP",
-      "CTA"
+      "CTA",
+      "AH"
     ]
   },
   {
@@ -34327,7 +34687,7 @@
     "sequence": [
       "AH",
       "FB",
-      "AH",
+      "PP",
       "CTA",
       "FB"
     ]
@@ -34399,7 +34759,8 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "education"
+      "education",
+      "tech"
     ],
     "sequence": [
       "AH",
@@ -34421,7 +34782,6 @@
     ],
     "sequence": [
       "CTA",
-      "AU",
       "SP",
       "FB"
     ]
@@ -34443,7 +34803,7 @@
       "OF",
       "AH",
       "AU",
-      "FB",
+      "UR",
       "CTA"
     ]
   },
@@ -34481,8 +34841,8 @@
     ],
     "_cta_text": "Get directions",
     "categories": [
-      "ecommerce",
-      "tech"
+      "tech",
+      "ecommerce"
     ],
     "sequence": [
       "AH",
@@ -34540,8 +34900,7 @@
       "entertainment"
     ],
     "sequence": [
-      "AH",
-      "FB"
+      "AH"
     ]
   },
   {
@@ -34591,11 +34950,11 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "entertainment"
+      "entertainment",
+      "tech"
     ],
     "sequence": [
-      "AH",
-      "FB"
+      "AH"
     ]
   },
   {
@@ -34609,8 +34968,7 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "tech",
-      "entertainment"
+      "tech"
     ],
     "sequence": [
       "AH",
@@ -34660,8 +35018,6 @@
     "sequence": [
       "AH",
       "FB",
-      "SP",
-      "FB",
       "CTA"
     ]
   },
@@ -34680,7 +35036,6 @@
     ],
     "sequence": [
       "OF",
-      "AU",
       "FB",
       "CTA"
     ]
@@ -34760,7 +35115,7 @@
     "sequence": [
       "OF",
       "AH",
-      "OF"
+      "FB"
     ]
   },
   {
@@ -34840,7 +35195,7 @@
       "AH",
       "FB",
       "AH",
-      "OF",
+      "FB",
       "AH",
       "FB",
       "CTA"
@@ -34857,6 +35212,7 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
+      "ecommerce",
       "tech"
     ],
     "sequence": [
@@ -34864,7 +35220,6 @@
       "PP",
       "OF",
       "AH",
-      "OF",
       "FB",
       "CTA"
     ]
@@ -34885,28 +35240,25 @@
     "sequence": [
       "AH",
       "AU",
+      "AH",
       "FB",
+      "AH",
+      "FB",
+      "AH",
+      "FB",
+      "AH",
+      "FB",
+      "AH",
+      "FB",
+      "AH",
       "AU",
-      "AH",
-      "FB",
-      "AH",
-      "FB",
-      "AH",
-      "FB",
-      "AH",
-      "FB",
-      "AH",
-      "FB",
-      "AH",
-      "FB",
-      "AH",
       "FB",
       "OF",
       "UR",
       "FB",
       "CTA",
-      "FB",
-      "AU"
+      "AU",
+      "AH"
     ]
   },
   {
@@ -34998,9 +35350,8 @@
     ],
     "sequence": [
       "AH",
+      "BA",
       "PP",
-      "AG",
-      "UR",
       "BA",
       "AG",
       "AH"
@@ -35040,15 +35391,17 @@
     "sequence": [
       "AH",
       "OF",
+      "AH",
       "FB",
       "AH",
       "FB",
       "SP",
-      "CTA",
-      "FB",
       "UR",
       "CTA",
       "UR",
+      "AU",
+      "CTA",
+      "SP",
       "CTA",
       "SP",
       "CTA",
@@ -35147,14 +35500,16 @@
       "tech"
     ],
     "sequence": [
-      "AU",
+      "AH",
+      "FB",
+      "OF",
       "FB",
       "OF",
       "FB",
       "OF",
       "AG",
       "CTA",
-      "FB"
+      "AH"
     ]
   },
   {
@@ -35192,7 +35547,6 @@
     ],
     "sequence": [
       "AH",
-      "PP",
       "FB"
     ]
   },
@@ -35207,15 +35561,15 @@
     ],
     "_cta_text": "Call now",
     "categories": [
-      "tech"
+      "ecommerce"
     ],
     "sequence": [
-      "AU",
       "AH",
       "PP",
       "FB",
       "OF",
-      "UR"
+      "UR",
+      "AH"
     ]
   },
   {
@@ -35233,6 +35587,7 @@
     ],
     "sequence": [
       "AH",
+      "CTA",
       "FB",
       "CTA"
     ]
@@ -35248,8 +35603,7 @@
     ],
     "_cta_text": "Send WhatsApp message",
     "categories": [
-      "tech",
-      "entertainment"
+      "tech"
     ],
     "sequence": [
       "CTA",
@@ -35315,8 +35669,8 @@
       "AH",
       "PP",
       "FB",
-      "CTA",
-      "SP"
+      "SP",
+      "CTA"
     ]
   },
   {
@@ -35335,7 +35689,7 @@
     ],
     "sequence": [
       "AH",
-      "PP",
+      "AG",
       "FB"
     ]
   },
@@ -35353,8 +35707,9 @@
       "tech"
     ],
     "sequence": [
-      "UR",
-      "FB"
+      "AH",
+      "CTA",
+      "AU"
     ]
   },
   {
@@ -35391,7 +35746,7 @@
     "sequence": [
       "CTA",
       "OF",
-      "AG",
+      "PP",
       "FB",
       "CTA"
     ]
@@ -35520,17 +35875,26 @@
     ],
     "_cta_text": "Send WhatsApp message",
     "categories": [
-      "tech",
-      "entertainment"
+      "tech"
     ],
     "sequence": [
       "CTA",
       "AH",
-      "PP",
+      "AG",
       "FB",
       "AH",
+      "OF",
       "FB",
       "OF",
+      "FB",
+      "OF",
+      "FB",
+      "OF",
+      "FB",
+      "OF",
+      "FB",
+      "OF",
+      "FB",
       "CTA"
     ]
   },
@@ -35570,7 +35934,6 @@
       "OF",
       "FB",
       "SP",
-      "FB",
       "OF",
       "FB"
     ]
@@ -35592,7 +35955,6 @@
     ],
     "sequence": [
       "CTA",
-      "AH",
       "FB"
     ]
   },
@@ -35671,10 +36033,10 @@
     "sequence": [
       "AH",
       "SP",
-      "FB",
+      "CTA",
       "UR",
       "CTA",
-      "SP"
+      "FB"
     ]
   },
   {
@@ -35689,7 +36051,7 @@
     "_cta_text": "Learn more",
     "categories": [
       "tech",
-      "travel"
+      "entertainment"
     ],
     "sequence": [
       "AH"
@@ -35706,10 +36068,10 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce"
+      "tech"
     ],
     "sequence": [
-      "AH",
+      "PP",
       "FB",
       "CTA"
     ]
@@ -35732,11 +36094,8 @@
     "sequence": [
       "AH",
       "FB",
-      "SP",
-      "FB",
-      "UR",
-      "FB",
-      "OF"
+      "CTA",
+      "FB"
     ]
   },
   {
@@ -35757,6 +36116,7 @@
       "FB",
       "SP",
       "PP",
+      "SP",
       "AU",
       "BA",
       "CTA"
@@ -35779,7 +36139,6 @@
     "sequence": [
       "AU",
       "OF",
-      "CTA",
       "UR",
       "CTA",
       "FB"
@@ -35796,12 +36155,13 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "home"
+      "home",
+      "tech"
     ],
     "sequence": [
+      "AU",
       "AH",
       "FB",
-      "SP",
       "CTA",
       "SP"
     ]
@@ -35844,6 +36204,7 @@
       "PP",
       "FB",
       "BA",
+      "FB",
       "AG",
       "SP"
     ]
@@ -35902,22 +36263,24 @@
       "AH",
       "AU",
       "FB",
+      "BA",
       "AH",
       "AU",
       "FB",
       "AU",
       "FB",
-      "AU",
+      "AH",
       "FB",
-      "AU",
+      "AH",
       "FB",
-      "AU",
+      "AH",
+      "FB",
+      "AH",
+      "FB",
+      "AH",
       "FB",
       "PP",
       "FB",
-      "AU",
-      "FB",
-      "BA",
       "UR"
     ]
   },
@@ -35935,7 +36298,7 @@
       "tech"
     ],
     "sequence": [
-      "CTA",
+      "AH",
       "FB",
       "CTA"
     ]
@@ -35954,7 +36317,6 @@
       "home"
     ],
     "sequence": [
-      "CTA",
       "AH",
       "FB",
       "AH"
@@ -36118,8 +36480,10 @@
       "entertainment"
     ],
     "sequence": [
+      "OF",
       "CTA",
       "AH",
+      "OF",
       "CTA"
     ]
   },
@@ -36157,8 +36521,17 @@
     "sequence": [
       "AH",
       "BA",
+      "SP",
+      "AH",
       "FB",
       "SP",
+      "FB",
+      "AU",
+      "FB",
+      "AU",
+      "FB",
+      "OF",
+      "FB",
       "AU"
     ]
   },
@@ -36176,7 +36549,7 @@
       "home"
     ],
     "sequence": [
-      "AH",
+      "AU",
       "FB"
     ]
   },
@@ -36196,7 +36569,6 @@
     "sequence": [
       "AH",
       "PP",
-      "OF",
       "CTA"
     ]
   },
@@ -36214,11 +36586,13 @@
       "tech"
     ],
     "sequence": [
-      "OF",
       "UR",
       "SP",
-      "PP",
-      "FB",
+      "BA",
+      "AG",
+      "SP",
+      "AG",
+      "BA",
       "AG",
       "SP",
       "AG",
@@ -36261,6 +36635,7 @@
       "AH",
       "AU",
       "FB",
+      "AU",
       "CTA"
     ]
   },
@@ -36280,7 +36655,6 @@
     "sequence": [
       "AH",
       "PP",
-      "OF",
       "CTA"
     ]
   },
@@ -36337,7 +36711,8 @@
     "sequence": [
       "SP",
       "FB",
-      "CTA"
+      "CTA",
+      "SP"
     ]
   },
   {
@@ -36357,7 +36732,7 @@
       "AH",
       "PP",
       "AG",
-      "FB",
+      "AH",
       "SP"
     ]
   },
@@ -36376,7 +36751,6 @@
     ],
     "sequence": [
       "AH",
-      "FB",
       "OF",
       "FB",
       "UR"
@@ -36455,7 +36829,8 @@
       "AH",
       "PP",
       "FB",
-      "OF"
+      "OF",
+      "AU"
     ]
   },
   {
@@ -36469,9 +36844,11 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "tech"
+      "tech",
+      "finance"
     ],
     "sequence": [
+      "AH",
       "AU",
       "FB",
       "AH"
@@ -36489,7 +36866,8 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "beauty"
+      "beauty",
+      "health"
     ],
     "sequence": [
       "AH",
@@ -36497,6 +36875,7 @@
       "FB",
       "SP",
       "CTA",
+      "AU",
       "FB"
     ]
   },
@@ -36537,7 +36916,7 @@
       "CTA",
       "FB",
       "OF",
-      "FB",
+      "AH",
       "CTA"
     ]
   },
@@ -36555,7 +36934,7 @@
       "home"
     ],
     "sequence": [
-      "UR",
+      "AH",
       "CTA",
       "AH",
       "CTA"
@@ -36575,7 +36954,7 @@
       "tech"
     ],
     "sequence": [
-      "AH",
+      "UR",
       "FB"
     ]
   },
@@ -36596,9 +36975,11 @@
       "PP",
       "AG",
       "PP",
-      "AG",
+      "AH",
       "PP",
       "AG",
+      "FB",
+      "AH",
       "FB",
       "OF",
       "FB",
@@ -36645,10 +37026,8 @@
     "sequence": [
       "AH",
       "AG",
-      "FB",
+      "AH",
       "AG",
-      "PP",
-      "BA",
       "PP",
       "AG",
       "AH",
@@ -36662,8 +37041,9 @@
       "FB",
       "PP",
       "CTA",
-      "OF",
-      "CTA"
+      "FB",
+      "CTA",
+      "OF"
     ]
   },
   {
@@ -36722,8 +37102,8 @@
       "home"
     ],
     "sequence": [
-      "AH",
-      "UR",
+      "CTA",
+      "OF",
       "CTA",
       "FB"
     ]
@@ -36745,9 +37125,9 @@
       "SP",
       "AU",
       "FB",
-      "SP",
       "CTA",
-      "FB"
+      "SP",
+      "AU"
     ]
   },
   {
@@ -36766,7 +37146,9 @@
     "sequence": [
       "AH",
       "PP",
+      "AH",
       "FB",
+      "BA",
       "AU"
     ]
   },
@@ -36781,11 +37163,9 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "tech",
       "finance"
     ],
     "sequence": [
-      "AH",
       "CTA"
     ]
   },
@@ -36802,9 +37182,10 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "finance"
+      "health"
     ],
     "sequence": [
+      "AH",
       "FB",
       "PP",
       "SP",
@@ -36865,7 +37246,7 @@
     ],
     "sequence": [
       "CTA",
-      "FB",
+      "OF",
       "CTA",
       "FB"
     ]
@@ -36885,7 +37266,8 @@
     ],
     "sequence": [
       "CTA",
-      "SP",
+      "FB",
+      "BA",
       "CTA"
     ]
   },
@@ -36903,8 +37285,7 @@
       "health"
     ],
     "sequence": [
-      "AH",
-      "FB"
+      "AH"
     ]
   },
   {
@@ -36923,6 +37304,22 @@
     "sequence": [
       "AH",
       "PP",
+      "FB",
+      "AH",
+      "CTA",
+      "AU",
+      "CTA",
+      "AH",
+      "AU",
+      "FB",
+      "CTA",
+      "FB",
+      "AU",
+      "CTA",
+      "AU",
+      "FB",
+      "CTA",
+      "AU",
       "FB",
       "AH",
       "FB",
@@ -36983,10 +37380,9 @@
     ],
     "sequence": [
       "AH",
-      "PP",
-      "AG",
       "FB",
-      "CTA"
+      "CTA",
+      "AH"
     ]
   },
   {
@@ -37004,8 +37400,8 @@
     ],
     "sequence": [
       "AH",
-      "PP",
-      "OF",
+      "FB",
+      "CTA",
       "PP",
       "FB"
     ]
@@ -37025,7 +37421,6 @@
     ],
     "sequence": [
       "AH",
-      "PP",
       "FB",
       "SP",
       "CTA",
@@ -37072,10 +37467,11 @@
       "BA",
       "FB",
       "AU",
-      "SP",
+      "AG",
       "BA",
       "FB",
-      "CTA"
+      "CTA",
+      "AH"
     ]
   },
   {
@@ -37092,7 +37488,6 @@
       "ecommerce"
     ],
     "sequence": [
-      "UR",
       "CTA",
       "FB",
       "CTA"
@@ -37109,11 +37504,10 @@
     ],
     "_cta_text": "Install now",
     "categories": [
-      "entertainment",
-      "tech"
+      "entertainment"
     ],
     "sequence": [
-      "AH",
+      "SP",
       "FB"
     ]
   },
@@ -37151,12 +37545,12 @@
       "finance"
     ],
     "sequence": [
-      "OF",
       "AH",
       "OF",
-      "AU",
+      "FB",
       "UR",
-      "AU",
+      "CTA",
+      "FB",
       "CTA",
       "UR",
       "AU"
@@ -37213,14 +37607,15 @@
     ],
     "_cta_text": "No button",
     "categories": [
-      "entertainment"
+      "entertainment",
+      "home"
     ],
     "sequence": [
       "AH",
-      "AU",
       "FB",
       "AH",
-      "CTA"
+      "CTA",
+      "SP"
     ]
   },
   {
@@ -37297,10 +37692,13 @@
     "sequence": [
       "AH",
       "FB",
+      "AH",
+      "FB",
       "AU",
       "FB",
       "AU",
-      "CTA"
+      "CTA",
+      "SP"
     ]
   },
   {
@@ -37379,6 +37777,7 @@
     "sequence": [
       "AH",
       "PP",
+      "AG",
       "FB",
       "CTA"
     ]
@@ -37417,9 +37816,8 @@
       "ecommerce"
     ],
     "sequence": [
-      "AH",
       "CTA",
-      "SP"
+      "AH"
     ]
   },
   {
@@ -37438,7 +37836,6 @@
       "food"
     ],
     "sequence": [
-      "AH",
       "FB",
       "CTA"
     ]
@@ -37462,6 +37859,7 @@
       "PP",
       "FB",
       "UR",
+      "BA",
       "SP"
     ]
   },
@@ -37481,8 +37879,7 @@
     "sequence": [
       "SP",
       "FB",
-      "AU",
-      "CTA"
+      "AU"
     ]
   },
   {
@@ -37496,8 +37893,8 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "tech",
-      "ecommerce"
+      "ecommerce",
+      "tech"
     ],
     "sequence": [
       "SP"
@@ -37538,8 +37935,7 @@
     ],
     "sequence": [
       "OF",
-      "FB",
-      "AU"
+      "FB"
     ]
   },
   {
@@ -37572,7 +37968,8 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "ecommerce"
+      "ecommerce",
+      "automotive"
     ],
     "sequence": [
       "OF",
@@ -37596,9 +37993,10 @@
       "tech"
     ],
     "sequence": [
+      "OF",
+      "FB",
       "AH",
       "FB",
-      "CTA",
       "PP",
       "FB"
     ]
@@ -37615,8 +38013,7 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "health",
-      "other"
+      "health"
     ],
     "sequence": [
       "AH",
@@ -37641,8 +38038,6 @@
       "tech"
     ],
     "sequence": [
-      "AH",
-      "FB",
       "AH",
       "FB",
       "OF"
@@ -37678,11 +38073,10 @@
     ],
     "_cta_text": "Install now",
     "categories": [
-      "tech",
-      "entertainment"
+      "tech"
     ],
     "sequence": [
-      "AH",
+      "OF",
       "CTA",
       "SP"
     ]
@@ -37698,13 +38092,16 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "tech"
+      "tech",
+      "finance"
     ],
     "sequence": [
       "AH",
       "SP",
       "FB",
-      "CTA"
+      "UR",
+      "CTA",
+      "SP"
     ]
   },
   {
@@ -37742,8 +38139,7 @@
       "tech"
     ],
     "sequence": [
-      "FB",
-      "OF"
+      "FB"
     ]
   },
   {
@@ -37779,11 +38175,13 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "tech"
+      "tech",
+      "entertainment"
     ],
     "sequence": [
       "AH",
       "FB",
+      "OF",
       "CTA",
       "SP"
     ]
@@ -37821,7 +38219,7 @@
       "finance"
     ],
     "sequence": [
-      "PP",
+      "FB",
       "CTA",
       "SP"
     ]
@@ -37913,14 +38311,14 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "tech",
-      "entertainment"
+      "tech"
     ],
     "sequence": [
       "AH",
       "FB",
       "SP",
       "CTA",
+      "AH",
       "FB",
       "OF",
       "CTA",
@@ -37958,12 +38356,15 @@
     ],
     "_cta_text": "Sign up",
     "categories": [
-      "tech",
-      "home"
+      "tech"
     ],
     "sequence": [
       "AH",
+      "AG",
       "PP",
+      "AG",
+      "PP",
+      "AG",
       "AH",
       "FB",
       "SP",
@@ -37973,15 +38374,19 @@
       "SP",
       "AG",
       "FB",
-      "SP",
-      "FB",
       "AG",
+      "AH",
+      "AG",
+      "AH",
       "BA",
       "CTA",
-      "PP",
+      "AH",
+      "SP",
       "AG",
       "FB",
       "SP",
+      "CTA",
+      "FB",
       "CTA",
       "FB"
     ]
@@ -38004,7 +38409,10 @@
       "AH",
       "PP",
       "FB",
+      "AH",
+      "FB",
       "SP",
+      "AH",
       "FB",
       "CTA",
       "SP"
@@ -38050,13 +38458,14 @@
     "sequence": [
       "PP",
       "AG",
-      "AU",
-      "AG",
+      "SP",
       "PP",
+      "AG",
+      "CTA",
       "FB",
       "AG",
       "FB",
-      "SP"
+      "AH"
     ]
   },
   {
@@ -38075,6 +38484,7 @@
     ],
     "sequence": [
       "AH",
+      "CTA",
       "FB",
       "CTA",
       "SP"
@@ -38094,9 +38504,8 @@
       "tech"
     ],
     "sequence": [
-      "PP",
       "FB",
-      "SP"
+      "AH"
     ]
   },
   {
@@ -38154,6 +38563,7 @@
     "sequence": [
       "SP",
       "CTA",
+      "FB",
       "SP",
       "CTA"
     ]
@@ -38169,11 +38579,12 @@
     ],
     "_cta_text": "Sign up",
     "categories": [
-      "ecommerce"
+      "ecommerce",
+      "tech"
     ],
     "sequence": [
       "CTA",
-      "SP"
+      "AH"
     ]
   },
   {
@@ -38188,16 +38599,18 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "tech",
-      "education"
+      "education",
+      "tech"
     ],
     "sequence": [
       "AH",
       "PP",
       "FB",
-      "AU",
+      "AH",
       "FB",
       "OF",
+      "FB",
+      "PP",
       "FB",
       "CTA",
       "FB"
@@ -38263,7 +38676,6 @@
       "AH",
       "FB",
       "SP",
-      "FB",
       "CTA",
       "FB"
     ]
@@ -38283,12 +38695,14 @@
       "entertainment"
     ],
     "sequence": [
-      "OF",
+      "AH",
       "FB",
       "CTA",
+      "AH",
       "FB",
       "OF",
-      "CTA"
+      "CTA",
+      "OF"
     ]
   },
   {
@@ -38309,7 +38723,7 @@
       "PP",
       "FB",
       "CTA",
-      "FB"
+      "AH"
     ]
   },
   {
@@ -38343,11 +38757,10 @@
     ],
     "_cta_text": "Shop now",
     "categories": [
-      "education",
-      "tech"
+      "education"
     ],
     "sequence": [
-      "SP",
+      "AH",
       "FB",
       "UR"
     ]
@@ -38368,7 +38781,8 @@
     ],
     "sequence": [
       "AH",
-      "FB"
+      "FB",
+      "CTA"
     ]
   },
   {
@@ -38390,7 +38804,9 @@
       "PP",
       "FB",
       "CTA",
-      "FB"
+      "OF",
+      "FB",
+      "AG"
     ]
   },
   {
@@ -38427,13 +38843,15 @@
       "entertainment"
     ],
     "sequence": [
-      "OF",
+      "AH",
       "FB",
       "SP",
       "CTA",
+      "AH",
       "FB",
       "OF",
-      "CTA"
+      "CTA",
+      "OF"
     ]
   },
   {
@@ -38508,8 +38926,8 @@
     ],
     "_cta_text": "Sign up",
     "categories": [
-      "entertainment",
-      "tech"
+      "tech",
+      "entertainment"
     ],
     "sequence": [
       "AH",
@@ -38555,7 +38973,6 @@
     ],
     "sequence": [
       "SP",
-      "AH",
       "CTA"
     ]
   },
@@ -38574,6 +38991,7 @@
     ],
     "sequence": [
       "CTA",
+      "FB",
       "AH",
       "FB"
     ]
@@ -38635,9 +39053,7 @@
     ],
     "sequence": [
       "PP",
-      "SP",
       "FB",
-      "BA",
       "CTA",
       "SP"
     ]
@@ -38671,16 +39087,17 @@
     ],
     "_cta_text": "Subscribe",
     "categories": [
-      "education",
-      "tech"
+      "education"
     ],
     "sequence": [
       "AH",
       "SP",
+      "AH",
       "FB",
       "SP",
       "AG",
-      "CTA"
+      "CTA",
+      "AH"
     ]
   },
   {
@@ -38694,14 +39111,14 @@
     ],
     "_cta_text": "Learn more",
     "categories": [
-      "education"
+      "education",
+      "tech"
     ],
     "sequence": [
       "AH",
       "FB",
       "AH",
       "FB",
-      "OF",
       "CTA"
     ]
   },
@@ -38716,12 +39133,11 @@
     ],
     "_cta_text": "Sign up",
     "categories": [
-      "ecommerce",
-      "tech"
+      "tech",
+      "ecommerce"
     ],
     "sequence": [
       "AH",
-      "PP",
       "FB",
       "CTA"
     ]
