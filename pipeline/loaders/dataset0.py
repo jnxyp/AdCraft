@@ -18,7 +18,7 @@ import httpx
 
 # ── Config ─────────────────────────────────────────────────────────────────
 CONFIG_PATH = Path(__file__).parent.parent / "fb_config.json"
-OUTPUT_PATH = Path(__file__).parent.parent / "data" / "raw_ds0.json"
+OUTPUT_PATH = Path(__file__).parent.parent / "data" / "ds0_raw.json"
 
 # Keywords chosen to cover all 10 target categories
 QUERY_KEYWORDS: list[str] = [

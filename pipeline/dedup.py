@@ -7,8 +7,8 @@ Pass 2 — near: embed remaining bodies with text-embedding-3-small and drop any
          same-product ads with different copy stay.
 
 Run from pipeline/:
-    python dedup.py                              # dedup raw_ds0.json
-    python dedup.py --input data/raw_ds1.json --output data/deduped_ds1.json
+    python dedup.py                              # dedup ds0_raw.json → ds0_dedup.json
+    python dedup.py --input data/ds1_raw.json --output data/ds1_dedup.json
 """
 from __future__ import annotations
 
@@ -96,8 +96,8 @@ def main() -> None:
     _load_dotenv(Path(__file__).parent.parent / ".env")
 
     parser = argparse.ArgumentParser(description="Deduplicate raw ads (exact + near-embedding)")
-    parser.add_argument("--input",     default="data/raw_ds0.json",    help="Input raw ads JSON")
-    parser.add_argument("--output",    default="data/deduped_ds0.json", help="Output deduped JSON")
+    parser.add_argument("--input",     default="data/ds0_raw.json",   help="Input raw ads JSON")
+    parser.add_argument("--output",    default="data/ds0_dedup.json", help="Output deduped JSON")
     parser.add_argument("--threshold", type=float, default=NEAR_THRESHOLD,
                         help=f"Cosine similarity cutoff for near-dedup (default {NEAR_THRESHOLD})")
     args = parser.parse_args()

@@ -53,8 +53,8 @@ backend/data/chromadb/
 backend/data/static/images/
 backend/data/adcraft.db
 backend/data/templates.json
-pipeline/data/deduped_*.json
-pipeline/data/annotated_*.json
+pipeline/data/*_dedup.json
+pipeline/data/*_annotated.json
 pipeline/data/*.checkpoint.json
 
 # ── OS / editor ──────────────────────────────────────────

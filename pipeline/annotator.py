@@ -1,8 +1,8 @@
 """Annotate ads with product_desc (2A), categories (2B), and pattern labels (Step 4).
 
 Run from pipeline/:
-    python annotator.py                          # process raw_ds0.json
-    python annotator.py --input data/raw_ds1.json --output data/annotated_ds1.json
+    python annotator.py                          # process ds0_raw.json
+    python annotator.py --input data/ds1_raw.json --output data/ds1_annotated.json
 
 Steps run sequentially; each step saves a checkpoint so the run is resumable
 if interrupted (checkpoint is deleted on clean completion).
@@ -453,8 +453,8 @@ def main() -> None:
     _load_dotenv(_Path(__file__).parent.parent / ".env")
 
     parser = argparse.ArgumentParser(description="Annotate ads: 2A product_desc, 2B categories, Step 4 patterns")
-    parser.add_argument("--input",  default="data/raw_ds0.json",       help="Input raw ads JSON")
-    parser.add_argument("--output", default="data/annotated_ds0.json", help="Output annotated JSON")
+    parser.add_argument("--input",  default="data/ds0_dedup.json",      help="Input ads JSON")
+    parser.add_argument("--output", default="data/ds0_annotated.json", help="Output annotated JSON")
     args = parser.parse_args()
 
     input_path = Path(args.input)
