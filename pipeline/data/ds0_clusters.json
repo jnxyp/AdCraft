@@ -1,0 +1,3735 @@
+{
+  "source": "data\\ds0_annotated.json",
+  "embedding_model": "text-embedding-3-small",
+  "similarity_threshold": 0.72,
+  "distance_threshold": 0.28,
+  "min_cluster_size": 2,
+  "clusters": [
+    {
+      "cluster_id": "automotive-0001",
+      "category": "automotive",
+      "size": 7,
+      "ad_ids": [
+        "434c1066-7b63-4af0-889f-a1a26dce2e21",
+        "726aa5fc-c69f-44b3-b0f0-e4838ca323b2",
+        "dc50d5ee-dfbd-4f96-9075-bdb148e79a10",
+        "28339657-399c-41f7-b5b2-abb9ca6e2179",
+        "bd3cdb1d-0b13-48e9-8307-3b3bda2263ed",
+        "7d59e726-ba7c-4416-934b-2988b4289bfa",
+        "85899aba-fdc4-426d-80de-188fd7c302dd"
+      ],
+      "ad_indices": [
+        940,
+        946,
+        947,
+        949,
+        951,
+        962,
+        971
+      ]
+    },
+    {
+      "cluster_id": "automotive-0002",
+      "category": "automotive",
+      "size": 3,
+      "ad_ids": [
+        "d8abee94-0392-4f47-a182-50de407c6385",
+        "8d74fa59-8507-41a5-8f32-39c4c7062424",
+        "31fe8ab5-d940-4968-8b91-6a1981928ff2"
+      ],
+      "ad_indices": [
+        1268,
+        1274,
+        1275
+      ]
+    },
+    {
+      "cluster_id": "automotive-0003",
+      "category": "automotive",
+      "size": 3,
+      "ad_ids": [
+        "362f4487-5b07-4d46-868e-f6cb4c95ac0d",
+        "1b310241-4c79-4296-9f37-3e41439ea53c",
+        "94ba1ada-d363-4fb5-832b-27d394bc8992"
+      ],
+      "ad_indices": [
+        1412,
+        1423,
+        1450
+      ]
+    },
+    {
+      "cluster_id": "automotive-0004",
+      "category": "automotive",
+      "size": 2,
+      "ad_ids": [
+        "4880618b-0057-4206-89f4-c908a7e3e2b0",
+        "375aa0b0-8547-4bce-ab6f-3218ba779db3"
+      ],
+      "ad_indices": [
+        0,
+        10
+      ]
+    },
+    {
+      "cluster_id": "automotive-0005",
+      "category": "automotive",
+      "size": 2,
+      "ad_ids": [
+        "9a4580b2-e9e2-43a9-903a-6be0f41ca847",
+        "387587ca-7340-4564-b7ff-9184bd9af092"
+      ],
+      "ad_indices": [
+        17,
+        1091
+      ]
+    },
+    {
+      "cluster_id": "automotive-0006",
+      "category": "automotive",
+      "size": 2,
+      "ad_ids": [
+        "673220e7-e93b-48af-84f5-1893e4abef4b",
+        "ab106fb5-a6c1-4110-8978-53c97ff1f8d1"
+      ],
+      "ad_indices": [
+        861,
+        882
+      ]
+    },
+    {
+      "cluster_id": "automotive-0007",
+      "category": "automotive",
+      "size": 2,
+      "ad_ids": [
+        "21416026-e250-4f96-affc-bad5e90e9b8d",
+        "49e5d080-aa7f-4c42-84e5-79e3aa8da2a0"
+      ],
+      "ad_indices": [
+        888,
+        891
+      ]
+    },
+    {
+      "cluster_id": "beauty-0001",
+      "category": "beauty",
+      "size": 7,
+      "ad_ids": [
+        "91df9d57-c826-4776-9e43-e44bca63a37c",
+        "36bc205f-1c4c-4298-8308-5d35f2c06ba5",
+        "62395d15-a061-4988-8afb-db37c468a87a",
+        "e49ba2e1-428a-4e96-843d-76665afedc78",
+        "88283fb6-f69a-4f3f-b3e1-953f58327d8e",
+        "416d60d1-7564-4adf-af19-743a2bb9153d",
+        "f83490a4-80dc-47da-add6-1ed586757aaf"
+      ],
+      "ad_indices": [
+        269,
+        271,
+        272,
+        278,
+        326,
+        329,
+        331
+      ]
+    },
+    {
+      "cluster_id": "beauty-0002",
+      "category": "beauty",
+      "size": 6,
+      "ad_ids": [
+        "0d83f4e4-8ca2-4be6-9338-770b8a1cba61",
+        "42faec5c-be65-4c69-a4e5-da4811dfbb19",
+        "38586f23-c99b-4652-8194-151bfc57be92",
+        "49976818-cd51-4eec-ad07-b47757414bc5",
+        "d3d651e4-e2cb-4e92-b5e5-df5c560bfabf",
+        "bee48639-baed-4a24-bbbb-5f803b844af4"
+      ],
+      "ad_indices": [
+        412,
+        466,
+        515,
+        952,
+        956,
+        972
+      ]
+    },
+    {
+      "cluster_id": "beauty-0003",
+      "category": "beauty",
+      "size": 5,
+      "ad_ids": [
+        "803b8fa6-1914-4245-ab6a-4d3ada86c6d9",
+        "960e37ec-3ec3-4ae0-99fe-da070a649a41",
+        "477a6ea3-daeb-464b-af7a-6e83300f8390",
+        "e5b7e564-39fc-4b3c-83bb-afd21d7b9246",
+        "2e70c27e-2f3d-49dd-84d3-a2f36e4e12c6"
+      ],
+      "ad_indices": [
+        84,
+        283,
+        309,
+        310,
+        346
+      ]
+    },
+    {
+      "cluster_id": "beauty-0004",
+      "category": "beauty",
+      "size": 5,
+      "ad_ids": [
+        "d9c35f39-818a-4af5-87ec-3009027548f3",
+        "9f0b2ebf-3ce8-418e-b9b7-d2d63abc792d",
+        "bf17871d-c3c8-49b9-9661-8965f7c5c84f",
+        "ab0ff202-3878-49e1-82b5-1013fd26effd",
+        "b52501aa-21e4-4e0c-b439-79ef11ba3dcd"
+      ],
+      "ad_indices": [
+        173,
+        232,
+        236,
+        389,
+        400
+      ]
+    },
+    {
+      "cluster_id": "beauty-0005",
+      "category": "beauty",
+      "size": 4,
+      "ad_ids": [
+        "c4a34b67-48f1-4609-bb5f-1323636e9b2c",
+        "b61b4636-f57a-4c85-9c1f-9edf2445f46a",
+        "a0e04223-e876-4d7c-bc54-f1e621980686",
+        "a11bbef4-23a6-463b-bd5d-5a180c67cbe1"
+      ],
+      "ad_indices": [
+        268,
+        294,
+        322,
+        631
+      ]
+    },
+    {
+      "cluster_id": "beauty-0006",
+      "category": "beauty",
+      "size": 4,
+      "ad_ids": [
+        "d0955046-e34a-49d6-b787-f03b2337decf",
+        "73f7ec13-b8e8-4280-8546-98e4c41d5edb",
+        "db42ff9c-b730-48d1-b1ef-7360e259449d",
+        "d21b74fc-8e81-45d7-873c-4aaf4cb82d11"
+      ],
+      "ad_indices": [
+        369,
+        373,
+        1269,
+        1301
+      ]
+    },
+    {
+      "cluster_id": "beauty-0007",
+      "category": "beauty",
+      "size": 3,
+      "ad_ids": [
+        "cc8e9bcb-047d-4e84-b3fb-08963a16e454",
+        "79664dc8-3ee5-42b0-ac14-f3e7c95d011b",
+        "48fadf9c-e74c-47ca-8f7a-925fce224039"
+      ],
+      "ad_indices": [
+        285,
+        314,
+        784
+      ]
+    },
+    {
+      "cluster_id": "beauty-0008",
+      "category": "beauty",
+      "size": 3,
+      "ad_ids": [
+        "d609b6c7-e4c4-475e-943c-ce8b3db4d74d",
+        "86eb454e-9140-46e6-95a9-d25b7dee6d24",
+        "8bedfa85-a8da-494e-9ff7-ebbe1e2d846f"
+      ],
+      "ad_indices": [
+        376,
+        399,
+        404
+      ]
+    },
+    {
+      "cluster_id": "beauty-0009",
+      "category": "beauty",
+      "size": 3,
+      "ad_ids": [
+        "5a24ac16-16be-4099-8c99-a49e7209ac67",
+        "e9150889-ea46-4cbf-a73d-2a75a534da62",
+        "acb96690-a7c9-4eb4-9812-ee8fb423f39a"
+      ],
+      "ad_indices": [
+        384,
+        402,
+        425
+      ]
+    },
+    {
+      "cluster_id": "beauty-0010",
+      "category": "beauty",
+      "size": 3,
+      "ad_ids": [
+        "e9425a7e-512b-4a03-9581-1d8af4902003",
+        "4b698959-67bd-4a60-833f-c0f36e38b755",
+        "e1402ace-53d0-4a89-a9d2-42b745a6e997"
+      ],
+      "ad_indices": [
+        926,
+        927,
+        1815
+      ]
+    },
+    {
+      "cluster_id": "beauty-0011",
+      "category": "beauty",
+      "size": 2,
+      "ad_ids": [
+        "136b7ced-c061-4408-bb4e-ffa00a0fe552",
+        "952aa7e3-6a3f-47f7-a14c-acb967d3ca61"
+      ],
+      "ad_indices": [
+        42,
+        220
+      ]
+    },
+    {
+      "cluster_id": "beauty-0012",
+      "category": "beauty",
+      "size": 2,
+      "ad_ids": [
+        "3c73f311-8a1c-437f-b37c-957ea0a63710",
+        "d9659a0a-dea6-4202-acf1-4742c0f1970b"
+      ],
+      "ad_indices": [
+        81,
+        293
+      ]
+    },
+    {
+      "cluster_id": "beauty-0013",
+      "category": "beauty",
+      "size": 2,
+      "ad_ids": [
+        "eb77a9ab-947e-4f58-8e49-61102ca1b9a2",
+        "8747a5ba-dad9-4efa-9a37-1e8fa42adfba"
+      ],
+      "ad_indices": [
+        132,
+        308
+      ]
+    },
+    {
+      "cluster_id": "beauty-0014",
+      "category": "beauty",
+      "size": 2,
+      "ad_ids": [
+        "7dfc35a2-0086-441a-b7e3-3ad6b9418e6a",
+        "cf8b786b-ec3f-484f-a55b-1e08a5d276a7"
+      ],
+      "ad_indices": [
+        150,
+        292
+      ]
+    },
+    {
+      "cluster_id": "beauty-0015",
+      "category": "beauty",
+      "size": 2,
+      "ad_ids": [
+        "8539bf9a-2a47-428b-96a1-c9780bf3fa03",
+        "a349a0b3-a7b4-4770-8ea8-d267450244ff"
+      ],
+      "ad_indices": [
+        200,
+        250
+      ]
+    },
+    {
+      "cluster_id": "beauty-0016",
+      "category": "beauty",
+      "size": 2,
+      "ad_ids": [
+        "720aa239-3e44-4b19-be21-f155daeae125",
+        "dbef7a8e-89f9-45cc-9d6c-4a3591f60d8a"
+      ],
+      "ad_indices": [
+        216,
+        231
+      ]
+    },
+    {
+      "cluster_id": "beauty-0017",
+      "category": "beauty",
+      "size": 2,
+      "ad_ids": [
+        "a1b6b696-8e61-451c-b333-9feb636a99f5",
+        "6612d29a-0ff6-44b9-ac6b-e99908742e49"
+      ],
+      "ad_indices": [
+        270,
+        360
+      ]
+    },
+    {
+      "cluster_id": "beauty-0018",
+      "category": "beauty",
+      "size": 2,
+      "ad_ids": [
+        "87344021-6fab-4adc-8802-6228e61190e8",
+        "0bbdf9ba-9d68-44e6-832b-5bbd04b53993"
+      ],
+      "ad_indices": [
+        274,
+        354
+      ]
+    },
+    {
+      "cluster_id": "beauty-0019",
+      "category": "beauty",
+      "size": 2,
+      "ad_ids": [
+        "2843fa91-f8c6-4118-8da5-e29a82347f48",
+        "3db66494-c10f-408e-8900-d13db1a8ac77"
+      ],
+      "ad_indices": [
+        281,
+        299
+      ]
+    },
+    {
+      "cluster_id": "beauty-0020",
+      "category": "beauty",
+      "size": 2,
+      "ad_ids": [
+        "bf6eef13-1a99-4527-b089-815aebe1a02b",
+        "ed7b4f04-0cf6-4137-b3a1-e4fc6991c762"
+      ],
+      "ad_indices": [
+        284,
+        336
+      ]
+    },
+    {
+      "cluster_id": "beauty-0021",
+      "category": "beauty",
+      "size": 2,
+      "ad_ids": [
+        "d5ed0118-38b9-4758-9b7f-de0036466679",
+        "21bd8ac3-d7a3-4a7f-af9b-c0005512c7f1"
+      ],
+      "ad_indices": [
+        289,
+        301
+      ]
+    },
+    {
+      "cluster_id": "beauty-0022",
+      "category": "beauty",
+      "size": 2,
+      "ad_ids": [
+        "fd4cba33-0e1a-4d4a-936c-ee8d1ee80cee",
+        "44d2a2b2-b4d3-4663-9e00-80c710652b5e"
+      ],
+      "ad_indices": [
+        291,
+        650
+      ]
+    },
+    {
+      "cluster_id": "beauty-0023",
+      "category": "beauty",
+      "size": 2,
+      "ad_ids": [
+        "3a7a84b6-568a-43b9-a5bd-01972b41ad94",
+        "e4de8824-85dd-42ce-a20c-e44208da3780"
+      ],
+      "ad_indices": [
+        302,
+        347
+      ]
+    },
+    {
+      "cluster_id": "beauty-0024",
+      "category": "beauty",
+      "size": 2,
+      "ad_ids": [
+        "9bef77f3-2487-4207-8c3e-e5f135ae06fa",
+        "7e2da44d-46da-4d9c-87e1-d7cc72389281"
+      ],
+      "ad_indices": [
+        305,
+        355
+      ]
+    },
+    {
+      "cluster_id": "beauty-0025",
+      "category": "beauty",
+      "size": 2,
+      "ad_ids": [
+        "a4e1c608-077c-4ead-9d4b-363820e569f8",
+        "d764cf78-cbbf-490f-afa6-5b24fcd260f1"
+      ],
+      "ad_indices": [
+        320,
+        569
+      ]
+    },
+    {
+      "cluster_id": "beauty-0026",
+      "category": "beauty",
+      "size": 2,
+      "ad_ids": [
+        "26b88ecf-53a9-4d56-b53b-2979125a438e",
+        "d29e8d01-a4fe-4479-857a-0f31dfd4b9f9"
+      ],
+      "ad_indices": [
+        358,
+        418
+      ]
+    },
+    {
+      "cluster_id": "beauty-0027",
+      "category": "beauty",
+      "size": 2,
+      "ad_ids": [
+        "24013056-b470-465b-93cc-1bdae42f8c6a",
+        "a6d43462-403e-4d0e-9ab8-43696601b13a"
+      ],
+      "ad_indices": [
+        374,
+        382
+      ]
+    },
+    {
+      "cluster_id": "beauty-0028",
+      "category": "beauty",
+      "size": 2,
+      "ad_ids": [
+        "4a07c1c6-69ae-430c-adca-41ac0ac4420d",
+        "b7575f52-283d-4dd3-b77b-3b78f26476da"
+      ],
+      "ad_indices": [
+        379,
+        417
+      ]
+    },
+    {
+      "cluster_id": "beauty-0029",
+      "category": "beauty",
+      "size": 2,
+      "ad_ids": [
+        "a418e152-2b98-496e-92c3-06807fa1cf64",
+        "fb38d075-548b-438d-ae33-2e4124dec593"
+      ],
+      "ad_indices": [
+        386,
+        401
+      ]
+    },
+    {
+      "cluster_id": "beauty-0030",
+      "category": "beauty",
+      "size": 2,
+      "ad_ids": [
+        "9e23d204-603f-4d2a-ad77-3d8f2628cd77",
+        "041980b8-d747-425a-bd95-44be09efaed3"
+      ],
+      "ad_indices": [
+        414,
+        422
+      ]
+    },
+    {
+      "cluster_id": "beauty-0031",
+      "category": "beauty",
+      "size": 2,
+      "ad_ids": [
+        "383f4d81-a212-417e-89fc-86a4017514b9",
+        "32730bb5-a0f3-4889-9858-78159890c9d1"
+      ],
+      "ad_indices": [
+        1074,
+        1086
+      ]
+    },
+    {
+      "cluster_id": "beauty-0032",
+      "category": "beauty",
+      "size": 2,
+      "ad_ids": [
+        "d9ab4281-6aa2-4fc0-be87-09636ef3c102",
+        "805f60ec-79a7-4801-a282-594193cd4000"
+      ],
+      "ad_indices": [
+        1216,
+        1227
+      ]
+    },
+    {
+      "cluster_id": "beauty-0033",
+      "category": "beauty",
+      "size": 2,
+      "ad_ids": [
+        "bb7307b6-e5ce-4d5d-83c0-e5098f235d18",
+        "546ec870-6cf5-4c56-8c84-174365e92791"
+      ],
+      "ad_indices": [
+        1426,
+        1737
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0001",
+      "category": "ecommerce",
+      "size": 4,
+      "ad_ids": [
+        "1104f6dc-0c3d-4dc9-b5fb-e006a4de2509",
+        "334814ff-9123-48b9-9fb3-3fde26f5b2c6",
+        "c996e0fb-3fa7-43ce-af9b-c48dd5620142",
+        "daf427f0-77d1-4dd1-a2c8-61d694f546df"
+      ],
+      "ad_indices": [
+        40,
+        47,
+        1180,
+        1191
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0002",
+      "category": "ecommerce",
+      "size": 4,
+      "ad_ids": [
+        "7d9ff84f-aff5-4b89-860d-707f512a1a2a",
+        "dc903104-4a11-42ea-adc5-e7046c59774b",
+        "6057057a-e5f0-4a3b-87dd-ca0e524b54bc",
+        "ca014d90-ba25-49d7-b769-f950c7046443"
+      ],
+      "ad_indices": [
+        1098,
+        1151,
+        1186,
+        1240
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0003",
+      "category": "ecommerce",
+      "size": 3,
+      "ad_ids": [
+        "820b30f9-0609-4632-9f5c-d6ba77fccc62",
+        "f24f42df-e6b9-4e0b-b5a6-e345ede5a1b6",
+        "db13e4e3-e417-4d06-845c-c69d8d771893"
+      ],
+      "ad_indices": [
+        16,
+        56,
+        660
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0004",
+      "category": "ecommerce",
+      "size": 3,
+      "ad_ids": [
+        "e9ddf80d-4814-4ff9-8dd5-dd7768719be3",
+        "c453516a-1709-442e-9fc2-1cfc032057e7",
+        "1ce341cb-39c6-41d2-a11e-144513dbeba2"
+      ],
+      "ad_indices": [
+        116,
+        813,
+        1382
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0005",
+      "category": "ecommerce",
+      "size": 3,
+      "ad_ids": [
+        "e1befd03-7816-4e85-9231-4becbe1e96d6",
+        "7c0ec1b0-f679-48d5-8dbd-55597a6fe605",
+        "8bcdad9e-95de-4543-94db-ed4d194e6a84"
+      ],
+      "ad_indices": [
+        407,
+        416,
+        1466
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0006",
+      "category": "ecommerce",
+      "size": 3,
+      "ad_ids": [
+        "ea17f16d-cb4b-497d-b9c3-9e7634e47fd7",
+        "dce4d833-6c21-4bbd-8c0b-2fb6751837cb",
+        "640e5146-f506-479c-b4be-842b48cc28d1"
+      ],
+      "ad_indices": [
+        527,
+        529,
+        534
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0007",
+      "category": "ecommerce",
+      "size": 3,
+      "ad_ids": [
+        "de9fa5c8-2054-4ade-8ff9-e2e8b2684a10",
+        "6bb89039-4e3d-4094-a87a-81a6a037376c",
+        "cbf4d695-3da0-471d-9cb7-248991a722ee"
+      ],
+      "ad_indices": [
+        1090,
+        1397,
+        1402
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0008",
+      "category": "ecommerce",
+      "size": 3,
+      "ad_ids": [
+        "dc2a35a1-611f-47ea-bcd6-1ce649c2bfa7",
+        "42b19421-1ff8-4f30-99fd-7d342f1e2a09",
+        "8a3fb15f-650a-410b-8448-fff571b408ff"
+      ],
+      "ad_indices": [
+        1354,
+        1355,
+        1366
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0009",
+      "category": "ecommerce",
+      "size": 3,
+      "ad_ids": [
+        "e604fdca-d325-4afe-92a6-e5e067caf8b6",
+        "cd580c6b-e0b2-4b3c-bb80-77d6c543c8db",
+        "497a9400-91e6-467d-b64d-136c4ed01ad5"
+      ],
+      "ad_indices": [
+        1411,
+        1432,
+        1441
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0010",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "d51d7e7d-4914-4f98-8ee6-df707397e13a",
+        "2f9adcd8-3e8a-4c80-b060-e013896da005"
+      ],
+      "ad_indices": [
+        13,
+        91
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0011",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "9642592e-5ef9-463a-96a4-8262d516e7eb",
+        "1561a870-7bfe-4269-a7f4-6c3f261e4aa8"
+      ],
+      "ad_indices": [
+        28,
+        45
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0012",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "d1011b5c-1caf-4184-800f-d0e1135b8a93",
+        "a0d41958-87e0-4d90-a262-e469b0fa530f"
+      ],
+      "ad_indices": [
+        31,
+        263
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0013",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "c8f10a0c-b2fd-4b6d-95ba-7b3a6e60ce7d",
+        "73ce0d7f-cc8d-45f1-95ce-3414de825346"
+      ],
+      "ad_indices": [
+        41,
+        86
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0014",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "d9767309-14e6-4b21-a9e4-017adb50a09a",
+        "19f28bba-9991-4e18-a4fa-8d9d2510ae43"
+      ],
+      "ad_indices": [
+        51,
+        113
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0015",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "f0ada02a-598f-4bb6-ad0a-92ff35f56853",
+        "b889d7eb-c140-4ec7-8356-9925f909b5e2"
+      ],
+      "ad_indices": [
+        62,
+        1138
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0016",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "92e40844-d7e9-45bb-b946-7c0b1379a712",
+        "828b0767-6509-4363-8948-00ebb3f56c7a"
+      ],
+      "ad_indices": [
+        63,
+        70
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0017",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "f4a2ef2e-ce35-454c-a921-c46f4bd644b6",
+        "bfb93f7d-a038-4591-bc5e-a06de2cea807"
+      ],
+      "ad_indices": [
+        94,
+        1111
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0018",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "80acca8b-f99a-40f3-bce3-7af4de09ed15",
+        "f26a5b1e-d5eb-429d-8f23-bf5157826c2e"
+      ],
+      "ad_indices": [
+        100,
+        131
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0019",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "992ce2bf-604b-4baf-a3da-57cde7ff3be1",
+        "cd78deb6-e676-48ce-a951-63d0f9624d71"
+      ],
+      "ad_indices": [
+        104,
+        169
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0020",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "86aed7eb-c9b0-4183-9edf-7b19953b7241",
+        "d79128eb-5eeb-4b9b-a9ad-abcdf67d16e8"
+      ],
+      "ad_indices": [
+        109,
+        149
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0021",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "a043fd25-b8fe-47d7-a399-635a555873d9",
+        "101ac020-ba5c-42be-9a02-5fa76b2fb3dc"
+      ],
+      "ad_indices": [
+        127,
+        1150
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0022",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "ce570cfa-8db5-4c86-b5c7-125af6ef7a8d",
+        "92b6d927-9216-43ca-93bb-230dacae62d0"
+      ],
+      "ad_indices": [
+        142,
+        1095
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0023",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "2e3b1da0-d9dc-481a-b88c-ab32793e13b1",
+        "551ebcd2-db3d-46c1-867e-9e9a955fa55b"
+      ],
+      "ad_indices": [
+        147,
+        1447
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0024",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "6d5c31f2-05bc-4db8-8d0f-52082b76a47e",
+        "9b94fb00-3cda-47fe-a1b0-0fddb4e590e0"
+      ],
+      "ad_indices": [
+        155,
+        163
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0025",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "77e463bc-30d9-449a-a16a-63a6a83e8b06",
+        "beee4543-8069-47c8-aa03-0d12e29439ad"
+      ],
+      "ad_indices": [
+        189,
+        210
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0026",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "4a07c1c6-69ae-430c-adca-41ac0ac4420d",
+        "b7575f52-283d-4dd3-b77b-3b78f26476da"
+      ],
+      "ad_indices": [
+        379,
+        417
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0027",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "7ab76b4c-7642-4a49-8d55-2e3f3f1ba9f2",
+        "20196b69-8898-41bb-b3d0-890a6d278edb"
+      ],
+      "ad_indices": [
+        468,
+        485
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0028",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "86e003b7-d8b4-4961-a314-5c8a03574d8b",
+        "89ede1fa-290d-4105-840c-1268d1c07ab7"
+      ],
+      "ad_indices": [
+        519,
+        540
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0029",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "1225afa8-6a48-4e28-899c-17db920cbbd3",
+        "c0972cac-3e7d-4419-81e4-41bfd19fa3a9"
+      ],
+      "ad_indices": [
+        530,
+        835
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0030",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "f81a7e3a-b030-4a3b-a7f6-8346acee4595",
+        "ca971ccc-5d7f-4c05-a772-7aacf6da6c16"
+      ],
+      "ad_indices": [
+        538,
+        1184
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0031",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "8de393ec-1cb2-4d13-a801-8dae35470ebf",
+        "7e3cef0e-2baf-4cf7-82db-6795bc1ebb60"
+      ],
+      "ad_indices": [
+        758,
+        768
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0032",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "36eef4bb-5354-4940-bb21-d24f667b1bf2",
+        "2d7cdf24-d587-46fb-8d06-f2f77a19e9c0"
+      ],
+      "ad_indices": [
+        803,
+        1379
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0033",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "1415eead-e379-478c-a2bc-58faabb697cb",
+        "6cbefd6b-8e26-43ef-a29f-32f1d841f7a0"
+      ],
+      "ad_indices": [
+        824,
+        1106
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0034",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "a0ad97bd-e26c-404e-9c01-64bd1401fa8d",
+        "81eeb32d-35d5-42c2-ad19-3e1984dd1c28"
+      ],
+      "ad_indices": [
+        838,
+        839
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0035",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "b01ed8b6-6bda-4590-8b06-0464c45f57c6",
+        "c3a68c8a-f5ab-431b-9cfa-d23cbdacdb59"
+      ],
+      "ad_indices": [
+        875,
+        1161
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0036",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "bc51a8d3-37b4-4721-9ff2-67eaa3db69a3",
+        "a3262726-d592-471e-8b7a-70a2a7700c5c"
+      ],
+      "ad_indices": [
+        979,
+        981
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0037",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "95530286-2f79-4d13-ad3c-d8ac5c798a59",
+        "7ed93aae-cac0-494d-a852-3186c0d8803d"
+      ],
+      "ad_indices": [
+        1013,
+        1036
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0038",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "3082dcde-c089-49d0-81c4-c04bc097e68b",
+        "95ea5be7-d7f8-46d0-925a-dedea5b38334"
+      ],
+      "ad_indices": [
+        1047,
+        1112
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0039",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "8bc91ab0-86d9-4b75-97d2-adac86bbf09e",
+        "557e36a8-2c7b-4868-8b4c-07c85e70c0a1"
+      ],
+      "ad_indices": [
+        1049,
+        1381
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0040",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "13944684-c01e-4a70-a1cb-5c0ed873b9b7",
+        "fcdaf5ad-96bb-4ab7-ab24-e8a92371e98c"
+      ],
+      "ad_indices": [
+        1051,
+        1092
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0041",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "ce6bb5a7-6725-41ac-bb84-a984dbf521ef",
+        "7b83eb84-69c9-4602-893d-fb199df74e34"
+      ],
+      "ad_indices": [
+        1061,
+        1079
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0042",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "798b90a7-8e88-4ac9-a078-ca67af7f9dd9",
+        "d8160318-d33e-40ec-bec1-a3321c660a48"
+      ],
+      "ad_indices": [
+        1062,
+        1145
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0043",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "2c6f7970-f628-47a3-9f0d-168b68d01ec2",
+        "17ed6c36-ad7b-478e-a481-b398f64f323a"
+      ],
+      "ad_indices": [
+        1084,
+        1264
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0044",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "ed3a5e18-066f-47d2-9e42-0280a1ad7ea2",
+        "5092b460-00bc-45d7-8219-9d53e2abe9bb"
+      ],
+      "ad_indices": [
+        1176,
+        1177
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0045",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "a2c13fe0-f8b6-43d9-9341-60c949e72b85",
+        "b872227a-a7e4-433b-867c-87d76a1a8c3e"
+      ],
+      "ad_indices": [
+        1203,
+        1235
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0046",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "f2d48f75-16e4-41e9-87e7-ce3afbc41e09",
+        "e9847f2b-fec7-47f9-a839-139390d02e67"
+      ],
+      "ad_indices": [
+        1427,
+        1452
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0047",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "eb89a720-d671-4b06-ac11-74562d0ac208",
+        "16c8e5cc-1a9d-4d77-ad02-c3941b53f76d"
+      ],
+      "ad_indices": [
+        1706,
+        1843
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0048",
+      "category": "ecommerce",
+      "size": 2,
+      "ad_ids": [
+        "71dc9b84-40b8-45b5-ab02-f2fa9510d076",
+        "3e10be53-9373-401c-be34-03bd523710f6"
+      ],
+      "ad_indices": [
+        1716,
+        1781
+      ]
+    },
+    {
+      "cluster_id": "education-0001",
+      "category": "education",
+      "size": 6,
+      "ad_ids": [
+        "35cd542a-1c75-47e6-b87b-de62e071af00",
+        "a354c08d-1699-4251-8021-fa9b89f6ce81",
+        "ba20f318-c43b-4479-be1a-35ceb60dcb35",
+        "50e5bf59-4620-4690-8e2a-8dbce1470801",
+        "1775d500-3a8e-446d-b360-c077896dfaca",
+        "5a93ff7a-e427-43bc-acc9-d1bb91e6d70a"
+      ],
+      "ad_indices": [
+        1585,
+        1606,
+        1607,
+        1608,
+        1626,
+        1638
+      ]
+    },
+    {
+      "cluster_id": "education-0002",
+      "category": "education",
+      "size": 3,
+      "ad_ids": [
+        "a1684a8a-d6be-4978-8f12-99b7d5573d5e",
+        "b4a81dc1-cdcf-47d1-b3c7-7ca0fa3645bb",
+        "51b5a3ca-534b-49ac-ad7f-a92b8141aa37"
+      ],
+      "ad_indices": [
+        191,
+        578,
+        738
+      ]
+    },
+    {
+      "cluster_id": "education-0003",
+      "category": "education",
+      "size": 3,
+      "ad_ids": [
+        "159f3282-a916-4518-a630-aac0ef26f91e",
+        "326357ec-8d3a-49ff-97be-02151a04ebb9",
+        "b50a38ca-6251-4f8f-844b-a7760721b7e2"
+      ],
+      "ad_indices": [
+        208,
+        511,
+        1364
+      ]
+    },
+    {
+      "cluster_id": "education-0004",
+      "category": "education",
+      "size": 3,
+      "ad_ids": [
+        "28d2796e-79c0-40ba-aeb6-2a79b25da37e",
+        "0c29ee01-6aaf-4aad-bc18-3281f66591b0",
+        "0b3d783d-120a-4b03-ac9a-ccd94bcc4ad8"
+      ],
+      "ad_indices": [
+        480,
+        493,
+        507
+      ]
+    },
+    {
+      "cluster_id": "education-0005",
+      "category": "education",
+      "size": 3,
+      "ad_ids": [
+        "950eea7d-a6cc-4952-81b6-0e261139cbe2",
+        "f7f7959a-13f8-44d6-8120-f219d8bad31a",
+        "76445a8d-e504-4a91-a18e-6609c83089e6"
+      ],
+      "ad_indices": [
+        533,
+        582,
+        1572
+      ]
+    },
+    {
+      "cluster_id": "education-0006",
+      "category": "education",
+      "size": 3,
+      "ad_ids": [
+        "83db049e-c4d1-4318-a498-cb7239ab4fc0",
+        "445544bd-5dd5-4801-ab36-68b9d67d79d3",
+        "fb78a0e1-29a9-4e7f-8fc6-51df66c60ed3"
+      ],
+      "ad_indices": [
+        873,
+        1030,
+        1039
+      ]
+    },
+    {
+      "cluster_id": "education-0007",
+      "category": "education",
+      "size": 3,
+      "ad_ids": [
+        "d8639225-8c4c-4bb2-b666-44366ca45613",
+        "3418524c-1333-4b42-9d19-5b8f1ee9094f",
+        "cbf88926-26bd-41cc-a9b0-11104e29c7fb"
+      ],
+      "ad_indices": [
+        1358,
+        1396,
+        1400
+      ]
+    },
+    {
+      "cluster_id": "education-0008",
+      "category": "education",
+      "size": 2,
+      "ad_ids": [
+        "a6c2d839-2c8c-4554-aba4-18e542314f1c",
+        "36a9f1b2-07c4-4400-a6cb-934d6c1b9515"
+      ],
+      "ad_indices": [
+        437,
+        451
+      ]
+    },
+    {
+      "cluster_id": "education-0009",
+      "category": "education",
+      "size": 2,
+      "ad_ids": [
+        "016e8fb3-4cb1-4ea9-bd7c-90458e18e52e",
+        "7ba6c4ba-7f6e-4562-8ff9-48795eedb908"
+      ],
+      "ad_indices": [
+        456,
+        457
+      ]
+    },
+    {
+      "cluster_id": "education-0010",
+      "category": "education",
+      "size": 2,
+      "ad_ids": [
+        "131ac3c8-e680-4701-9389-4978a48d93f3",
+        "0e9065a6-5634-407e-bec9-aabc7834e064"
+      ],
+      "ad_indices": [
+        487,
+        1600
+      ]
+    },
+    {
+      "cluster_id": "education-0011",
+      "category": "education",
+      "size": 2,
+      "ad_ids": [
+        "4fe805b8-9ee6-4037-8b2e-849ef7debe90",
+        "021f1440-bbd6-426c-b090-828607374351"
+      ],
+      "ad_indices": [
+        1228,
+        1398
+      ]
+    },
+    {
+      "cluster_id": "education-0012",
+      "category": "education",
+      "size": 2,
+      "ad_ids": [
+        "91052430-5d3a-4339-97a1-a9e1edfd1032",
+        "a1080fc6-38a9-457b-913b-71f88ba6aa67"
+      ],
+      "ad_indices": [
+        1573,
+        1614
+      ]
+    },
+    {
+      "cluster_id": "education-0013",
+      "category": "education",
+      "size": 2,
+      "ad_ids": [
+        "f24fbe4e-ebd0-4cf2-b252-faaf944db0c4",
+        "3be95d2a-7106-4fc6-943e-741e163428ef"
+      ],
+      "ad_indices": [
+        1586,
+        1632
+      ]
+    },
+    {
+      "cluster_id": "education-0014",
+      "category": "education",
+      "size": 2,
+      "ad_ids": [
+        "f30f8cb5-1a11-4bde-8164-0f82fb3023ff",
+        "ae7edad2-3701-4c7c-956c-beb5027b964a"
+      ],
+      "ad_indices": [
+        1588,
+        1591
+      ]
+    },
+    {
+      "cluster_id": "education-0015",
+      "category": "education",
+      "size": 2,
+      "ad_ids": [
+        "0d023edb-d3e4-4481-a4e8-e03eeeeca07d",
+        "961a25a8-aef7-426d-b949-7cc44fd648ce"
+      ],
+      "ad_indices": [
+        1593,
+        1621
+      ]
+    },
+    {
+      "cluster_id": "education-0016",
+      "category": "education",
+      "size": 2,
+      "ad_ids": [
+        "b3c5e684-a95e-4a78-a4f0-6b619e054f44",
+        "7d3151d5-aa85-4003-a4c5-25cbb738a8b0"
+      ],
+      "ad_indices": [
+        1594,
+        1637
+      ]
+    },
+    {
+      "cluster_id": "entertainment-0001",
+      "category": "entertainment",
+      "size": 9,
+      "ad_ids": [
+        "efb2bd73-135f-4cc4-907c-617f7a67eac1",
+        "5525412f-3427-4e10-9608-91e336b0a520",
+        "8289f9dc-b6ca-4aee-bdaf-5c46a55eed41",
+        "955166dc-ace4-4d96-afb4-7844d0a34f26",
+        "86223fcb-cc32-4457-b026-1e83fe5aaf20",
+        "1f74b3a9-3253-4c34-a917-744009c0dd62",
+        "216e26d7-6120-458e-906c-0880e91f9111",
+        "a2b08f5c-db32-46c5-b4dd-4a0356e2df6c",
+        "b80a3309-4e1c-49be-81d5-8cd7f3fe9ac1"
+      ],
+      "ad_indices": [
+        864,
+        877,
+        887,
+        914,
+        916,
+        921,
+        1809,
+        1822,
+        1829
+      ]
+    },
+    {
+      "cluster_id": "entertainment-0002",
+      "category": "entertainment",
+      "size": 5,
+      "ad_ids": [
+        "6661e37b-fb3e-4350-84f0-b03cd7329466",
+        "f4a2ef2e-ce35-454c-a921-c46f4bd644b6",
+        "89be85e5-c2a6-4dd9-855c-0502bd1e8b8b",
+        "00c1e978-5651-4d42-9049-ec5f4dea31e8",
+        "bfb93f7d-a038-4591-bc5e-a06de2cea807"
+      ],
+      "ad_indices": [
+        35,
+        94,
+        482,
+        1026,
+        1111
+      ]
+    },
+    {
+      "cluster_id": "entertainment-0003",
+      "category": "entertainment",
+      "size": 4,
+      "ad_ids": [
+        "63148d7c-0074-4820-b9c0-d3a1820a7fbc",
+        "9f99a829-4940-47f1-b30b-44622dc5a97a",
+        "31cb906e-ac2a-4b8e-9f3a-be703c50f424",
+        "68112738-642d-436e-aeff-71cf0ab6b2d4"
+      ],
+      "ad_indices": [
+        690,
+        744,
+        747,
+        752
+      ]
+    },
+    {
+      "cluster_id": "entertainment-0004",
+      "category": "entertainment",
+      "size": 4,
+      "ad_ids": [
+        "bc405e31-2858-4e35-93a0-4985a1e92837",
+        "8a947618-c543-4c58-b803-6da34d719227",
+        "7ffc0edf-0648-49fb-ba94-6a3fd616cad8",
+        "7444c358-8a78-4fbb-a071-61b582d55029"
+      ],
+      "ad_indices": [
+        1523,
+        1536,
+        1544,
+        1560
+      ]
+    },
+    {
+      "cluster_id": "entertainment-0005",
+      "category": "entertainment",
+      "size": 3,
+      "ad_ids": [
+        "f6ef0f10-1efa-4028-8844-7d71d26c05b4",
+        "61dec012-1884-4ab9-88ef-39670d8ac895",
+        "ca5bbc92-96da-4cb5-be16-c88c4f10ef98"
+      ],
+      "ad_indices": [
+        447,
+        563,
+        781
+      ]
+    },
+    {
+      "cluster_id": "entertainment-0006",
+      "category": "entertainment",
+      "size": 3,
+      "ad_ids": [
+        "f7c93ec6-c1e9-4dae-b43f-4e4ac94a6160",
+        "ceb7f47f-35d5-429c-b10c-e4650ff44a68",
+        "b3892949-20f5-4e32-b93e-23c4d36aa2c9"
+      ],
+      "ad_indices": [
+        1799,
+        1810,
+        1812
+      ]
+    },
+    {
+      "cluster_id": "entertainment-0007",
+      "category": "entertainment",
+      "size": 2,
+      "ad_ids": [
+        "e6a499e8-793d-4c13-875f-8a0ce38df385",
+        "768e9e28-788c-4b5c-be94-e2a63e6b1e48"
+      ],
+      "ad_indices": [
+        79,
+        806
+      ]
+    },
+    {
+      "cluster_id": "entertainment-0008",
+      "category": "entertainment",
+      "size": 2,
+      "ad_ids": [
+        "5dd0fe6d-6ee0-48a3-bdec-6364524228e3",
+        "b0cd43f0-9d2b-4f8a-9102-6643339e222e"
+      ],
+      "ad_indices": [
+        472,
+        495
+      ]
+    },
+    {
+      "cluster_id": "entertainment-0009",
+      "category": "entertainment",
+      "size": 2,
+      "ad_ids": [
+        "9de33101-0e14-4bf2-928e-2692a44fe44c",
+        "4aa7e978-4747-4e6e-867b-0785e26a93ad"
+      ],
+      "ad_indices": [
+        957,
+        1077
+      ]
+    },
+    {
+      "cluster_id": "entertainment-0010",
+      "category": "entertainment",
+      "size": 2,
+      "ad_ids": [
+        "190feee0-7218-4c03-9e62-525deae65f34",
+        "237f1c91-9d56-4601-ad21-f62fa239c01e"
+      ],
+      "ad_indices": [
+        1247,
+        1254
+      ]
+    },
+    {
+      "cluster_id": "entertainment-0011",
+      "category": "entertainment",
+      "size": 2,
+      "ad_ids": [
+        "cdb97d82-34eb-44c4-a36c-37c5a9814f6d",
+        "9a4f5dd2-dfe8-48ab-b7b2-5bd2ae5fc0c3"
+      ],
+      "ad_indices": [
+        1291,
+        1308
+      ]
+    },
+    {
+      "cluster_id": "entertainment-0012",
+      "category": "entertainment",
+      "size": 2,
+      "ad_ids": [
+        "e604fdca-d325-4afe-92a6-e5e067caf8b6",
+        "497a9400-91e6-467d-b64d-136c4ed01ad5"
+      ],
+      "ad_indices": [
+        1411,
+        1441
+      ]
+    },
+    {
+      "cluster_id": "entertainment-0013",
+      "category": "entertainment",
+      "size": 2,
+      "ad_ids": [
+        "497179e9-92cc-42ff-9fe7-4d0026158e67",
+        "d2544560-f06a-4c9e-abeb-a9368059c491"
+      ],
+      "ad_indices": [
+        1477,
+        1489
+      ]
+    },
+    {
+      "cluster_id": "entertainment-0014",
+      "category": "entertainment",
+      "size": 2,
+      "ad_ids": [
+        "02e1699e-f4d2-4713-9cb4-82342f99ea50",
+        "20eeb405-b8f4-4905-b995-534ad77bf63b"
+      ],
+      "ad_indices": [
+        1545,
+        1766
+      ]
+    },
+    {
+      "cluster_id": "finance-0001",
+      "category": "finance",
+      "size": 4,
+      "ad_ids": [
+        "ae89200b-886f-42ad-a654-842c1c3cdcf1",
+        "6e63e497-954e-4698-b3b7-94460379babe",
+        "1fc8740c-d723-4322-a4dc-2192f6f75f82",
+        "648b521d-9cd1-40e6-8d30-be053c29f29d"
+      ],
+      "ad_indices": [
+        49,
+        439,
+        545,
+        1801
+      ]
+    },
+    {
+      "cluster_id": "finance-0002",
+      "category": "finance",
+      "size": 3,
+      "ad_ids": [
+        "45ec0e63-0ed7-4911-b1e5-fdb6c1dc164a",
+        "e086999d-41b9-475c-b572-0affa75b2c66",
+        "700339c7-3942-4be9-ac0c-04c413973066"
+      ],
+      "ad_indices": [
+        663,
+        672,
+        681
+      ]
+    },
+    {
+      "cluster_id": "finance-0003",
+      "category": "finance",
+      "size": 3,
+      "ad_ids": [
+        "ba5a4992-30ad-48b4-a833-68db41665b1c",
+        "3edb1f86-d7a6-476c-b8c3-b0e4bef1167e",
+        "2af7219a-6e39-4d14-9980-7fda6ed973b3"
+      ],
+      "ad_indices": [
+        670,
+        964,
+        1744
+      ]
+    },
+    {
+      "cluster_id": "finance-0004",
+      "category": "finance",
+      "size": 2,
+      "ad_ids": [
+        "1463ad2a-da23-4ed1-a834-7c7ab19b3010",
+        "9a09b9ba-e128-4338-aa66-4cc5aede67d2"
+      ],
+      "ad_indices": [
+        44,
+        508
+      ]
+    },
+    {
+      "cluster_id": "finance-0005",
+      "category": "finance",
+      "size": 2,
+      "ad_ids": [
+        "a1684a8a-d6be-4978-8f12-99b7d5573d5e",
+        "b4a81dc1-cdcf-47d1-b3c7-7ca0fa3645bb"
+      ],
+      "ad_indices": [
+        191,
+        578
+      ]
+    },
+    {
+      "cluster_id": "finance-0006",
+      "category": "finance",
+      "size": 2,
+      "ad_ids": [
+        "4ac735a1-af06-4f46-96e3-3b2869cc4c65",
+        "159d6fa6-8643-4719-afc9-cdff88002218"
+      ],
+      "ad_indices": [
+        476,
+        1351
+      ]
+    },
+    {
+      "cluster_id": "finance-0007",
+      "category": "finance",
+      "size": 2,
+      "ad_ids": [
+        "aa15d39c-09e8-4bf0-a6e0-4da81accb648",
+        "23ee18c1-df67-4723-a1c9-66f39930cd8c"
+      ],
+      "ad_indices": [
+        580,
+        640
+      ]
+    },
+    {
+      "cluster_id": "finance-0008",
+      "category": "finance",
+      "size": 2,
+      "ad_ids": [
+        "5148429f-8383-4890-b88c-ceae7c37cfb2",
+        "4ffb21be-837e-47de-b3a5-783bc4beab5d"
+      ],
+      "ad_indices": [
+        585,
+        587
+      ]
+    },
+    {
+      "cluster_id": "finance-0009",
+      "category": "finance",
+      "size": 2,
+      "ad_ids": [
+        "2b23eefa-fb60-4efa-a4c0-b5aecda47aa2",
+        "3fc27d5b-68d1-4148-a4fd-f73992a8a174"
+      ],
+      "ad_indices": [
+        590,
+        599
+      ]
+    },
+    {
+      "cluster_id": "finance-0010",
+      "category": "finance",
+      "size": 2,
+      "ad_ids": [
+        "ed01a993-c7ec-4aec-8d07-e01787981bc8",
+        "3d51e2b6-8ca1-4b9f-865c-91d12c50b909"
+      ],
+      "ad_indices": [
+        652,
+        679
+      ]
+    },
+    {
+      "cluster_id": "finance-0011",
+      "category": "finance",
+      "size": 2,
+      "ad_ids": [
+        "ccfbed39-2b9c-4071-b3c5-a46771737ce6",
+        "404ed365-7206-4c5f-9d3d-f8a549e38c93"
+      ],
+      "ad_indices": [
+        664,
+        677
+      ]
+    },
+    {
+      "cluster_id": "finance-0012",
+      "category": "finance",
+      "size": 2,
+      "ad_ids": [
+        "ff5ab913-16af-4c3d-a18b-354c41a7a391",
+        "01a6a4b1-9305-473d-b104-385877aaf701"
+      ],
+      "ad_indices": [
+        860,
+        874
+      ]
+    },
+    {
+      "cluster_id": "food-0001",
+      "category": "food",
+      "size": 4,
+      "ad_ids": [
+        "112c7c8d-3d76-4c88-8f5e-b181f44b5fa5",
+        "a8aa656d-26ff-4e01-b7e6-f1e1bda900fd",
+        "1380b040-8701-40ad-ac3a-0a167f3e5fff",
+        "e9468abf-516e-4d62-a561-4e9f4ff22812"
+      ],
+      "ad_indices": [
+        1055,
+        1121,
+        1128,
+        1735
+      ]
+    },
+    {
+      "cluster_id": "food-0002",
+      "category": "food",
+      "size": 3,
+      "ad_ids": [
+        "551a5c42-1e52-4c05-b5af-8ca709bd0515",
+        "3dc76217-dd3f-4cf5-b586-110cc1f1f7cf",
+        "d202f5a9-16e1-4c3d-9449-ca6130f35573"
+      ],
+      "ad_indices": [
+        688,
+        708,
+        746
+      ]
+    },
+    {
+      "cluster_id": "food-0003",
+      "category": "food",
+      "size": 2,
+      "ad_ids": [
+        "052b70bf-f5f4-4e38-b99c-2cae46e71f18",
+        "a4d36fd2-04fd-4411-b331-00ee6b343710"
+      ],
+      "ad_indices": [
+        108,
+        162
+      ]
+    },
+    {
+      "cluster_id": "health-0001",
+      "category": "health",
+      "size": 6,
+      "ad_ids": [
+        "94bf1b59-b3df-4a9e-8f9c-709b98d1563f",
+        "3775c607-a559-4f90-ade3-07313d941ce7",
+        "706b678a-958b-49a1-84b6-d36a1b0b1537",
+        "309db707-16aa-4f5b-a7af-1d3ee882b718",
+        "fd27761d-a85b-4035-8e6b-507ced4f7ab1",
+        "b5b70022-561c-4440-bd1e-3db2598aa273"
+      ],
+      "ad_indices": [
+        985,
+        986,
+        990,
+        1008,
+        1131,
+        1485
+      ]
+    },
+    {
+      "cluster_id": "health-0002",
+      "category": "health",
+      "size": 5,
+      "ad_ids": [
+        "41d9d6a6-3c22-46bc-8342-6cda659c86bc",
+        "b2199c9d-4fde-4b60-8437-c15404b773fa",
+        "f81a7e3a-b030-4a3b-a7f6-8346acee4595",
+        "c1235fc0-1280-4b7d-8614-271cdc914e3e",
+        "ca971ccc-5d7f-4c05-a772-7aacf6da6c16"
+      ],
+      "ad_indices": [
+        14,
+        214,
+        538,
+        764,
+        1184
+      ]
+    },
+    {
+      "cluster_id": "health-0003",
+      "category": "health",
+      "size": 5,
+      "ad_ids": [
+        "d9c35f39-818a-4af5-87ec-3009027548f3",
+        "9f0b2ebf-3ce8-418e-b9b7-d2d63abc792d",
+        "bf17871d-c3c8-49b9-9661-8965f7c5c84f",
+        "ab0ff202-3878-49e1-82b5-1013fd26effd",
+        "b52501aa-21e4-4e0c-b439-79ef11ba3dcd"
+      ],
+      "ad_indices": [
+        173,
+        232,
+        236,
+        389,
+        400
+      ]
+    },
+    {
+      "cluster_id": "health-0004",
+      "category": "health",
+      "size": 5,
+      "ad_ids": [
+        "e0b95e88-a3ee-4476-8605-494fb61be946",
+        "4f36a984-74ee-4226-9590-652bf9438bdf",
+        "cb5d4166-781e-4bee-8c38-9cc33fda5dfb",
+        "d314bda4-7d46-402a-bc06-1fb7dc893699",
+        "2421f4f0-96e2-4e07-8cb5-3cedd171a3bb"
+      ],
+      "ad_indices": [
+        203,
+        658,
+        659,
+        662,
+        684
+      ]
+    },
+    {
+      "cluster_id": "health-0005",
+      "category": "health",
+      "size": 5,
+      "ad_ids": [
+        "0d83f4e4-8ca2-4be6-9338-770b8a1cba61",
+        "42faec5c-be65-4c69-a4e5-da4811dfbb19",
+        "38586f23-c99b-4652-8194-151bfc57be92",
+        "d3d651e4-e2cb-4e92-b5e5-df5c560bfabf",
+        "bee48639-baed-4a24-bbbb-5f803b844af4"
+      ],
+      "ad_indices": [
+        412,
+        466,
+        515,
+        956,
+        972
+      ]
+    },
+    {
+      "cluster_id": "health-0006",
+      "category": "health",
+      "size": 4,
+      "ad_ids": [
+        "ae39738e-68a6-45d0-a130-885fb796155d",
+        "bf41ec77-a64e-47a3-95d4-5990bc6bfad2",
+        "1b8cc6cf-d9ef-408c-9e58-9ad218e4ccaf",
+        "33e7f729-ec56-4e96-801f-28961b16f740"
+      ],
+      "ad_indices": [
+        223,
+        395,
+        807,
+        837
+      ]
+    },
+    {
+      "cluster_id": "health-0007",
+      "category": "health",
+      "size": 4,
+      "ad_ids": [
+        "9502fa14-d258-47a8-97f9-de790f134bc1",
+        "0aeb1ab9-6d64-4a94-8d3a-bdc8c6633eee",
+        "27d883cd-f3db-41e7-94d5-fa90e5d4545f",
+        "41c01538-f0be-402a-8c95-0ad63d956e8e"
+      ],
+      "ad_indices": [
+        998,
+        999,
+        1004,
+        1019
+      ]
+    },
+    {
+      "cluster_id": "health-0008",
+      "category": "health",
+      "size": 3,
+      "ad_ids": [
+        "052b70bf-f5f4-4e38-b99c-2cae46e71f18",
+        "fb808f24-ccfc-463f-94ca-037c5e3bb151",
+        "a4d36fd2-04fd-4411-b331-00ee6b343710"
+      ],
+      "ad_indices": [
+        108,
+        161,
+        162
+      ]
+    },
+    {
+      "cluster_id": "health-0009",
+      "category": "health",
+      "size": 3,
+      "ad_ids": [
+        "d159361e-47ba-4c94-88fe-6683e23ad0be",
+        "ee02d485-90f8-44d5-a153-0210cd76783c",
+        "2d17ef0c-8bec-40bc-ac74-374f104f9a32"
+      ],
+      "ad_indices": [
+        215,
+        221,
+        606
+      ]
+    },
+    {
+      "cluster_id": "health-0010",
+      "category": "health",
+      "size": 3,
+      "ad_ids": [
+        "ecb7c8e7-60ff-4457-82cd-a115fc743765",
+        "ae4152b3-6ef0-4eac-9f30-219b047af39e",
+        "fd919f16-da77-4356-8bb3-af93b94dec72"
+      ],
+      "ad_indices": [
+        433,
+        469,
+        505
+      ]
+    },
+    {
+      "cluster_id": "health-0011",
+      "category": "health",
+      "size": 3,
+      "ad_ids": [
+        "2d50f7bf-b9d8-4c67-bffa-ed5c513c1033",
+        "49d784f6-57de-4b60-8bac-9ba110420fa4",
+        "ec7030f9-86bf-49b0-a587-2a0d7d58d17a"
+      ],
+      "ad_indices": [
+        598,
+        980,
+        1041
+      ]
+    },
+    {
+      "cluster_id": "health-0012",
+      "category": "health",
+      "size": 3,
+      "ad_ids": [
+        "ed01a993-c7ec-4aec-8d07-e01787981bc8",
+        "1fc43812-a7b3-4eff-879f-328e54f41d21",
+        "3d51e2b6-8ca1-4b9f-865c-91d12c50b909"
+      ],
+      "ad_indices": [
+        652,
+        676,
+        679
+      ]
+    },
+    {
+      "cluster_id": "health-0013",
+      "category": "health",
+      "size": 3,
+      "ad_ids": [
+        "ceec0475-41b3-467f-8440-9e95048f757a",
+        "7ac38b16-440d-4497-b876-f4e176ae584b",
+        "d04c3ae0-1fb6-4ccd-b4d6-a6bea8f56b41"
+      ],
+      "ad_indices": [
+        1003,
+        1010,
+        1052
+      ]
+    },
+    {
+      "cluster_id": "health-0014",
+      "category": "health",
+      "size": 3,
+      "ad_ids": [
+        "0b097189-90b2-4576-a93d-5ce331c7f37c",
+        "86b0f650-d2f3-4c45-b8bb-c1fbd4543784",
+        "ab0e0af4-78d4-46fc-bcf8-50e156759265"
+      ],
+      "ad_indices": [
+        1283,
+        1298,
+        1346
+      ]
+    },
+    {
+      "cluster_id": "health-0015",
+      "category": "health",
+      "size": 2,
+      "ad_ids": [
+        "bea13de4-b050-4a27-8ab6-943585a97cef",
+        "350a1431-b017-462b-b738-a13e0d73151d"
+      ],
+      "ad_indices": [
+        3,
+        452
+      ]
+    },
+    {
+      "cluster_id": "health-0016",
+      "category": "health",
+      "size": 2,
+      "ad_ids": [
+        "136b7ced-c061-4408-bb4e-ffa00a0fe552",
+        "952aa7e3-6a3f-47f7-a14c-acb967d3ca61"
+      ],
+      "ad_indices": [
+        42,
+        220
+      ]
+    },
+    {
+      "cluster_id": "health-0017",
+      "category": "health",
+      "size": 2,
+      "ad_ids": [
+        "d7bc4c92-d8d1-4827-9848-f26a04b5e45f",
+        "48030437-60d1-4a72-a26a-dc3fdc88e5e1"
+      ],
+      "ad_indices": [
+        60,
+        177
+      ]
+    },
+    {
+      "cluster_id": "health-0018",
+      "category": "health",
+      "size": 2,
+      "ad_ids": [
+        "afa9b538-7e11-4be5-9db9-b0e2ebbda51c",
+        "beee4543-8069-47c8-aa03-0d12e29439ad"
+      ],
+      "ad_indices": [
+        88,
+        210
+      ]
+    },
+    {
+      "cluster_id": "health-0019",
+      "category": "health",
+      "size": 2,
+      "ad_ids": [
+        "1ab5f999-fcc3-470f-a4f1-df2149acba43",
+        "b203571a-ad81-4dba-a913-53215c8776f5"
+      ],
+      "ad_indices": [
+        107,
+        398
+      ]
+    },
+    {
+      "cluster_id": "health-0020",
+      "category": "health",
+      "size": 2,
+      "ad_ids": [
+        "e46c2bbe-0496-4d4a-ab70-27b9b930f686",
+        "468b1596-d142-4702-b18d-a0d919b68514"
+      ],
+      "ad_indices": [
+        178,
+        378
+      ]
+    },
+    {
+      "cluster_id": "health-0021",
+      "category": "health",
+      "size": 2,
+      "ad_ids": [
+        "f82b37f0-7b06-45ba-8d71-4636f84f8e28",
+        "6bdd63be-2066-4cdf-b016-697e803d0792"
+      ],
+      "ad_indices": [
+        179,
+        218
+      ]
+    },
+    {
+      "cluster_id": "health-0022",
+      "category": "health",
+      "size": 2,
+      "ad_ids": [
+        "77e228de-2e98-4522-8a15-9aa32d2b3a83",
+        "e3b288f7-d7c7-410c-9d74-9a56efa1e171"
+      ],
+      "ad_indices": [
+        180,
+        219
+      ]
+    },
+    {
+      "cluster_id": "health-0023",
+      "category": "health",
+      "size": 2,
+      "ad_ids": [
+        "a1f5c09f-b400-4dc4-bc2a-931d0c5aa667",
+        "cd203082-696b-4c85-a0f0-ad5495eae2bb"
+      ],
+      "ad_indices": [
+        190,
+        204
+      ]
+    },
+    {
+      "cluster_id": "health-0024",
+      "category": "health",
+      "size": 2,
+      "ad_ids": [
+        "8539bf9a-2a47-428b-96a1-c9780bf3fa03",
+        "a349a0b3-a7b4-4770-8ea8-d267450244ff"
+      ],
+      "ad_indices": [
+        200,
+        250
+      ]
+    },
+    {
+      "cluster_id": "health-0025",
+      "category": "health",
+      "size": 2,
+      "ad_ids": [
+        "720aa239-3e44-4b19-be21-f155daeae125",
+        "dbef7a8e-89f9-45cc-9d6c-4a3591f60d8a"
+      ],
+      "ad_indices": [
+        216,
+        231
+      ]
+    },
+    {
+      "cluster_id": "health-0026",
+      "category": "health",
+      "size": 2,
+      "ad_ids": [
+        "b0c8f4d4-0312-41e9-88af-bbbc798b08bb",
+        "0eaf34bd-c95e-493e-bdbb-6bdaf1fa9ba1"
+      ],
+      "ad_indices": [
+        222,
+        430
+      ]
+    },
+    {
+      "cluster_id": "health-0027",
+      "category": "health",
+      "size": 2,
+      "ad_ids": [
+        "a1460bd4-98c9-42a9-b99c-7bad7493fff0",
+        "1a2ce6ef-29d1-47fe-a592-8146083661db"
+      ],
+      "ad_indices": [
+        227,
+        247
+      ]
+    },
+    {
+      "cluster_id": "health-0028",
+      "category": "health",
+      "size": 2,
+      "ad_ids": [
+        "298cf857-837b-4bdc-8a16-cddf96dbf660",
+        "a0811b2b-688f-4bdc-bcb1-c730c446cc9c"
+      ],
+      "ad_indices": [
+        233,
+        243
+      ]
+    },
+    {
+      "cluster_id": "health-0029",
+      "category": "health",
+      "size": 2,
+      "ad_ids": [
+        "cdae2744-7888-4948-963b-77d5a53f524e",
+        "ee6e4e8a-17ea-407d-b337-56ba5e610740"
+      ],
+      "ad_indices": [
+        239,
+        249
+      ]
+    },
+    {
+      "cluster_id": "health-0030",
+      "category": "health",
+      "size": 2,
+      "ad_ids": [
+        "a4e1c608-077c-4ead-9d4b-363820e569f8",
+        "d764cf78-cbbf-490f-afa6-5b24fcd260f1"
+      ],
+      "ad_indices": [
+        320,
+        569
+      ]
+    },
+    {
+      "cluster_id": "health-0031",
+      "category": "health",
+      "size": 2,
+      "ad_ids": [
+        "ae717b64-6c53-4107-a112-2e3c3f92c776",
+        "3fde5aa8-66e7-4a8b-91d2-eb16e4406ffe"
+      ],
+      "ad_indices": [
+        471,
+        483
+      ]
+    },
+    {
+      "cluster_id": "health-0032",
+      "category": "health",
+      "size": 2,
+      "ad_ids": [
+        "881adbee-e2e5-449a-a220-56d3c860f638",
+        "067ef068-3b72-4746-a8d7-a26601730928"
+      ],
+      "ad_indices": [
+        626,
+        1015
+      ]
+    },
+    {
+      "cluster_id": "health-0033",
+      "category": "health",
+      "size": 2,
+      "ad_ids": [
+        "1a0df1b2-55c5-4c5a-b715-d4a251ca9573",
+        "79a0bb9f-0027-4a2c-85d5-9acd636ea3c6"
+      ],
+      "ad_indices": [
+        657,
+        675
+      ]
+    },
+    {
+      "cluster_id": "health-0034",
+      "category": "health",
+      "size": 2,
+      "ad_ids": [
+        "f4e42e3d-a0f9-4f41-999a-a8bcb4efb0aa",
+        "f637849b-b062-4cef-84e9-0574ccdbf63e"
+      ],
+      "ad_indices": [
+        724,
+        756
+      ]
+    },
+    {
+      "cluster_id": "health-0035",
+      "category": "health",
+      "size": 2,
+      "ad_ids": [
+        "50075053-62ee-4ec0-9e8e-4af9b557f6b9",
+        "ea6c7446-c3ae-4af7-9f8c-7784dac17b40"
+      ],
+      "ad_indices": [
+        854,
+        1009
+      ]
+    },
+    {
+      "cluster_id": "health-0036",
+      "category": "health",
+      "size": 2,
+      "ad_ids": [
+        "25d6c521-95ab-4181-b476-92b54329b86f",
+        "15a3c5bd-c0e8-4591-86f5-a021df2004dd"
+      ],
+      "ad_indices": [
+        988,
+        992
+      ]
+    },
+    {
+      "cluster_id": "health-0037",
+      "category": "health",
+      "size": 2,
+      "ad_ids": [
+        "1a122fc2-6d8c-4d53-90e5-703551026a42",
+        "7ed93aae-cac0-494d-a852-3186c0d8803d"
+      ],
+      "ad_indices": [
+        1007,
+        1036
+      ]
+    },
+    {
+      "cluster_id": "health-0038",
+      "category": "health",
+      "size": 2,
+      "ad_ids": [
+        "112c7c8d-3d76-4c88-8f5e-b181f44b5fa5",
+        "1380b040-8701-40ad-ac3a-0a167f3e5fff"
+      ],
+      "ad_indices": [
+        1055,
+        1128
+      ]
+    },
+    {
+      "cluster_id": "health-0039",
+      "category": "health",
+      "size": 2,
+      "ad_ids": [
+        "baf75bc2-06b5-4f14-a2ff-108897b7a6a4",
+        "22ce2adb-0da6-467a-9205-2bd63656cd8e"
+      ],
+      "ad_indices": [
+        1148,
+        1429
+      ]
+    },
+    {
+      "cluster_id": "health-0040",
+      "category": "health",
+      "size": 2,
+      "ad_ids": [
+        "bb7307b6-e5ce-4d5d-83c0-e5098f235d18",
+        "546ec870-6cf5-4c56-8c84-174365e92791"
+      ],
+      "ad_indices": [
+        1426,
+        1737
+      ]
+    },
+    {
+      "cluster_id": "health-0041",
+      "category": "health",
+      "size": 2,
+      "ad_ids": [
+        "debbea37-0f3f-439f-baa9-6f06490ec083",
+        "5c640ddf-9747-4dbb-998a-f5d3c2c8b02b"
+      ],
+      "ad_indices": [
+        1483,
+        1514
+      ]
+    },
+    {
+      "cluster_id": "health-0042",
+      "category": "health",
+      "size": 2,
+      "ad_ids": [
+        "94d246b6-f8d9-43e4-9c75-e5c320452995",
+        "7450b1fb-67bf-4549-aec4-c37657ce9ecd"
+      ],
+      "ad_indices": [
+        1521,
+        1553
+      ]
+    },
+    {
+      "cluster_id": "home-0001",
+      "category": "home",
+      "size": 3,
+      "ad_ids": [
+        "b2025385-f26f-44e3-bf75-664d6d0c4704",
+        "678b4e9a-c749-4f78-aeb1-362a47ce6e40",
+        "c1bdbb7f-a661-4953-9dc4-122930650a28"
+      ],
+      "ad_indices": [
+        1273,
+        1300,
+        1330
+      ]
+    },
+    {
+      "cluster_id": "home-0002",
+      "category": "home",
+      "size": 2,
+      "ad_ids": [
+        "70d5c65d-d780-49d7-a0d9-785ef7867861",
+        "a8124315-a8f1-467e-b4d4-fe85a8480013"
+      ],
+      "ad_indices": [
+        18,
+        1223
+      ]
+    },
+    {
+      "cluster_id": "home-0003",
+      "category": "home",
+      "size": 2,
+      "ad_ids": [
+        "225076eb-d2d2-401b-b439-c428e04fb101",
+        "ebf75eb2-841a-43ef-a858-642c6de26f37"
+      ],
+      "ad_indices": [
+        123,
+        1261
+      ]
+    },
+    {
+      "cluster_id": "home-0004",
+      "category": "home",
+      "size": 2,
+      "ad_ids": [
+        "de50250c-9a27-43ea-ac8f-ed5cdff7a6b3",
+        "15f5a11c-d8a3-4504-9441-53db3c89f607"
+      ],
+      "ad_indices": [
+        371,
+        591
+      ]
+    },
+    {
+      "cluster_id": "home-0005",
+      "category": "home",
+      "size": 2,
+      "ad_ids": [
+        "713f3ea7-de8a-47b6-9818-4287fbeeebfb",
+        "d373d3f5-9c55-4601-aa9f-d0b0707b7b0d"
+      ],
+      "ad_indices": [
+        390,
+        1407
+      ]
+    },
+    {
+      "cluster_id": "home-0006",
+      "category": "home",
+      "size": 2,
+      "ad_ids": [
+        "21942efc-4347-4c53-9f3c-c61067614a7c",
+        "310cd19f-a3bb-46b4-82b1-dc35d57d12ba"
+      ],
+      "ad_indices": [
+        410,
+        429
+      ]
+    },
+    {
+      "cluster_id": "home-0007",
+      "category": "home",
+      "size": 2,
+      "ad_ids": [
+        "a7db5057-bc2a-460e-90c8-669d79384419",
+        "9bcc1f29-1d1e-4e6a-9368-083a2dd1d0d3"
+      ],
+      "ad_indices": [
+        605,
+        611
+      ]
+    },
+    {
+      "cluster_id": "home-0008",
+      "category": "home",
+      "size": 2,
+      "ad_ids": [
+        "14627889-dc2a-474e-bc87-20f42474d458",
+        "1726a1e3-a80b-4e55-8833-551c9260e647"
+      ],
+      "ad_indices": [
+        736,
+        739
+      ]
+    },
+    {
+      "cluster_id": "home-0009",
+      "category": "home",
+      "size": 2,
+      "ad_ids": [
+        "ed48e41c-34bc-4d9a-ab87-36b01633a899",
+        "da788925-71b4-40f7-93a0-526c20b5d07a"
+      ],
+      "ad_indices": [
+        1099,
+        1118
+      ]
+    },
+    {
+      "cluster_id": "home-0010",
+      "category": "home",
+      "size": 2,
+      "ad_ids": [
+        "be4facb2-04a8-46ea-beda-b6d67945a272",
+        "b1b33c59-d915-407a-964c-5a04efc13b07"
+      ],
+      "ad_indices": [
+        1218,
+        1224
+      ]
+    },
+    {
+      "cluster_id": "home-0011",
+      "category": "home",
+      "size": 2,
+      "ad_ids": [
+        "4fe805b8-9ee6-4037-8b2e-849ef7debe90",
+        "021f1440-bbd6-426c-b090-828607374351"
+      ],
+      "ad_indices": [
+        1228,
+        1398
+      ]
+    },
+    {
+      "cluster_id": "home-0012",
+      "category": "home",
+      "size": 2,
+      "ad_ids": [
+        "0b5b1b80-4dc5-42c1-a662-cb40d48cc5b5",
+        "cfe2acc9-1093-4763-8e30-e9735ea1350e"
+      ],
+      "ad_indices": [
+        1246,
+        1758
+      ]
+    },
+    {
+      "cluster_id": "home-0013",
+      "category": "home",
+      "size": 2,
+      "ad_ids": [
+        "e5c1b6a5-cc5d-4377-a5c8-5c01f5f253f1",
+        "a95ec74a-5952-4dcd-a153-4138e9eb0602"
+      ],
+      "ad_indices": [
+        1296,
+        1703
+      ]
+    },
+    {
+      "cluster_id": "home-0014",
+      "category": "home",
+      "size": 2,
+      "ad_ids": [
+        "97753808-c2e9-467a-bcd9-c2656c929c89",
+        "3e5a58ef-89b3-42f2-ad1c-b8892cb7fa0d"
+      ],
+      "ad_indices": [
+        1439,
+        1470
+      ]
+    },
+    {
+      "cluster_id": "home-0015",
+      "category": "home",
+      "size": 2,
+      "ad_ids": [
+        "71a26123-70a4-4583-82af-cbe04a85c70d",
+        "867f5a0f-be11-477f-958b-09a8bbcd01e1"
+      ],
+      "ad_indices": [
+        1475,
+        1484
+      ]
+    },
+    {
+      "cluster_id": "home-0016",
+      "category": "home",
+      "size": 2,
+      "ad_ids": [
+        "7c23a865-5200-49eb-90ac-6cee1b2f1e00",
+        "a8470c53-2694-4fc7-be4b-c2a817023626"
+      ],
+      "ad_indices": [
+        1480,
+        1487
+      ]
+    },
+    {
+      "cluster_id": "home-0017",
+      "category": "home",
+      "size": 2,
+      "ad_ids": [
+        "114362a7-d99a-4433-89a0-3954c162e68e",
+        "3f8a08e5-7d16-43d9-a988-c0c4746363c6"
+      ],
+      "ad_indices": [
+        1711,
+        1748
+      ]
+    },
+    {
+      "cluster_id": "home-0018",
+      "category": "home",
+      "size": 2,
+      "ad_ids": [
+        "22227398-9d99-4bcc-a7a5-184b073aa314",
+        "500477b3-0ac2-4446-ba09-e37d46c887c7"
+      ],
+      "ad_indices": [
+        1747,
+        1754
+      ]
+    },
+    {
+      "cluster_id": "tech-0001",
+      "category": "tech",
+      "size": 17,
+      "ad_ids": [
+        "6f6b8d37-787a-402d-9679-e72be5be9a8c",
+        "bc405e31-2858-4e35-93a0-4985a1e92837",
+        "18d9af62-b99b-4449-8411-9bbcecc7b689",
+        "98db8304-18e5-48ef-ad5f-f06507c3bfbc",
+        "ee9d6242-a2d0-4bb6-abe8-071bb4e81794",
+        "adbb4f24-8e89-44a9-bfcf-44e57ed524a3",
+        "ff4fd7d7-2830-4f25-afa2-392fb4bcf906",
+        "7ffc0edf-0648-49fb-ba94-6a3fd616cad8",
+        "a9f6a4c9-c85c-4b21-99f9-4cfb2ef8dc85",
+        "8fb2c6e0-7207-44fc-8e5b-d675166a798c",
+        "c57acbfd-8f81-48a0-8d0f-fd47cd7f22c3",
+        "23fe1d13-cfae-40bf-ba55-96417f3ab219",
+        "bf864d4a-f1b9-4ced-80fb-7b55c6b0f6bd",
+        "e0e57332-34b9-4697-b829-d089b09cf2d1",
+        "7444c358-8a78-4fbb-a071-61b582d55029",
+        "c2295cd1-23ef-46da-bc34-d530fc481e32",
+        "8af86e8c-a904-4642-8327-202d1c18d304"
+      ],
+      "ad_indices": [
+        1518,
+        1523,
+        1526,
+        1533,
+        1538,
+        1539,
+        1543,
+        1544,
+        1546,
+        1547,
+        1549,
+        1555,
+        1556,
+        1558,
+        1560,
+        1561,
+        1562
+      ]
+    },
+    {
+      "cluster_id": "tech-0002",
+      "category": "tech",
+      "size": 14,
+      "ad_ids": [
+        "efb2bd73-135f-4cc4-907c-617f7a67eac1",
+        "5525412f-3427-4e10-9608-91e336b0a520",
+        "8289f9dc-b6ca-4aee-bdaf-5c46a55eed41",
+        "96a84677-7b89-4ce2-8644-4b370b723592",
+        "b83b15f2-33b3-4546-ac92-e740f9566241",
+        "86d3a1ff-b704-485f-91e3-9291e63d6547",
+        "955166dc-ace4-4d96-afb4-7844d0a34f26",
+        "86223fcb-cc32-4457-b026-1e83fe5aaf20",
+        "1f74b3a9-3253-4c34-a917-744009c0dd62",
+        "2670ee28-f21c-4012-a2cb-ee3eea96ad2f",
+        "a3be2df7-16b8-4717-8af2-a83c45a0bf94",
+        "216e26d7-6120-458e-906c-0880e91f9111",
+        "a2b08f5c-db32-46c5-b4dd-4a0356e2df6c",
+        "b80a3309-4e1c-49be-81d5-8cd7f3fe9ac1"
+      ],
+      "ad_indices": [
+        864,
+        877,
+        887,
+        897,
+        904,
+        912,
+        914,
+        916,
+        921,
+        1646,
+        1806,
+        1809,
+        1822,
+        1829
+      ]
+    },
+    {
+      "cluster_id": "tech-0003",
+      "category": "tech",
+      "size": 13,
+      "ad_ids": [
+        "c061e03d-bf80-428a-91a7-1e2294ab26f5",
+        "58534063-18ef-4542-a14f-ad397ed7b45a",
+        "67348ee4-3156-4636-8012-7ab89cae4640",
+        "1bee393b-92c4-45fd-913b-6c39deac5772",
+        "49986be2-e3ca-447a-9faa-2d3958b96d39",
+        "b5438a69-269a-4608-b1cf-a7ead7cd824a",
+        "14a370b8-b4b2-427d-b49a-ba76dbb2db20",
+        "41802dfe-58ac-4a89-963e-7a3706953bac",
+        "7525e5a9-e73e-4807-a3f2-a0d36897a3e6",
+        "2629f567-58b3-4de2-a0fa-eef917289e06",
+        "d4681eff-73b8-491d-ae00-e929a54d621e",
+        "7382881c-d11c-48e4-b8be-c9aec9fabc27",
+        "a2d8d4ab-70db-4f31-bc33-248f79b0ac92"
+      ],
+      "ad_indices": [
+        1640,
+        1641,
+        1643,
+        1644,
+        1652,
+        1655,
+        1662,
+        1669,
+        1670,
+        1682,
+        1685,
+        1687,
+        1688
+      ]
+    },
+    {
+      "cluster_id": "tech-0004",
+      "category": "tech",
+      "size": 7,
+      "ad_ids": [
+        "833430ca-c2c4-4c81-91fb-2eddcf9f3792",
+        "30a7ea57-f69d-40ea-8d0d-3cad91c5c6cf",
+        "b35b53ea-d2c6-4093-b989-55fc6165c52b",
+        "03984a2c-b06c-42f1-a8e0-048426fde5c4",
+        "80b0caae-e60d-4a90-8be2-a3d6593315fb",
+        "eab27a5e-3b05-4641-b713-48eb5e29fadf",
+        "c6f69875-be0c-42b4-aaba-8cea9a78ed3e"
+      ],
+      "ad_indices": [
+        1540,
+        1649,
+        1653,
+        1660,
+        1672,
+        1677,
+        1692
+      ]
+    },
+    {
+      "cluster_id": "tech-0005",
+      "category": "tech",
+      "size": 6,
+      "ad_ids": [
+        "74a8931a-167c-4e76-b41d-1629895c87ff",
+        "8a947618-c543-4c58-b803-6da34d719227",
+        "e06c3aea-4cfa-4fc3-8cd2-7d3efd66d158",
+        "2f696198-f2cb-4efb-8df0-1b46b61533cd",
+        "a9f22c9e-c690-46c2-8f77-5e4a622939ce",
+        "6e51390c-480b-4113-9cea-ff9ca650108b"
+      ],
+      "ad_indices": [
+        1528,
+        1536,
+        1550,
+        1551,
+        1552,
+        1564
+      ]
+    },
+    {
+      "cluster_id": "tech-0006",
+      "category": "tech",
+      "size": 6,
+      "ad_ids": [
+        "e78e6ea6-7aac-4359-b498-b2e18334515d",
+        "eb0dc5a9-b53d-4f18-988a-59fec3fd2ce9",
+        "661ed453-ac55-4a9a-aeef-8db8367774e5",
+        "4f4e4932-5515-4487-a3fa-66c87b7c882c",
+        "adf66dc4-3c53-4bc7-8dd8-41e65cd84651",
+        "0070fcc6-5e20-4819-80a7-7973fc27ff0d"
+      ],
+      "ad_indices": [
+        1796,
+        1797,
+        1808,
+        1831,
+        1834,
+        1837
+      ]
+    },
+    {
+      "cluster_id": "tech-0007",
+      "category": "tech",
+      "size": 5,
+      "ad_ids": [
+        "bc22f0d4-2bb2-4057-8e2f-3c682c9ae2ac",
+        "b873152b-7a02-4775-a288-d9d3d04a3e54",
+        "8e550fa6-990e-4ab9-8a0e-1bfc8180a40a",
+        "144efd43-7076-43d3-adc5-7c934d240582",
+        "005c0ca1-809d-4ec3-835f-a68f6ed6d7e9"
+      ],
+      "ad_indices": [
+        802,
+        823,
+        825,
+        830,
+        1568
+      ]
+    },
+    {
+      "cluster_id": "tech-0008",
+      "category": "tech",
+      "size": 5,
+      "ad_ids": [
+        "02a9129b-4da3-4c62-818d-839bee99c976",
+        "43ee7a80-a1eb-4d0a-bda9-afbdfc6c1202",
+        "ef98b3f9-da80-4cdb-9ef7-f5b4b374237e",
+        "3ec993ad-42ec-4aa2-b508-c64e5e6fb8e5",
+        "5cc429cb-aab4-493a-9ffc-479101ba999d"
+      ],
+      "ad_indices": [
+        1263,
+        1266,
+        1279,
+        1293,
+        1337
+      ]
+    },
+    {
+      "cluster_id": "tech-0009",
+      "category": "tech",
+      "size": 5,
+      "ad_ids": [
+        "f7c93ec6-c1e9-4dae-b43f-4e4ac94a6160",
+        "ceb7f47f-35d5-429c-b10c-e4650ff44a68",
+        "b3892949-20f5-4e32-b93e-23c4d36aa2c9",
+        "fb844242-e35d-4eee-b175-423b7f9a54aa",
+        "85362ce5-ab37-4ddc-87d1-20cdccae7b0f"
+      ],
+      "ad_indices": [
+        1799,
+        1810,
+        1812,
+        1821,
+        1838
+      ]
+    },
+    {
+      "cluster_id": "tech-0010",
+      "category": "tech",
+      "size": 4,
+      "ad_ids": [
+        "1104f6dc-0c3d-4dc9-b5fb-e006a4de2509",
+        "a0d41958-87e0-4d90-a262-e469b0fa530f",
+        "c996e0fb-3fa7-43ce-af9b-c48dd5620142",
+        "daf427f0-77d1-4dd1-a2c8-61d694f546df"
+      ],
+      "ad_indices": [
+        40,
+        263,
+        1180,
+        1191
+      ]
+    },
+    {
+      "cluster_id": "tech-0011",
+      "category": "tech",
+      "size": 4,
+      "ad_ids": [
+        "d0955046-e34a-49d6-b787-f03b2337decf",
+        "73f7ec13-b8e8-4280-8546-98e4c41d5edb",
+        "db42ff9c-b730-48d1-b1ef-7360e259449d",
+        "d21b74fc-8e81-45d7-873c-4aaf4cb82d11"
+      ],
+      "ad_indices": [
+        369,
+        373,
+        1269,
+        1301
+      ]
+    },
+    {
+      "cluster_id": "tech-0012",
+      "category": "tech",
+      "size": 4,
+      "ad_ids": [
+        "e1771a70-42dd-4f4c-81d1-a65f3377da8b",
+        "df9200a8-11d0-41ea-92e2-84031ad21f45",
+        "7c85fad9-0741-493a-9346-f56458cb04c8",
+        "6ccd49ce-8dc7-41f7-a31d-07439346cfc0"
+      ],
+      "ad_indices": [
+        1353,
+        1361,
+        1370,
+        1399
+      ]
+    },
+    {
+      "cluster_id": "tech-0013",
+      "category": "tech",
+      "size": 3,
+      "ad_ids": [
+        "e0b95e88-a3ee-4476-8605-494fb61be946",
+        "d314bda4-7d46-402a-bc06-1fb7dc893699",
+        "2421f4f0-96e2-4e07-8cb5-3cedd171a3bb"
+      ],
+      "ad_indices": [
+        203,
+        662,
+        684
+      ]
+    },
+    {
+      "cluster_id": "tech-0014",
+      "category": "tech",
+      "size": 3,
+      "ad_ids": [
+        "f6ef0f10-1efa-4028-8844-7d71d26c05b4",
+        "61dec012-1884-4ab9-88ef-39670d8ac895",
+        "00c1e978-5651-4d42-9049-ec5f4dea31e8"
+      ],
+      "ad_indices": [
+        447,
+        563,
+        1026
+      ]
+    },
+    {
+      "cluster_id": "tech-0015",
+      "category": "tech",
+      "size": 3,
+      "ad_ids": [
+        "2d50f7bf-b9d8-4c67-bffa-ed5c513c1033",
+        "49d784f6-57de-4b60-8bac-9ba110420fa4",
+        "ec7030f9-86bf-49b0-a587-2a0d7d58d17a"
+      ],
+      "ad_indices": [
+        598,
+        980,
+        1041
+      ]
+    },
+    {
+      "cluster_id": "tech-0016",
+      "category": "tech",
+      "size": 3,
+      "ad_ids": [
+        "58840db8-2da3-4747-be91-57ede1c93d2d",
+        "a8cd7ee3-f397-4367-952d-86b5acfffd3e",
+        "71f0bb05-7a91-4f0a-be26-f7d8eff17871"
+      ],
+      "ad_indices": [
+        870,
+        915,
+        936
+      ]
+    },
+    {
+      "cluster_id": "tech-0017",
+      "category": "tech",
+      "size": 3,
+      "ad_ids": [
+        "83db049e-c4d1-4318-a498-cb7239ab4fc0",
+        "445544bd-5dd5-4801-ab36-68b9d67d79d3",
+        "fb78a0e1-29a9-4e7f-8fc6-51df66c60ed3"
+      ],
+      "ad_indices": [
+        873,
+        1030,
+        1039
+      ]
+    },
+    {
+      "cluster_id": "tech-0018",
+      "category": "tech",
+      "size": 3,
+      "ad_ids": [
+        "e9425a7e-512b-4a03-9581-1d8af4902003",
+        "4b698959-67bd-4a60-833f-c0f36e38b755",
+        "e1402ace-53d0-4a89-a9d2-42b745a6e997"
+      ],
+      "ad_indices": [
+        926,
+        927,
+        1815
+      ]
+    },
+    {
+      "cluster_id": "tech-0019",
+      "category": "tech",
+      "size": 3,
+      "ad_ids": [
+        "5e9193ff-742f-4abc-878c-908f882223fd",
+        "c9acd500-3788-49d4-86ba-e34435e4c143",
+        "5f46eec0-983f-46b6-883a-adfb790b26a3"
+      ],
+      "ad_indices": [
+        1541,
+        1798,
+        1800
+      ]
+    },
+    {
+      "cluster_id": "tech-0020",
+      "category": "tech",
+      "size": 3,
+      "ad_ids": [
+        "572ff2b7-3f51-46ba-9b13-9a0eef4599da",
+        "b850fff7-381b-4db0-ae78-ca2a8fb38646",
+        "3b150925-065e-450d-8965-c89226b0a4f4"
+      ],
+      "ad_indices": [
+        1611,
+        1723,
+        1730
+      ]
+    },
+    {
+      "cluster_id": "tech-0021",
+      "category": "tech",
+      "size": 3,
+      "ad_ids": [
+        "adbf4828-d85f-4a2e-85a2-dcec8fb3770e",
+        "d4f5b20c-cce0-448a-a9b7-66c8bbf7f78e",
+        "a5041905-2423-4f3f-93db-03c21fbeeff4"
+      ],
+      "ad_indices": [
+        1663,
+        1665,
+        1694
+      ]
+    },
+    {
+      "cluster_id": "tech-0022",
+      "category": "tech",
+      "size": 3,
+      "ad_ids": [
+        "83405031-ad27-467e-8cf9-34732ba7ab4c",
+        "05349df6-c05f-456a-8ab4-820d4709428d",
+        "9c3a1d56-2b7d-4c9d-8ccc-bf3ca97e7223"
+      ],
+      "ad_indices": [
+        1761,
+        1767,
+        1790
+      ]
+    },
+    {
+      "cluster_id": "tech-0023",
+      "category": "tech",
+      "size": 2,
+      "ad_ids": [
+        "bea13de4-b050-4a27-8ab6-943585a97cef",
+        "350a1431-b017-462b-b738-a13e0d73151d"
+      ],
+      "ad_indices": [
+        3,
+        452
+      ]
+    },
+    {
+      "cluster_id": "tech-0024",
+      "category": "tech",
+      "size": 2,
+      "ad_ids": [
+        "64bb46c9-ab01-43ec-ae51-a980cad1d99f",
+        "43566ba9-4f0d-455c-943f-9e6b112337fe"
+      ],
+      "ad_indices": [
+        152,
+        840
+      ]
+    },
+    {
+      "cluster_id": "tech-0025",
+      "category": "tech",
+      "size": 2,
+      "ad_ids": [
+        "aa15d39c-09e8-4bf0-a6e0-4da81accb648",
+        "23ee18c1-df67-4723-a1c9-66f39930cd8c"
+      ],
+      "ad_indices": [
+        580,
+        640
+      ]
+    },
+    {
+      "cluster_id": "tech-0026",
+      "category": "tech",
+      "size": 2,
+      "ad_ids": [
+        "d06269be-2eaa-450f-a8d5-366eaa75d65e",
+        "abde5890-ce22-4ece-be59-6a8de8fb130a"
+      ],
+      "ad_indices": [
+        601,
+        646
+      ]
+    },
+    {
+      "cluster_id": "tech-0027",
+      "category": "tech",
+      "size": 2,
+      "ad_ids": [
+        "f4e42e3d-a0f9-4f41-999a-a8bcb4efb0aa",
+        "f637849b-b062-4cef-84e9-0574ccdbf63e"
+      ],
+      "ad_indices": [
+        724,
+        756
+      ]
+    },
+    {
+      "cluster_id": "tech-0028",
+      "category": "tech",
+      "size": 2,
+      "ad_ids": [
+        "3ea550dd-80cd-4313-8b2e-bd5756415592",
+        "c39af0bc-8c99-476b-b6e4-3e514f80c8f8"
+      ],
+      "ad_indices": [
+        796,
+        826
+      ]
+    },
+    {
+      "cluster_id": "tech-0029",
+      "category": "tech",
+      "size": 2,
+      "ad_ids": [
+        "ff5ab913-16af-4c3d-a18b-354c41a7a391",
+        "01a6a4b1-9305-473d-b104-385877aaf701"
+      ],
+      "ad_indices": [
+        860,
+        874
+      ]
+    },
+    {
+      "cluster_id": "tech-0030",
+      "category": "tech",
+      "size": 2,
+      "ad_ids": [
+        "673220e7-e93b-48af-84f5-1893e4abef4b",
+        "ab106fb5-a6c1-4110-8978-53c97ff1f8d1"
+      ],
+      "ad_indices": [
+        861,
+        882
+      ]
+    },
+    {
+      "cluster_id": "tech-0031",
+      "category": "tech",
+      "size": 2,
+      "ad_ids": [
+        "68ca3f03-4bad-4723-89d7-abe4bf9ed9e4",
+        "442c7bff-d73e-4f45-85ba-475c20996888"
+      ],
+      "ad_indices": [
+        896,
+        918
+      ]
+    },
+    {
+      "cluster_id": "tech-0032",
+      "category": "tech",
+      "size": 2,
+      "ad_ids": [
+        "b9e49219-4bed-4bef-a523-0b7ce2a781f1",
+        "bd5d374d-9911-447d-8520-13c40dcade05"
+      ],
+      "ad_indices": [
+        903,
+        922
+      ]
+    },
+    {
+      "cluster_id": "tech-0033",
+      "category": "tech",
+      "size": 2,
+      "ad_ids": [
+        "27d883cd-f3db-41e7-94d5-fa90e5d4545f",
+        "41c01538-f0be-402a-8c95-0ad63d956e8e"
+      ],
+      "ad_indices": [
+        1004,
+        1019
+      ]
+    },
+    {
+      "cluster_id": "tech-0034",
+      "category": "tech",
+      "size": 2,
+      "ad_ids": [
+        "11d4fbcc-37e2-46e8-9f5b-32e2b28e23aa",
+        "dae8d14f-c03b-42e3-b8fd-7e03545bbcbb"
+      ],
+      "ad_indices": [
+        1046,
+        1115
+      ]
+    },
+    {
+      "cluster_id": "tech-0035",
+      "category": "tech",
+      "size": 2,
+      "ad_ids": [
+        "0b5b1b80-4dc5-42c1-a662-cb40d48cc5b5",
+        "cfe2acc9-1093-4763-8e30-e9735ea1350e"
+      ],
+      "ad_indices": [
+        1246,
+        1758
+      ]
+    },
+    {
+      "cluster_id": "tech-0036",
+      "category": "tech",
+      "size": 2,
+      "ad_ids": [
+        "190feee0-7218-4c03-9e62-525deae65f34",
+        "237f1c91-9d56-4601-ad21-f62fa239c01e"
+      ],
+      "ad_indices": [
+        1247,
+        1254
+      ]
+    },
+    {
+      "cluster_id": "tech-0037",
+      "category": "tech",
+      "size": 2,
+      "ad_ids": [
+        "59b13b79-333d-464c-892b-97c520a7ee5a",
+        "d3c5c241-0256-4322-b40f-5e2f695293ef"
+      ],
+      "ad_indices": [
+        1260,
+        1679
+      ]
+    },
+    {
+      "cluster_id": "tech-0038",
+      "category": "tech",
+      "size": 2,
+      "ad_ids": [
+        "2f226fb8-2475-4f77-86e9-f4829f28958f",
+        "e9f238be-35e1-4afd-a18a-c7106aa96dbf"
+      ],
+      "ad_indices": [
+        1272,
+        1338
+      ]
+    },
+    {
+      "cluster_id": "tech-0039",
+      "category": "tech",
+      "size": 2,
+      "ad_ids": [
+        "86b0f650-d2f3-4c45-b8bb-c1fbd4543784",
+        "ab0e0af4-78d4-46fc-bcf8-50e156759265"
+      ],
+      "ad_indices": [
+        1298,
+        1346
+      ]
+    },
+    {
+      "cluster_id": "tech-0040",
+      "category": "tech",
+      "size": 2,
+      "ad_ids": [
+        "497179e9-92cc-42ff-9fe7-4d0026158e67",
+        "d2544560-f06a-4c9e-abeb-a9368059c491"
+      ],
+      "ad_indices": [
+        1477,
+        1489
+      ]
+    },
+    {
+      "cluster_id": "tech-0041",
+      "category": "tech",
+      "size": 2,
+      "ad_ids": [
+        "a0c662ca-f3dc-4c63-9ab4-272237642159",
+        "3242e591-ffa4-4a18-ad96-41fff811f251"
+      ],
+      "ad_indices": [
+        1495,
+        1511
+      ]
+    },
+    {
+      "cluster_id": "tech-0042",
+      "category": "tech",
+      "size": 2,
+      "ad_ids": [
+        "469d2d4c-b712-4435-b2fd-d50267e4ed1c",
+        "0cc057f5-3705-45f3-8e6f-16db8a80496f"
+      ],
+      "ad_indices": [
+        1519,
+        1520
+      ]
+    },
+    {
+      "cluster_id": "tech-0043",
+      "category": "tech",
+      "size": 2,
+      "ad_ids": [
+        "94d246b6-f8d9-43e4-9c75-e5c320452995",
+        "7450b1fb-67bf-4549-aec4-c37657ce9ecd"
+      ],
+      "ad_indices": [
+        1521,
+        1553
+      ]
+    },
+    {
+      "cluster_id": "tech-0044",
+      "category": "tech",
+      "size": 2,
+      "ad_ids": [
+        "f4f168b2-8450-40f7-8752-784eda1fa300",
+        "c1f0e535-87dd-40b2-ac94-5110ecad3586"
+      ],
+      "ad_indices": [
+        1522,
+        1537
+      ]
+    },
+    {
+      "cluster_id": "tech-0045",
+      "category": "tech",
+      "size": 2,
+      "ad_ids": [
+        "543f5409-1995-463b-be4c-9b8b1cf614fb",
+        "6d5b7e0d-325d-4037-88fe-8c63961eba67"
+      ],
+      "ad_indices": [
+        1525,
+        1542
+      ]
+    },
+    {
+      "cluster_id": "tech-0046",
+      "category": "tech",
+      "size": 2,
+      "ad_ids": [
+        "4b3fcfb0-d55a-43b4-a1d2-dc81fabde97c",
+        "6bbc2dc5-0f0d-4843-8cb2-d259a3ee39a4"
+      ],
+      "ad_indices": [
+        1527,
+        1554
+      ]
+    },
+    {
+      "cluster_id": "tech-0047",
+      "category": "tech",
+      "size": 2,
+      "ad_ids": [
+        "59146dcc-52a9-4bc1-a1a3-eb05ca7f5755",
+        "2145b7e4-0c86-4c46-a5ed-53f88b5041d6"
+      ],
+      "ad_indices": [
+        1530,
+        1548
+      ]
+    },
+    {
+      "cluster_id": "tech-0048",
+      "category": "tech",
+      "size": 2,
+      "ad_ids": [
+        "0b820ef2-1b11-4a3a-b94f-a4836b3dd328",
+        "bc56736e-579b-464d-8c8a-2d74c81691a2"
+      ],
+      "ad_indices": [
+        1580,
+        1582
+      ]
+    },
+    {
+      "cluster_id": "tech-0049",
+      "category": "tech",
+      "size": 2,
+      "ad_ids": [
+        "8a0336f4-e5df-41bb-93cb-bebac0a054ef",
+        "84f6e642-9302-45f7-b930-45111d4c8664"
+      ],
+      "ad_indices": [
+        1651,
+        1656
+      ]
+    },
+    {
+      "cluster_id": "tech-0050",
+      "category": "tech",
+      "size": 2,
+      "ad_ids": [
+        "f36bb772-4ebd-4d97-ba1d-7343a1d3e4d1",
+        "62de86dd-1af9-4a46-b1c1-a89dcf9c2530"
+      ],
+      "ad_indices": [
+        1673,
+        1693
+      ]
+    },
+    {
+      "cluster_id": "tech-0051",
+      "category": "tech",
+      "size": 2,
+      "ad_ids": [
+        "a7192db6-76a3-4ce4-b5ff-5c58193d192f",
+        "74645f74-daae-4ca1-92eb-edcd0049db1d"
+      ],
+      "ad_indices": [
+        1676,
+        1690
+      ]
+    },
+    {
+      "cluster_id": "tech-0052",
+      "category": "tech",
+      "size": 2,
+      "ad_ids": [
+        "cd7d8574-8ee2-4507-a942-76323e550c4c",
+        "187cc887-c2fb-498d-94ba-c77018d518a1"
+      ],
+      "ad_indices": [
+        1698,
+        1785
+      ]
+    },
+    {
+      "cluster_id": "tech-0053",
+      "category": "tech",
+      "size": 2,
+      "ad_ids": [
+        "5a354b40-3bf2-4471-9d62-9796870badb7",
+        "998d870e-ca84-40ee-8006-6bbd23089120"
+      ],
+      "ad_indices": [
+        1705,
+        1811
+      ]
+    },
+    {
+      "cluster_id": "tech-0054",
+      "category": "tech",
+      "size": 2,
+      "ad_ids": [
+        "eb89a720-d671-4b06-ac11-74562d0ac208",
+        "16c8e5cc-1a9d-4d77-ad02-c3941b53f76d"
+      ],
+      "ad_indices": [
+        1706,
+        1843
+      ]
+    },
+    {
+      "cluster_id": "tech-0055",
+      "category": "tech",
+      "size": 2,
+      "ad_ids": [
+        "4a0ecb2b-fbdf-4d2f-887c-05a62a01ce92",
+        "c25ce6d3-95bb-4537-9254-885173df1bfe"
+      ],
+      "ad_indices": [
+        1714,
+        1776
+      ]
+    },
+    {
+      "cluster_id": "tech-0056",
+      "category": "tech",
+      "size": 2,
+      "ad_ids": [
+        "c2f40246-9e5b-4fbb-9001-7c6cc802b554",
+        "b2c20a33-14b5-4169-920c-5318ddcbc2e3"
+      ],
+      "ad_indices": [
+        1722,
+        1726
+      ]
+    },
+    {
+      "cluster_id": "tech-0057",
+      "category": "tech",
+      "size": 2,
+      "ad_ids": [
+        "c23160e7-616d-4c5a-93b3-bd45dee21d8a",
+        "9b256483-f945-42f1-91f2-85ee38a5d1ba"
+      ],
+      "ad_indices": [
+        1804,
+        1816
+      ]
+    },
+    {
+      "cluster_id": "travel-0001",
+      "category": "travel",
+      "size": 6,
+      "ad_ids": [
+        "a253761e-ed0c-49f6-909d-859ab79b6dbc",
+        "904f3d7b-c475-479c-b7e3-ce4bd51a3a5f",
+        "ad90889b-53a8-4842-9172-4c34d172f737",
+        "69a2b529-a14b-483c-bf75-1a4271b261c4",
+        "6710cad3-2c6d-40c3-8e92-58c81a8f3e5f",
+        "8b36c9bf-441c-4a52-9f37-e5c0864d0c59"
+      ],
+      "ad_indices": [
+        785,
+        787,
+        788,
+        789,
+        798,
+        828
+      ]
+    },
+    {
+      "cluster_id": "travel-0002",
+      "category": "travel",
+      "size": 4,
+      "ad_ids": [
+        "1afcaa7d-90d8-49fe-b8c5-a3e017a97563",
+        "12b262cf-c65e-4c23-ae6b-8c04c3c1e1b4",
+        "be6bc9a0-8b38-4ca8-a958-473c3dd2bb8f",
+        "86492a3a-11da-44c9-b6c8-64bd817c64ee"
+      ],
+      "ad_indices": [
+        21,
+        98,
+        1360,
+        1394
+      ]
+    },
+    {
+      "cluster_id": "travel-0003",
+      "category": "travel",
+      "size": 4,
+      "ad_ids": [
+        "bc22f0d4-2bb2-4057-8e2f-3c682c9ae2ac",
+        "b873152b-7a02-4775-a288-d9d3d04a3e54",
+        "8e550fa6-990e-4ab9-8a0e-1bfc8180a40a",
+        "005c0ca1-809d-4ec3-835f-a68f6ed6d7e9"
+      ],
+      "ad_indices": [
+        802,
+        823,
+        825,
+        1568
+      ]
+    },
+    {
+      "cluster_id": "travel-0004",
+      "category": "travel",
+      "size": 2,
+      "ad_ids": [
+        "ccfbed39-2b9c-4071-b3c5-a46771737ce6",
+        "404ed365-7206-4c5f-9d3d-f8a549e38c93"
+      ],
+      "ad_indices": [
+        664,
+        677
+      ]
+    },
+    {
+      "cluster_id": "travel-0005",
+      "category": "travel",
+      "size": 2,
+      "ad_ids": [
+        "d690eb10-51b6-4dc2-8639-43cd9d1affdc",
+        "3c44dd37-9cee-497c-ae23-274cfe06db17"
+      ],
+      "ad_indices": [
+        793,
+        794
+      ]
+    },
+    {
+      "cluster_id": "travel-0006",
+      "category": "travel",
+      "size": 2,
+      "ad_ids": [
+        "3ea550dd-80cd-4313-8b2e-bd5756415592",
+        "c39af0bc-8c99-476b-b6e4-3e514f80c8f8"
+      ],
+      "ad_indices": [
+        796,
+        826
+      ]
+    },
+    {
+      "cluster_id": "travel-0007",
+      "category": "travel",
+      "size": 2,
+      "ad_ids": [
+        "dbde9266-24d8-472e-88f0-d9807cabeb8b",
+        "38c631fa-e248-4539-b2c9-c67264a60c87"
+      ],
+      "ad_indices": [
+        1125,
+        1133
+      ]
+    },
+    {
+      "cluster_id": "travel-0008",
+      "category": "travel",
+      "size": 2,
+      "ad_ids": [
+        "08947d3b-1ef0-4472-8324-5ceed3d63121",
+        "ee65c20e-f3c7-4105-b362-1a6d1239d977"
+      ],
+      "ad_indices": [
+        1719,
+        1728
+      ]
+    }
+  ]
+}
