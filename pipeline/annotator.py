@@ -18,6 +18,7 @@ from pathlib import Path
 from typing import Any
 
 from openai import AsyncOpenAI
+from tqdm import tqdm
 
 log = logging.getLogger(__name__)
 logging.basicConfig(
@@ -27,10 +28,11 @@ logging.basicConfig(
 )
 
 MODEL: str = "gpt-5-mini"
-TEMPERATURE: float = 0.0
 MAX_CONCURRENT: int = 20
 BATCH_SIZE: int = 10
 MAX_RETRIES: int = 3
+SAVE_EVERY: int = 50        # checkpoint frequency for 2A / 2B (ads)
+SAVE_EVERY_BATCH: int = 10  # checkpoint frequency for Step 4 (batches)
 
 CATEGORIES: list[str] = [
     "ecommerce", "tech", "health", "beauty", "education",
@@ -100,10 +102,10 @@ _FEW_SHOT_2B: list[dict[str, str]] = [
 
 _SYSTEM_STEP4 = (
     "You are an expert ad copy analyst.\n"
-    "For each ad: split the body into individual sentences, assign exactly one pattern "
-    "label per sentence (choose the most dominant intent), and list the labels in order "
-    "as \"sequence\". Return one object per ad in the \"annotations\" field, preserving input order.\n\n"
-    "Pattern labels:\n"
+    "For each ad, identify the rhetorical pattern sequence — the ordered list of persuasion "
+    "techniques used, one code per functional block (sentence or clause).\n"
+    "Return one object per ad in the \"annotations\" field, preserving input order.\n\n"
+    "Pattern codes:\n"
     "AH — Attention Hook   PP — Pain Point     AG — Agitation\n"
     "FB — Feature&Benefit  SP — Social Proof   BA — Before&After\n"
     "AU — Authority        UR — Urgency        OF — Offer\n"
@@ -125,16 +127,7 @@ _FEW_SHOT_STEP4: list[dict[str, str]] = [
     {
         "role": "assistant",
         "content": json.dumps({
-            "annotations": [{
-                "ad_index": 0,
-                "sentences": [
-                    {"text": "Still wasting hours on manual reports?", "pattern": "PP"},
-                    {"text": "DataPulse auto-generates your analytics in seconds.", "pattern": "FB"},
-                    {"text": "Trusted by 10,000+ teams.", "pattern": "SP"},
-                    {"text": "Start free today.", "pattern": "CTA"},
-                ],
-                "sequence": ["PP", "FB", "SP", "CTA"],
-            }],
+            "annotations": [{"ad_index": 0, "sequence": ["PP", "FB", "SP", "CTA"]}],
         }),
     },
 ]
@@ -174,24 +167,12 @@ _SCHEMA_STEP4 = _wrap_schema("annotations_response", {
                 "type": "object",
                 "properties": {
                     "ad_index": {"type": "integer"},
-                    "sentences": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "text": {"type": "string"},
-                                "pattern": {"type": "string", "enum": PATTERN_CODES},
-                            },
-                            "required": ["text", "pattern"],
-                            "additionalProperties": False,
-                        },
-                    },
                     "sequence": {
                         "type": "array",
                         "items": {"type": "string", "enum": PATTERN_CODES},
                     },
                 },
-                "required": ["ad_index", "sentences", "sequence"],
+                "required": ["ad_index", "sequence"],
                 "additionalProperties": False,
             },
         },
@@ -248,7 +229,9 @@ async def _infer_product_desc(
     return str(json.loads(content)["product_desc"])
 
 
-async def run_2a(client: AsyncOpenAI, ads: list[dict[str, Any]]) -> None:
+async def run_2a(
+    client: AsyncOpenAI, ads: list[dict[str, Any]], checkpoint_path: Path
+) -> None:
     missing: list[int] = [i for i, ad in enumerate(ads) if not ad.get("product_desc")]
     if not missing:
         log.info("2A: all ads already have product_desc — skipping")
@@ -257,17 +240,21 @@ async def run_2a(client: AsyncOpenAI, ads: list[dict[str, Any]]) -> None:
     sem = asyncio.Semaphore(MAX_CONCURRENT)
     done_count: int = 0
 
-    async def _do(idx: int) -> None:
-        nonlocal done_count
-        try:
-            ads[idx]["product_desc"] = await _infer_product_desc(client, sem, ads[idx]["body"])
-        except Exception as exc:
-            log.error("2A: ad %d failed: %s", idx, exc)
-        done_count += 1
-        if done_count % 100 == 0:
-            log.info("2A: %d / %d done", done_count, len(missing))
+    with tqdm(total=len(missing), desc="2A product_desc", unit="ad", dynamic_ncols=True) as bar:
+        async def _do(idx: int) -> None:
+            nonlocal done_count
+            try:
+                ads[idx]["product_desc"] = await _infer_product_desc(
+                    client, sem, ads[idx]["body"]
+                )
+            except Exception as exc:
+                log.error("2A: ad %d failed: %s", idx, exc)
+            done_count += 1
+            bar.update(1)
+            if done_count % SAVE_EVERY == 0:
+                _save_checkpoint(ads, checkpoint_path)
 
-    await asyncio.gather(*[_do(i) for i in missing])
+        await asyncio.gather(*[_do(i) for i in missing])
     log.info("2A: complete")
 
 
@@ -288,7 +275,9 @@ async def _infer_categories(
     return list(json.loads(content)["categories"])
 
 
-async def run_2b(client: AsyncOpenAI, ads: list[dict[str, Any]]) -> None:
+async def run_2b(
+    client: AsyncOpenAI, ads: list[dict[str, Any]], checkpoint_path: Path
+) -> None:
     missing: list[int] = [i for i, ad in enumerate(ads) if not ad.get("categories")]
     if not missing:
         log.info("2B: all ads already have categories — skipping")
@@ -297,19 +286,21 @@ async def run_2b(client: AsyncOpenAI, ads: list[dict[str, Any]]) -> None:
     sem = asyncio.Semaphore(MAX_CONCURRENT)
     done_count: int = 0
 
-    async def _do(idx: int) -> None:
-        nonlocal done_count
-        try:
-            ads[idx]["categories"] = await _infer_categories(
-                client, sem, ads[idx]["product_desc"]
-            )
-        except Exception as exc:
-            log.error("2B: ad %d failed: %s", idx, exc)
-        done_count += 1
-        if done_count % 100 == 0:
-            log.info("2B: %d / %d done", done_count, len(missing))
+    with tqdm(total=len(missing), desc="2B categories ", unit="ad", dynamic_ncols=True) as bar:
+        async def _do(idx: int) -> None:
+            nonlocal done_count
+            try:
+                ads[idx]["categories"] = await _infer_categories(
+                    client, sem, ads[idx]["product_desc"]
+                )
+            except Exception as exc:
+                log.error("2B: ad %d failed: %s", idx, exc)
+            done_count += 1
+            bar.update(1)
+            if done_count % SAVE_EVERY == 0:
+                _save_checkpoint(ads, checkpoint_path)
 
-    await asyncio.gather(*[_do(i) for i in missing])
+        await asyncio.gather(*[_do(i) for i in missing])
     log.info("2B: complete")
 
 
@@ -361,43 +352,58 @@ async def _annotate_batch(
             fallback.append(ann)
         except Exception as exc:
             log.error("Step 4: individual annotation failed for ad in batch (pos %d): %s", i, exc)
-            fallback.append({
-                "ad_index": i,
-                "sentences": [{"text": ad["body"], "pattern": "AH"}],
-                "sequence": ["AH"],
-            })
+            fallback.append({"ad_index": i, "sequence": ["AH"]})
     return fallback
 
 
-async def run_step4(client: AsyncOpenAI, ads: list[dict[str, Any]]) -> None:
-    missing: list[int] = [i for i, ad in enumerate(ads) if not ad.get("sentences")]
+async def run_step4(
+    client: AsyncOpenAI, ads: list[dict[str, Any]], checkpoint_path: Path
+) -> None:
+    missing: list[int] = [i for i, ad in enumerate(ads) if not ad.get("sequence")]
     if not missing:
         log.info("Step 4: all ads already annotated — skipping")
         return
-    log.info("Step 4: annotating %d / %d ads (batch_size=%d)", len(missing), len(ads), BATCH_SIZE)
-    sem = asyncio.Semaphore(MAX_CONCURRENT)
-
     batches: list[list[int]] = [
         missing[i: i + BATCH_SIZE] for i in range(0, len(missing), BATCH_SIZE)
     ]
+    log.info(
+        "Step 4: annotating %d ads in %d batches (concurrency=%d)",
+        len(missing), len(batches), MAX_CONCURRENT,
+    )
+    sem = asyncio.Semaphore(MAX_CONCURRENT)
     done_count: int = 0
 
-    async def _do_batch(indices: list[int]) -> None:
-        nonlocal done_count
-        batch_ads = [ads[i] for i in indices]
-        try:
-            results = await _annotate_batch(client, sem, batch_ads)
-            for ann in results:
-                ads[indices[ann["ad_index"]]]["sentences"] = ann["sentences"]
-                ads[indices[ann["ad_index"]]]["sequence"] = ann["sequence"]
-        except Exception as exc:
-            log.error("Step 4: batch %s failed entirely: %s", indices[:3], exc)
-        done_count += 1
-        if done_count % 20 == 0:
-            log.info("Step 4: %d / %d batches done", done_count, len(batches))
+    with tqdm(total=len(batches), desc="Step4 patterns", unit="batch", dynamic_ncols=True) as bar:
+        async def _do_batch(indices: list[int]) -> None:
+            nonlocal done_count
+            batch_ads = [ads[i] for i in indices]
+            try:
+                results = await _annotate_batch(client, sem, batch_ads)
+                for ann in results:
+                    ads[indices[ann["ad_index"]]]["sequence"] = _dedup_consecutive(ann["sequence"])
+            except Exception as exc:
+                log.error("Step 4: batch %s failed entirely: %s", indices[:3], exc)
+            done_count += 1
+            bar.update(1)
+            bar.set_postfix(ads=done_count * BATCH_SIZE)
+            if done_count % SAVE_EVERY_BATCH == 0:
+                _save_checkpoint(ads, checkpoint_path)
 
-    await asyncio.gather(*[_do_batch(b) for b in batches])
+        await asyncio.gather(*[_do_batch(b) for b in batches])
     log.info("Step 4: complete")
+
+
+# ── Helpers ───────────────────────────────────────────────────────────────────
+
+def _save_checkpoint(ads: list[dict[str, Any]], path: Path) -> None:
+    path.write_text(json.dumps(ads, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def _dedup_consecutive(seq: list[str]) -> list[str]:
+    """Collapse consecutive identical pattern codes: [A,A,B,B,A] → [A,B,A]."""
+    if not seq:
+        return seq
+    return [seq[0]] + [b for a, b in zip(seq, seq[1:]) if a != b]
 
 
 # ── Normalisation ─────────────────────────────────────────────────────────────
@@ -432,13 +438,13 @@ async def annotate(
 
     client = AsyncOpenAI()
 
-    await run_2a(client, ads)
-    checkpoint_path.write_text(json.dumps(ads, ensure_ascii=False, indent=2), encoding="utf-8")
+    await run_2a(client, ads, checkpoint_path)
+    _save_checkpoint(ads, checkpoint_path)
 
-    await run_2b(client, ads)
-    checkpoint_path.write_text(json.dumps(ads, ensure_ascii=False, indent=2), encoding="utf-8")
+    await run_2b(client, ads, checkpoint_path)
+    _save_checkpoint(ads, checkpoint_path)
 
-    await run_step4(client, ads)
+    await run_step4(client, ads, checkpoint_path)
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(ads, ensure_ascii=False, indent=2), encoding="utf-8")
