@@ -421,6 +421,34 @@ def _normalize(ads: list[dict[str, Any]]) -> None:
             del ad["category"]
 
 
+def _normalize_for_output(ads: list[dict[str, Any]]) -> None:
+    """Keep the committed annotated artifact stable and sequence-only."""
+    field_order: list[str] = [
+        "ad_id",
+        "body",
+        "product_desc",
+        "categories",
+        "sequence",
+        "source",
+        "_cta_text",
+        "_page_categories",
+        "_page_name",
+    ]
+    for index, ad in enumerate(ads):
+        ad.pop("sentences", None)
+        sequence = ad.get("sequence", [])
+        if isinstance(sequence, list):
+            ad["sequence"] = _dedup_consecutive([str(code) for code in sequence])
+        ordered: dict[str, Any] = {}
+        for field in field_order:
+            if field in ad:
+                ordered[field] = ad[field]
+        for field in sorted(field for field in ad if field not in ordered):
+            ordered[field] = ad[field]
+        ads[index] = ordered
+    ads.sort(key=lambda item: str(item.get("ad_id", "")))
+
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 async def annotate(
@@ -431,6 +459,10 @@ async def annotate(
     if checkpoint_path.exists():
         ads: list[dict[str, Any]] = json.loads(checkpoint_path.read_text(encoding="utf-8"))
         log.info("Resuming from checkpoint: %d ads loaded", len(ads))
+    elif output_path.exists():
+        ads = json.loads(output_path.read_text(encoding="utf-8"))
+        _normalize(ads)
+        log.info("Loaded %d cached annotated ads from %s", len(ads), output_path)
     else:
         ads = json.loads(input_path.read_text(encoding="utf-8"))
         _normalize(ads)
@@ -446,8 +478,9 @@ async def annotate(
 
     await run_step4(client, ads, checkpoint_path)
 
+    _normalize_for_output(ads)
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(json.dumps(ads, ensure_ascii=False, indent=2), encoding="utf-8")
+    output_path.write_text(json.dumps(ads, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     log.info("Saved %d annotated ads -> %s", len(ads), output_path)
 
     checkpoint_path.unlink(missing_ok=True)
