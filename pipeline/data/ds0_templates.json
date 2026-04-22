@@ -1,5 +1,5 @@
 {
-  "source": "data\\ds0_annotated.json",
+  "source": "data/ds0_annotated.json",
   "template_count": 959,
   "ad_count": 1844,
   "templates": [
@@ -27,9 +27,9 @@
         "tech",
         "travel"
       ],
-      "example_ad_id": "9a4580b2-e9e2-43a9-903a-6be0f41ca847",
-      "example_body": "Online car buying, your way.\nDid you know you can buy a car online on Autotrader? Really! Then, you can pick it up at a dealership or have it delivered.",
-      "example_product_desc": "An online car marketplace that lets customers purchase vehicles online and arrange either dealership pickup or home delivery."
+      "example_ad_id": "00591a0b-95c0-455d-9767-782e64de7a72",
+      "example_body": "Cat & Dog Probiotic Supplements\nFortiFlora is made with exceptional science to help keep your pet's gut health exceptionally regular.",
+      "example_product_desc": "A probiotic dietary supplement for cats and dogs formulated to support digestive/gut health and regularity."
     },
     {
       "id": "tmpl_2be94739222b",
@@ -55,9 +55,9 @@
         "tech",
         "travel"
       ],
-      "example_ad_id": "1393674a-21b9-435c-b848-fa6b7904e1fa",
-      "example_body": "You drool, you buy!\nGet our delicious Grilled Chicken, served with Rice and Charro Beans, Corn Tortillas, Grilled Onions, and Limes.  And don't forget about our Salsa Verde and Salsa Roja!\nOrder Ahead and Skip the Line at Pollo Regio . Place Orders Online or on your Mobile Phone.",
-      "example_product_desc": "A grilled chicken meal from Pollo Regio served with rice, charro beans, corn tortillas, grilled onions, limes, and salsas, available for online or mobile pre-order and pickup."
+      "example_ad_id": "00c1e978-5651-4d42-9049-ec5f4dea31e8",
+      "example_body": "TikTok Lite For Friends & Fun\nShort story adventures await you. Download TikTok Lite now.",
+      "example_product_desc": "A lightweight mobile app for creating, sharing, and watching short-form social videos."
     },
     {
       "id": "tmpl_c10640796137",
@@ -81,9 +81,9 @@
         "tech",
         "travel"
       ],
-      "example_ad_id": "f9f41976-cc11-4c8d-9da9-1ab1c0b08e97",
-      "example_body": "{{product.name}}\n🛍️ Shop now at MICAS – where style meets savings! 🌞",
-      "example_product_desc": "Insufficient information to identify a specific product — the ad only promotes the MICAS store without describing the item."
+      "example_ad_id": "036ef090-2bad-4b40-a27b-6238664a8fdd",
+      "example_body": "{{product.name}}\nShop our selection of toys and games at Amazon!",
+      "example_product_desc": "An Amazon storefront section offering a range of toys and games for purchase."
     },
     {
       "id": "tmpl_c29a4af1c148",
@@ -106,9 +106,9 @@
         "home",
         "tech"
       ],
-      "example_ad_id": "67bf5d20-d8d9-4036-9f46-fef4937b8887",
-      "example_body": "Buy {{product.price strip_zeros}} {{product.name}}\nShop Now 🛒 Sports Nutrition Products that Work for Pro and Elite Athletes 🚴🏻 We Turn Athletes into Champions 🚀",
-      "example_product_desc": "A line of sports nutrition supplements formulated to support performance and recovery for professional and elite athletes."
+      "example_ad_id": "016e8fb3-4cb1-4ea9-bd7c-90458e18e52e",
+      "example_body": "Enroll Today With 3 Easy Steps\nAttend school online using Acellus Gold - a revolutionary platform that accelerates learning.",
+      "example_product_desc": "Acellus Gold is an online schooling platform that provides accelerated curriculum and coursework for students to attend school remotely."
     },
     {
       "id": "tmpl_8db464a85675",
@@ -131,9 +131,9 @@
         "tech",
         "travel"
       ],
-      "example_ad_id": "7e39cf6e-5742-4fae-8ec2-e670c0ef3e01",
-      "example_body": "{{product.name}}\nBuy now & Pay later with 4 interest-free payments using Klarna. Orders $75+ ship free.",
-      "example_product_desc": "An online retail product (unspecified) being sold with Klarna buy-now-pay-later financing and free shipping on orders over $75."
+      "example_ad_id": "049b889b-11c9-448e-aed0-db95fb3de89a",
+      "example_body": "Shine And Protect Your Off-Road Toys\nShine and Renew Plastic, Vinyl, and Rubber Surfaces!\n✅ Bring out a high-gloss shine\n✅ Protect surfaces against stain and corrosion\n✅ Reduce mud adhesion to make your next clean up easier\nFree Shipping",
+      "example_product_desc": "A protective restorer for off-road vehicle plastic, vinyl, and rubber surfaces that cleans, adds a high-gloss finish, and reduces mud adhesion."
     },
     {
       "id": "tmpl_bb959633d9bd",
@@ -158,9 +158,9 @@
         "tech",
         "travel"
       ],
-      "example_ad_id": "bd94d6d2-69df-43a1-b433-403d405b7f6f",
-      "example_body": "Bird's Nest Drinks\nShop online for 100% all natural bird's nests, soups, drinks, and gifts. You can depend on us to provide you with the highest quality authentic bird’s nests products.",
-      "example_product_desc": "An online retailer offering authentic, all‑natural bird’s nest products, including raw nests, soups, drinks, and gift items."
+      "example_ad_id": "0373f7cc-b543-4d7b-976c-18a297b40776",
+      "example_body": "A nation isn't just built, it's powered\nIn 2026, Chevron is planning to invest $10.5 billion in U.S. energy projects - fueling infrastructure and supporting jobs nationwide.\nThanks to thousands of U.S.-based employees, Chevron boosted its production by nearly 20% last year.",
+      "example_product_desc": "Chevron's planned $10.5 billion U.S. energy investment program to develop domestic energy infrastructure, boost production, and support jobs."
     },
     {
       "id": "tmpl_8336bfe0780d",
@@ -182,9 +182,9 @@
         "tech",
         "travel"
       ],
-      "example_ad_id": "b2f55091-35f2-4f6f-afd1-716ca53e1539",
-      "example_body": "Your Purchase, Their Path to Education. Every SOS Book Empowers a Student Through EdForAll.\n\nQuote of the day: \"Success is a strange phenomenon. A thousand days of struggle are followed by the exhilaration of victory and a one-day celebration before it's back to the grind again.\" - Dr Marko Saravanja",
-      "example_product_desc": "A book whose purchase directs proceeds to the EdForAll program to fund educational support for students."
+      "example_ad_id": "02a9129b-4da3-4c62-818d-839bee99c976",
+      "example_body": "A Kid's Smartphone With Premium Parental Controls\nLooking for the best phone for your kid? The Bark Phone has you covered!\n\n🟩 Allow the apps you want\n🟥 Block the apps you don't\n👀 Monitor texts & over 30 other apps.\n📴 Turn off internet to make it talk & text only.\n📍 GPS powered location tracking.\n🔒 Remote phone lock.\nBuilt By Parents, For Parents",
+      "example_product_desc": "A smartphone designed for children that includes integrated parental controls such as app allow/block, text and app monitoring, internet cutoff for talk-and-text only, GPS location tracking, and remote locking."
     },
     {
       "id": "tmpl_6dab7625fe2b",
@@ -208,9 +208,9 @@
         "tech",
         "travel"
       ],
-      "example_ad_id": "8c597607-231d-4684-964a-a9a3f80ed502",
-      "example_body": "Vitamins that make you a priority\nCustomers have reported noticeably better skin, less bloating, increased energy levels, and healthier hair-growth.",
-      "example_product_desc": "A daily vitamin supplement formulated to support skin health, reduce bloating, boost energy, and promote healthier hair growth."
+      "example_ad_id": "163fa7da-b659-45d6-abed-9a2a1091b1b7",
+      "example_body": "Sunrise in #sedona. Just outside of the town we found this beautiful #tree.  We waited until #sunrise.  Of course, I had to take a #starburst \nThis place in #arizona is fantastic \n.#usa#america#desert#natgeo#natural#nature#photography# #wildlife_planet#nature_perfections#natgeo#getinsta#natgeotravel#instafollow#eartjpix#ig_masterpiece#earth##landscape#landscapephotography#magicdestination #instagram #instafollow#photographer #amazing",
+      "example_product_desc": "An Instagram photography account showcasing landscape and nature photos from Sedona, Arizona."
     },
     {
       "id": "tmpl_f96952eeb95e",
@@ -234,9 +234,9 @@
         "tech",
         "travel"
       ],
-      "example_ad_id": "ab62ba90-d8ff-4322-8965-89cdb3fd90d2",
-      "example_body": "Natural, Chelated & Easily Absorbed - Free Shipping!\nIntroducing Keystone: The Ultimate All-Natural Dog Vitamin-Mineral Supplement 🐾\n\n🌟 Irresistible Taste and Comprehensive Support: Keystone is the most complete formula available:\n- Bright Eyes 👁️\n- Healthy Skin & Coat 🧴\n- Smooth Digestion 🍽️\n- Robust Immune System 🦠\n- Calm Nervous System 🐶\n\n💎 Chelated Goodness: Keystone contains chelated vitamins, minerals, enzymes, and amino acids for maximum absorption and effectiveness.\n\nGive your dog the gift of vitality and well-being. Try Keystone today, and watch them thrive!\nHelps support the eyes, skin, coat, digestion, immune system, nervous system. Contains chelated vitamins, minerals, enzymes, and amino acids.",
-      "example_product_desc": "An all-natural, chelated vitamin and mineral supplement for dogs containing enzymes and amino acids to support eye health, skin and coat, digestion, immune function, and the nervous system."
+      "example_ad_id": "0d023edb-d3e4-4481-a4e8-e03eeeeca07d",
+      "example_body": "Master of Science in Information Systems at CSULB\nLooking to lead in tech, not just keep up with it? 📈 The Master of Science in Information Systems (MSIS) at CSULB blends business strategy, data analytics, AI, and cybersecurity to prepare you for leadership in a rapidly evolving digital world.\n\n✅ Complete in 21 months\n✅ Evening classes for working professionals\n✅ Specializations in AI or Cybersecurity\n✅ Hands-on experience with real-world tools\n✅ Networking with industry experts\n\nIf you're looking to build expertise in high-demand fields like AI and cybersecurity, this Master's program is designed to advance your career.\n\n🔗 Learn more + start your application: https://bit.ly/4axoGe5\nThe Master of Science in Information Systems (MSIS) program at California State University, Long Beach (CSULB) offers an immersive in-person experience that combines business strategy with advanced technology skills. Designed for professionals ready to pivot, level up, or lead in the tech sector, th...",
+      "example_product_desc": "A 21-month in-person Master of Science in Information Systems (MSIS) degree at California State University, Long Beach offering evening classes, AI and cybersecurity specializations, and hands-on, industry-focused training for working professionals."
     },
     {
       "id": "tmpl_1e70220ab5f6",
@@ -260,9 +260,9 @@
         "tech",
         "travel"
       ],
-      "example_ad_id": "bfdeed11-3803-41b5-ac26-7c21bb1acf76",
-      "example_body": "Hamdard Erqember\nJab bemari se ho jaen nidhal, toh sehatyabi ke baad karein Hamdard Erqember ka istemal kiun ke ye hai taqat aur tandurusti ka be-misal formula!\n\nShop now: https://pk.hamdardglobal.com/hamdard-erqember-syrup-175-ml.html\n\n#HamdardPakistan #HamdardErqember #taqat #tandrusti",
-      "example_product_desc": "A herbal tonic syrup designed to restore strength and vitality after illness."
+      "example_ad_id": "1dad69f5-d1c5-49af-98f6-07df6edb2f2f",
+      "example_body": "Impress your guests only at Melo's! Celebrate with Westholme Australian Wagyu Tenderloin Grade 8 with Lobster Tail & Burnt Onion Bone Marrow Sauce! Four Course Meal served with Soup, Salad & Dessert! Book your table now! \n\nCall or message us for Reservations:\n\nQuezon City- 8924-9194 / 8924-9168 \nViber/Whattsapp: 09054946560 / 09458952187 \n#58 Sgt. Esguerra Ave. Diliman, Quezon City \n\nAlabang- 87712288 / 87713945 \nViber/Whattsapp: 09178830123 / 09957647958 \nWestgate Center Alabang, Muntinlupa \n\nThe Fort- 8403-5968 / 8403-5969 \nForbes Town Center 29th Street, \nBurgos Circle, Fort Taguig \n\n#MeatYouAtMelos #MelosAtHome #Steak #Wagyu #Since1988 #35years #andCounting #CelebrateFamily #CelebrateLove #CelebrateLife #MelosAlabang #MelosQuezonCity #MelosBGC #fyp #supportlocal",
+      "example_product_desc": "Melo's is a restaurant offering premium four-course steakhouse meals featuring Westholme Australian Wagyu tenderloin with lobster tail and burnt onion bone marrow sauce, available at multiple Metro Manila locations by reservation."
     },
     {
       "id": "tmpl_0d720905a9d5",
@@ -284,9 +284,9 @@
         "home",
         "tech"
       ],
-      "example_ad_id": "2c831ede-5955-4ac3-a35e-1193a4725a49",
-      "example_body": "Hamdard Ispaghol\nKabz aur tazabiyat ki shikayat? Rozana ek chammach Hamdard Ispaghol ke istemal se paayein rahat aur behtereen hazma!\n\nShop now: https://pk.hamdardglobal.com/hamdard-ispaghol-classic-100-gram-jar.html\n\n#Hamdard #Ispaghol #SehatmandZindagi #KabzSeRahat #TazabiyatSeRahat",
-      "example_product_desc": "A natural psyllium husk (ispaghol) fiber supplement from Hamdard intended to relieve constipation and acidity and support digestion."
+      "example_ad_id": "0b85b79a-a8d4-4018-9a1c-16bfbf7908fa",
+      "example_body": "Power smarter with next‑gen passives\nFrom energy storage to thermal stability—engineers are facing new design challenges. The Q1 2026 IP&E News edition brings you the latest breakthroughs in high‑power passive components that are built to meet these demands. \n\nExplore advancements in capacitors, inductors, and resistors that minimize losses, enhance reliability, and scale to higher voltages and currents. \n\nStay ahead in today’s fast‑moving electronics landscape with insights that matter. \n\nDownload now https://bit.ly/4v5Wmr7 \n\n#HighPowerPassives #EnergyStorageSolutions #PowerEfficiency #ThermalManagement #ElectronicsDesign #IPENews #ArrowElectronics",
+      "example_product_desc": "A downloadable Q1 2026 industry newsletter from IP&E News providing technical insights and developments in high‑power passive components (capacitors, inductors, resistors) for electronics engineers."
     },
     {
       "id": "tmpl_04a4f0ab02e1",
@@ -307,9 +307,9 @@
         "health",
         "tech"
       ],
-      "example_ad_id": "471cae57-2fc6-4f8d-97ee-bd9eee6acb9d",
-      "example_body": "👜 Designer bags, 💰 huge discounts, ✔️ trusted sellers. Live on Whatnot!",
-      "example_product_desc": "A live-streaming online marketplace and app where vetted sellers sell designer bags to buyers in real time."
+      "example_ad_id": "000bd880-c62b-4f84-95ea-6229b5273346",
+      "example_body": "The Most Important Skill You Will Ever Learn In Life?",
+      "example_product_desc": "A self-improvement course or program that teaches a foundational life skill to improve personal or professional outcomes."
     },
     {
       "id": "tmpl_5cec023bbdd0",
@@ -328,9 +328,9 @@
         "tech",
         "travel"
       ],
-      "example_ad_id": "87344021-6fab-4adc-8802-6228e61190e8",
-      "example_body": "If you haven’t tried the @cerave Shampoo and Conditioner yet, i’m truly not sure what you’re waiting for!! #ceravepartner",
-      "example_product_desc": "A paired shampoo and conditioner hair-care line from CeraVe designed to cleanse and condition hair."
+      "example_ad_id": "0061b061-9d2a-4f7b-9d8e-da489583fe37",
+      "example_body": "#1 Selling Hoodie in America\nThe Most Viral Hoodie Brand Online!",
+      "example_product_desc": "An online apparel brand that designs and sells hoodies."
     },
     {
       "id": "tmpl_b44d0fc1ac46",
@@ -352,9 +352,9 @@
         "tech",
         "travel"
       ],
-      "example_ad_id": "44c908a8-3e59-4aa3-89e5-3dadd541627a",
-      "example_body": "Summer Sale - Buy 1 Get 1 Free! ☀️\nUpgrade your shower with a filtered showerhead! 😍",
-      "example_product_desc": "A showerhead with an integrated water filter that reduces chlorine, sediment, and other impurities to deliver cleaner, filtered shower water."
+      "example_ad_id": "1415eead-e379-478c-a2bc-58faabb697cb",
+      "example_body": "50% Off The Best Selling Hoodie Dress Today\nBe the MVP of thoughtful Gifts with the Warmy Hoodie Dress!",
+      "example_product_desc": "A cozy hoodie-style dress that combines sweatshirt comfort with a dress silhouette, designed as a warm, giftable casual garment."
     },
     {
       "id": "tmpl_adb707630395",
@@ -376,9 +376,9 @@
         "home",
         "tech"
       ],
-      "example_ad_id": "d51d7e7d-4914-4f98-8ee6-df707397e13a",
-      "example_body": "Yup, you can buy new outfits without breaking the bank. Save on fashion ⚡️ Shop on Whatnot!",
-      "example_product_desc": "A mobile marketplace app for buying discounted new and secondhand clothing and fashion items."
+      "example_ad_id": "365b1bd9-8a92-4575-941e-29990b459fc4",
+      "example_body": "TickPick: No Hidden Fee Tickets 🎟🙌\nDownload TickPick for the guaranteed best prices on 21 Savage tickets! 🎶",
+      "example_product_desc": "A ticket marketplace app for buying live event tickets with transparent, no-hidden-fee pricing and a best-price guarantee."
     },
     {
       "id": "tmpl_a34e676bd615",
@@ -400,9 +400,9 @@
         "tech",
         "travel"
       ],
-      "example_ad_id": "d7bc4c92-d8d1-4827-9848-f26a04b5e45f",
-      "example_body": "Bestselling PCOS Solution of 2025\nYou’ve tried the diets, the workouts, the prescriptions, and still saw no progress. This formula was built to match your body’s needs",
-      "example_product_desc": "A dietary supplement formula formulated to help manage symptoms of polycystic ovary syndrome (PCOS) and support hormonal and metabolic health."
+      "example_ad_id": "1a0df1b2-55c5-4c5a-b715-d4a251ca9573",
+      "example_body": "Get essential information on healthcare costs and insurance basics.\nManaging your anxiety treatment shouldn't stress you out.\nThis free, easy-to-use website is powered by our database of billions of billed medical and dental services and features comprehensive educational resources to bring transparency to healthcare costs and the process you’ll go through.",
+      "example_product_desc": "A free, easy-to-use website that provides searchable, data-driven estimates of healthcare and dental costs along with educational resources on insurance basics and treatment processes."
     },
     {
       "id": "tmpl_ee34934614ab",
@@ -422,9 +422,9 @@
         "tech",
         "travel"
       ],
-      "example_ad_id": "a349a0b3-a7b4-4770-8ea8-d267450244ff",
-      "example_body": "Flavorless. Blends Well. No Aftertaste\nRadiant Skin, Stronger Hair, and Healthier Joints – All in One Scoop",
-      "example_product_desc": "A flavorless powdered dietary supplement that mixes into beverages to support skin, hair, and joint health."
+      "example_ad_id": "14525d8e-bab5-4c2f-ba27-4447a046a7dc",
+      "example_body": "CyberPower diseña y fabrica sistemas UPS, PDUs, supresores de picos, accesorios, software, racks y gabinetes para entornos empresariales, corporativos, gubernamentales, educativos, PyMES y domésticos.",
+      "example_product_desc": "A manufacturer of power protection and infrastructure equipment—UPS systems, PDUs, surge suppressors, accessories, management software, and racks/cabinets—for enterprise, government, education, SMB, and home environments."
     },
     {
       "id": "tmpl_2efee8c3ed37",
@@ -446,9 +446,9 @@
         "other",
         "tech"
       ],
-      "example_ad_id": "18fa3ae3-3e17-4565-a9c3-209640462bd2",
-      "example_body": "{{product.name}}\nShop now and save up to an additional 75% Off ALL rugs today! Free Shipping & Free Returns",
-      "example_product_desc": "An online retailer specializing in area and decorative rugs."
+      "example_ad_id": "062ecd52-0766-44e0-93ed-32b1a4c2d6a5",
+      "example_body": "Permanent Holiday & Year Round Programmable Lighting for Homes & Businesses.\n\nBeat the holiday rush and enjoy up to 20% off peak-season pricing this summer.",
+      "example_product_desc": "A permanently installed programmable exterior lighting system for homes and businesses that provides customizable holiday and year‑round decorative lighting."
     },
     {
       "id": "tmpl_184b14462d79",
@@ -472,9 +472,9 @@
         "tech",
         "travel"
       ],
-      "example_ad_id": "45e17e42-63ff-44b9-b347-70d93eae6be6",
-      "example_body": "Discover the joi of healthy hair. Find your joi with Joico. ✨",
-      "example_product_desc": "Joico is a haircare brand offering salon-quality shampoos, conditioners, and treatments to improve hair health, shine, and manageability."
+      "example_ad_id": "0b5b1b80-4dc5-42c1-a662-cb40d48cc5b5",
+      "example_body": "Smart Shades Made Simple\nCreate instant privacy for the perfect family gathering with Caséta smart shades.\nCaséta smart shades",
+      "example_product_desc": "Motorized smart window shades that provide adjustable privacy and light control and integrate with the Caséta home automation system."
     },
     {
       "id": "tmpl_7f781f3e1dfc",
@@ -495,9 +495,9 @@
         "food",
         "home"
       ],
-      "example_ad_id": "2cea236b-a086-441a-8f66-21395d8e92b9",
-      "example_body": "{{product.name}}\nTime to Update Your Wardrobe🍁\nBuy 4 Get 1 Free(code: IC50)👏\nShop Now in https://kol.incerunmen.com/12GWX",
-      "example_product_desc": "An online retailer selling men's clothing and seasonal wardrobe items."
+      "example_ad_id": "1a8070ea-7e70-41d3-98fe-bf434dbb03b5",
+      "example_body": "{{product.name}}\nAll Jackets are now 50% off. Shop your favorites.",
+      "example_product_desc": "An apparel retailer that sells jackets and outerwear."
     },
     {
       "id": "tmpl_48c00672fcae",
@@ -519,9 +519,9 @@
         "home",
         "travel"
       ],
-      "example_ad_id": "1b777836-cf65-4595-89c1-bd29e24b3911",
-      "example_body": "County TV & Appliance\nAt County TV & Appliance, We GUARANTEE You'll Find the Lowest Price",
-      "example_product_desc": "A retail store selling televisions and household appliances that promotes low-price guarantees."
+      "example_ad_id": "0270dc46-256b-4225-ae44-23d0285a6562",
+      "example_body": "Hospitality Experts\nHRS - Hotel and Restaurant Supplies - is a renowned dealer in the Kingdom of Bahrain for exclusive equipment used in the food and hospitality industry.",
+      "example_product_desc": "A Bahrain-based supplier of equipment and supplies for hotels, restaurants, and the food-service industry."
     },
     {
       "id": "tmpl_7694f2d6dd34",
@@ -545,9 +545,9 @@
         "home",
         "tech"
       ],
-      "example_ad_id": "127ad83c-aeec-4e5a-b078-25b05daeae58",
-      "example_body": "Nouvelle\nRev Up: Color & Care in One Step ✨\n\nEnhance your hair with Rev Up, the direct-coloring mask that boosts shine, hydration, and softness—without ammonia or developer. A gentle, temporary way to refresh your shade or extend color vibrancy.\n\nLet the fragrance elevate your experience:\n🍋 Top Notes: Lemon, Pink Grapefruit, Orange Peel, Curly Mint, Eucalyptus\n🌸 Heart Notes: Orange Blossom, Jasmine, Lily of the Valley, Pelargonium\n🌿 Base Notes: Iris Rhizomes, White Woods\n\nAvailable in 11 stunning shades—tap the link in bio to explore them all!\n\n#revup #haircolor#nouvelle#semipermanentcolor #innovationhaircarecolorcare",
-      "example_product_desc": "A semi-permanent, ammonia- and developer-free direct-coloring hair mask that deposits temporary color while conditioning hair to boost shine, hydration, and softness."
+      "example_ad_id": "081fcdad-15fb-452a-9956-35eaec9ff543",
+      "example_body": "Built For The Cold\n❄️ WINTER ARC HAS BEGUN ❄️\nThe season of comfort for most… and commitment for a few.\nOur Saint Kaizen hoodies are built for those who stay the course — who train, grind, and grow when the world slows down.\n\nHeavyweight cotton. Purpose-built design.\nEach piece a reminder: discipline doesn’t freeze when the temperature drops.\n\n⚔️ Faith-built. Cold-ready.\n👉 Grab yours now and enter your Winter Arc.\nRise This Winter",
+      "example_product_desc": "A heavyweight Saint Kaizen hoodie made from heavy cotton with a purpose-built design for cold-weather training and everyday wear."
     },
     {
       "id": "tmpl_c311f24304be",
@@ -567,9 +567,9 @@
         "finance",
         "home"
       ],
-      "example_ad_id": "39fde19b-aed5-4f2b-b887-990ac5b0c4d0",
-      "example_body": "{{product.name}}\nPeople are absolutely raving about our t-shirts and how they're the most comfortable thing they own.\n\nClick \"Shop now\" to see what the hype is about.",
-      "example_product_desc": "An e-commerce brand selling casual t-shirts."
+      "example_ad_id": "26b88ecf-53a9-4d56-b53b-2979125a438e",
+      "example_body": "Your scalp called…it wants in on your skincare routine🤝🤗 3 months in using this @obagimedical Biostim Scalp Serum and it’s been a game changer - more hydration, softer roots, and the BEST part, my hair looks fuller!  You can now shop at Obagi.com or your nearest Obagi provider #ad",
+      "example_product_desc": "A topical scalp serum formulated to hydrate and nourish the scalp and improve hair texture and fullness."
     },
     {
       "id": "tmpl_3949b898612f",
@@ -590,9 +590,9 @@
         "tech",
         "travel"
       ],
-      "example_ad_id": "c83e5fd7-d93b-4718-ad3b-e02ad3c65b12",
-      "example_body": "Getting to the NFL Draft didn’t happen overnight #Ad\n\nIt’s about the work you don’t see with the people who made it possible. Now I’m stepping into what’s next, and @TideLaundry is keeping my new colors ready for every gameday ahead.",
-      "example_product_desc": "A laundry detergent and fabric-care product line for cleaning clothes and preserving garment colors."
+      "example_ad_id": "112c7c8d-3d76-4c88-8f5e-b181f44b5fa5",
+      "example_body": "The Easiest Way to Eat Healthy\n“My cholesterol is 1/3 of what it was, I have lost 20 lbs and I feel amazing every day!” - Jessica K, Customer Review\nQuick • Easy • Nutritious",
+      "example_product_desc": "A subscription meal service delivering quick, easy, nutritious prepared meals to support healthier eating."
     },
     {
       "id": "tmpl_3de4c55548c8",
@@ -612,9 +612,9 @@
         "home",
         "tech"
       ],
-      "example_ad_id": "70a06180-f034-4a7a-8053-1acdf07be9ed",
-      "example_body": "Shop Engagement Rings\nThe perfect ring does exist -- and it's right here. Stop searching and shop now.",
-      "example_product_desc": "An online jewelry retailer specializing in engagement rings."
+      "example_ad_id": "079f6f6a-3cf6-4292-a83a-6561dd32819d",
+      "example_body": "Start Transformation Now!\nWhether you're a fresh beginner or an experienced gym maniac, try this new gym workout that targets every muscle group for a full-body burn!\nTake 1-minute quiz to start now!",
+      "example_product_desc": "An exercise program offering a full-body gym workout that targets every muscle group and includes a short quiz to tailor routines for all fitness levels."
     },
     {
       "id": "tmpl_5d3d808caab5",
@@ -632,9 +632,9 @@
         "finance",
         "tech"
       ],
-      "example_ad_id": "887fe2e2-8902-4b5d-9fa9-081ad99e8dd8",
-      "example_body": "Read more about Scholarships to Study in Seoul!\nLearn more about Scholarships to Study in Seoul in this Guide.\nLearn more",
-      "example_product_desc": "A guide listing scholarships and application information for students seeking to study in Seoul."
+      "example_ad_id": "1964044c-acd3-4bba-b231-765650a586c2",
+      "example_body": "👉 Follow @itwithwali here on IG to discover how to finally break into Tech.",
+      "example_product_desc": "An Instagram account offering guidance, tips, and resources to help people break into the tech industry."
     },
     {
       "id": "tmpl_2c2f416e92a1",
@@ -656,9 +656,9 @@
         "health",
         "home"
       ],
-      "example_ad_id": "d6728ae3-4301-46c3-bd37-a70935a089a1",
-      "example_body": "{{product.name}}\nGNC is your one-stop shop for all things protein and performance. Online & In-store",
-      "example_product_desc": "A retail chain (online and in-store) that sells nutritional supplements, protein products, and performance-focused health and fitness goods."
+      "example_ad_id": "21ca4939-eb5e-49fc-8d43-76b89f32f066",
+      "example_body": "Why Women 50+ Are Choosing This Over Botox\nIn Korea — the world’s most advanced beauty market — women rely on smart formulas, not needles. This anti-aging foundation delivers an instant smoothing and lifting look that makes skin appear years younger in seconds. No injections. No $300 creams. Just visible results you can see the moment you apply.\nInstant smoothing. No needles required.",
+      "example_product_desc": "A Korean-formulated anti-aging foundation that instantly smooths and lifts skin to reduce the visible signs of aging without injections."
     },
     {
       "id": "tmpl_46b32da02e0d",
@@ -674,9 +674,9 @@
         "education",
         "health"
       ],
-      "example_ad_id": "ecb7c8e7-60ff-4457-82cd-a115fc743765",
-      "example_body": "Prescribing Information: https://www.merck.com/product/usa/pi_circulars/k/keytruda/keytruda_pi.pdf\n(pembrolizumab) Click “Learn More” for link to Med Guide and visit keytruda.com for additional information.",
-      "example_product_desc": "A prescription monoclonal antibody immunotherapy (pembrolizumab/Keytruda) that blocks the PD‑1 pathway and is used to treat various types of cancer."
+      "example_ad_id": "5d72f1df-ecb7-4a85-b33e-4ed217b15a10",
+      "example_body": "International Society of Automation\nJoin us in-person for cybersecurity training! Browse our offerings and get started! Learn more.",
+      "example_product_desc": "In-person cybersecurity training courses for industrial automation professionals offered by the International Society of Automation."
     },
     {
       "id": "tmpl_08cc8d74e7ca",
@@ -694,9 +694,9 @@
         "health",
         "tech"
       ],
-      "example_ad_id": "e377795f-0260-43c7-8f55-b39b91e71124",
-      "example_body": "Unlimited Downloads\n6000+ Premium Themes & Plugins for $10\nBuy Premium WP themes and plugins at very cheap price, 100% Free from virus and malware. Unlimited website usage. Lifetime free updates.",
-      "example_product_desc": "A digital storefront offering access to 6,000+ premium WordPress themes and plugins for a low one-time fee with unlimited downloads and lifetime updates."
+      "example_ad_id": "11ec3acb-69d8-4aca-a573-c547a8110eb8",
+      "example_body": "{{product.brand}} {{product.name}}\nNeed electronic components fast?\nOrder from TRC and get same-day shipping!\n• No delays, no hassle\n• Keep your project on track",
+      "example_product_desc": "A supplier/distributor of electronic components that sells parts with same-day shipping to support fast project timelines."
     },
     {
       "id": "tmpl_9a982e713220",
@@ -715,9 +715,9 @@
         "finance",
         "tech"
       ],
-      "example_ad_id": "ca180f1c-bbb5-488d-87cf-b2fb5193f8bb",
-      "example_body": "The first rule of being an oily girl is knowing that your scalp is skin too –– care for it as such with @cerave Oil Control Balancing Shampoo + Conditioner. Shop now on @amazon \n\n#CeraVePartner #oilyskin #oilyscalp #haircaretips #oilcontrol",
-      "example_product_desc": "A shampoo-and-conditioner duo formulated to balance and control excess oil on the scalp and hair."
+      "example_ad_id": "01a6a4b1-9305-473d-b104-385877aaf701",
+      "example_body": "CoinLedger Tax Software\nWe make reporting your digital asset taxes easier than ever. Sign up for free. No credit card needed!\nTrusted By 700,000+ Users",
+      "example_product_desc": "Software for preparing and reporting taxes on cryptocurrency and other digital asset transactions."
     },
     {
       "id": "tmpl_31c5093e8a3e",
@@ -737,9 +737,9 @@
         "health",
         "tech"
       ],
-      "example_ad_id": "eddcd0fb-869e-421c-a85b-34545b07c961",
-      "example_body": "{{product.current_price strip_zeros}}\n😍Hot sale up to 70% off😍  New users: First order from $0.99!  🎉Fast delivery and Quality Assurance  Shop Now to Save Big!💓💓💓",
-      "example_product_desc": "An online retail marketplace offering heavily discounted goods and a promotional first-order price for new users with fast delivery."
+      "example_ad_id": "30a7ea57-f69d-40ea-8d0d-3cad91c5c6cf",
+      "example_body": "Up to 60% OFF\nProtect your devices and digital life with trusted Norton security — now available at major savings.\nCompare plans, see expert insights, and secure antivirus protection, VPN, scam defense, and more in one place. Get peace of mind online today.\nSave on antivirus now",
+      "example_product_desc": "A consumer cybersecurity suite that provides antivirus, a VPN, and anti-scam/anti-phishing protections to secure personal devices and online activity."
     },
     {
       "id": "tmpl_dae6766fa5ed",
@@ -761,9 +761,9 @@
         "home",
         "tech"
       ],
-      "example_ad_id": "acb96690-a7c9-4eb4-9812-ee8fb423f39a",
-      "example_body": "Tressa Professional Hair Products\nColor, waves, hair care, tools, and styling: everything you need, nothing you don't for your salon. Since 1969, Tressa has been pioneering waves that allow you to curl, color, and shampoo in the same service as well as color enriching shampoos that tone and condition as they cleanse. Find out how Tressa Professional Hair Products can enhance your abilities in your salon!",
-      "example_product_desc": "A professional salon haircare and styling brand offering hair color, waving/perming systems, color-enriching shampoos, tools, and styling products."
+      "example_ad_id": "1ddd7e22-2494-4172-b2af-8461949ceac2",
+      "example_body": "Unlimited 18 cuts!\nEat like a Brazilian local..\n\n18 UNLIMITED meats from the grill, 45+ gourmet salad options, and table-side service!\n\n“Narration generated with an AI voice actor. Story is a dramatization for illustration—real menu, fictional diner.”\n\nJoin us in: Cupertino, CA | Irvine, CA | Napa, CA | Roseville, CA | San Diego, CA | Walnut Creek, CA | Las Vegas, NV | Charleston, SC",
+      "example_product_desc": "A Brazilian-style churrascaria restaurant chain offering all-you-can-eat service of 18 grilled meat cuts, a 45+ item gourmet salad bar, and table-side service at multiple U.S. locations."
     },
     {
       "id": "tmpl_97d40a5521a2",
@@ -784,9 +784,9 @@
         "health",
         "tech"
       ],
-      "example_ad_id": "d288f7d1-59bd-41d0-ad68-4dc6abeace51",
-      "example_body": "Buy Assortment Kits Online | Bolt & Nut Australia Pty Ltd\nOver 350 different fastener assortment kits assembled here in Brisbane ready for immediate despatch. Delivered freight free with volume buy discounts. 15,000 fasteners online. No min spend or buy qty.\nLargest range of all types of bolts and nuts, socket screws, washers, machine screws, rivets, screws, self-drillers, boat hardware, masonry fasteners.",
-      "example_product_desc": "An Australian online supplier of fastener assortment kits and individual bolts, nuts, screws, washers and related hardware."
+      "example_ad_id": "03525f38-b65c-48ba-bd39-a3ac18ebed25",
+      "example_body": "Crystal Vision Center\nCrystal Vision Center provides eye exams, glasses, contacts at low prices. We offer great deals on professional eye care. Our optical service is easy and convenient. We give you more.",
+      "example_product_desc": "An optometry clinic providing comprehensive eye exams and affordable prescription glasses and contact lenses."
     },
     {
       "id": "tmpl_60b995a86554",
@@ -806,9 +806,9 @@
         "health",
         "home"
       ],
-      "example_ad_id": "e4934c56-7bd4-416d-960b-04a3fc72bd55",
-      "example_body": "🎒Personalized Backpacks For Kids\nYour child’s favorite backpack just got even better. 🎒\n\nNow available in brand-new colors and playful designs, our upgraded backpack is softer, sturdier, and still made just for them with their name embroidered on the front.\n\n💖 Personalize it with your child’s name\n🎨 Choose from fresh new styles & colorways\n🧵 Improved quality, built to last every adventure\n\nPerfect for school, daycare, or as a keepsake gift they’ll treasure forever.\n\n👉 Order today at 40% OFF + FREE shipping when you buy 2 or more!\nKnit & Carry™ - ⭐⭐⭐⭐⭐",
-      "example_product_desc": "A personalized children’s backpack with embroidered names, multiple color and design options, and reinforced construction for school, daycare, or keepsake use."
+      "example_ad_id": "33db2f02-e1fc-4888-a1fb-80c2b2630899",
+      "example_body": "Refresh Your Space\nSay goodbye to scrubbing with spillproof, machine washable rugs. Safe for pets & kids, and contains zero PFAS or BPA.\n\n✨ All sizes fit in household washer & dryer\n✨ Includes cushioned, non-slip pad\n✨ Stylish, hand-illustrated designs\n✨ Free shipping & 30-day returns\n20,000+ 5-Star Reviews",
+      "example_product_desc": "Machine-washable, spillproof area rugs with a cushioned non-slip backing made from pet- and kid-safe, PFAS- and BPA-free materials."
     },
     {
       "id": "tmpl_f13574613ed8",
@@ -829,9 +829,9 @@
         "tech",
         "travel"
       ],
-      "example_ad_id": "fb808f24-ccfc-463f-94ca-037c5e3bb151",
-      "example_body": "Your Target run just got a major upgrade\n🎯 RYZE is now available at Target stores nationwide!\n\nIt's a creamy and delicious blend that features six functional mushrooms, prebiotics, zero added sugar, certified organic, non-GMO ingredients. These clean, no BS ingredients come to you sustainably from right here in the USA to provide game-changing daily immune support and long-lasting energy in every cup. Just add water for easy prep and on-the-go wellness.\n\nTry now ➡️ https://shop.ryzesuperfoods.com/fb 🍄",
-      "example_product_desc": "An instant, certified-organic powdered drink mix made from six functional mushrooms and prebiotics with no added sugar, designed to support immune health and provide sustained energy."
+      "example_ad_id": "33e7f729-ec56-4e96-801f-28961b16f740",
+      "example_body": "Learn the benefits of female-focused beef organs →\n\"The female-focused beef organ superfoods in Primal Queen made a huge difference in my life! I feel more energized and even have less bloating.\"\n-Emma L.\n\nLearn why female-focused beef organs were the prized possession of our ancestors and how they can unlock energy, hormonal balancing, and more for modern-day women.\nPrimal Queen provides premium grass-fed beef organs for women, supporting energy, vitality, and overall wellness. Sourced from pasture-raised cows, our nutrient-rich supplements are crafted to fuel the modern woman with ancestral nutrition. Shop now for the best beef organ supplements for women.",
+      "example_product_desc": "A line of grass-fed beef organ dietary supplements formulated for women to support energy, hormonal balance, and overall wellness."
     },
     {
       "id": "tmpl_26f7b5c78b8c",
@@ -850,9 +850,9 @@
         "home",
         "tech"
       ],
-      "example_ad_id": "7ba6c4ba-7f6e-4562-8ff9-48795eedb908",
-      "example_body": "Acellus Academy | Accredited Online School\nAttend school online using Acellus Gold - a revolutionary platform that accelerates learning.",
-      "example_product_desc": "An accredited online school that delivers curriculum through the Acellus Gold accelerated online learning platform."
+      "example_ad_id": "18fd1904-8fe0-49a5-a983-8794c537dbfb",
+      "example_body": "EZ DUPE INC.\nDuplicator manufacturer, best duplication system, standalone, portable, multimedia, over 20 years experience.",
+      "example_product_desc": "A manufacturer of standalone, portable multimedia duplication systems for copying CDs, DVDs, and other media."
     },
     {
       "id": "tmpl_03dc82a4522d",
@@ -891,9 +891,9 @@
         "home",
         "tech"
       ],
-      "example_ad_id": "eb77a9ab-947e-4f58-8e49-61102ca1b9a2",
-      "example_body": "Currently loving the @no7usa Future Renew Defense Shield Moisturizer SPF 50 and Serum for protected skin and that hydrated glow. Shop now at @Target! 💛 #No7Partner #BelieveInPossible",
-      "example_product_desc": "A skincare duo consisting of a facial moisturizer with SPF 50 and a complementary serum that hydrates and protects the skin."
+      "example_ad_id": "23079494-3d08-4d5a-af9d-c331e19998f7",
+      "example_body": "@claudeai Cowork has fundamentally changed how I get things done… here’s why you should be using it too!  Try Claude today using the link in my bio 🔗 #ClaudePartner",
+      "example_product_desc": "An AI-powered virtual assistant (large language model) that helps users with writing, research, and productivity tasks."
     },
     {
       "id": "tmpl_d37ef2848f01",
@@ -935,9 +935,9 @@
         "other",
         "tech"
       ],
-      "example_ad_id": "cf8b786b-ec3f-484f-a55b-1e08a5d276a7",
-      "example_body": "You’ll be finding THIS in my bag! Find @vaselinebrand Original Healing Jelly tubes at Amazon and comment your favorite way to use Vaseline\n\n#vaselinepartner #dermatologist #skincare #dermangelo",
-      "example_product_desc": "A tube of Vaseline Original Healing Jelly — petroleum-jelly skin protectant and moisturizer used to heal and protect dry or irritated skin."
+      "example_ad_id": "2198a531-373e-4510-80f9-af51592e0364",
+      "example_body": "If you use ChatGPT for your homework and assignments then you must know about this tool ✨🧠\n\n@bypassgpt_ \n\n#bypassgpt #studytok #studytips #study #fyp",
+      "example_product_desc": "An online tool that helps students use ChatGPT more effectively to complete homework and assignments."
     },
     {
       "id": "tmpl_f0fbd7945866",
@@ -956,9 +956,9 @@
         "health",
         "tech"
       ],
-      "example_ad_id": "27f1cc42-b6bd-4bf7-a43d-56420e694e34",
-      "example_body": "Stress-Free Nail Grooming for Your Dog!\n🚨 Is nail trimming a nightmare for your dog? Switch to the Silent Groom Pro™ for a safe, quiet, and straightforward experience! 🐶",
-      "example_product_desc": "A low-noise electric nail trimmer designed to safely and gently file and groom dogs' nails."
+      "example_ad_id": "0fff70fa-6b07-42c6-80e4-3f4c6074f416",
+      "example_body": "Talk Early and Often\nHave you had a conversation with our youth about medication abuse? Talk early and often about the dangers of Fentanyl.\nLCAHEALTHYYOUTH.COM",
+      "example_product_desc": "An educational public-health campaign and website providing information and resources to parents and youth to prevent fentanyl and prescription medication abuse."
     },
     {
       "id": "tmpl_0b31b086e653",
@@ -978,9 +978,9 @@
         "health",
         "tech"
       ],
-      "example_ad_id": "23ebfb09-1428-487d-b9f4-ffd173a40261",
-      "example_body": "⭐⭐⭐⭐⭐ - Rated 5/5\nCelebrate your unbreakable bond with our Bow Friendship Bracelets. Perfect for besties who want something meaningful and cute to wear every day 💞\n→ Click \"Shop Now\" and enjoy a special 50% off deal!",
-      "example_product_desc": "Matching bow-themed friendship bracelets designed for friends to wear as a symbolic everyday accessory."
+      "example_ad_id": "02e1699e-f4d2-4713-9cb4-82342f99ea50",
+      "example_body": "⭐⭐⭐⭐⭐ বিনামূল্যের অ্যাপ\nসব ধরনের ক্লিপে সীমাহীন অ্যাক্সেস উপভোগ করুন!\n\nঅনলাইনে দেখুন অথবা অফলাইনে দেখার জন্য ডাউনলোড করুন।",
+      "example_product_desc": "A free mobile app that provides unlimited access to a variety of video clips with online streaming and offline download capability."
     },
     {
       "id": "tmpl_558be0d0e158",
@@ -1000,9 +1000,9 @@
         "health",
         "home"
       ],
-      "example_ad_id": "a00c4539-3386-47bd-9a32-4083930d423d",
-      "example_body": "The #1 GLP-1 Supplement After 4 Months of Testing\nWe tested 5 “Ozempic alternative” supplements for 4 months.\n\nAll of them helped a little.\n\nBut only one delivered fast, sustainable weight loss with zero side effects — and women said they’d keep using it even after the test ended.\n\nSee the full ranking and results.\nSee which supplement ranked #1 overall",
-      "example_product_desc": "A four-month comparative review and ranking of GLP-1 (Ozempic-alternative) dietary supplements reporting their effectiveness, side effects, and user preferences."
+      "example_ad_id": "86cab214-6f71-4331-baed-ea3a89fe6f20",
+      "example_body": "Yumeya Furniture\n📣Yumeya is a China-based metal wood grain restaurant chair manufacturer & project supplier. We focus on the eco-friendly wood look aluminum chair, which brings charming solid wood chair’s look to reliable metal chair. With its lightweight, stackable and easy-clean features, these products are the new trend for restaurant chairs. Contact us to know more!\nClick 👉https://bit.ly/3D1eSuq to get more info.",
+      "example_product_desc": "A China-based manufacturer and supplier of wood-grain aluminum restaurant chairs—lightweight, stackable, easy-to-clean metal chairs that mimic the look of solid wood."
     },
     {
       "id": "tmpl_eed12bed27bc",
@@ -1068,9 +1068,9 @@
         "health",
         "home"
       ],
-      "example_ad_id": "d46e05ff-fbaa-477a-9f7f-91355efa643c",
-      "example_body": "DeerRun-Treadmill\nGet ready to save BIG TIME!⏰\n• Up to $160 OFF DeerRun A1 Pro\n• 350lbs capacity & speeds up to 10mph\nShop now and kickstart your fitness journey with FREE shipping and AfterPay!",
-      "example_product_desc": "A home-use treadmill (DeerRun A1 Pro) for walking and running with a 350 lb weight capacity and a top speed of 10 mph."
+      "example_ad_id": "3da1d412-b6a3-4181-ae89-e1d6bcbe11b9",
+      "example_body": "Get Cash Now\n‼️ Attention‼️\n📲 We are buying iPhone X and newer, iPads, Watches, MacBooks\n♻️ New, Used, Cracked\n💯 Same day transactions \n💬 Message For Quote",
+      "example_product_desc": "A buyback service that purchases iPhone X and newer, iPads, Apple Watches, and MacBooks in any condition (new, used, cracked) for same-day cash."
     },
     {
       "id": "tmpl_b654002d0241",
@@ -1111,9 +1111,9 @@
         "finance",
         "health"
       ],
-      "example_ad_id": "d2d80d28-fc05-4bce-8688-fd44d6bd5178",
-      "example_body": "use code: FISH10\nShop the sweetest styles for your little ones! 💕 Stock up for the season now!",
-      "example_product_desc": "A retailer offering seasonal clothing and accessories for infants and young children."
+      "example_ad_id": "3d51e2b6-8ca1-4b9f-865c-91d12c50b909",
+      "example_body": "FREE Breast Pump & More Through Insurance\nFrom FREE breast pumps to lactation support and parenting classes, you're just 2 simple steps away from seeing everything your plan includes.",
+      "example_product_desc": "A service that helps insured members view and access maternity and parenting benefits covered by their insurance, such as free breast pumps, lactation support, and parenting classes."
     },
     {
       "id": "tmpl_2de35c5f77fa",
@@ -1131,9 +1131,9 @@
         "home",
         "tech"
       ],
-      "example_ad_id": "713f3ea7-de8a-47b6-9818-4287fbeeebfb",
-      "example_body": "TubShroom Has Over 120,000 5-Star Reviews 🤩🤩🤩 Say goodbye to Clogged Drains Forever! 👌👌👌",
-      "example_product_desc": "A silicone bathtub drain insert designed to catch hair and prevent clogged drains."
+      "example_ad_id": "03984a2c-b06c-42f1-a8e0-048426fde5c4",
+      "example_body": "Join millions of users who trust McAfee\nMcAfee's cutting-edge AntiVirus, Secure VPN, and scam protection keep your info safe online.",
+      "example_product_desc": "A cybersecurity suite that provides antivirus, a secure VPN, and scam/phishing protection to protect users' devices and online data."
     },
     {
       "id": "tmpl_e226386869e1",
@@ -1215,9 +1215,9 @@
         "home",
         "tech"
       ],
-      "example_ad_id": "1a3e0034-400a-46eb-b8fd-3c40acd0568d",
-      "example_body": "Premium Electric Coffee Grinders\nInvest in your business with Mahlkonig's premium electric coffee grinders!\nEnjoy a freshly-ground cup of coffee with Mahlkönig world-class flat burr coffee grinders. For professional and home users. Discover now.",
-      "example_product_desc": "Electric flat-burr coffee grinders for home and professional use that grind coffee beans to produce freshly ground coffee."
+      "example_ad_id": "0fb38a56-65ac-4007-b80b-c6d4dba7522a",
+      "example_body": "230-Fifth Rooftop Bar\nCome and experience the vibrant atmosphere at 230 fifth Rooftop Bar! Open all year long, we're the perfect spot to enjoy the spring and summer seasons under the sky. \n\nNo reservations required—walk-ins are always welcome! Whether you're looking to unwind with refreshing drinks or indulge in delicious food, our rooftop offers stunning views that promise unforgettable evenings. \n\nJoin us at 230 Fifth Rooftop Bar for a taste of the good life, where every visit is more than just a meal—it's a celebration!",
+      "example_product_desc": "A year-round rooftop bar (230 Fifth) that serves food and drinks and offers panoramic city skyline views with walk-in seating."
     },
     {
       "id": "tmpl_fec00494b9ce",
@@ -1237,9 +1237,9 @@
         "health",
         "home"
       ],
-      "example_ad_id": "bbbc0d26-3b84-4364-88ae-32e07f19a4d5",
-      "example_body": "𝐋𝐢𝐠𝐡𝐭, 𝐅𝐥𝐮𝐢𝐝 𝐚𝐧𝐝 𝐫𝐚𝐝𝐢𝐚𝐧𝐭𝐥𝐲 𝐩𝐨𝐥𝐢𝐬𝐡𝐞𝐝.\n\nThis sky blue 𝑴𝑨𝑹𝑰𝑨.𝑩 chiffon saree features a delicately embroidered blouse with a hand-embellished V neckline and fitted sleeves, offering a refined and graceful silhouette.\n\nAdorned with spray embroidery and detailed borders, the saree is elevated with an embroidered pallu that adds depth and movement. Paired with a matching raw silk petticoat, the ensemble creates a soft yet striking statement for formal occasions.\n\nAvailable in-store & online\nShop Now: tinyurl.com/269enthc\n\n𝗦𝘁𝗼𝗿𝗲 𝗔𝗱𝗱𝗿𝗲𝘀𝘀:\n◾Outlet Address: Level: 02, Centrepoint Shopping Mall, Uttara.\n\n(MARIA.B Bangladesh, Saree, Luxury Formal, Eid Edit)",
-      "example_product_desc": "A luxury sky-blue MARIA.B chiffon saree ensemble featuring a hand-embellished embroidered blouse with a V-neckline and fitted sleeves, detailed borders and an embroidered pallu, paired with a matching raw silk petticoat."
+      "example_ad_id": "b27fa272-6d10-4e9e-80f4-a4c22ea7a1cb",
+      "example_body": "Shop & Save\nWhether you're a movie buff, a music lover or just looking to create a comfortable home, we offer a variety of home electronics to suit your every need.  https://bit.ly/41KX1i7\nRussells is a brand of JD Group, a furniture retailer making customers dream homes a reality with quality furniture and appliances at affordable prices.",
+      "example_product_desc": "Russells is a retail brand offering affordable home electronics, furniture, and appliances for creating comfortable home and entertainment spaces."
     },
     {
       "id": "tmpl_b5a58641d266",
@@ -1259,9 +1259,9 @@
         "education",
         "entertainment"
       ],
-      "example_ad_id": "bcc5b55f-4bc5-40aa-b69b-5797021ffbf7",
-      "example_body": "A Rose with a Twist – Literally!\nImagine her reaction… Surprise her with a rose preserved to last forever & personalized necklace! 🌹\n\n⭐Over 3500+ five-star reviews and thousands of surprises delivered.\n\n→ Click “Shop Now” to get them a gift they’ll never forget!",
-      "example_product_desc": "A gift set combining a long-lasting preserved rose and a personalized necklace."
+      "example_ad_id": "0a0c5711-9375-41f2-9731-f49b563bea6f",
+      "example_body": "Pomade That Doesn’t Damage Your Hair!\nSuavecito products feature effortless washability. Made with non-drying ingredients that will easily rinse out.\n\nBelieve the hype. Invest in the best Pomade money can buy!",
+      "example_product_desc": "A hair pomade formulated with non-drying, water-soluble ingredients that styles hair and rinses out easily without causing damage."
     },
     {
       "id": "tmpl_455d768760a3",
@@ -1281,9 +1281,9 @@
         "home",
         "tech"
       ],
-      "example_ad_id": "b35c1bae-0328-4a97-9011-eb7167cad161",
-      "example_body": "🏆 Car Cover With Lifetime Warranty\n😍 WOW, over 500,000 satisfied customers and Lifetime Warranty! Protect your beloved car today with a car cover featuring the ultra-tough SEAL-TEC™ fabric. 👏\n\n🎁 Use code COVERME for 10% off, Free storage bag and Free shipping!",
-      "example_product_desc": "A heavy-duty protective car cover made from SEAL-TEC fabric that shields vehicles from the elements and is sold with a lifetime warranty."
+      "example_ad_id": "46253443-0012-41fc-98c9-4f667b406dbc",
+      "example_body": "Vivint Home Security\nJust moved in and turned my house into a smart home with Vivint—total control, all in one smart hub. My home feels safer and smarter than ever!\nGet up to 6 months FREE monitoring now!",
+      "example_product_desc": "An integrated smart home and home security system that provides a central smart hub, connected devices, and professional monitoring services."
     },
     {
       "id": "tmpl_f1c583039389",
@@ -1304,9 +1304,9 @@
         "home",
         "tech"
       ],
-      "example_ad_id": "3dcc4a0c-e0d6-4d55-8c92-202c25c4762f",
-      "example_body": "Well hello, freedom! 😍\nPaying off your debt may not be as overwhelming as you think! 💖\n\nIf you’ve been thinking, “I won’t be able to pay off my debt until I…\n\n❌ get a big raise\n❌ sell a bunch of stuff\n❌ drastically cut my expenses…”\n\nThink again! 🤯\n\nYou don’t need to give up all the fun things in your life. 🙅‍♀️ You need a smarter payoff strategy. 💪\n\nAfter entering just a few key pieces of info, 👩‍💻 the debt spreadsheet instantly creates a proven debt payoff plan to help you ditch your debt as quickly as possible. 🎉\n\nSay goodbye to stress and worry, and start paying down your debt the smart way today. 🙌\n\nGrab the debt spreadsheet trusted by 20,000 families, and let’s do this! ➡️ https://abbyorganizes.com/products/debt-snowball-spreadsheet-for-google-sheets",
-      "example_product_desc": "A Google Sheets debt-payoff spreadsheet template that generates personalized repayment plans (using the debt-snowball method) to help users prioritize and track debt payments."
+      "example_ad_id": "0070fcc6-5e20-4819-80a7-7973fc27ff0d",
+      "example_body": "Stop Designing Like It’s 2015 — This AI Renders for You in Seconds\nTired of wasting hours modeling one room?\nYour competitors are using AI to generate entire walkthroughs before you even finish a draft.\nArchSynth lets you go from sketch to photoreal render in seconds.\n3D models, virtual staging, AI landscaping, and more—no plugins, no learning curve.\n👉 Stop grinding. Start creating smarter.",
+      "example_product_desc": "An AI-powered design platform that turns architectural sketches into photorealistic 3D models, virtual staging, landscaping, and walkthrough renders."
     },
     {
       "id": "tmpl_6a8c2c01809b",
@@ -1342,9 +1342,9 @@
         "health",
         "tech"
       ],
-      "example_ad_id": "ae717b64-6c53-4107-a112-2e3c3f92c776",
-      "example_body": "Learn more about LYNPARZA®  (olaparib)\nPrescribing Information & Medication Guide: bit.ly/LYNPARZAPI",
-      "example_product_desc": "LYNPARZA (olaparib) is a prescription PARP inhibitor medication used to treat certain BRCA-mutated and other specified ovarian, breast, pancreatic, and prostate cancers."
+      "example_ad_id": "4ac735a1-af06-4f46-96e3-3b2869cc4c65",
+      "example_body": "Learn More About QuickBooks\nIn partnership with @quickbooks here are 3 things we did right from day one with FLUR (without realizing it)",
+      "example_product_desc": "QuickBooks is cloud-based accounting and bookkeeping software that helps small businesses manage invoicing, expenses, payroll, and taxes."
     },
     {
       "id": "tmpl_f9cbb51da383",
@@ -1379,9 +1379,9 @@
         "ecommerce",
         "tech"
       ],
-      "example_ad_id": "3d8a4399-2387-4e48-8428-c64fe87fc632",
-      "example_body": "50% OFF LIMITED TIME 🐶\nTODAY Only We Are Having A 50% OFF Sale On Our Custom Pet Photo Necklace!❤️✨\nUnique & Meaningful Gift",
-      "example_product_desc": "A personalized necklace featuring a custom photo of a pet as a keepsake pendant."
+      "example_ad_id": "3ac12934-eb09-4339-a33b-a855cc0536b9",
+      "example_body": "↻ Recupera i tuoi ricordi oggi!\n📸 Recupera le foto cancellate anni fa",
+      "example_product_desc": "A data-recovery app/service that restores permanently deleted photos from phones, cameras, and other storage devices."
     },
     {
       "id": "tmpl_5b77361241eb",
@@ -1439,9 +1439,9 @@
         "ecommerce",
         "health"
       ],
-      "example_ad_id": "dbef7a8e-89f9-45cc-9d6c-4a3591f60d8a",
-      "example_body": "Acne? Get clear skin in 90 days or your money back\n\"I was using the same cleanser, the same moisturiser, and the same serums... the only difference.. the acne supplement\"",
-      "example_product_desc": "An oral dietary supplement formulated to help reduce acne and promote clearer skin."
+      "example_ad_id": "32b00273-8153-4451-8339-3317922d361c",
+      "example_body": "Getting ready for newborn life one cozy essential at a time 🤍\n15% off the Momcozy Baby Swing with 9CSVJ0ER ✨ @momcozy \n\n#Momcozy #MomcozyBabySwing #BabySwing #SoothingBaby #HandsFreeParenting",
+      "example_product_desc": "A powered infant swing designed to soothe newborns with automated rocking and vibration for hands-free soothing and seating."
     },
     {
       "id": "tmpl_cde9adc0b9ad",
@@ -1459,9 +1459,9 @@
         "education",
         "health"
       ],
-      "example_ad_id": "bf17871d-c3c8-49b9-9661-8965f7c5c84f",
-      "example_body": "Try A Full Size Product Before You Buy\nSee why @malika can't get enough of the amazing Extra Strength Liquid Collagen and try a full size product before you buy!\nTake the Quiz",
-      "example_product_desc": "An extra-strength liquid collagen dietary supplement formulated to support skin, hair, and joint health."
+      "example_ad_id": "54f07247-904d-46fa-83a5-fa0569a04a34",
+      "example_body": "Watch the presentation\nI learned to speak Spanish at a native level without ever living in an Spanish-speaking country and without taking classes. Here’s exactly how 👇",
+      "example_product_desc": "An online program/presentation teaching a self-directed method to achieve native-level Spanish proficiency without living in a Spanish-speaking country or taking formal classes."
     },
     {
       "id": "tmpl_b4d31986fa5f",
@@ -1480,9 +1480,9 @@
         "finance",
         "health"
       ],
-      "example_ad_id": "8539bf9a-2a47-428b-96a1-c9780bf3fa03",
-      "example_body": "Flavorless. Blends Well, No Aftertaste\nSummer is Here! Radiant Skin, Stronger Hair, and Healthier Joints – All in One Scoop",
-      "example_product_desc": "A flavorless, mixable powdered dietary supplement formulated to support radiant skin, stronger hair, and healthier joints."
+      "example_ad_id": "59403f25-fcc2-4acc-a7a1-7638f372cd73",
+      "example_body": "Our 100% online Juris Master equips non-lawyers with practical legal and regulatory expertise to excel in today’s job market.\nA 100% Online Law Degree for Non-Lawyers\nOur 30-credit-hour Juris Master Program is designed for working professionals in Cybersecurity, HR, Finance, Health Care, or Risk Management.",
+      "example_product_desc": "A 100% online 30‑credit Juris Master graduate program that provides non‑lawyers with practical legal and regulatory training for professionals in fields like cybersecurity, HR, finance, health care, and risk management."
     },
     {
       "id": "tmpl_08ded0578273",
@@ -1499,9 +1499,9 @@
         "beauty",
         "ecommerce"
       ],
-      "example_ad_id": "c91e31eb-ac5e-46df-86cb-99f439a40b7c",
-      "example_body": "Buy 1 Get 1 FREE Sale Now Live!\nIt’s more than jewelry — it’s a promise.\nThe Forever Knot Bracelet symbolizes a bond that never breaks. 💞\nLimited Time Offer ⏳",
-      "example_product_desc": "A knot-design bracelet sold as symbolic jewelry representing an enduring or unbreakable bond."
+      "example_ad_id": "3c73f311-8a1c-437f-b37c-957ea0a63710",
+      "example_body": "Buy 1 Get 1 Free ❤️\nOur Beauty Balm delivers sheer-to-light coverage with powerful skincare benefits. Hydrate, plump, and achieve a radiant glow—all in one effortless step. 💧✨\nFlash Sale 75% OFF",
+      "example_product_desc": "A tinted beauty balm (BB cream) that provides sheer-to-light facial coverage while delivering hydrating and plumping skincare benefits for a radiant glow."
     },
     {
       "id": "tmpl_e2e4ada20bd3",
@@ -1520,9 +1520,9 @@
         "food",
         "tech"
       ],
-      "example_ad_id": "5069d4e9-c9e3-401d-9e09-76ffbc5040fb",
-      "example_body": "If you’re new around here, you may not know why O.R.G’s Mineral Peels have their cult following… But once you shed away YOUR few layers of residue and feel the baby soft skin underneath, you’ll want to join right in. ⭐️⭐️⭐️⭐️⭐️",
-      "example_product_desc": "An at-home mineral peel exfoliant treatment that removes dead skin and residue to reveal softer, smoother skin."
+      "example_ad_id": "4132a76e-8bd2-4331-9186-c6aeee5ed8fb",
+      "example_body": "I love an elevated ‘just because’ home cooked meal and this saffron crab pasta was absolute perfection. #ad Inspired by a saffron fish dish I had recently at a restaurant, Al Bronzo pasta by @barillaus made it that much better. it’s the perfect scarpetta moment, savoring every last drop. #barilla #crabpasta #saffron",
+      "example_product_desc": "A premium Barilla 'Al Bronzo' pasta line made to recreate restaurant-quality, sauce-friendly pasta dishes at home."
     },
     {
       "id": "tmpl_e48faaa717da",
@@ -1538,9 +1538,9 @@
       "categories": [
         "ecommerce"
       ],
-      "example_ad_id": "7c0ec1b0-f679-48d5-8dbd-55597a6fe605",
-      "example_body": "🚨 BUY 1 GET 1 ENDS TODAY! 🚨\n🚨 BUY 1 GET 1 FREE ENDS TODAY! 🚨\n\n✅ Effortless Fur Removal: Soft brush cloth bristles generate static to lift and capture pet hair instantly.\n✅ Universal Fit: Ergonomic design with adjustable wrist strap ensures a snug fit for all hand sizes.\n✅ Reusable & Easy to Clean: Simply rinse under running water and air-dry for repeated use.\n✅ Versatile Use: Effectively removes hair from furniture, clothing, car interiors, and more.\n\nBuy One Get One Free Sale Ends Today! 🚨",
-      "example_product_desc": "A reusable pet-hair removal glove with soft static-generating bristles and an adjustable wrist strap for lifting hair from furniture, clothing, and car interiors."
+      "example_ad_id": "2c6f7970-f628-47a3-9f0d-168b68d01ec2",
+      "example_body": "🔥 50% OFF – Ends Tonight\n🍊 Same color. Same finish. Same perfection.\nMagCase Metal completes your iPhone 17 Pro — real aluminum, flawless fit, and a cosmic orange glow to match.\n\n🛡️ Real metal armor\n📱 Ultra-slim design\n⚡ MagSafe ready\n\n🔥 50% OFF – limited stock today.\n🕒 Sale Ends Tonight – Save 50% Before Stock Runs Out!",
+      "example_product_desc": "A slim, real-aluminum protective case for the iPhone 17 Pro with MagSafe compatibility and a colored finish."
     },
     {
       "id": "tmpl_09ee2cc4c885",
@@ -1559,9 +1559,9 @@
         "ecommerce",
         "health"
       ],
-      "example_ad_id": "71624f95-5e81-4cad-b9db-6089601cd97d",
-      "example_body": "Skincare That's Covered 💳 Now Eligible With HSA/FSA\nFDA-cleared, dermatologist-recommended—and now HSA/FSA eligible. Let your benefits work for your skin.\n#1 Dermatologist Recommended LED Device",
-      "example_product_desc": "An FDA-cleared, dermatologist-recommended at-home LED light therapy device for skin treatment that is HSA/FSA-eligible."
+      "example_ad_id": "30e10711-a53d-4b5f-b58c-ce4517ee74c6",
+      "example_body": "The Fitness Shoppe\nThe Fitness Shoppe is locally owned and operated. We specializes in exercise equipment, fitness supplements, health supplements, and weight loss products. \n\nEstablished in 2001",
+      "example_product_desc": "A locally owned fitness retailer (est. 2001) selling exercise equipment, fitness and health supplements, and weight-loss products."
     },
     {
       "id": "tmpl_42e999ec63dc",
@@ -1581,9 +1581,9 @@
         "tech",
         "travel"
       ],
-      "example_ad_id": "ed25958a-bc7e-4c82-b07a-24ff6496fc8a",
-      "example_body": "MotoTravelGreece | Motorcycle Tours and Rentals in Greece\nChoose your motorcycle, choose your route and Explore Greeece with mototravelgreece.com | Discover undisclosed routes of the Greek countryside ! Rent a brand new BMW motorcycle and enjoy a top two-wheel trip! �\nMotoTravelGreece provides motorcycle tours and rentals in Greece. Book a daily tour near Athens, or choose among our self-guided or fully guided tours on both road and off-road disciplines. Explore Greece from the seat of one of the latest models of BMW and YAMAHA motorcycles.",
-      "example_product_desc": "A motorcycle tour and rental company in Greece offering daily, self-guided, and fully guided road and off-road tours and rentals of new BMW and Yamaha motorcycles."
+      "example_ad_id": "1bfade90-ea96-4acd-b3a1-5cb4dcb41896",
+      "example_body": "RMM for Medium and Large MikroTik Deployments. With Admiral: backups, firmware updates, and configuration changes are a breeze.\nSave money with MikroTik. Save time with Admiral.\nBuilt by MikroTik certified engineers, Admiral Platform is the ultimate MikroTik centralization and automation software. Cloud-based or on-prem, Admiral is the lightweight and easy-to-use solution for for medium and large deployments.",
+      "example_product_desc": "A centralized remote monitoring and management (RMM) platform for medium-to-large MikroTik network deployments that automates backups, firmware updates, and configuration management, available cloud-based or on-premises."
     },
     {
       "id": "tmpl_30c4d5a54264",
@@ -1601,9 +1601,9 @@
         "beauty",
         "entertainment"
       ],
-      "example_ad_id": "80eaf5a1-5ce9-4505-8c57-a7171cbaef94",
-      "example_body": "24-Hour Liner That Never Backs Down\n👁 Glide on at 9AM, still flawless at midnight. Our 24-hour liner stays put through anything. Shop 12 stunning shades now! ✨\nFree Shipping. 30 Day Risk-free trial.",
-      "example_product_desc": "A long-wearing, smudge-proof eyeliner available in multiple shades that provides up to 24-hour wear."
+      "example_ad_id": "603b28f6-5632-4c2a-adbe-33f973a35a40",
+      "example_body": "Free Reels + Short Dramas\nTrending reels + short dramas in one app. Start watching free. Upgrade anytime for more.",
+      "example_product_desc": "A streaming app for short-form video content that offers trending reels and short scripted dramas for free with an optional paid upgrade."
     },
     {
       "id": "tmpl_b525a12328c7",
@@ -1664,9 +1664,9 @@
         "beauty",
         "travel"
       ],
-      "example_ad_id": "a11bbef4-23a6-463b-bd5d-5a180c67cbe1",
-      "example_body": "Invest in Your Skin’s Future—Without the Clinic Price Tag 🤔\nClinic treatments can feel effective, but they’re costly and hard to keep up with. Qure’s Micro-Infusion System lets you perform a treatment at home that’s similar to professional microneedling but without spending thousands on repeated visits.\n\nBy creating tiny micro-channels with 24K gold-plated 0.5mm needles, the system helps your skin absorb science-backed serums more effectively.\n\nWith continued treatments, users often report:\n\n✅ Fine lines looking softer\n\n✅ Smoother-feeling skin texture\n\n✅ A hydrated, radiant-looking glow\n\nPlus, for a limited time only, save 70% on the 6-month supply.",
-      "example_product_desc": "An at-home micro-infusion (microneedling) device with 0.5mm gold-plated needles that creates micro-channels to boost serum absorption and improve skin texture and fine lines."
+      "example_ad_id": "904f3d7b-c475-479c-b7e3-ce4bd51a3a5f",
+      "example_body": "Expedia Travel: Vacation Homes, Hotels, Car Rentals, Flights & More\nWe get it. Plans change. Look for free cancellation options and find a hotel like this stay from one of our travelers. Terms apply.",
+      "example_product_desc": "An online travel booking service for searching and reserving vacation homes, hotels, flights, and car rentals, with options like free cancellation and traveler-reviewed listings."
     },
     {
       "id": "tmpl_9301cdc08e2d",
@@ -1686,9 +1686,9 @@
         "entertainment",
         "health"
       ],
-      "example_ad_id": "2665f064-c3a7-4072-ac72-17b00d76d9cd",
-      "example_body": "Unlock Limitless Streaming Right From Your Car\nSick of boring drives? 🎥\nTurn your car into a full-on entertainment hub in seconds.\nWith StreamDrive, watch Netflix, YouTube, and listen to Spotify right from your dashboard — no phone or cables needed.\nMake every ride epic — grab yours now before the sale ends!🎉",
-      "example_product_desc": "A plug-in car infotainment device that streams Netflix, YouTube, and Spotify directly through a vehicle’s dashboard without using a phone or cables."
+      "example_ad_id": "1a122fc2-6d8c-4d53-90e5-703551026a42",
+      "example_body": "{{product.name}}\nYou shouldn't have to take out a second mortgage to own a home gym. Premium fitness equipment without the premium price. 🏋️💪\n\n🛡️ 1-Year Warranty Included\n📦 Order by 11am CT, most items ship same day*",
+      "example_product_desc": "A company that sells premium home-gym equipment and accessories at more affordable prices."
     },
     {
       "id": "tmpl_4ee987328aa2",
@@ -1708,9 +1708,9 @@
         "health",
         "home"
       ],
-      "example_ad_id": "d29e8d01-a4fe-4479-857a-0f31dfd4b9f9",
-      "example_body": "🔥Scalp Stimulator\nThe story that stopped the SHERRI audience. Real ingredients. Real routines. Healthy hair starts at the scalp. See why millions trust this oil to support stronger, fuller looking hair.",
-      "example_product_desc": "A topical scalp-stimulating oil formulated with real ingredients to nourish the scalp and support stronger, fuller-looking hair."
+      "example_ad_id": "50075053-62ee-4ec0-9e8e-4af9b557f6b9",
+      "example_body": "JUST CLIMBED THE HIGHEST PEAK IN AFRICA!\n\"Our second annual Sisters Rising Mount Kilimanjaro climb was a resounding success, with all 10 ladies summiting the tallest mountain in Africa! A heartfelt thank you to Black Girl Vitamins for the goodie bags, including your collagen powder, delicious vitamin D gummies, travel washcloths and cozy sweatshirts that kept us warm during those chilly nights. Your generosity filled us with love and we are truly grateful! Congratulations to this amazing group of strong women!\"",
+      "example_product_desc": "A wellness brand for Black women that sells vitamins and nutritional supplements (like collagen powder and vitamin D gummies) and related lifestyle products."
     },
     {
       "id": "tmpl_5d04df884cae",
@@ -1730,9 +1730,9 @@
         "food",
         "health"
       ],
-      "example_ad_id": "b52501aa-21e4-4e0c-b439-79ef11ba3dcd",
-      "example_body": "Try a Full Size Bottle BEFORE You Buy!\nLet us show you why liquid collagen is all the rage right now. Meet E27 Extra Strength Liquid Collagen:\n\n🌟 Promotes hydrated, glowing skin\n👑 Reduces dullness, fine lines, and wrinkles\n❤️ Aids in thicker and fuller hair\n✅ Results in just 4 weeks\nTake the quiz",
-      "example_product_desc": "An extra-strength liquid collagen dietary supplement formulated to support skin hydration, reduce signs of aging, and promote thicker, fuller hair."
+      "example_ad_id": "1b310241-4c79-4296-9f37-3e41439ea53c",
+      "example_body": "Protection with No Monthly Fees!\nThieves hate this little tracker! 🚗\n\nSafeSync is a discreet, powerful GPS tracker that alerts you the moment your car moves.\n\nNo monthly fees - Get yours today! 🔐",
+      "example_product_desc": "A discreet GPS tracker for cars that provides instant movement/location alerts and operates without a monthly subscription."
     },
     {
       "id": "tmpl_659ed748bc83",
@@ -1751,9 +1751,9 @@
         "ecommerce",
         "home"
       ],
-      "example_ad_id": "d638509b-b255-49aa-98ad-5361df3df9e4",
-      "example_body": "Mariska Hargitay\nI’m so proud to partner with @Cetaphil to introduce the new Skin Activator Hydrating & Firming Cream. #CetaphilPartner \n \nCetaphil has been a trusted part of my skincare routine for years, and this launch is especially fun. \nI like simple, straightforward beauty routines that evolve with me. The Skin Activator Hydrating & Firming Cream is powered with AHA and encapsulated CICA, so it works deep within the skin’s surface to help awaken tired surface skin cells, delivering visibly firmer looking skin in just one month.\n \nI can’t wait for you to try it 💙\n \n#Cetaphil #SkinActivator #Hydration #FirmingSkin #CetaphilSkinActivator",
-      "example_product_desc": "A hydrating and firming facial cream from Cetaphil formulated with AHA and encapsulated CICA to improve skin hydration and firmness."
+      "example_ad_id": "aa4a3c86-d63e-46bc-911c-09dbb5855d01",
+      "example_body": "Our most popular tree is the Thuja Green Giant! 🌲 This fast growing evergreen is perfect for creating a natural privacy screen for your yard.\n\nClick the link in our bio to get trees delivered. 📦🌲\n.\n.\n#fastgrowingtrees #landscaping #thujagreengiant #privacytree #privacyhedge #evergreentrees #arborvitae #hedging #landscapingideas",
+      "example_product_desc": "Live Thuja 'Green Giant' evergreen trees sold and delivered for use as fast-growing privacy screens and landscaping."
     },
     {
       "id": "tmpl_4561cd64fe15",
@@ -1773,9 +1773,9 @@
         "home",
         "tech"
       ],
-      "example_ad_id": "d13a53e5-f2b0-46a1-ad45-f75e8c3c6132",
-      "example_body": "Signs of life at Al Badia\n🏌️‍♂️Big news for golf lovers in Dubai! After closing its doors in 2017, Al Badia Golf Club is stirring up excitement with new developments on the horizon. Could this iconic course be making a comeback? 🏌️‍♀️🤔\n\nClick here to uncover the full story: https://bit.ly/4a5Pnob\n\n⛳️ Share your thoughts—do you think it’s time for Al Badia to reopen? \n\n#DubaiGolf #AlBadiaRevival #golfnews #golfcourse",
-      "example_product_desc": "An online news article reporting potential redevelopment and reopening of Al Badia Golf Club in Dubai."
+      "example_ad_id": "861fdabe-d8f3-4757-b387-560badcc3b95",
+      "example_body": "Supernote\nSupernote Nomad: The outdoor writer's dream device. Sketch wildlife, log your hikes, or lose yourself in a great book - all on one tough little gadget. No more lost notebooks or heavy tablets. Just pure, distraction-free writing and reading wherever your feet take you. Ready to make your outdoor adventures even more amazing? Grab your Supernote Nomad and hit the trail! 🌄🖋️📖\n\nPhotos shared by nomads: @spence.explore @huntrex_ @avecnicole",
+      "example_product_desc": "A rugged, lightweight e-ink digital notebook and reader designed for distraction‑free writing, sketching, and reading outdoors."
     },
     {
       "id": "tmpl_fa229c4df70b",
@@ -1795,9 +1795,9 @@
         "food",
         "travel"
       ],
-      "example_ad_id": "94303bcb-7642-45d2-bd16-8372a21f0f91",
-      "example_body": "Family Hotel With Spa in Carlsbad, CA\nEnjoy everything sunny Carlsbad (30 - minutes from San Diego Airport) has to offer including our private entrance to LEGOLAND! Book our Family Fun Package and receive:\n\nCredit to our restaurant & spa\nAn arts & crafts basket for your kids\n\nBook Now!",
-      "example_product_desc": "A family-oriented hotel and spa in Carlsbad, California offering a private entrance to LEGOLAND and family packages with restaurant/spa credits and kids' arts-and-crafts baskets."
+      "example_ad_id": "3709550f-79c6-45dc-a219-d63071e9b17c",
+      "example_body": "Home - Mission Street Oyster\nOnly Quality Food. Situated in the vibrant Mission District, the inviting restaurant serves several varieties of oysters. Come join us here in San Francisco!\nOnly Quality Food Mission Street Oyster Bar. Situated in the vibrant Mission District, the inviting restaurant serves several varieties of oysters.   View MenuReservation \" Our Story Welcome To Mission Street Oyster Situated in the vibrant Mission district, the inviting restaurant serves several va...",
+      "example_product_desc": "A Mission District restaurant in San Francisco specializing in oysters and other seafood."
     },
     {
       "id": "tmpl_069fa8c53552",
@@ -1816,9 +1816,9 @@
         "health",
         "tech"
       ],
-      "example_ad_id": "474e610d-c1e6-4932-933e-f94b9dcb4dd5",
-      "example_body": "Boost Energy & Performance 🔥\nWant to improve your overall health & energy levels? You've got to try MuscleMax's Gummies!\n\n⚡ Boost Energy Levels\n🌿 85+ Vitamins and Minerals\n🏔️ Quality Ingredients\n\nClick Shop Now To Get Your Gummies Today ⬇️\nMuscleMax™",
-      "example_product_desc": "A multivitamin and mineral gummy dietary supplement formulated to support energy and overall health."
+      "example_ad_id": "0db6e3c7-31b7-4458-af94-80a69931c094",
+      "example_body": "A Smarter Way to Protect Your Devices\nStill thinking about antivirus protection?\n\nPC Matic uses application allowlisting to stop unknown programs before they can run.\n\nEasy to use. No long-term risk. Backed by a 30-day money-back guarantee.\n\nGet protected today.\nProudly Made in the USA 🇺🇸",
+      "example_product_desc": "PC security software that uses application allowlisting (whitelisting) to block unknown programs from running on computers."
     },
     {
       "id": "tmpl_2d22981bef79",
@@ -1838,9 +1838,9 @@
         "beauty",
         "ecommerce"
       ],
-      "example_ad_id": "da925095-c6ad-4945-9f2c-be20b2707a48",
-      "example_body": "Back with another #QuickTransfers Spotlight! Today we are introducing Carlos Merritt @cmerritt_21 Local ATL brand owner and Don Dada! Enjoy some quick insight on how he leverages Quick Transfers to supplement the inventory of both of his clothing brands @_streetdada and @_dondadaofficial not allowing the tariffs to slow him down!\n\nVisit QuickTransfers.com to get started building your own brand and legacy!\n\n#DTFTransfers #CustomApparel #atlanta #heatpress",
-      "example_product_desc": "A service that supplies custom DTF heat-transfer designs for apparel brands to produce and replenish clothing inventory."
+      "example_ad_id": "1c5f21e2-aa39-46ab-9fc2-3d2d65bd94f0",
+      "example_body": "#Ad New ERA, new tone, same main character 🎤✨\nThis #MatrixBronde is a Certified chart-topper 💅\nThe new hair color trend by Matrix.\nGet it at a salon near you!\n#MatrixIndia #MatrixMelts\n@matrixindia_lnc",
+      "example_product_desc": "A professional hair-color line and salon service from Matrix offering the 'Matrix Bronde' melt-style/ombre hair coloring trend."
     },
     {
       "id": "tmpl_2df2a481dd31",
@@ -2068,9 +2068,9 @@
         "entertainment",
         "food"
       ],
-      "example_ad_id": "e5b7e564-39fc-4b3c-83bb-afd21d7b9246",
-      "example_body": "132 Days Later... Still Not Empty.\nDay 1 ➡️ Day 132.\n\nOne jar. Four months. Still going.\nThis is not your average face cream - it’s the balm that replaces 5 products and refuses to run out.\n\n🧈 Grass-fed tallow, raw honey, zero fillers.\n💛 Sensitive-skin safe, ultra-concentrated, made to last.\n\nAncestral skincare that works harder and longer.",
-      "example_product_desc": "A concentrated, multi-purpose facial balm made with grass-fed tallow and raw honey for sensitive, dry, or irritated skin."
+      "example_ad_id": "68112738-642d-436e-aeff-71cf0ab6b2d4",
+      "example_body": "Your restaurant, your success.\nBecome a culinary master! Manage your own Star Restaurant, cook global dishes & serve up success in Star Chef 2!",
+      "example_product_desc": "A restaurant-management simulation game where players run and upgrade their own restaurant, cook international dishes, and grow a culinary business."
     },
     {
       "id": "tmpl_b13bc3eebf46",
@@ -2087,9 +2087,9 @@
         "beauty",
         "education"
       ],
-      "example_ad_id": "e4de8824-85dd-42ce-a20c-e44208da3780",
-      "example_body": "{{product.name}}\nShop Award-Winning Skincare Today. Plus Enjoy a Complimentary Deluxe Sample at Check Out.",
-      "example_product_desc": "An award-winning skincare product line offering beauty and skin-care products."
+      "example_ad_id": "a6c2d839-2c8c-4554-aba4-18e542314f1c",
+      "example_body": "What a unique mix of languages 🇰🇷🇮🇷\nIf you want to learn languages, use Preply! \nUse the link in my BIO and get 50% OFF on your first lesson ✨#preply #japan #vienna #korea #farsi",
+      "example_product_desc": "An online platform that connects language learners with live tutors for one-on-one lessons."
     },
     {
       "id": "tmpl_2c29f227ca57",
@@ -2106,9 +2106,9 @@
         "ecommerce",
         "tech"
       ],
-      "example_ad_id": "5a5925ab-f621-45ff-848e-52ad6ef0d766",
-      "example_body": "{{product.name}}\nRare collectibles—from iconic Morgan Silver Dollars to Pre-33 gold—starting at $1 ⚡ Live on Whatnot!",
-      "example_product_desc": "A live online marketplace on Whatnot for buying and selling rare collectible coins, including Morgan Silver Dollars and pre‑1933 gold."
+      "example_ad_id": "5853db12-5eae-4b5c-b1eb-41dc6442b71a",
+      "example_body": "Save when you switch\nLearn how to receive $450 when you switch to AT&T and purchase a new smartphone*.\n\n*Ends 5/3/26. Receive $450 is a combination of $350 in bill credits ($9.73/month for 36 months) and a $100 Digital Costco Shop Card. Savings requires purchase of a new smartphone on installment plan with an eligible wireless plan. Additional terms and restrictions apply. Visit Costco.com/ATT-Brand-Showcase.html for details.\nThrough 5/3/26",
+      "example_product_desc": "A promotional switch-to-AT&T program (offered through Costco) that provides bill credits and a digital Costco Shop Card when customers switch carriers and purchase a new smartphone on an installment plan."
     },
     {
       "id": "tmpl_27739f5ff354",
@@ -2163,9 +2163,9 @@
       "categories": [
         "finance"
       ],
-      "example_ad_id": "48f19b9a-1f47-421b-ba71-26d285f5190d",
-      "example_body": "World Gold Council\nImagine if everything in life was as good as gold. It’s easy to invest in, could help grow your wealth, and protect it too. A timeless asset that stands strong when others may not.",
-      "example_product_desc": "An industry organization that promotes gold as an investment and provides research, data, and guidance on investing in gold."
+      "example_ad_id": "24262f3c-1fb8-4ec3-9079-3194a24a5d41",
+      "example_body": "LPL Financial\nThe greener grass is right where you want it: on your side. Your business, your future, your finances—let’s find ways to grow.",
+      "example_product_desc": "A financial services firm offering investment management, wealth-planning, and advisory solutions for individuals and businesses."
     },
     {
       "id": "tmpl_b4f4c93c2ac3",
@@ -2202,9 +2202,9 @@
         "education",
         "tech"
       ],
-      "example_ad_id": "d0955046-e34a-49d6-b787-f03b2337decf",
-      "example_body": "Try it now\nNew hair, new vibe. Let AI give you your dream hairstyle in seconds!",
-      "example_product_desc": "An AI-powered app that generates realistic virtual hairstyle previews on your photos in seconds."
+      "example_ad_id": "7c4c1fd1-1e57-4906-96a4-ebb4ae978dcc",
+      "example_body": "Like our page to get daily reminders for the Seekers.\n\nAn Opportunity Not to be Missed\n\nSeekersGuidance is pleased to offer everyone a special opportunity for every Muslim to join our Islamic Studies Curriculum: a world-class, five-level, structured curriculum covering Law, Worship, Hadith Studies, Spirituality, Quranic Studies, and Prophetic Studies.",
+      "example_product_desc": "A five-level structured Islamic studies curriculum from SeekersGuidance covering law, worship, hadith, spirituality, Quranic studies, and Prophetic studies."
     },
     {
       "id": "tmpl_9f841a1e7a52",
@@ -2221,9 +2221,9 @@
         "beauty",
         "tech"
       ],
-      "example_ad_id": "76dab86b-395a-4609-8736-7cb38e555ced",
-      "example_body": "Comment LINK to shop this genius luxury shower cap.\n.\n#amazonhome #amazonfinds",
-      "example_product_desc": "A luxury shower cap designed to keep hair dry during bathing, made from premium/waterproof materials."
+      "example_ad_id": "6ccd49ce-8dc7-41f7-a31d-07439346cfc0",
+      "example_body": "Type “SCREEN” for the link! 🤍\n\nTriple Screen Laptop Extender 💻\n\n#officefinds #homeoffice #amazonmusthaves #officesetup #screen",
+      "example_product_desc": "An attachable portable monitor accessory that adds two additional fold-out screens to a laptop to create a triple-monitor workstation."
     },
     {
       "id": "tmpl_2ecf1c8a573e",
@@ -2240,9 +2240,9 @@
         "beauty",
         "ecommerce"
       ],
-      "example_ad_id": "ed7b4f04-0cf6-4137-b3a1-e4fc6991c762",
-      "example_body": "Add a \"☁️\" at checkout and see what happens... Shop Now\nAdd a \"☁️\" at checkout and see what happens...\n\nSay goodbye to acne and hello to confidence 👋\n\n☁️ 100% pure cotton and ultra soft\n✨ Free of bacteria and harsh chemicals\n🌱 Biodegradable and eco-friendly\n\nResults in 60 days or get your money back.\nMoney-back guarantee",
-      "example_product_desc": "A 100% pure cotton, ultra-soft, antibacterial and biodegradable skincare product designed to help reduce acne."
+      "example_ad_id": "bda9c061-2f6c-4560-94c6-cb2ebd75cd4d",
+      "example_body": "Get Yours Today!\nInvest in the ultimate bonding experience for new moms - your connection with your baby will only get stronger.✨\n50% Off + Free Shipping",
+      "example_product_desc": "An ergonomic baby carrier/wrap designed to enable close physical contact for new mothers to bond with their infants."
     },
     {
       "id": "tmpl_0f28f74368f8",
@@ -2278,9 +2278,9 @@
         "health",
         "tech"
       ],
-      "example_ad_id": "9502fa14-d258-47a8-97f9-de790f134bc1",
-      "example_body": "¡Comienza ahora!\nEstamos buscandoa una mujer cansada de hacer entrenamientos aleatorios sin ver resultados 🙋‍♀️\n👉 Haz un test de 1 minuto y obtén tu plan de gimnasio personalizado que realmente funciona.",
-      "example_product_desc": "A personalized workout-planning service for women that generates tailored gym programs based on a short assessment."
+      "example_ad_id": "41c01538-f0be-402a-8c95-0ad63d956e8e",
+      "example_body": "Comece agora!\nEstamos à procura de mulheres cansadas de fazer treinos aleatórios e não ver resultados 🙋‍♀️\n👉 Faça este quiz de 1 minuto e obtenha o seu plano de ginásio personalizado que vai funciona mesmo",
+      "example_product_desc": "An online fitness service that provides personalized gym workout plans for women based on a one-minute quiz."
     },
     {
       "id": "tmpl_111a9b3bccb3",
@@ -2318,9 +2318,9 @@
         "finance",
         "tech"
       ],
-      "example_ad_id": "aa15d39c-09e8-4bf0-a6e0-4da81accb648",
-      "example_body": "Investing is no longer a game for the 'experts', Stack simplifies and automates investing for everyday investors like you and us 🤗\n\nRead the blog to know more about Stack's mission to make investing accessible for everyone - link in the story ✅\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n#investing #investingforbeginners #investingforeveryone #investingapps #fintechs #money #savings #getstackgo #stackapp #blogs\n#mobileapp #easyinvesting #financialplanning #invest #automatedinvesting #investingsimplified",
-      "example_product_desc": "A mobile automated investing app that simplifies portfolio-building and financial planning for everyday investors."
+      "example_ad_id": "a9676792-5aea-4b11-b4f8-c73f7654cebb",
+      "example_body": "Great for travel or adding counter space when getting ready 😅 comment “SPACE” and I’ll send you all the link details to your DMs 🔗 \n\n#amazonfinds #counterspace #getready #geniusfind #amazonhome",
+      "example_product_desc": "A portable, foldable countertop organizer/shelf that provides extra surface space for toiletries and makeup when traveling or getting ready."
     },
     {
       "id": "tmpl_248819645f66",
@@ -2357,9 +2357,9 @@
         "entertainment",
         "food"
       ],
-      "example_ad_id": "551a5c42-1e52-4c05-b5af-8ca709bd0515",
-      "example_body": "Breakfast, Lunch, and Dinner thanks to @cookunity 🙌 Use Code: GRUBS for 50% off your first order! #cookunitypartner",
-      "example_product_desc": "A prepared meal delivery service that delivers chef-made, ready-to-eat meals to customers' homes."
+      "example_ad_id": "3b53fcc5-c436-46bf-87dd-7859a7093fa6",
+      "example_body": "Get the most out of your MOZA gear with our custom made products and accessories. Upgrade your setup with wheel mounts, dust covers, decor, and more, or save big with our Moza Bundle!\n\n @moza_racing_official \n\n#moza #dust #dustcover #wheelmounting #simracing #simracingsetup #assettocorsa #gaming #gamingsetup #racecars #simracers #iracing #iracingofficial #simsportgadget",
+      "example_product_desc": "Custom-made accessories and mounting hardware for MOZA sim racing equipment, including wheel mounts, dust covers, decorative items, and bundled kits."
     },
     {
       "id": "tmpl_a560562e729c",
@@ -2395,9 +2395,9 @@
       "categories": [
         "tech"
       ],
-      "example_ad_id": "c1f0e535-87dd-40b2-ac94-5110ecad3586",
-      "example_body": "Surfshark from 81% off + 3 months extra\nDid you know that your online payments aren't private if the Wi-Fi isn't secure?\nSafer online payments with a VPN",
-      "example_product_desc": "A VPN service that encrypts your internet connection to protect privacy and secure online payments on unsecured Wi‑Fi."
+      "example_ad_id": "bf864d4a-f1b9-4ced-80fb-7b55c6b0f6bd",
+      "example_body": "Surfshark from 81% off + 3 months extra\nYour most private side isn’t meant for hackers or snoopers. A VPN will help you keep your privacy online.\nStay private online",
+      "example_product_desc": "A Virtual Private Network (VPN) service that encrypts your internet traffic and masks your IP address to protect online privacy and security."
     },
     {
       "id": "tmpl_d03ab1244372",
@@ -2415,9 +2415,9 @@
         "education",
         "finance"
       ],
-      "example_ad_id": "e11c994d-b015-4f11-8f56-b49a60c8a8b6",
-      "example_body": "Lil Baby, Glorilla, DC Young Fly, Michael Vicks Wife, etc.. EVERYONE is learning how to invest from Aristotle! and you're next! \n\nfollow @aristotle_investments for more content! \n\nDM or Comment “trial” to access our world class option picks + beginners options master class + beginners guide to investing ebook‼️",
-      "example_product_desc": "An investment education and advisory service that provides options trade recommendations, beginner masterclasses, and an investing guide ebook."
+      "example_ad_id": "9310f2af-2436-453d-8b72-646d5c2869d4",
+      "example_body": "😮What a useful gadget, I always carry it in my bag and take it out to protect myself in case of danger😬Promise me not to test this on your boyfriend💪 https://shopscoopmall.com/product/tacticalstunpen/",
+      "example_product_desc": "A compact tactical stun pen — a pen-shaped personal-defense device that delivers an electric shock to deter or incapacitate attackers."
     },
     {
       "id": "tmpl_1e817d109a5e",
@@ -2435,9 +2435,9 @@
         "ecommerce",
         "home"
       ],
-      "example_ad_id": "e20a9d92-5107-4a3a-bd0f-dd6a69eb7173",
-      "example_body": "Customer Rating 4.8/5+ Stars!🌟150,000+ Reviews!\nGrab life by the bald.\nThe Bawldy™ Pro gives you the smoothest, fastest shave without the irritation.\nWaterproof, wireless, and built to handle every curve.",
-      "example_product_desc": "A waterproof, cordless electric razor designed specifically for shaving bald heads, delivering fast, smooth, irritation‑free shaves."
+      "example_ad_id": "67317c79-b80e-49ab-b6bd-04bc19e74088",
+      "example_body": "★★★★★ 15,000+ Sold\nEmpty Walls Are Boring 😴\n\n✔️ Choice of Canvas or Premium Grade Acrylic Glass \n✔️ Delivered Ready To Hang\n✔️ Gallery Grade Quality\n✔️ Ships fast, with 100% Defect-Free Insurance \nYou won't leave our site without finding your favorite piece 👀\nYour walls will thank you",
+      "example_product_desc": "Gallery-quality wall art sold as canvas or premium acrylic glass prints, delivered ready-to-hang."
     },
     {
       "id": "tmpl_c02c46166dea",
@@ -2454,9 +2454,9 @@
         "ecommerce",
         "home"
       ],
-      "example_ad_id": "d9767309-14e6-4b21-a9e4-017adb50a09a",
-      "example_body": "Limited time discount 📣\nComfy & stylish for any occasion 🎁\nLook good and feel good too 👏\nA selection of color choices 🧡\nShop Women's Bestsellers, Halara Butt Lifting Leggings, Halara SoCinched Leggings and More at Halara, Always Made From Activewear-Inspired Fabrics and Featuring Innovative Designs. Enjoy Free Shipping.",
-      "example_product_desc": "A women's activewear brand selling comfortable, stylish leggings (including butt-lifting and SoCinched styles) and other apparel made from activewear-inspired fabrics."
+      "example_ad_id": "310cd19f-a3bb-46b4-82b1-dc35d57d12ba",
+      "example_body": "🚨 WE ARE BACK IN STOCK! 🚨\n🚨 WE ARE BACK IN STOCK EARLY FOR BLACK FRIDAY! 🚨\n\n✅ Effortless Fur Removal: Soft brush cloth bristles generate static to lift and capture pet hair instantly.\n✅ Universal Fit: Ergonomic design with adjustable wrist strap ensures a snug fit for all hand sizes.\n✅ Reusable & Easy to Clean: Simply rinse under running water and air-dry for repeated use.\n✅ Versatile Use: Effectively removes hair from furniture, clothing, car interiors, and more.\n\nBuy One Get One Free Sale Ends Today! 🚨",
+      "example_product_desc": "A reusable pet-hair removal glove with soft, static-generating bristles and an adjustable wrist strap for removing pet hair from furniture, clothing, and car interiors."
     },
     {
       "id": "tmpl_7085eaf5edc5",
@@ -2535,9 +2535,9 @@
         "health",
         "home"
       ],
-      "example_ad_id": "a778307b-f2e0-4bd0-a79d-95057e504ec0",
-      "example_body": "{{product.name}}\nGet your daily vitamins and supplements delivered right to your door. Save 25% off your first order with code SHOP25.*\n\n*See website for details",
-      "example_product_desc": "A home delivery service for vitamins and dietary supplements."
+      "example_ad_id": "2d6f0333-bd1d-4518-8f89-ff35e9706cad",
+      "example_body": "BLACK FRIDAY SALE\nKeep your couch clean and your pets comfortable with this couch cover. Designed to protect your furniture while blending beautifully into any home. 🐾\n\n✅ Ultra-soft quilted material pets love\n✅ Shields against fur, stains, and scratches\n✅ Non-slip backing keeps it securely in place\n✅ Machine washable for quick, easy cleaning\n✅ Neutral tones that match any living space\n\n🐾 Get 30% OFF today — limited time only.\nPawLounge™ Plush Couch Cover",
+      "example_product_desc": "A plush, quilted, non-slip, machine-washable couch cover that protects furniture from pet fur, stains, and scratches while blending with home decor."
     },
     {
       "id": "tmpl_51a7c819f397",
@@ -2594,9 +2594,9 @@
         "ecommerce",
         "tech"
       ],
-      "example_ad_id": "dc4c9009-9f27-4e2c-8912-d3bbefc031c6",
-      "example_body": "How can something so perfect be just $19...\nYou will MELT his heart when he opens your beautiful eyes 🥹\n24,0000+ ☆☆☆☆☆ Reviews, Crafted With Meticulous Detail + Our Patented Software To Enhance Your Image To The Absolute Maximum Quality... All For Just $19.97? Seems Impossible But We Are Here To Make The Most Meaningful And Sentimental Pieces Available For Everyone ♡",
-      "example_product_desc": "A personalized photo gift service that uses proprietary image-enhancement software to create sentimental, low-cost prints and keepsakes."
+      "example_ad_id": "8033e9cc-c05e-4578-8e84-28407cb21e1c",
+      "example_body": "Zero Hassle in Seconds\nYes, CLIPSTIC is tested to fit every ski + pole combination. Strong, durable, and backed by 50k families.\nIf it doesn't fit–they buy it back from you.\nSave Up To 25% Today",
+      "example_product_desc": "A durable universal clip designed to fasten skis to ski poles for secure carrying and storage."
     },
     {
       "id": "tmpl_cd63ef0d48e0",
@@ -2614,9 +2614,9 @@
         "ecommerce",
         "entertainment"
       ],
-      "example_ad_id": "c3a68c8a-f5ab-431b-9cfa-d23cbdacdb59",
-      "example_body": "Home - Cheap game keys at your fingertips\nDune Awakening: 20% off ALL platforms\nUnlock gaming joy worldwide! We offer instant delivery 24/7 on game keys. Score fantastic deals on Steam, Origin, Battle.net, Xbox, PSN, and more!",
-      "example_product_desc": "An online store selling discounted digital game activation keys for platforms like Steam, Origin, Battle.net, Xbox, and PlayStation with instant 24/7 delivery."
+      "example_ad_id": "4bffc040-324d-4cdc-85e3-610b8d165c3d",
+      "example_body": "🔥🔥 #เข้าครบทุกสีทุกรุ่น 🔥🔥 สีเขียวเหนี่ยวทรัพย์💚\n----------------------------------------------------\n🔥 #ราคาดี ที่ถูกยิ่งกว่า #ราคาส่ง 😆 390.- เน้นไว‼️ พ่อค้ารีบ‼️\n🔺 มีครบทุกสีน๊า งานเนี๊ยบ!!! #พร้อมส่งทันที ทักเลย \n✅ #พร้อมส่ง ตั้งแต่ iPhone11 - #16promax",
+      "example_product_desc": "Affordable protective phone cases available in multiple colors, compatible with iPhone 11 through iPhone 16 Pro Max."
     },
     {
       "id": "tmpl_7490a765eef5",
@@ -2633,9 +2633,9 @@
       "categories": [
         "automotive"
       ],
-      "example_ad_id": "e924d2fd-facd-41a6-9113-2cae0f3885b1",
-      "example_body": "Haney Marine and Outdoors\n💥2023 Liquidation Sale💥Everything Must Go💥Dealer Invoice Pricing💥Pontoons, Fishing Boats, Hunting Boats, Mud Motors, Outboards and More!!\n\nGIVE US A CALL TODAY AND SAVE BIG!!\n\nHaney Marine and Outdoor\n8390 US 72\nAthens AL 35611\n(256)232-5850",
-      "example_product_desc": "A marine and outdoor dealership selling pontoons, fishing and hunting boats, mud motors, outboard engines, and related marine equipment."
+      "example_ad_id": "c5dd2a5d-9a40-4f1c-919c-64cb5c8e55f8",
+      "example_body": "KBB Instant Cash Offer in Temecula, CA | DCH Honda of Temecula\nWant to make a deal? 🤝\n\nWe're paying top $$$ for you to sell your car🚗! \n\nClick \"Get Quote\" to get an Instant Cash Offer for your car today!\nWe use cookies and browser activity to improve your experience, personalize content and ads, and analyze how our sites are used. For more information on how we collect and use this information, please review our Privacy Policy. California consumers may exercise their CCPA rights here.",
+      "example_product_desc": "A service from DCH Honda of Temecula that provides Kelley Blue Book–based instant cash offers for people selling their cars in Temecula, CA."
     },
     {
       "id": "tmpl_39c12e3b2a53",
@@ -2652,9 +2652,9 @@
       "categories": [
         "ecommerce"
       ],
-      "example_ad_id": "92e40844-d7e9-45bb-b946-7c0b1379a712",
-      "example_body": "Celebrate her, every day 🤍\nGet more sparkle for less: 2 for 1 on all jewelry! ✨\n\nThis is your sign to treat yourself or buy a gift for someone special.\n\nWaterproof 💧 Sweatproof 💦 Tarnish-free ✨",
-      "example_product_desc": "Fashion jewelry pieces that are waterproof, sweatproof, and tarnish-free."
+      "example_ad_id": "828b0767-6509-4363-8948-00ebb3f56c7a",
+      "example_body": "Tarnish-Free Friendship Rings 💫\nGet more sparkle for less: 2 for 1 on all jewelry! ✨\n\nThis is your sign to treat yourself or buy a gift for someone special.\n\nWaterproof 💧 Sweatproof 💦 Tarnish-free ✨",
+      "example_product_desc": "Matching friendship rings — paired fashion jewelry designed to be waterproof, sweatproof, and resistant to tarnishing."
     },
     {
       "id": "tmpl_0633e0c7d486",
@@ -2673,9 +2673,9 @@
         "entertainment",
         "tech"
       ],
-      "example_ad_id": "cf58e42f-df88-493d-9536-3a1ec8c1da24",
-      "example_body": "All in One Voiceover & Music Maker App\n💥 One-time payment. No monthly fees. No credits. \n\n🔥 Create lifelike voice clones\n🔥 Make songs & music with male/female vocals\n🔥Dub voices in any language\n🔥 Turn text into podcasts & audiobooks\n🔥Generate unique character voices from prompt (wizard, warlord, witch & more)\n🔥 Choose from over 7000+ AI Voices\n💼 Use everything commercially — no royalties.\nPay Once Use Forever",
-      "example_product_desc": "An AI-powered all-in-one voiceover and music creation app that generates lifelike voice clones, sung and spoken vocals, multilingual dubbing, and text-to-speech/audiobook production under a one-time commercial-use license."
+      "example_ad_id": "1c0e1ebb-eb65-4509-bc96-22ee410e21ce",
+      "example_body": "Plato's Closet - Boardman, OH\n—>Plato's Closet pays cash on the spot for trendy girls + guys teens/young adults clothing and accessories!\n\n—> We buy all day everyday �\nPlato's Closet Boardman buys and sells gently used clothing for children, teen and twenty-something boys and girls. Our used clothing stores offer a huge selection of current, trendy styles as well as every day basics you can't live without - all at up to 70% off retail prices!",
+      "example_product_desc": "A resale clothing store that buys and sells gently used, trendy apparel and accessories for teens and young adults, offering cash on the spot."
     },
     {
       "id": "tmpl_ec1a4fb72035",
@@ -2713,9 +2713,9 @@
         "health",
         "home"
       ],
-      "example_ad_id": "3b0a35d5-54da-4577-9078-f60ecb423abd",
-      "example_body": "Natural Relief in Weeks\nTired of waking up stiff and sore?\n\nOur high-potency turmeric blend supports joint comfort and reduces inflammation — without fillers, additives, or fluff.\n\nClinically dosed. 100% natural.\nFeel the difference in just weeks.\n100,000+ Sold",
-      "example_product_desc": "A high-potency turmeric (curcumin) dietary supplement formulated to support joint comfort and reduce inflammation."
+      "example_ad_id": "15f5a11c-d8a3-4504-9441-53db3c89f607",
+      "example_body": "It’s Time to Take a Breath of Sans-Fresh Air 🌬️\nSick of stuffiness when you’re stuck indoors? Sans can eliminate the allergens and microscopic particles we inhale every day. 👀\nThe best air purifier I’ve ever used.",
+      "example_product_desc": "A compact indoor air purifier that removes allergens and microscopic particles to improve indoor air quality."
     },
     {
       "id": "tmpl_5c08b6275d3d",
@@ -2773,9 +2773,9 @@
         "home",
         "tech"
       ],
-      "example_ad_id": "e1771a70-42dd-4f4c-81d1-a65f3377da8b",
-      "example_body": "Discover Tri-Screen 3 now\nMeet the all-new Tri-Screen 3 — triple your laptop, triple your output\n\nHow much more could you do with two extra Full-HD screens? The Xebec Tri-Screen 3 instantly adds dual 13.3″ monitors to your laptop—no clutter, all power.\n\nSleek aluminum design and single-cable setup",
-      "example_product_desc": "A portable laptop accessory that attaches to a laptop and provides two 13.3″ Full-HD external monitors via a single-cable connection."
+      "example_ad_id": "1068b4fa-44dc-44ab-be3d-4c1b4ffb4927",
+      "example_body": "Comment PAINT \n\nAnd YES… you can paint your kitchen cabinets with this! 👀🫢\n\nTruly the best paint ever — let me tell you why!\n\nThis paint kit gives you the freedom to create multiple wood-like finishes, from soft white oak to rich, rustic tones with just a touch of stain. And the best part? It comes in so many colors 😍 — everything you see in this video is from just one kit: The Pickled Oak Kit!\n\nHere are a few ways to use it:\n\nOption 1: Apply one coat using the included brush. The paint is specially formulated to mimic wood, and the brush strokes give it that perfect grain effect.\n\nOption 2: For a deeper, rustic white oak with subtle red undertones, layer one coat of stain over the white oak base.\n\nOption 3: Use the graining tool to create a natural wood texture and dimension.\n\nOption 4: Wipe off excess stain with the included cloth to reveal a soft, realistic wood grain finish.\n\nOption 5: My favorite method: paint one coat of white oak, add a layer of stain, let it dry, then paint over it again and immediately use the graining tool — it gives the most dimensional, custom wood look!",
+      "example_product_desc": "A DIY paint kit that creates realistic wood-grain finishes on cabinets and furniture, including base paint, stain, a graining tool, brush, and cloth."
     },
     {
       "id": "tmpl_c9bde7927bd4",
@@ -2853,9 +2853,9 @@
         "finance",
         "tech"
       ],
-      "example_ad_id": "64bb46c9-ab01-43ec-ae51-a980cad1d99f",
-      "example_body": "Free Shipping & Returns\nMake your wallet smarter and never lose it again.\n\n✅ Ultra-Slim Design - Fits perfectly in any wallet or purse.\n✅ 5-Month Rechargeable Battery - Worry-free use, no frequent charging needed.\n✅ Works with Apple Find My and even with RFID-Blocking Wallets.\n\nShop now: https://www.spotminders.com/products/spotminders-tracking-cards\n5,000+ ⭐⭐⭐⭐⭐ Reviews",
-      "example_product_desc": "A slim, rechargeable tracking card that fits in wallets and purses and uses Apple Find My–compatible tracking to help locate lost wallets and items, including when inside RFID-blocking wallets."
+      "example_ad_id": "43b6c62a-7ce9-459c-a73a-9ab2a6bc7350",
+      "example_body": "$1.200 MXN al mes!\n🚗 Autos desde $1.200 MXN al mes! 🚗\n\n✅ Fácil financiamiento, incluso con mal crédito!\n✅ Aprobación rápida\n✅ Pagos mensuales súper bajos\n\nAprovecha ahora! [Solicita Ya]\n⭐⭐⭐⭐⭐",
+      "example_product_desc": "A car financing service in Mexico that provides low-monthly-payment auto loans with quick approval, including options for buyers with poor credit."
     },
     {
       "id": "tmpl_feeb16ff435f",
@@ -2873,9 +2873,9 @@
         "health",
         "tech"
       ],
-      "example_ad_id": "94bf1b59-b3df-4a9e-8f9c-709b98d1563f",
-      "example_body": "GET 50% OFF THE WAVER TODAY!\nStruggling with joint stiffness, poor circulation, or balance issues?\n\nThe Waver isn’t just a fitness tool—it’s a daily wellness routine you can stick to.\n✔️ Gently activates muscles without high-impact movements\n✔️ Helps ease tension in knees, hips, and lower back\n✔️ Supports blood flow and lymphatic drainage\n✔️ Great for regaining stability and strength\n✔️ Easy enough for anyone to use—sitting or standing\n\nNo gym. No pressure. Just a few minutes a day to feel noticeably better.\n\nShop now → lifeprofitness.com/pages/vibration-plate-rp",
-      "example_product_desc": "A home-use vibration plate platform that delivers low-impact whole-body vibration to activate muscles, improve circulation and balance, and reduce joint tension."
+      "example_ad_id": "5e9193ff-742f-4abc-878c-908f882223fd",
+      "example_body": "Summer Sale–50% OFF Yearly Plans!\nDon’t let AI detectors jeopardize your hard work.\nWalter AI helps you humanize AI-generated text and bypass AI detectors like GPTZero and Turnitin. Try Walter AI for a flawless AI Text Humanizer.",
+      "example_product_desc": "A web tool that rephrases and humanizes AI-generated text so it reads like human writing and is less likely to be flagged by AI-detection or plagiarism tools."
     },
     {
       "id": "tmpl_e4af1c1c2d34",
@@ -2892,9 +2892,9 @@
       "categories": [
         "tech"
       ],
-      "example_ad_id": "e6383913-3060-4acb-8de7-4e7cade4fdb4",
-      "example_body": "If the job hunt is starting to feel like a full-time job, it’s time for a change – this time using @linkedin’s AI-powered job search tool! It helps you find the roles that align with your interests, skills, and goals, further closing your gap between search to application. \n\nSee how LinkedIn can work for you with AI powered job search today!\n\n#LinkedInPartner @linkedin #JobSearchTips #CareerAdvice #LinkedInTips #NewJobNewMe",
-      "example_product_desc": "An AI-powered job search feature on LinkedIn that analyzes users’ interests, skills, and goals to find and recommend relevant job openings."
+      "example_ad_id": "37327162-6c69-414c-b408-660d5bad9e0d",
+      "example_body": "Creating a 3D model is often harder than printing it.\nAs a 3D printing hobbyist, that’s usually the biggest blocker for me.\n\nThis time, I used Meshy 6 Preview to go from a simple idea → AI-generated image → 3D model → straight into my slicer.\nNo advanced modeling skills, no starting from scratch.\n\nWhat really surprised me is how smooth the workflow is — especially with Nano Banana Pro and direct integration with Bambu Studio.\nFrom concept to a real printed decoration in just a couple of hours.\n\nIf you’re into 3D printing, game assets, or digital design, this tool is worth a look.\n\n@meshy.ai @meshyai_3dprinting \n\n#BestAI3DModelGenerator\n#ImageTo3DModel\n#MeshyAI\n#MostUseful3DModelTool\n#BestGameAssetGenerator\n#TextTo3D\n#3DModelingSoftware\n#AI3D\n#3DPrinting\n#makercommunity",
+      "example_product_desc": "Meshy is an AI-driven 3D modeling tool that converts images or text prompts into ready-to-print 3D models with direct slicer and 3D printer integration."
     },
     {
       "id": "tmpl_899632d78d80",
@@ -2911,9 +2911,9 @@
       "categories": [
         "ecommerce"
       ],
-      "example_ad_id": "7d43b78a-ec6a-4119-802f-de856047b60e",
-      "example_body": "‼️ BEFORE you request the link you must be following me or you will not be able to see the message due to IG privacy settings.\n\n💫 Comment SHOP and I’ll send the links for this video to your DM or you can tap the link in bio to shop all my posts \n\nThe #1 best selling item this year! It really is the best! \n\nhttps://amzlink.to/az0bslZuZLBti",
-      "example_product_desc": "A consumer product sold on Amazon that the influencer is promoting and directing followers to purchase via a link or DM."
+      "example_ad_id": "71dc9b84-40b8-45b5-ab02-f2fa9510d076",
+      "example_body": "‼️ BEFORE you request the link you must be following me or you will not be able to see the message due to IG privacy settings.\n\n💫 Comment SHOP and I’ll send the links for this video to your DM or you can tap the link in bio to shop all my posts \n\nAmazon best sellers last week! \n\nhttps://amzlink.to/az0XqIV4CkjEN",
+      "example_product_desc": "An Instagram-based shopping/affiliate service that provides curated Amazon best-seller product links via direct message or a link in the profile."
     },
     {
       "id": "tmpl_a0c62b8f4cf7",
@@ -2932,9 +2932,9 @@
         "health",
         "other"
       ],
-      "example_ad_id": "3b2fd93c-a6c1-483a-b034-8140254d3dd8",
-      "example_body": "Wanhua Chemical\n🌍 We Are Wanhua Chemical\nAt Wanhua Chemical, we believe chemistry shapes the way we live, move, and connect.\nOur advanced materials empower innovation across industries — from homeware and furniture, sports and leisure, and personal care, to automotive and transportation, building and construction, electronics and electrical, and green energy. By providing safer, cleaner, and more efficient chemical solutions, we help create a smarter, more sustainable world for everyone.\nWith 7 R&D centers, 12 production bases, 28 sales offices, and hundreds of logistics sites, our agile and resilient global supply chain connects customers worldwide—ensuring reliable delivery, consistent quality, and premium service wherever you are.\nGuided by our mission, “Advancing Chemistry, Transforming Lives,” we continue to drive technological innovation that transforms industries and improves life.\n👉 Follow our page for insights, innovations, and stories on how Wanhua’s chemistry is powering a better future.",
-      "example_product_desc": "A global chemical company that develops and supplies advanced materials and specialty chemical solutions for industries such as automotive, construction, electronics, personal care, and green energy."
+      "example_ad_id": "17d8c0e0-da9b-4a9d-818d-b830eb693855",
+      "example_body": "Blog\n💡 ABA stands for \"Applied Behavior Analysis.\" \n➡️ ABA can be used to reduce challenging behaviors and replace them with functional responses\n© . All Rights Reserved. Click here for our Privacy Policy.Should you encounter issues using our website, please contact us at 1 586 207-9255 for assistance.",
+      "example_product_desc": "A service and informational resource offering Applied Behavior Analysis (ABA) interventions to reduce challenging behaviors and teach functional replacement responses."
     },
     {
       "id": "tmpl_488c09b2c75d",
@@ -2975,9 +2975,9 @@
         "health",
         "tech"
       ],
-      "example_ad_id": "ee02d485-90f8-44d5-a153-0210cd76783c",
-      "example_body": "{{product.name}}\nUnlock Your Full Potential with Snap Supplements!\n\nLooking to elevate your fitness, mental clarity, or overall wellness? At Snap Supplements, we create premium, science-backed supplements to help you take control of your health. Whether you’re crushing workouts, managing stress, or boosting energy, we’ve got the right product for your goals.\n\nWhy Choose Snap Supplements?\n✅ High-quality, all-natural ingredients\n✅ Products designed for maximum absorption and effectiveness\n✅ No fillers, no fluff—just results\n✅ Affordable prices for the best quality\n\nStart your journey to a healthier, stronger you today!",
-      "example_product_desc": "A brand of science-backed dietary supplements made with natural ingredients to support fitness, energy, mental clarity, and overall wellness."
+      "example_ad_id": "d9d5e4ba-a570-47af-92d4-3fd1d5aaa317",
+      "example_body": "xTool MetalFab Laser Welder and CNC Cutter for Education\nTransform Your Classroom with xTool MetalFab: The Ultimate All-in-One Metal Workshop!\n\n🛠️ Why Choose xTool MetalFab for Education?\n✅ Safety First, Always: Built for classrooms, xTool MetalFab features an OD5+ protective cover and 10 advanced safety features to ensure a secure, worry-free environment for students to explore their creativity.\n✅ Student-Friendly Design: No experience? No problem! With an intuitive touchscreen, smart AI cameras, and 100+ pre-set material parameters, students can start creating right away—no steep learning curve required.\n✅ Complete Metal Fabrication in One Machine: Save space and budget with a single device that handles CNC cutting, welding, and cleaning. From start to finish, xTool MetalFab empowers students with a full metalworking experience.\n\n🎁Get a Custom Quote in Seconds! — unlock classroom bundles, and priority support.\nBring Innovation to Your Classroom Today!",
+      "example_product_desc": "An all-in-one educational metal fabrication machine that combines laser welding, CNC cutting, and cleaning with classroom-grade safety features and student-friendly controls."
     },
     {
       "id": "tmpl_c90d301e8d6b",
@@ -3017,9 +3017,9 @@
         "automotive",
         "health"
       ],
-      "example_ad_id": "788697ee-9b33-4cac-8fd4-078ba5dde3db",
-      "example_body": "Maximum Strength Nerve Gel is a Game Changer!\nYou can feel the soothing relief as soon as you rub it in. NeuropAWAY® Gel’s patented formula is the only topical gel on the market that contains 50,000 IU of Vitamin D per jar to calm nerves at the source. Feel better and restore nutrients instantly with NeuropAWAY® Gel. Our maximum strength gel targets deficiencies and delivers key nutrients to damaged and inflamed nerves.\nToday Buy Neuropaway Maximum Strength Gel 2oz; Patented formula for the support of Diabetic Neuropathy, nerve pain, tingling, burning, and numbness. at Walmart.com",
-      "example_product_desc": "A topical maximum-strength gel (NeuropAWAY®) marketed for diabetic neuropathy and nerve pain that delivers high-dose vitamin D (50,000 IU per jar) and other nutrients to the affected area."
+      "example_ad_id": "008a3b7a-7301-44a6-8c58-5ace7d556d18",
+      "example_body": "Sewell Family of Companies\nGreat technicians deserve better! Here's why they should join Sewell:\n\n*Manufacturer automotive certifications - Gain opportunities for certifications with a wide range of brands including Kia, Ford, Lincoln, BMW, Cadillac, Buick, GMC, Chevrolet, Chrysler, Dodge, Jeep, and RAM!\n\n*Over $100,000 per year in potential earnings\n\n*Relocation Assistance\n\n*Climate-controlled shop\n\n*Great benefits\n\n*New equipment\n\n*Sewell = Many Brands = Many Opportunities\n\n*People-first culture\n\n*Much more!\n\nYou don't have to decide between a fulfilling career or great compensation. We're a family-owned business for over 100 years, and our team is growing! Technician careers are available for all makes. Click the link below to get an offer from one of our West Texas dealerships today!",
+      "example_product_desc": "A family-owned automotive dealership group offering technician job opportunities across multiple vehicle brands with paid certification programs, competitive pay, relocation assistance, and benefits."
     },
     {
       "id": "tmpl_61f2fc4f4b31",
@@ -3060,9 +3060,9 @@
         "health",
         "tech"
       ],
-      "example_ad_id": "8e5b120c-1f77-420e-8e60-522a9fecaa3f",
-      "example_body": "Seeking adults who use alcohol or drugs for an online research study!\nDownload a research app on your phone and take short, daily online surveys. Get paid for participating. Must be 18+ and own an Android smartphone. Click the link to learn more.\nThe most powerful, simple and trusted way to gather experience data. Start your journey to experience management and try a free account today.",
-      "example_product_desc": "A smartphone research app that recruits adults who use alcohol or drugs to complete short daily surveys and receive payment for participation."
+      "example_ad_id": "1b98a883-fbea-40cd-9e54-03d4735f4675",
+      "example_body": "Recover, & Revitalize with Red Light Therapy 🔴⚡\n✅ 𝐀𝐥𝐥-𝐍𝐞𝐰 𝟐𝟎𝟐𝟓 𝐁𝐈𝐎𝐌𝐀𝐗 𝟗𝐭𝐡 𝐆𝐞𝐧𝐞𝐫𝐚𝐭𝐢𝐨𝐧 \nRedefining red light therapy with cutting-edge features:\n\n🔊 𝐕𝐨𝐢𝐜𝐞 𝐑𝐞𝐜𝐨𝐠𝐧𝐢𝐭𝐢𝐨𝐧 𝐂𝐨𝐧𝐭𝐫𝐨𝐥: Hands-free, effortless control for ultimate convenience.\n\n🔦 𝐈𝐧𝐝𝐮𝐬𝐭𝐫𝐲-𝐋𝐞𝐚𝐝𝐢𝐧𝐠 𝐈𝐫𝐫𝐚𝐝𝐢𝐚𝐧𝐜𝐞: Enhanced power and deeper tissue penetration with advanced circuitry.\n\n🔴 𝟕-𝐖𝐚𝐯𝐞 𝐑+ & 𝐍𝐈𝐑+ 𝐒𝐩𝐞𝐜𝐭𝐫𝐚𝐥 𝐎𝐮𝐭𝐩𝐮𝐭: Target every layer of skin and tissue with wavelengths up to 1060nm IR.\n\n📱 𝐆𝐥𝐨𝐛𝐚𝐥𝐥𝐲 𝐏𝐚𝐭𝐞𝐧𝐭𝐞𝐝 𝐓𝐨𝐭𝐚𝐥 𝐂𝐨𝐧𝐭𝐫𝐨𝐥 𝐒𝐲𝐬𝐭𝐞𝐦: Includes professional touchscreen remote and smartphone app.\n\n🎮 𝐒𝐢𝐦𝐩𝐥𝐞 𝐑𝐞𝐦𝐨𝐭𝐞 𝐂𝐨𝐧𝐭𝐫𝐨𝐥 𝐈𝐧𝐜𝐥𝐮𝐝𝐞𝐝: Easy access for seamless operation.\n\n💡 𝐖𝐡𝐚𝐭 𝐃𝐨𝐞𝐬 𝐓𝐡𝐢𝐬 𝐌𝐞𝐚𝐧 𝐟𝐨𝐫 𝐘𝐨𝐮?\n\n💪Faster recovery after workouts \n⚡Enhanced energy levels and mood \n✨ Smoother, youthful skin \n✅ Reduced pain and inflammation \n🚀 Optimized overall health and performance \n\n👉 𝐒𝐡𝐨𝐩 𝐍𝐨𝐰\n\nwww.platinumtherapylights.com\nPlatinumLED manufactures top-notch Red and NIR therapy lights for a wide range of uses. Get your premium light therapy device today!",
+      "example_product_desc": "A high-power red and near-infrared light therapy device (panel) with multiple wavelengths and smart controls (voice, touchscreen, app, remote) designed for home and professional use to support recovery, skin health, pain relief, and performance."
     },
     {
       "id": "tmpl_f9e3883d3943",
@@ -3081,9 +3081,9 @@
         "beauty",
         "tech"
       ],
-      "example_ad_id": "a4297b4b-26d6-49bb-934e-ba1f2e296973",
-      "example_body": "Ethica Beauty\nPlant Based Care for Healthy Strong Hair\n\nRevitalize Your Hair with Plant-Based Care!\n \nSay goodbye to dry, damaged locks and hello to a healthy, lustrous mane. Try our plant-based hair care products today and experience the transformative power of Ethica  for yourself!\n\n#BEAGOODHUMAN\nAnti Aging Hair Care",
-      "example_product_desc": "A line of plant-based hair care products formulated to strengthen, revitalize, and support healthier, anti-aging hair."
+      "example_ad_id": "550ee8b8-9c43-4307-b963-9045ac96ce1e",
+      "example_body": "Church Windows Management Software\nWe offer top-rated software for churches of all sizes to keep up with their congregations and organize routine church office duties to help them operate more efficiently. You can download our free trial, or our team will be happy to give you a live demo.\nVisit our website to learn more about how our software can help your church!\nTrusted by thousands of churches, Church Windows software provides an easy way to track the church congregation, its happenings, its finances, and its payroll. Available in Web or Desktop versions for church of all sizes!",
+      "example_product_desc": "Church management software that helps congregations track members, events, finances, and payroll, available in web and desktop versions."
     },
     {
       "id": "tmpl_ed62cd72a9d1",
@@ -3186,9 +3186,9 @@
         "ecommerce",
         "home"
       ],
-      "example_ad_id": "b19d7486-0740-4974-b253-8799a73c9cfe",
-      "example_body": "Hair in the drain? Not today👏\n\nThis little gadget catches all the stray strands before they turn into a clogged nightmare. Fits most shower drains, super easy to use, and honestly… kinda satisfying to watch it work. 😍🤮\nWe’ve tried a ton of different drain hair catchers and this is one of the more subtle ones – the flower is kinda cute sitting on the drain like that! 🤭\n\nSend this to someone who has great hair but doesn’t want a plumbing disaster on their hands💇🏼‍♀️\n\n🛍️ Comment “DRAIN” to get the details or check the “bathroom favorites” folder on our Amazon storefront!!\n\n#everythingenvy #founditonamazon #draincleaning #homeessentials #bathroomhacks #bathroomrefresh #cleaningmadeeasy #amazongadgets #amazonmusthaves #amazonbathroom #asseenonsharktank #amazonhome #amazonfavorites DrainWig, drain cover hair catcher",
-      "example_product_desc": "A flower-shaped drain hair catcher that fits most shower drains to trap stray strands and prevent clogs."
+      "example_ad_id": "31104a2a-82db-4747-bcfa-a066ea7f343d",
+      "example_body": "Amazon kitchen find you’ll actually use.\nThese mixing bowls are sturdy, have non slip bottoms, come with lids, and stack neatly inside each other for easy storage. I use them all the time for cooking, baking, and meal prep.\nComment 𝗕𝗢𝗪𝗟𝗦 and I’ll send you the link. 𝗠𝗮𝗸𝗲 𝘀𝘂𝗿𝗲 𝘆𝗼𝘂’𝗿𝗲 𝗳𝗼𝗹𝗹𝗼𝘄𝗶𝗻𝗴 𝗺𝗲 𝗯𝗲𝗳𝗼𝗿𝗲 𝗮𝘀𝗸𝗶𝗻𝗴 𝗳𝗼𝗿 𝘁𝗵𝗲 𝗹𝗶𝗻𝗸𝘀, 𝗼𝗿 𝘁𝗵𝗲𝘆 𝘄𝗼𝗻’𝘁 𝘀𝗲𝗻𝗱.\nFollow for more Amazon home finds and everyday essentials you’ll actually use.\n\n@amazon \n\n#kitchengadget #kitchenmusthave #kitchenessentials #amazonkitchen #amazonhome #affordablefinds #momlife",
+      "example_product_desc": "A nested set of sturdy mixing bowls with non-slip bottoms and fitted lids for cooking, baking, meal prep, and storage."
     },
     {
       "id": "tmpl_6f548fbae197",
@@ -3271,9 +3271,9 @@
         "ecommerce",
         "tech"
       ],
-      "example_ad_id": "d74b660e-0dda-43f3-87ff-76c0b88e0acc",
-      "example_body": "{{product.name}}\nMost kids struggle to learn on bikes that weren’t made for them.\nGuardian Bikes are designed to help kids balance, stop safely, and ride with confidence—often faster than traditional mass market bikes.\n\nParents trust Guardian for safer first rides.\nFind the perfect bike for your child today 🚲✨",
-      "example_product_desc": "Children's bicycles engineered to help kids learn balance, stop safely, and ride with greater confidence than standard mass-market bikes."
+      "example_ad_id": "d3c5c241-0256-4322-b40f-5e2f695293ef",
+      "example_body": "Rápido con un toque👉\n¿Teléfono móvil lento y con cuelgues? ¡Esta aplicación es la olución! ¡Toque DESCARGAR y obtener su móvil más rápido! 👇\n⭐⭐⭐⭐⭐4.9/5.0",
+      "example_product_desc": "A mobile optimization app that cleans junk files and manages system resources to improve smartphone performance."
     },
     {
       "id": "tmpl_a97cc19d4d56",
@@ -3313,9 +3313,9 @@
         "ecommerce",
         "tech"
       ],
-      "example_ad_id": "df789016-50c8-4825-b7de-4d4d3aafbb93",
-      "example_body": "BUY 1 GET 1 FREE\nRELAUNCHED → The Santos\n\n ☑️ 316L Stainless Steel Craft\n ☑️ Dependable Quartz Movement\n ☑️ Built for the Everyday Explorer\n\nShop → luckyfours.com/products/santos\n1,300+ 5-Star Reviews",
-      "example_product_desc": "A 316L stainless steel quartz wristwatch designed for everyday wear and outdoor exploration."
+      "example_ad_id": "43566ba9-4f0d-455c-943f-9e6b112337fe",
+      "example_body": "Free Shipping & Returns\nMake your passport smarter and never lose it again.\n\n✅ Slim Protective Design – Keeps your passport safe without adding bulk.\n✅ 5-Month Rechargeable Battery – Worry-free use, no frequent charging needed.\n✅ Works with Apple Find My and even with RFID-Blocking Covers.\n\nShop now: https://www.spotminders.com/products/passport-tracker\n5,000+ ⭐⭐⭐⭐⭐ Reviews",
+      "example_product_desc": "A slim protective passport sleeve containing a rechargeable tracking device that pairs with Apple Find My to help locate and safeguard passports."
     },
     {
       "id": "tmpl_3d63530ea04c",
@@ -3401,9 +3401,9 @@
       "categories": [
         "beauty"
       ],
-      "example_ad_id": "960e37ec-3ec3-4ae0-99fe-da070a649a41",
-      "example_body": "Restore Your Skin in 3 Weeks!\nApplying foreign ingredients onto your skin daily can RUIN your skin microbiome. This isn't good for your health. You can replace nearly every big pharma skincare product with our natural Tallow & Honey Balm.\n\nUsing our knowledge of natural skin care alternatives, we aim to protect your skin with the finest of ingredients, to nurture your entire body’s divinity.\n\nShop now & secure your jar of Tallow & Honey Balm today! 🐄\nLIMITED STOCK LEFT!",
-      "example_product_desc": "A natural topical skincare balm made from tallow and honey designed to moisturize and support skin health as an alternative to conventional skincare products."
+      "example_ad_id": "477a6ea3-daeb-464b-af7a-6e83300f8390",
+      "example_body": "The All-in-One Skincare Solution!\nApplying foreign ingredients onto your skin daily can RUIN your skin microbiome. This isn't good for your health. You can replace nearly every big pharma skincare product with our natural Tallow & Honey Balm.\n\nUsing our knowledge of natural skin care alternatives, we aim to protect your skin with the finest of ingredients, to nurture your entire body’s divinity.\n\nShop now & secure your jar of Tallow & Honey Balm today! 🐄\nLIMITED STOCK LEFT!",
+      "example_product_desc": "A natural, all-purpose topical skincare balm made from tallow and honey for moisturizing and general skin care."
     },
     {
       "id": "tmpl_77d167c073c8",
