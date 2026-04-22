@@ -43,7 +43,6 @@ class Cluster(TypedDict):
     category: str
     size: int
     ad_ids: list[str]
-    ad_indices: list[int]
 
 
 class ClusterOutput(TypedDict):
@@ -104,6 +103,18 @@ def load_or_create_embeddings(ads: list[Ad], input_path: Path, cache_path: Path)
         ):
             log.info("Loaded embedding cache: %s", cache_path)
             return np.array(cache["embeddings"], dtype=np.float32)
+        if (
+            cache.get("embedding_model") == EMBED_MODEL
+            and cache.get("source") == str(input_path)
+            and set(cache.get("ad_ids", [])) == set(ad_ids)
+        ):
+            log.info("Loaded embedding cache with reordered ad_ids: %s", cache_path)
+            by_id = dict(zip(cache["ad_ids"], cache["embeddings"]))
+            embeddings = np.array([by_id[ad_id] for ad_id in ad_ids], dtype=np.float32)
+            cache["ad_ids"] = ad_ids
+            cache["embeddings"] = embeddings.astype(float).tolist()
+            cache_path.write_text(json.dumps(cache, ensure_ascii=False), encoding="utf-8")
+            return embeddings
         log.info("Embedding cache is stale; rebuilding: %s", cache_path)
 
     client = OpenAI()
@@ -157,7 +168,6 @@ def cluster_category(
                 "category": category,
                 "size": len(chunk),
                 "ad_ids": [ads[index]["ad_id"] for index in chunk],
-                "ad_indices": chunk,
             })
     return clusters
 
