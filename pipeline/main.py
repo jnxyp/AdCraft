@@ -22,6 +22,7 @@ from openai import OpenAI
 import annotator
 import cluster_builder
 import dedup
+import eval_task_builder
 import template_builder
 
 log = logging.getLogger(__name__)
@@ -36,6 +37,7 @@ class PipelinePaths(TypedDict):
     annotated: Path
     clusters: Path
     templates: Path
+    eval_tasks: Path
     embedding_cache: Path
 
 
@@ -47,6 +49,7 @@ def paths_for(dataset: str) -> PipelinePaths:
         "annotated": data_dir / f"{dataset}_annotated.json",
         "clusters": data_dir / f"{dataset}_clusters.json",
         "templates": data_dir / f"{dataset}_templates.json",
+        "eval_tasks": data_dir / f"{dataset}_eval_tasks.json",
         "embedding_cache": data_dir / f"{dataset}_product_desc_embeddings.json",
     }
 
@@ -108,6 +111,21 @@ def is_template_ready(path: Path) -> bool:
     if not isinstance(templates, list) or not templates:
         return False
     return all(cast(dict[str, object], item).get("id") for item in templates)
+
+
+def is_eval_task_ready(path: Path) -> bool:
+    if not path.exists():
+        return False
+    data = cast(dict[str, object], read_json(path))
+    tasks = data.get("tasks")
+    if not isinstance(tasks, list) or not tasks:
+        return False
+    for item in tasks:
+        task = cast(dict[str, object], item)
+        ads = task.get("ads")
+        if not task.get("id") or task.get("task_type") != "triplet" or not isinstance(ads, list) or len(ads) != 3:
+            return False
+    return True
 
 
 def write_ads_sorted(path: Path, rows: list[dict[str, object]]) -> None:
@@ -175,6 +193,23 @@ def run_templates(paths: PipelinePaths, force: bool) -> None:
     template_builder.write_output(paths["templates"], paths["annotated"], templates, len(ads))
 
 
+def run_eval_tasks(paths: PipelinePaths, force: bool) -> None:
+    if is_eval_task_ready(paths["eval_tasks"]) and not force:
+        log.info("Step 6 eval tasks: cache hit -> %s", paths["eval_tasks"])
+        return
+    ads_by_id = eval_task_builder.read_ads(paths["annotated"])
+    clusters = eval_task_builder.read_clusters(paths["clusters"])
+    templates_by_sequence = eval_task_builder.read_templates(paths["templates"])
+    tasks = eval_task_builder.build_eval_tasks(ads_by_id, clusters, templates_by_sequence)
+    eval_task_builder.write_output(
+        paths["eval_tasks"],
+        paths["annotated"],
+        paths["clusters"],
+        paths["templates"],
+        tasks,
+    )
+
+
 def main() -> None:
     load_dotenv(PIPELINE_DIR.parent / ".env")
 
@@ -185,6 +220,7 @@ def main() -> None:
     parser.add_argument("--force-annotate", action="store_true", help="Rebuild LLM annotations")
     parser.add_argument("--force-clusters", action="store_true", help="Rebuild clusters")
     parser.add_argument("--force-templates", action="store_true", help="Rebuild templates")
+    parser.add_argument("--force-eval-tasks", action="store_true", help="Rebuild eval task JSON")
     args = parser.parse_args()
 
     if Path.cwd().resolve() != PIPELINE_DIR:
@@ -199,6 +235,7 @@ def main() -> None:
     run_annotate(paths, force_all or bool(args.force_annotate))
     run_clusters(paths, force_all or bool(args.force_clusters))
     run_templates(paths, force_all or bool(args.force_templates))
+    run_eval_tasks(paths, force_all or bool(args.force_eval_tasks))
     log.info("Pipeline complete for %s", args.dataset)
 
 
