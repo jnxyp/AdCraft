@@ -1,4 +1,4 @@
-"""Build human evaluation tasks from product clusters and sequence templates.
+"""Build deterministic human evaluation tasks from clusters and templates.
 
 Run from pipeline/:
     python eval_task_builder.py
@@ -20,7 +20,10 @@ log = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s", stream=sys.stdout)
 
 Slot = Literal["a", "b"]
+RANDOM_SEED: int = 20260501
 MAX_AD_USES_PER_CLUSTER: int = 3
+CROSS_CLUSTER_RATIO: float = 0.20
+MAX_CROSS_CLUSTER_AD_USES: int = 1
 
 
 class Ad(TypedDict):
@@ -64,6 +67,8 @@ class Candidate(TypedDict):
     sequence_key: str
     template_id: str
     template_count: int
+    category: str
+    cluster_id: str
 
 
 class TaskAd(TypedDict):
@@ -77,6 +82,7 @@ class TaskAd(TypedDict):
 class EvalTask(TypedDict):
     id: str
     task_type: Literal["pair"]
+    pair_scope: Literal["same_cluster", "cross_cluster"]
     category: str
     cluster_id: str
     ads: list[TaskAd]
@@ -105,10 +111,11 @@ def read_templates(path: Path) -> dict[str, Template]:
     return {template_builder.sequence_key(template["sequence"]): template for template in data["templates"]}
 
 
-def task_id(category: str, cluster_id: str, ads: list[TaskAd]) -> str:
+def task_id(category: str, cluster_id: str, pair_scope: str, ads: list[TaskAd]) -> str:
     payload = {
         "category": category,
         "cluster_id": cluster_id,
+        "pair_scope": pair_scope,
         "ads": [
             {
                 "slot": ad["slot"],
@@ -143,6 +150,8 @@ def candidates_for_cluster(
             "sequence_key": seq_key,
             "template_id": template["id"],
             "template_count": template["count"],
+            "category": cluster["category"],
+            "cluster_id": cluster["cluster_id"],
         })
     return candidates
 
@@ -176,7 +185,12 @@ def choose_pair(candidates: list[Candidate], ad_use_counts: dict[str, int], used
     return list(best[3])
 
 
-def make_task(category: str, cluster_id: str, candidates: list[Candidate]) -> EvalTask:
+def make_task(
+    category: str,
+    cluster_id: str,
+    pair_scope: Literal["same_cluster", "cross_cluster"],
+    candidates: list[Candidate],
+) -> EvalTask:
     slots: list[Slot] = ["a", "b"]
     task_ads: list[TaskAd] = []
     for slot, candidate in zip(slots, candidates):
@@ -188,12 +202,56 @@ def make_task(category: str, cluster_id: str, candidates: list[Candidate]) -> Ev
             "sequence": candidate["sequence"],
         })
     return {
-        "id": task_id(category, cluster_id, task_ads),
+        "id": task_id(category, cluster_id, pair_scope, task_ads),
         "task_type": "pair",
+        "pair_scope": pair_scope,
         "category": category,
         "cluster_id": cluster_id,
         "ads": task_ads,
     }
+
+
+def pair_key_for(candidates: list[Candidate]) -> tuple[str, str]:
+    return tuple(sorted(candidate["ad_id"] for candidate in candidates))
+
+
+def grouped_candidates_by_category(clusters: list[Cluster], ads_by_id: dict[str, Ad], templates_by_sequence: dict[str, Template]) -> dict[str, list[Candidate]]:
+    grouped: dict[str, list[Candidate]] = {}
+    for cluster in clusters:
+        grouped.setdefault(cluster["category"], []).extend(
+            candidates_for_cluster(cluster, ads_by_id, templates_by_sequence)
+        )
+    return grouped
+
+
+def choose_cross_cluster_pair(
+    candidates: list[Candidate],
+    ad_use_counts: dict[str, int],
+    used_pair_keys: set[tuple[str, str]],
+) -> list[Candidate] | None:
+    available = [
+        candidate
+        for candidate in candidates
+        if ad_use_counts.get(candidate["ad_id"], 0) < MAX_CROSS_CLUSTER_AD_USES
+    ]
+    best: tuple[int, int, tuple[str, str], tuple[Candidate, Candidate]] | None = None
+    for combo in combinations(available, 2):
+        left, right = combo
+        if left["cluster_id"] == right["cluster_id"]:
+            continue
+        if left["sequence_key"] == right["sequence_key"] or left["template_id"] == right["template_id"]:
+            continue
+        pair_key = pair_key_for(list(combo))
+        if pair_key in used_pair_keys:
+            continue
+        use_penalty = sum(ad_use_counts.get(ad_id, 0) for ad_id in pair_key)
+        score = left["template_count"] + right["template_count"]
+        ranked = (use_penalty, -score, pair_key, combo)
+        if best is None or ranked < best:
+            best = ranked
+    if best is None:
+        return None
+    return list(best[3])
 
 
 def build_eval_tasks(
@@ -203,25 +261,50 @@ def build_eval_tasks(
 ) -> list[EvalTask]:
     tasks: list[EvalTask] = []
     skipped = 0
+    used_pair_keys: set[tuple[str, str]] = set()
     for cluster in clusters:
         candidates = candidates_for_cluster(cluster, ads_by_id, templates_by_sequence)
         ad_use_counts: dict[str, int] = {}
-        used_pair_keys: set[tuple[str, str]] = set()
         cluster_tasks = 0
         for _ in range(desired_task_count(len(candidates))):
             pair = choose_pair(candidates, ad_use_counts, used_pair_keys)
             if pair is None:
                 break
-            pair_key = tuple(sorted(candidate["ad_id"] for candidate in pair))
+            pair_key = pair_key_for(pair)
             used_pair_keys.add(pair_key)
             for candidate in pair:
                 ad_use_counts[candidate["ad_id"]] = ad_use_counts.get(candidate["ad_id"], 0) + 1
-            tasks.append(make_task(cluster["category"], cluster["cluster_id"], pair))
+            tasks.append(make_task(cluster["category"], cluster["cluster_id"], "same_cluster", pair))
             cluster_tasks += 1
         if cluster_tasks == 0:
             skipped += 1
-    tasks.sort(key=lambda task: (task["category"], task["task_type"], task["id"]))
-    log.info("Built %d eval tasks; skipped %d clusters without enough distinct sequences", len(tasks), skipped)
+
+    same_cluster_count = len(tasks)
+    cross_target = round(same_cluster_count * CROSS_CLUSTER_RATIO)
+    cross_use_counts: dict[str, int] = {}
+    cross_tasks = 0
+    for category, candidates in grouped_candidates_by_category(clusters, ads_by_id, templates_by_sequence).items():
+        category_target = round(sum(1 for task in tasks if task["category"] == category) * CROSS_CLUSTER_RATIO)
+        for _ in range(category_target):
+            pair = choose_cross_cluster_pair(candidates, cross_use_counts, used_pair_keys)
+            if pair is None:
+                break
+            pair_key = pair_key_for(pair)
+            used_pair_keys.add(pair_key)
+            for candidate in pair:
+                cross_use_counts[candidate["ad_id"]] = cross_use_counts.get(candidate["ad_id"], 0) + 1
+            cluster_id = f"cross:{pair[0]['cluster_id']}|{pair[1]['cluster_id']}"
+            tasks.append(make_task(category, cluster_id, "cross_cluster", pair))
+            cross_tasks += 1
+    tasks.sort(key=lambda task: (task["category"], task["pair_scope"], task["id"]))
+    log.info(
+        "Built %d eval tasks (%d same-cluster, %d cross-cluster; target=%d); skipped %d clusters without enough distinct sequences",
+        len(tasks),
+        same_cluster_count,
+        cross_tasks,
+        cross_target,
+        skipped,
+    )
     return tasks
 
 
