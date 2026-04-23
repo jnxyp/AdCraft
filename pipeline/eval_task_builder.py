@@ -148,7 +148,7 @@ def candidates_for_cluster(
 
 
 def desired_task_count(cluster_size: int) -> int:
-    return cluster_size
+    return cluster_size * MAX_AD_USES_PER_CLUSTER // 2
 
 
 def choose_pair(candidates: list[Candidate], ad_use_counts: dict[str, int], used_pair_keys: set[tuple[str, str]]) -> list[Candidate] | None:
