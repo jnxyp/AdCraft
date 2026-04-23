@@ -19,7 +19,7 @@ import template_builder
 log = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s", stream=sys.stdout)
 
-Slot = Literal["a", "b", "c"]
+Slot = Literal["a", "b"]
 
 
 class Ad(TypedDict):
@@ -75,7 +75,7 @@ class TaskAd(TypedDict):
 
 class EvalTask(TypedDict):
     id: str
-    task_type: Literal["triplet"]
+    task_type: Literal["pair"]
     category: str
     cluster_id: str
     ads: list[TaskAd]
@@ -147,19 +147,15 @@ def candidates_for_cluster(
 
 
 def desired_task_count(cluster_size: int) -> int:
-    if cluster_size < 5:
-        return 0
-    if cluster_size == 5:
-        return 1
-    return 2
+    return cluster_size // 2
 
 
-def choose_triplet(candidates: list[Candidate], used_ad_ids: set[str]) -> list[Candidate] | None:
+def choose_pair(candidates: list[Candidate], used_ad_ids: set[str]) -> list[Candidate] | None:
     available = [candidate for candidate in candidates if candidate["ad_id"] not in used_ad_ids]
-    best: tuple[int, tuple[str, str, str], tuple[Candidate, Candidate, Candidate]] | None = None
-    for combo in combinations(available, 3):
+    best: tuple[int, tuple[str, str], tuple[Candidate, Candidate]] | None = None
+    for combo in combinations(available, 2):
         sequence_keys = {candidate["sequence_key"] for candidate in combo}
-        if len(sequence_keys) != 3:
+        if len(sequence_keys) != 2:
             continue
         score = sum(candidate["template_count"] for candidate in combo)
         ad_ids = tuple(candidate["ad_id"] for candidate in combo)
@@ -172,7 +168,7 @@ def choose_triplet(candidates: list[Candidate], used_ad_ids: set[str]) -> list[C
 
 
 def make_task(category: str, cluster_id: str, candidates: list[Candidate]) -> EvalTask:
-    slots: list[Slot] = ["a", "b", "c"]
+    slots: list[Slot] = ["a", "b"]
     task_ads: list[TaskAd] = []
     for slot, candidate in zip(slots, candidates):
         task_ads.append({
@@ -184,7 +180,7 @@ def make_task(category: str, cluster_id: str, candidates: list[Candidate]) -> Ev
         })
     return {
         "id": task_id(category, cluster_id, task_ads),
-        "task_type": "triplet",
+        "task_type": "pair",
         "category": category,
         "cluster_id": cluster_id,
         "ads": task_ads,
@@ -203,11 +199,11 @@ def build_eval_tasks(
         used_ad_ids: set[str] = set()
         cluster_tasks = 0
         for _ in range(desired_task_count(len(candidates))):
-            triplet = choose_triplet(candidates, used_ad_ids)
-            if triplet is None:
+            pair = choose_pair(candidates, used_ad_ids)
+            if pair is None:
                 break
-            used_ad_ids.update(candidate["ad_id"] for candidate in triplet)
-            tasks.append(make_task(cluster["category"], cluster["cluster_id"], triplet))
+            used_ad_ids.update(candidate["ad_id"] for candidate in pair)
+            tasks.append(make_task(cluster["category"], cluster["cluster_id"], pair))
             cluster_tasks += 1
         if cluster_tasks == 0:
             skipped += 1
@@ -236,7 +232,7 @@ def write_output(
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Build eval task JSON from clusters and templates")
+    parser = argparse.ArgumentParser(description="Build pairwise eval task JSON from clusters and templates")
     parser.add_argument("--ads", default="data/ds0_annotated.json", help="Annotated ads JSON")
     parser.add_argument("--clusters", default="data/ds0_clusters.json", help="Cluster JSON")
     parser.add_argument("--templates", default="data/ds0_templates.json", help="Template JSON")

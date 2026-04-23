@@ -123,7 +123,7 @@ def is_eval_task_ready(path: Path) -> bool:
     for item in tasks:
         task = cast(dict[str, object], item)
         ads = task.get("ads")
-        if not task.get("id") or task.get("task_type") != "triplet" or not isinstance(ads, list) or len(ads) != 3:
+        if not task.get("id") or task.get("task_type") != "pair" or not isinstance(ads, list) or len(ads) != 2:
             return False
     return True
 
