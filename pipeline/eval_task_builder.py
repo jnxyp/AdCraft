@@ -111,21 +111,9 @@ def read_templates(path: Path) -> dict[str, Template]:
     return {template_builder.sequence_key(template["sequence"]): template for template in data["templates"]}
 
 
-def task_id(category: str, cluster_id: str, pair_scope: str, ads: list[TaskAd]) -> str:
-    payload = {
-        "category": category,
-        "cluster_id": cluster_id,
-        "pair_scope": pair_scope,
-        "ads": [
-            {
-                "slot": ad["slot"],
-                "ad_id": ad["ad_id"],
-                "template_id": ad["template_id"],
-            }
-            for ad in ads
-        ],
-    }
-    digest = hashlib.sha1(json.dumps(payload, sort_keys=True, separators=(",", ":")).encode("utf-8")).hexdigest()[:12]
+def task_id(ads: list[TaskAd]) -> str:
+    key = json.dumps(sorted(ad["ad_id"] for ad in ads), separators=(",", ":"))
+    digest = hashlib.sha1(key.encode("utf-8")).hexdigest()[:12]
     return f"eval_{digest}"
 
 
@@ -202,7 +190,7 @@ def make_task(
             "sequence": candidate["sequence"],
         })
     return {
-        "id": task_id(category, cluster_id, pair_scope, task_ads),
+        "id": task_id(task_ads),
         "task_type": "pair",
         "pair_scope": pair_scope,
         "category": category,
