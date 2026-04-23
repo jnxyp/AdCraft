@@ -20,6 +20,7 @@ log = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s", stream=sys.stdout)
 
 Slot = Literal["a", "b"]
+MAX_AD_USES_PER_CLUSTER: int = 3
 
 
 class Ad(TypedDict):
@@ -147,24 +148,32 @@ def candidates_for_cluster(
 
 
 def desired_task_count(cluster_size: int) -> int:
-    return cluster_size // 2
+    return cluster_size
 
 
-def choose_pair(candidates: list[Candidate], used_ad_ids: set[str]) -> list[Candidate] | None:
-    available = [candidate for candidate in candidates if candidate["ad_id"] not in used_ad_ids]
-    best: tuple[int, tuple[str, str], tuple[Candidate, Candidate]] | None = None
+def choose_pair(candidates: list[Candidate], ad_use_counts: dict[str, int], used_pair_keys: set[tuple[str, str]]) -> list[Candidate] | None:
+    available = [
+        candidate
+        for candidate in candidates
+        if ad_use_counts.get(candidate["ad_id"], 0) < MAX_AD_USES_PER_CLUSTER
+    ]
+    best: tuple[int, int, tuple[str, str], tuple[Candidate, Candidate]] | None = None
     for combo in combinations(available, 2):
         sequence_keys = {candidate["sequence_key"] for candidate in combo}
         if len(sequence_keys) != 2:
             continue
-        score = sum(candidate["template_count"] for candidate in combo)
         ad_ids = tuple(candidate["ad_id"] for candidate in combo)
-        ranked = (-score, ad_ids, combo)
+        pair_key = tuple(sorted(ad_ids))
+        if pair_key in used_pair_keys:
+            continue
+        use_penalty = sum(ad_use_counts.get(ad_id, 0) for ad_id in ad_ids)
+        score = sum(candidate["template_count"] for candidate in combo)
+        ranked = (use_penalty, -score, ad_ids, combo)
         if best is None or ranked < best:
             best = ranked
     if best is None:
         return None
-    return list(best[2])
+    return list(best[3])
 
 
 def make_task(category: str, cluster_id: str, candidates: list[Candidate]) -> EvalTask:
@@ -196,13 +205,17 @@ def build_eval_tasks(
     skipped = 0
     for cluster in clusters:
         candidates = candidates_for_cluster(cluster, ads_by_id, templates_by_sequence)
-        used_ad_ids: set[str] = set()
+        ad_use_counts: dict[str, int] = {}
+        used_pair_keys: set[tuple[str, str]] = set()
         cluster_tasks = 0
         for _ in range(desired_task_count(len(candidates))):
-            pair = choose_pair(candidates, used_ad_ids)
+            pair = choose_pair(candidates, ad_use_counts, used_pair_keys)
             if pair is None:
                 break
-            used_ad_ids.update(candidate["ad_id"] for candidate in pair)
+            pair_key = tuple(sorted(candidate["ad_id"] for candidate in pair))
+            used_pair_keys.add(pair_key)
+            for candidate in pair:
+                ad_use_counts[candidate["ad_id"]] = ad_use_counts.get(candidate["ad_id"], 0) + 1
             tasks.append(make_task(cluster["category"], cluster["cluster_id"], pair))
             cluster_tasks += 1
         if cluster_tasks == 0:
