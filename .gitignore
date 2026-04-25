@@ -48,11 +48,8 @@ out/
 .env.*.local
 pipeline/fb_config.json
 
-# ── Data & generated files ───────────────────────────────
-backend/data/chromadb/
-backend/data/static/images/
-backend/data/adcraft.db
-backend/data/templates.json
+# ── Runtime data & generated files ───────────────────────
+data/
 pipeline/data/*_dedup.json
 pipeline/data/*.checkpoint.json
 pipeline/data/*_embeddings.json

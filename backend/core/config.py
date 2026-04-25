@@ -31,15 +31,16 @@ class Settings:
 
 def load_settings() -> Settings:
     backend_root = Path(__file__).resolve().parent.parent
+    project_root = backend_root.parent
     load_dotenv(backend_root.parent / ".env")
-    data_dir = _env_path("ADFRAME_DATA_DIR", backend_root / "data")
-    pipeline_data_dir = _env_path("ADFRAME_PIPELINE_DATA_DIR", backend_root.parent / "pipeline" / "data")
+    data_dir = _env_path("ADFRAME_DATA_DIR", project_root / "data")
+    pipeline_data_dir = _env_path("ADFRAME_PIPELINE_DATA_DIR", project_root / "pipeline" / "data")
     return Settings(
         backend_root=backend_root,
         data_dir=data_dir,
-        db_path=data_dir / "adcraft.db",
+        db_path=data_dir / "adframe.db",
         chromadb_dir=data_dir / "chromadb",
-        static_images_dir=data_dir / "static" / "images",
+        static_images_dir=data_dir / "images",
         pipeline_data_dir=pipeline_data_dir,
         openai_api_key=os.environ.get("OPENAI_API_KEY", ""),
         openai_chat_model=os.environ.get("OPENAI_CHAT_MODEL", "gpt-5-mini"),
