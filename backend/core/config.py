@@ -4,6 +4,8 @@ import os
 from dataclasses import dataclass
 from pathlib import Path
 
+from dotenv import load_dotenv
+
 
 def _env_path(key: str, default: Path) -> Path:
     raw = os.environ.get(key)
@@ -29,6 +31,7 @@ class Settings:
 
 def load_settings() -> Settings:
     backend_root = Path(__file__).resolve().parent.parent
+    load_dotenv(backend_root.parent / ".env")
     data_dir = _env_path("ADFRAME_DATA_DIR", backend_root / "data")
     pipeline_data_dir = _env_path("ADFRAME_PIPELINE_DATA_DIR", backend_root.parent / "pipeline" / "data")
     return Settings(
