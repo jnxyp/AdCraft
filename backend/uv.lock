@@ -33,7 +33,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "aiosqlite" },
-    { name = "chromadb" },
+    { name = "chromadb", specifier = "==1.5.8" },
     { name = "fastapi" },
     { name = "httpx" },
     { name = "numpy" },

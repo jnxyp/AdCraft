@@ -6,7 +6,7 @@ dependencies = [
     "fastapi",
     "uvicorn[standard]",
     "aiosqlite",
-    "chromadb",
+    "chromadb==1.5.8",
     "openai",
     "pillow",
     "python-dotenv",
