@@ -13,8 +13,8 @@ export function EvaluatePage() {
   const { nextTask, vote, isSubmitting, submitError } = useEval()
   const task = nextTask.data
   const progress = task?.progress
-  const progressPercent = progress && progress.total > 0
-    ? Math.min(100, Math.round((progress.session_done / progress.total) * 100))
+  const resolvedPercent = progress && progress.total > 0
+    ? Math.min(100, Math.round((progress.resolved / progress.total) * 100))
     : 0
   const hasTask = Boolean(task?.task_id && task.ads.length >= 2)
 
@@ -35,15 +35,18 @@ export function EvaluatePage() {
               <span className="rounded border border-white/25 px-3 py-1 font-medium">
                 {task?.category ?? 'Loading'}
               </span>
-              <span className="text-white/80">
-                {progress ? `${progress.session_done} / ${progress.total}` : 'Preparing'}
+              <span className="rounded border border-white/20 px-3 py-1 text-white/85">
+                {progress ? `Your evaluations: ${progress.session_done} / ${progress.total}` : 'Preparing'}
+              </span>
+              <span className="rounded border border-white/20 px-3 py-1 text-white/85">
+                {progress ? `Globally resolved: ${progress.resolved} / ${progress.total}` : 'Resolving'}
               </span>
             </div>
           </div>
           <div className="mt-5 h-2 overflow-hidden rounded-full bg-white/20">
             <div
               className="h-full rounded-full bg-il-orange transition-[width] duration-300"
-              style={{ width: `${progressPercent}%` }}
+              style={{ width: `${resolvedPercent}%` }}
             />
           </div>
         </header>
