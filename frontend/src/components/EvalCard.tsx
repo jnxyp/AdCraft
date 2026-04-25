@@ -1,0 +1,26 @@
+import type { EvalAd } from '../types/eval'
+
+interface EvalCardProps {
+  ad: EvalAd
+  label: 'A' | 'B'
+}
+
+export function EvalCard({ ad, label }: EvalCardProps) {
+  return (
+    <article className="flex min-h-[280px] flex-col rounded-lg border border-il-storm-20 bg-white">
+      <header className="flex items-center justify-between border-b border-il-storm-20 px-5 py-4">
+        <span className="text-sm font-semibold uppercase tracking-[0.12em] text-il-blue">
+          Option {label}
+        </span>
+        <span className="rounded border border-il-storm-20 px-2 py-1 text-xs font-medium text-il-storm-60">
+          {ad.ad_id}
+        </span>
+      </header>
+      <div className="flex flex-1 items-center px-5 py-6">
+        <p className="whitespace-pre-wrap text-left text-[17px] leading-8 text-il-storm-10">
+          {ad.body}
+        </p>
+      </div>
+    </article>
+  )
+}
