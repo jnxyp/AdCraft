@@ -60,13 +60,13 @@ export function EvaluatePage() {
             <CompleteState onRefresh={() => void nextTask.refetch()} />
           ) : null}
           {hasTask && task ? (
-            <div className="grid h-full min-h-0 grid-rows-[auto_1fr_auto] gap-5">
+            <div className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)_96px] gap-5">
               {submitError ? <SubmitError /> : null}
               <div className="grid min-h-0 gap-5 lg:grid-cols-2">
                 <EvalCard ad={task.ads[0]} label="A" />
                 <EvalCard ad={task.ads[1]} label="B" />
               </div>
-              <div className="shrink-0 grid gap-3 rounded-lg border border-il-storm-20 bg-white p-4 shadow-sm sm:grid-cols-3">
+              <div className="grid h-24 shrink-0 items-center gap-3 rounded-lg border border-il-storm-20 bg-white p-4 shadow-sm sm:grid-cols-3">
                 {ACTIONS.map((action) => (
                   <button
                     key={action.winner}
@@ -137,7 +137,7 @@ function SubmitError() {
 }
 
 function buttonClass(tone: 'primary' | 'neutral') {
-  const base = 'min-h-12 rounded-md border px-4 py-3 text-base font-semibold transition disabled:cursor-not-allowed disabled:opacity-60'
+  const base = 'h-16 rounded-md border px-4 text-base font-semibold transition disabled:cursor-not-allowed disabled:opacity-60'
   if (tone === 'primary') {
     return `${base} border-il-blue text-il-blue hover:border-il-orange hover:bg-il-orange hover:text-il-blue`
   }
