@@ -9,7 +9,7 @@ import type {
   WinnerSlot,
 } from '../types/eval'
 
-const SESSION_KEY = 'adframe_eval_session_id'
+const SESSION_KEY = 'ad_craft_eval_session_id'
 
 function getSessionId(): string {
   const stored = window.localStorage.getItem(SESSION_KEY)

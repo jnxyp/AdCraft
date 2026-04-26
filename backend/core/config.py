@@ -38,7 +38,7 @@ def load_settings() -> Settings:
     return Settings(
         backend_root=backend_root,
         data_dir=data_dir,
-        db_path=data_dir / "adframe.db",
+        db_path=data_dir / "adcraft.db",
         chromadb_dir=data_dir / "chromadb",
         static_images_dir=data_dir / "images",
         pipeline_data_dir=pipeline_data_dir,

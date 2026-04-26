@@ -25,7 +25,7 @@ export function EvaluatePage() {
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.14em] text-white/75">
-                AdFrame
+                AD Craft
               </p>
               <h1 className="mt-1 text-3xl font-semibold leading-tight">
                 Evaluate
@@ -36,7 +36,7 @@ export function EvaluatePage() {
                 {task?.category ?? 'Loading'}
               </span>
               <span className="rounded border border-white/20 px-3 py-1 text-white/85">
-                {progress ? `Your evaluations: ${progress.session_done} / ${progress.total}` : 'Preparing'}
+                {progress ? `Your evaluations: ${progress.session_done}` : 'Preparing'}
               </span>
               <span className="rounded border border-white/20 px-3 py-1 text-white/85">
                 {progress ? `Globally resolved: ${progress.resolved} / ${progress.total}` : 'Resolving'}
@@ -60,8 +60,12 @@ export function EvaluatePage() {
             <CompleteState onRefresh={() => void nextTask.refetch()} />
           ) : null}
           {hasTask && task ? (
-            <div className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)_96px] gap-5">
-              {submitError ? <SubmitError /> : null}
+            <div className="relative grid h-full min-h-0 grid-rows-[minmax(0,1fr)_96px] gap-5">
+              {submitError ? (
+                <div className="absolute left-0 right-0 top-0 z-10">
+                  <SubmitError />
+                </div>
+              ) : null}
               <div className="grid min-h-0 gap-5 lg:grid-cols-2">
                 <EvalCard ad={task.ads[0]} label="A" />
                 <EvalCard ad={task.ads[1]} label="B" />

@@ -63,7 +63,7 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
             pass
 
 
-app = FastAPI(title="AdFrame API", lifespan=lifespan)
+app = FastAPI(title="AD Craft API", lifespan=lifespan)
 app.include_router(create_eval_router(load_settings().db_path, max_votes=load_settings().eval_max_votes))
 
 

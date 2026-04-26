@@ -15,7 +15,7 @@ def test_load_settings_defaults_to_project_data_dir(monkeypatch: pytest.MonkeyPa
     project_root = Path(__file__).resolve().parents[2]
 
     assert settings.data_dir == project_root / "data"
-    assert settings.db_path == project_root / "data" / "adframe.db"
+    assert settings.db_path == project_root / "data" / "adcraft.db"
     assert settings.chromadb_dir == project_root / "data" / "chromadb"
     assert settings.static_images_dir == project_root / "data" / "images"
     assert settings.pipeline_data_dir == project_root / "pipeline" / "data"
@@ -27,4 +27,4 @@ def test_load_settings_allows_data_dir_override(monkeypatch: pytest.MonkeyPatch,
     settings = load_settings()
 
     assert settings.data_dir == tmp_path / "runtime"
-    assert settings.db_path == tmp_path / "runtime" / "adframe.db"
+    assert settings.db_path == tmp_path / "runtime" / "adcraft.db"
