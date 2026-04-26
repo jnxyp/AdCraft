@@ -20,7 +20,7 @@ export function EvaluatePage() {
 
   return (
     <main className="h-screen overflow-hidden bg-il-storm-95 text-il-storm-10">
-      <div className="mx-auto flex h-full w-full max-w-6xl flex-col px-4 py-5 sm:px-6 lg:px-8">
+      <div className="mx-auto grid h-full w-full max-w-6xl grid-rows-[auto_minmax(0,1fr)] px-4 pt-5 sm:px-6 lg:px-8">
         <header className="shrink-0 rounded-lg border border-il-blue bg-il-blue px-5 py-5 text-white">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
@@ -51,7 +51,7 @@ export function EvaluatePage() {
           </div>
         </header>
 
-        <section className="min-h-0 flex-1 py-6">
+        <section className="min-h-0 pt-5">
           {nextTask.isPending ? <LoadingState /> : null}
           {nextTask.isError ? (
             <ErrorState onRetry={() => void nextTask.refetch()} />
@@ -89,41 +89,47 @@ export function EvaluatePage() {
 
 function LoadingState() {
   return (
-    <div className="rounded-lg border border-il-storm-20 bg-white p-8 text-center">
-      <RefreshCw className="mx-auto h-7 w-7 animate-spin text-il-blue" aria-hidden="true" />
-      <p className="mt-4 font-medium text-il-storm-60">Loading next comparison</p>
+    <div className="flex h-full items-center justify-center rounded-lg border border-il-storm-20 bg-white p-8 text-center">
+      <div>
+        <RefreshCw className="mx-auto h-7 w-7 animate-spin text-il-blue" aria-hidden="true" />
+        <p className="mt-4 font-medium text-il-storm-60">Loading next comparison</p>
+      </div>
     </div>
   )
 }
 
 function ErrorState({ onRetry }: { onRetry: () => void }) {
   return (
-    <div className="rounded-lg border border-il-altgeld bg-white p-8 text-center">
-      <AlertCircle className="mx-auto h-7 w-7 text-il-altgeld" aria-hidden="true" />
-      <p className="mt-4 font-semibold text-il-storm-10">Could not load a task.</p>
-      <button
-        type="button"
-        onClick={onRetry}
-        className="mt-5 rounded-md border border-il-blue px-4 py-2 font-semibold text-il-blue hover:border-il-orange hover:text-il-altgeld"
-      >
-        Try again
-      </button>
+    <div className="flex h-full items-center justify-center rounded-lg border border-il-altgeld bg-white p-8 text-center">
+      <div>
+        <AlertCircle className="mx-auto h-7 w-7 text-il-altgeld" aria-hidden="true" />
+        <p className="mt-4 font-semibold text-il-storm-10">Could not load a task.</p>
+        <button
+          type="button"
+          onClick={onRetry}
+          className="mt-5 rounded-md border border-il-blue px-4 py-2 font-semibold text-il-blue hover:border-il-orange hover:text-il-altgeld"
+        >
+          Try again
+        </button>
+      </div>
     </div>
   )
 }
 
 function CompleteState({ onRefresh }: { onRefresh: () => void }) {
   return (
-    <div className="rounded-lg border border-il-storm-20 bg-white p-8 text-center">
-      <CheckCircle2 className="mx-auto h-8 w-8 text-il-blue" aria-hidden="true" />
-      <h2 className="mt-4 text-2xl font-semibold text-il-blue">All done! Thank you.</h2>
-      <button
-        type="button"
-        onClick={onRefresh}
-        className="mt-6 rounded-md bg-il-blue px-4 py-2 font-semibold text-white hover:bg-il-orange hover:text-il-blue"
-      >
-        Refresh
-      </button>
+    <div className="flex h-full items-center justify-center rounded-lg border border-il-storm-20 bg-white p-8 text-center">
+      <div>
+        <CheckCircle2 className="mx-auto h-8 w-8 text-il-blue" aria-hidden="true" />
+        <h2 className="mt-4 text-2xl font-semibold text-il-blue">All done! Thank you.</h2>
+        <button
+          type="button"
+          onClick={onRefresh}
+          className="mt-6 rounded-md bg-il-blue px-4 py-2 font-semibold text-white hover:bg-il-orange hover:text-il-blue"
+        >
+          Refresh
+        </button>
+      </div>
     </div>
   )
 }
