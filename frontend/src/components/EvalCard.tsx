@@ -7,8 +7,8 @@ interface EvalCardProps {
 
 export function EvalCard({ ad, label }: EvalCardProps) {
   return (
-    <article className="flex min-h-[280px] flex-col rounded-lg border border-il-storm-20 bg-white">
-      <header className="flex items-center justify-between border-b border-il-storm-20 px-5 py-4">
+    <article className="flex min-h-0 flex-col rounded-lg border border-il-storm-20 bg-white">
+      <header className="shrink-0 flex items-center justify-between border-b border-il-storm-20 px-5 py-4">
         <span className="text-sm font-semibold uppercase tracking-[0.12em] text-il-blue">
           Option {label}
         </span>
@@ -16,7 +16,7 @@ export function EvalCard({ ad, label }: EvalCardProps) {
           {ad.ad_id}
         </span>
       </header>
-      <div className="flex flex-1 items-center px-5 py-6">
+      <div className="min-h-0 flex-1 overflow-y-auto px-5 py-6">
         <p className="whitespace-pre-wrap text-left text-[17px] leading-8 text-il-storm-10">
           {ad.body}
         </p>

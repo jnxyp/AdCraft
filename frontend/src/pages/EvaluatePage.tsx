@@ -19,9 +19,9 @@ export function EvaluatePage() {
   const hasTask = Boolean(task?.task_id && task.ads.length >= 2)
 
   return (
-    <main className="min-h-screen bg-il-storm-95 text-il-storm-10">
-      <div className="mx-auto flex min-h-screen w-full max-w-6xl flex-col px-4 py-5 sm:px-6 lg:px-8">
-        <header className="rounded-lg border border-il-blue bg-il-blue px-5 py-5 text-white">
+    <main className="h-screen overflow-hidden bg-il-storm-95 text-il-storm-10">
+      <div className="mx-auto flex h-full w-full max-w-6xl flex-col px-4 py-5 sm:px-6 lg:px-8">
+        <header className="shrink-0 rounded-lg border border-il-blue bg-il-blue px-5 py-5 text-white">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.14em] text-white/75">
@@ -51,7 +51,7 @@ export function EvaluatePage() {
           </div>
         </header>
 
-        <section className="flex flex-1 flex-col justify-center py-6">
+        <section className="min-h-0 flex-1 py-6">
           {nextTask.isPending ? <LoadingState /> : null}
           {nextTask.isError ? (
             <ErrorState onRetry={() => void nextTask.refetch()} />
@@ -60,13 +60,13 @@ export function EvaluatePage() {
             <CompleteState onRefresh={() => void nextTask.refetch()} />
           ) : null}
           {hasTask && task ? (
-            <div className="flex flex-col gap-5">
+            <div className="grid h-full min-h-0 grid-rows-[auto_1fr_auto] gap-5">
               {submitError ? <SubmitError /> : null}
-              <div className="grid gap-5 lg:grid-cols-2">
+              <div className="grid min-h-0 gap-5 lg:grid-cols-2">
                 <EvalCard ad={task.ads[0]} label="A" />
                 <EvalCard ad={task.ads[1]} label="B" />
               </div>
-              <div className="grid gap-3 rounded-lg border border-il-storm-20 bg-white p-4 shadow-sm sm:grid-cols-3">
+              <div className="shrink-0 grid gap-3 rounded-lg border border-il-storm-20 bg-white p-4 shadow-sm sm:grid-cols-3">
                 {ACTIONS.map((action) => (
                   <button
                     key={action.winner}
