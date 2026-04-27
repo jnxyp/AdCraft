@@ -64,8 +64,8 @@ export function EvaluatePage() {
                 </div>
               ) : null}
               <div className="grid min-h-0 gap-5 lg:grid-cols-2">
-                <EvalCard ad={task.ads[0]} label="A" />
-                <EvalCard ad={task.ads[1]} label="B" />
+                <EvalCard ad={task.ads[0]} label="A" category={task.category} />
+                <EvalCard ad={task.ads[1]} label="B" category={task.category} />
               </div>
               <div className="grid h-24 shrink-0 items-center gap-3 rounded-lg border border-il-storm-20 bg-white p-4 shadow-sm sm:grid-cols-3">
                 {ACTIONS.map((action) => (
