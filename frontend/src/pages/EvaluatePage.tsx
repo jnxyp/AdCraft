@@ -19,31 +19,28 @@ export function EvaluatePage() {
   const hasTask = Boolean(task?.task_id && task.ads.length >= 2)
 
   return (
-    <main className="h-screen overflow-hidden bg-il-storm-95 text-il-storm-10">
-      <div className="mx-auto grid h-full w-full max-w-6xl grid-rows-[auto_minmax(0,1fr)] px-4 pt-5 sm:px-6 lg:px-8">
+    <div className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] pt-5">
         <header className="shrink-0 rounded-lg border border-il-blue bg-il-blue px-5 py-5 text-white">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.14em] text-white/75">
-                AD Craft
+                Human Feedback
               </p>
               <h1 className="mt-1 text-3xl font-semibold leading-tight">
                 Evaluate
               </h1>
             </div>
             <div className="flex flex-wrap items-center gap-3 text-sm">
-              <span className="rounded border border-white/25 px-3 py-1 font-medium">
-                {task?.category ?? 'Loading'}
-              </span>
               <span className="rounded border border-white/20 px-3 py-1 text-white/85">
                 {progress ? `Your evaluations: ${progress.session_done}` : 'Preparing'}
               </span>
-              <span className="rounded border border-white/20 px-3 py-1 text-white/85">
-                {progress ? `Globally resolved: ${progress.resolved} / ${progress.total}` : 'Resolving'}
-              </span>
             </div>
           </div>
-          <div className="mt-5 h-2 overflow-hidden rounded-full bg-white/20">
+          <div className="mt-5 flex items-center justify-between gap-4 text-sm text-white/80">
+            <span>{progress ? `Globally resolved: ${progress.resolved} / ${progress.total}` : 'Globally resolved'}</span>
+            <span>{resolvedPercent}%</span>
+          </div>
+          <div className="mt-2 h-2 overflow-hidden rounded-full bg-white/20">
             <div
               className="h-full rounded-full bg-il-orange transition-[width] duration-300"
               style={{ width: `${resolvedPercent}%` }}
@@ -87,7 +84,6 @@ export function EvaluatePage() {
           ) : null}
         </section>
       </div>
-    </main>
   )
 }
 
