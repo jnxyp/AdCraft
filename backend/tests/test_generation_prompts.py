@@ -21,6 +21,7 @@ def test_render_structured_prompt_contains_core_fields() -> None:
     )
 
     assert "strictly following the given structural pattern sequence" in system_prompt
+    assert "Return only valid JSON" in system_prompt
     assert "Category: tech" in user_prompt
     assert "Template Name: AH→PP→FB→CTA" in user_prompt
     assert "Sequence: AH -> PP -> FB -> CTA" in user_prompt

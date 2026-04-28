@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import uuid
+import asyncio
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Protocol, cast
@@ -9,7 +10,14 @@ from typing import Protocol, cast
 from fastapi import APIRouter, HTTPException, Request, status
 from openai import AsyncOpenAI
 
-from api.schemas import GenerateRequest, GenerateResponse, StructuredVariantResponse
+from api.schemas import (
+    GenerateRequest,
+    GenerateResponse,
+    StructuredSegmentResponse,
+    GenerateTemplateVariantRequest,
+    StructuredVariantResponse,
+    TemplateCandidateResponse,
+)
 from core.config import Settings
 from core.database import connect
 from generation.direct import generate_direct_output
@@ -19,6 +27,10 @@ from retrieval.retriever import Template
 
 class RetrieverLike(Protocol):
     async def query(self, category: str, product_desc: str, length: str) -> list[Template]: ...
+    async def query_ranked(
+        self, category: str, product_desc: str, length: str, limit: int
+    ) -> list[Template]: ...
+    async def infer_category(self, product_desc: str, length: str) -> str: ...
 
 
 class TextGenerator(Protocol):
@@ -59,10 +71,15 @@ def create_generate_router(
             model=settings.openai_chat_model,
         )
 
-        candidates = await retriever.query(
-            category=payload.category,
+        resolved_category = payload.category
+        if payload.category == "auto":
+            resolved_category = await retriever.infer_category(payload.product_desc, payload.length)
+
+        candidates = await retriever.query_ranked(
+            category=resolved_category,
             product_desc=payload.product_desc,
             length=payload.length,
+            limit=20,
         )
         if not candidates:
             raise HTTPException(
@@ -70,26 +87,27 @@ def create_generate_router(
                 detail="No candidate templates found",
             )
 
-        structured_variants = await generate_structured_variants(
+        structured_task = generate_structured_variants(
             text_generator=text_generator,
-            category=payload.category,
+            category=resolved_category,
             product_desc=payload.product_desc,
             generation_prompt=payload.generation_prompt,
-            templates=candidates,
+            templates=candidates[:3],
         )
-        direct_output = await generate_direct_output(
+        direct_task = generate_direct_output(
             text_generator=text_generator,
-            category=payload.category,
+            category=resolved_category,
             product_desc=payload.product_desc,
             length=payload.length,
             generation_prompt=payload.generation_prompt,
         )
+        structured_variants, direct_output = await asyncio.gather(structured_task, direct_task)
 
         generation_id = str(uuid.uuid4())
         await _insert_generation(
             db_path=db_path,
             generation_id=generation_id,
-            category=payload.category,
+            category=resolved_category,
             product_desc=payload.product_desc,
             generation_prompt=payload.generation_prompt,
             structured_variants=structured_variants,
@@ -98,11 +116,49 @@ def create_generate_router(
 
         return GenerateResponse(
             generation_id=generation_id,
-            category=payload.category,
+            category=resolved_category,
             product_desc=payload.product_desc,
-            structured_variants=[StructuredVariantResponse(**variant) for variant in structured_variants],
+            templates=[_candidate_response(candidate) for candidate in candidates],
+            structured_variants=[_variant_response(variant) for variant in structured_variants],
             direct_output=direct_output,
         )
+
+    @router.post("/generate/template-variant", response_model=StructuredVariantResponse)
+    async def generate_template_variant_endpoint(
+        payload: GenerateTemplateVariantRequest,
+        request: Request,
+    ) -> StructuredVariantResponse:
+        settings = settings_override or _settings_from_app(request)
+        retriever = retriever_override or _retriever_from_app(request)
+        text_generator = text_generator_override or OpenAITextGenerator(
+            client=AsyncOpenAI(api_key=settings.openai_api_key),
+            model=settings.openai_chat_model,
+        )
+        candidates = await retriever.query_ranked(
+            category=payload.category,
+            product_desc=payload.product_desc,
+            length=payload.length,
+            limit=50,
+        )
+        target = next((candidate for candidate in candidates if candidate["id"] == payload.template_id), None)
+        if target is None:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="Template not found in current category",
+            )
+        variants = await generate_structured_variants(
+            text_generator=text_generator,
+            category=payload.category,
+            product_desc=payload.product_desc,
+            generation_prompt=payload.generation_prompt,
+            templates=[target],
+        )
+        if not variants:
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail="Failed to generate variant",
+            )
+        return _variant_response(variants[0])
 
     return router
 
@@ -130,6 +186,34 @@ def _retriever_from_app(request: Request) -> RetrieverLike:
             detail="Retriever is invalid",
         )
     return cast(RetrieverLike, retriever_obj)
+
+
+def _candidate_response(candidate: Template) -> TemplateCandidateResponse:
+    sequence = candidate["name"].split("→")
+    return TemplateCandidateResponse(
+        template_id=candidate["id"],
+        template_name=candidate["name"],
+        sequence=sequence,
+        category_tags=[item for item in candidate["categories"].split("|") if item],
+        freq_score=candidate["freq_score"],
+    )
+
+
+def _variant_response(variant: StructuredVariant) -> StructuredVariantResponse:
+    return StructuredVariantResponse(
+        template_id=variant["template_id"],
+        template_name=variant["template_name"],
+        sequence=variant["sequence"],
+        segments=[
+            StructuredSegmentResponse(
+                label=segment["label"],
+                label_full=segment["label_full"],
+                text=segment["text"],
+            )
+            for segment in variant["segments"]
+        ],
+        output=variant["output"],
+    )
 
 
 async def _insert_generation(

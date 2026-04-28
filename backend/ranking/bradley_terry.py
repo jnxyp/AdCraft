@@ -109,9 +109,10 @@ async def build_comparisons_from_resolved_tasks(db_path: Path) -> list[tuple[str
 def rank_candidates(
     candidates: list[dict[str, object]],
     bt_scores: dict[str, float],
+    top_k: int = 3,
 ) -> list[dict[str, object]]:
     if not bt_scores:
-        return sorted(candidates, key=_freq_score, reverse=True)[:3]
+        return sorted(candidates, key=_freq_score, reverse=True)[:top_k]
 
     known: list[dict[str, object]] = []
     unknown: list[dict[str, object]] = []
@@ -127,7 +128,7 @@ def rank_candidates(
         reverse=True,
     )
     ranked_unknown = sorted(unknown, key=_freq_score, reverse=True)
-    return (ranked_known + ranked_unknown)[:3]
+    return (ranked_known + ranked_unknown)[:top_k]
 
 
 def _parse_ads(raw_ads: str) -> list[EvalTaskAd]:

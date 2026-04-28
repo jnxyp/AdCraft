@@ -58,16 +58,40 @@ class GenerateRequest(BaseModel):
     generation_prompt: str | None = None
 
 
+class StructuredSegmentResponse(BaseModel):
+    label: str
+    label_full: str
+    text: str
+
+
 class StructuredVariantResponse(BaseModel):
     template_id: str
     template_name: str
     sequence: list[str]
+    segments: list[StructuredSegmentResponse]
     output: str
+
+
+class TemplateCandidateResponse(BaseModel):
+    template_id: str
+    template_name: str
+    sequence: list[str]
+    category_tags: list[str]
+    freq_score: float
 
 
 class GenerateResponse(BaseModel):
     generation_id: str
     category: str
     product_desc: str
+    templates: list[TemplateCandidateResponse]
     structured_variants: list[StructuredVariantResponse]
     direct_output: str
+
+
+class GenerateTemplateVariantRequest(BaseModel):
+    template_id: str
+    category: str
+    product_desc: str
+    length: Literal["xs", "s", "m", "l", "xl"]
+    generation_prompt: str | None = None

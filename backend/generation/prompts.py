@@ -22,7 +22,9 @@ def render_structured_system_prompt() -> str:
         "Generate ad copy strictly following the given structural pattern sequence.\n"
         "Rules:\n"
         "- Generate 1-2 sentences per pattern step, in order.\n"
-        "- Prefix each sentence with its pattern label, e.g. [AH], [PP], [CTA].\n"
+        "- Return only valid JSON, no markdown, no prose.\n"
+        "- JSON schema: {\"segments\": [{\"label\": \"AH\", \"text\": \"...\"}]}\n"
+        "- label must be exactly one of the sequence labels.\n"
         "- Keep the output in English.\n"
         "- Be specific and persuasive, and avoid generic filler."
     )
@@ -48,7 +50,7 @@ def render_structured_user_prompt(
         f"Sequence: {sequence_text}\n"
         f"Pattern Labels:\n{label_lines}\n"
         f"Additional Guidance: {extra_guidance}\n"
-        "Output only the final ad copy."
+        "Return only JSON."
     )
 
 

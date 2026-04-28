@@ -19,6 +19,16 @@ class FakeTextGenerator:
         self.calls.append((system_prompt, user_prompt))
         if self.delay_seconds > 0:
             await asyncio.sleep(self.delay_seconds)
+        if "Return only valid JSON" in system_prompt:
+            sequence_line = next(
+                (line for line in user_prompt.splitlines() if line.startswith("Sequence: ")),
+                "Sequence: AH -> CTA",
+            )
+            labels = [part.strip() for part in sequence_line.removeprefix("Sequence: ").split("->")]
+            segment_payload = ",".join(
+                f'{{"label":"{label}","text":"{label} line."}}' for label in labels
+            )
+            return f'{{"segments":[{segment_payload}]}}'
         return f"OUT::{len(self.calls)}"
 
 
@@ -43,6 +53,7 @@ async def test_generate_structured_variants_returns_top_three() -> None:
     assert len(variants) == 3
     assert [variant["template_id"] for variant in variants] == ["t1", "t2", "t3"]
     assert variants[0]["sequence"] == ["AH", "PP", "FB", "CTA"]
+    assert variants[0]["segments"][0]["label_full"] == "Attention Hook"
     assert len(generator.calls) == 3
 
 

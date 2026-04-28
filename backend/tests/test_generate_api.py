@@ -16,14 +16,25 @@ from core.database import connect, init_schema
 @dataclass
 class FakeRetriever:
     calls: list[tuple[str, str, str]] = field(default_factory=list)
+    infer_calls: list[tuple[str, str]] = field(default_factory=list)
 
     async def query(self, category: str, product_desc: str, length: str) -> list[dict[str, object]]:
+        self.calls.append((category, product_desc, length))
+        return await self.query_ranked(category, product_desc, length, 3)
+
+    async def query_ranked(
+        self, category: str, product_desc: str, length: str, limit: int
+    ) -> list[dict[str, object]]:
         self.calls.append((category, product_desc, length))
         return [
             {"id": "tmpl_1", "name": "AH→PP→FB→CTA", "categories": "tech", "freq_score": 0.8, "seq_len": 4, "example_product_desc": "a"},
             {"id": "tmpl_2", "name": "AH→FB→CTA", "categories": "tech", "freq_score": 0.6, "seq_len": 3, "example_product_desc": "b"},
             {"id": "tmpl_3", "name": "PP→FB→SP→CTA", "categories": "tech", "freq_score": 0.5, "seq_len": 4, "example_product_desc": "c"},
-        ]
+        ][:limit]
+
+    async def infer_category(self, product_desc: str, length: str) -> str:
+        self.infer_calls.append((product_desc, length))
+        return "tech"
 
 
 @dataclass
@@ -32,6 +43,16 @@ class FakeTextGenerator:
 
     async def generate(self, *, system_prompt: str, user_prompt: str) -> str:
         self.calls.append((system_prompt, user_prompt))
+        if "Return only valid JSON" in system_prompt:
+            sequence_line = next(
+                (line for line in user_prompt.splitlines() if line.startswith("Sequence: ")),
+                "Sequence: AH -> CTA",
+            )
+            labels = [part.strip() for part in sequence_line.removeprefix("Sequence: ").split("->")]
+            segment_payload = ",".join(
+                f'{{"label":"{label}","text":"{label} line."}}' for label in labels
+            )
+            return f'{{"segments":[{segment_payload}]}}'
         return f"Generated::{len(self.calls)}"
 
 
@@ -87,7 +108,9 @@ async def test_generate_route_returns_variants_and_persists_row(tmp_path: Path) 
     assert payload["category"] == "tech"
     assert payload["product_desc"] == "No-code analytics for teams"
     assert len(payload["structured_variants"]) == 3
-    assert payload["direct_output"] == "Generated::4"
+    assert len(payload["templates"]) == 3
+    assert payload["structured_variants"][0]["segments"][0]["label_full"] == "Attention Hook"
+    assert payload["direct_output"].startswith("Generated::")
     assert len(generator.calls) == 4
     assert retriever.calls == [("tech", "No-code analytics for teams", "m")]
 
@@ -103,5 +126,5 @@ async def test_generate_route_returns_variants_and_persists_row(tmp_path: Path) 
     assert row["generation_prompt"] == "Practical tone."
     variants = json.loads(str(row["variants"]))
     assert len(variants) == 3
-    assert row["direct_output"] == "Generated::4"
+    assert str(row["direct_output"]).startswith("Generated::")
     assert row["image_path"] is None

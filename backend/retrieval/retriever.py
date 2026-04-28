@@ -67,13 +67,49 @@ class Retriever:
         product_desc: str,
         length: str,
     ) -> list[Template]:
+        ranked = await self.query_ranked(
+            category=category,
+            product_desc=product_desc,
+            length=length,
+            limit=TOP_K,
+        )
+        return ranked[:TOP_K]
+
+    async def query_ranked(
+        self,
+        category: str,
+        product_desc: str,
+        length: str,
+        limit: int,
+    ) -> list[Template]:
         min_len, max_len = _length_range(length)
         candidates = self._query_candidates(category, product_desc, min_len, max_len)
         if len(candidates) < TOP_K:
             candidates = self._query_candidates(category, product_desc, max(1, min_len - 1), max_len + 1)
 
-        ranked = rank_candidates([dict(candidate) for candidate in candidates], self._bt_scores)
+        ranked = rank_candidates([dict(candidate) for candidate in candidates], self._bt_scores, top_k=limit)
         return [_coerce_template(candidate) for candidate in ranked]
+
+    async def infer_category(
+        self,
+        product_desc: str,
+        length: str,
+    ) -> str:
+        min_len, max_len = _length_range(length)
+        result = self._collection.query(
+            query_texts=[product_desc],
+            n_results=SEMANTIC_CANDIDATES,
+            where=_seq_len_filter(min_len, max_len),
+        )
+        candidates = _templates_from_query_result(result)
+        counts: dict[str, int] = {}
+        for candidate in candidates:
+            for category in candidate["categories"].split("|"):
+                if category:
+                    counts[category] = counts.get(category, 0) + 1
+        if not counts:
+            raise ValueError("cannot infer category from empty candidate set")
+        return sorted(counts.items(), key=lambda item: (-item[1], item[0]))[0][0]
 
     def _query_candidates(
         self,

@@ -156,3 +156,19 @@ async def test_query_falls_back_to_local_category_filter_when_contains_returns_e
             {"seq_len": {"$lte": 5}},
         ]
     }
+
+
+@pytest.mark.asyncio
+async def test_infer_category_returns_most_common_category() -> None:
+    collection = FakeChromaCollection(
+        templates=[
+            FakeTemplate("tmpl_a", "AH", "health|tech", 0.2, 4, "Product A"),
+            FakeTemplate("tmpl_b", "PP", "health", 0.9, 4, "Product B"),
+            FakeTemplate("tmpl_c", "CTA", "tech", 0.3, 5, "Product C"),
+        ]
+    )
+    retriever = Retriever(FakeChromaClient(collection))
+
+    inferred = await retriever.infer_category("wellness app", "m")
+
+    assert inferred == "health"
