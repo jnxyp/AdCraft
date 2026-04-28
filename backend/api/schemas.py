@@ -49,3 +49,25 @@ class EvalStatsResponse(BaseModel):
     total: int
     responses: int
     bt_updated_at: str | None
+
+
+class GenerateRequest(BaseModel):
+    category: str
+    product_desc: str
+    length: Literal["xs", "s", "m", "l", "xl"]
+    generation_prompt: str | None = None
+
+
+class StructuredVariantResponse(BaseModel):
+    template_id: str
+    template_name: str
+    sequence: list[str]
+    output: str
+
+
+class GenerateResponse(BaseModel):
+    generation_id: str
+    category: str
+    product_desc: str
+    structured_variants: list[StructuredVariantResponse]
+    direct_output: str

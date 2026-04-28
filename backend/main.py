@@ -12,6 +12,7 @@ from chromadb.utils import embedding_functions
 from fastapi import FastAPI
 
 from api.routes.eval import create_eval_router
+from api.routes.generate import create_generate_router
 from core.config import Settings, load_settings
 from core.database import connect, init_schema
 from ranking.bradley_terry import build_comparisons_from_resolved_tasks, fit
@@ -65,6 +66,7 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
 
 app = FastAPI(title="AD Craft API", lifespan=lifespan)
 app.include_router(create_eval_router(load_settings().db_path, max_votes=load_settings().eval_max_votes))
+app.include_router(create_generate_router(load_settings().db_path))
 
 
 async def bt_refit_task(
