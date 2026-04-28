@@ -128,3 +128,51 @@ async def test_generate_route_returns_variants_and_persists_row(tmp_path: Path) 
     assert len(variants) == 3
     assert str(row["direct_output"]).startswith("Generated::")
     assert row["image_path"] is None
+
+
+@pytest.mark.asyncio
+async def test_generate_route_supports_auto_category_and_template_variant(tmp_path: Path) -> None:
+    db_path = tmp_path / "test.db"
+    await init_schema(db_path)
+    retriever = FakeRetriever()
+    generator = FakeTextGenerator()
+
+    app = FastAPI()
+    app.include_router(
+        create_generate_router(
+            db_path,
+            retriever_override=retriever,
+            text_generator_override=generator,
+            settings_override=_settings(db_path),
+        )
+    )
+    client = TestClient(app)
+
+    response = client.post(
+        "/api/generate",
+        json={
+            "category": "auto",
+            "product_desc": "No-code analytics for teams",
+            "length": "m",
+            "generation_prompt": None,
+        },
+    )
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["category"] == "tech"
+    assert retriever.infer_calls == [("No-code analytics for teams", "m")]
+
+    variant_response = client.post(
+        "/api/generate/template-variant",
+        json={
+            "template_id": "tmpl_2",
+            "category": "tech",
+            "product_desc": "No-code analytics for teams",
+            "length": "m",
+            "generation_prompt": None,
+        },
+    )
+    assert variant_response.status_code == 200
+    variant = variant_response.json()
+    assert variant["template_id"] == "tmpl_2"
+    assert len(variant["segments"]) == 3

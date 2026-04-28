@@ -1,6 +1,7 @@
-import type { LengthOption } from '../types/generate'
+import type { CategoryOption, LengthOption } from '../types/generate'
 
 const CATEGORIES = [
+  'auto',
   'tech',
   'beauty',
   'health',
@@ -23,12 +24,12 @@ const LENGTH_OPTIONS: Array<{ value: LengthOption; label: string }> = [
 ]
 
 interface InputPanelProps {
-  category: string
+  category: CategoryOption
   productDesc: string
   generationPrompt: string
   length: LengthOption
   disabled: boolean
-  onCategoryChange: (value: string) => void
+  onCategoryChange: (value: CategoryOption) => void
   onProductDescChange: (value: string) => void
   onGenerationPromptChange: (value: string) => void
   onLengthChange: (value: LengthOption) => void
@@ -38,13 +39,31 @@ interface InputPanelProps {
 export function InputPanel(props: InputPanelProps) {
   return (
     <section className="rounded-lg border border-il-storm-20 bg-white p-5">
-      <div className="grid gap-4 md:grid-cols-2">
+      <label className="mt-4 flex flex-col gap-2 text-sm font-medium text-il-storm-10">
+        Product Description
+        <textarea
+          className="min-h-28 rounded-md border border-il-storm-20 px-3 py-2 leading-7"
+          value={props.productDesc}
+          onChange={(event) => props.onProductDescChange(event.target.value)}
+          disabled={props.disabled}
+        />
+      </label>
+      <label className="mt-4 flex flex-col gap-2 text-sm font-medium text-il-storm-10">
+        Additional Guidance (optional)
+        <textarea
+          className="min-h-24 rounded-md border border-il-storm-20 px-3 py-2 leading-7"
+          value={props.generationPrompt}
+          onChange={(event) => props.onGenerationPromptChange(event.target.value)}
+          disabled={props.disabled}
+        />
+      </label>
+      <div className="mt-4 grid gap-4 md:grid-cols-2">
         <label className="flex flex-col gap-2 text-sm font-medium text-il-storm-10">
           Category
           <select
             className="h-11 rounded-md border border-il-storm-20 bg-white px-3"
             value={props.category}
-            onChange={(event) => props.onCategoryChange(event.target.value)}
+            onChange={(event) => props.onCategoryChange(event.target.value as CategoryOption)}
             disabled={props.disabled}
           >
             {CATEGORIES.map((category) => (
@@ -75,31 +94,13 @@ export function InputPanel(props: InputPanelProps) {
           </div>
         </div>
       </div>
-      <label className="mt-4 flex flex-col gap-2 text-sm font-medium text-il-storm-10">
-        Product Description
-        <textarea
-          className="min-h-28 rounded-md border border-il-storm-20 px-3 py-2 leading-7"
-          value={props.productDesc}
-          onChange={(event) => props.onProductDescChange(event.target.value)}
-          disabled={props.disabled}
-        />
-      </label>
-      <label className="mt-4 flex flex-col gap-2 text-sm font-medium text-il-storm-10">
-        Additional Guidance (optional)
-        <textarea
-          className="min-h-24 rounded-md border border-il-storm-20 px-3 py-2 leading-7"
-          value={props.generationPrompt}
-          onChange={(event) => props.onGenerationPromptChange(event.target.value)}
-          disabled={props.disabled}
-        />
-      </label>
       <button
         type="button"
         onClick={props.onSubmit}
         disabled={props.disabled || props.productDesc.trim().length < 8}
         className="mt-5 h-12 rounded-md bg-il-blue px-5 text-sm font-semibold text-white transition hover:bg-il-orange hover:text-il-blue disabled:cursor-not-allowed disabled:opacity-60"
       >
-        {props.disabled ? 'Generating...' : 'Generate Copy'}
+        {props.disabled ? 'Finding...' : 'Find Template'}
       </button>
     </section>
   )
