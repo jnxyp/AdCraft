@@ -40,13 +40,8 @@ export function InputPanel(props: InputPanelProps) {
   const rawIndex = LENGTH_OPTIONS.findIndex((option) => option.value === props.length)
   const selectedIndex = rawIndex >= 0 ? rawIndex : 2
   const selected = LENGTH_OPTIONS[selectedIndex] ?? LENGTH_OPTIONS[2]
-  const sliderPercent = `${(selectedIndex / (LENGTH_OPTIONS.length - 1)) * 100}%`
-  const bubbleLeft =
-    selectedIndex === 0
-      ? '8px'
-      : selectedIndex === LENGTH_OPTIONS.length - 1
-        ? 'calc(100% - 8px)'
-        : sliderPercent
+  const sliderRatio = selectedIndex / (LENGTH_OPTIONS.length - 1)
+  const bubbleLeft = `calc(${sliderRatio * 100}% + ${(0.5 - sliderRatio) * 16}px)`
 
   return (
     <section className="rounded-lg border border-il-storm-20 bg-white p-4">
@@ -88,8 +83,8 @@ export function InputPanel(props: InputPanelProps) {
         </label>
         <div className="flex flex-col gap-2 text-sm font-medium text-il-storm-10">
           Length
-          <div className="rounded-md border border-il-storm-20 px-3 py-3">
-            <div className="relative pt-6">
+          <div className="px-1 pt-1">
+            <div className="relative pt-5">
               <span
                 className="absolute top-0 -translate-x-1/2 rounded bg-il-blue px-2 py-0.5 text-xs font-semibold text-white"
                 style={{ left: bubbleLeft }}
@@ -113,7 +108,7 @@ export function InputPanel(props: InputPanelProps) {
                 className="h-2 w-full appearance-none rounded-full bg-il-storm-20 accent-[#13294B] [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-il-blue [&::-webkit-slider-thumb]:shadow-sm [&::-moz-range-thumb]:h-4 [&::-moz-range-thumb]:w-4 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:bg-il-blue"
               />
             </div>
-            <div className="mt-2 flex items-center justify-between text-xs font-semibold text-il-storm-60">
+            <div className="mt-1 flex items-center justify-between text-xs font-semibold text-il-storm-60">
               <span>Shorter</span>
               <span>Longer</span>
             </div>
