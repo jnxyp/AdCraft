@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { AlertCircle, LoaderCircle } from 'lucide-react'
+import { useEffect, useState } from 'react'
+import { AlertCircle, Check, LoaderCircle } from 'lucide-react'
 import { InputPanel } from '../components/InputPanel'
 import {
   useFindTemplates,
@@ -28,7 +28,7 @@ const SEGMENT_STYLE: Record<string, string> = {
   CTA: 'bg-indigo-100 text-indigo-900',
 }
 
-type ResultKey = string
+type ResultKey = string | null
 type GenerationStatus = 'idle' | 'loading' | 'done' | 'error'
 
 export function GeneratePage() {
@@ -41,7 +41,7 @@ export function GeneratePage() {
   const [generationPrompt, setGenerationPrompt] = useState('')
   const [resolvedCategory, setResolvedCategory] = useState<string | null>(null)
   const [result, setResult] = useState<FindTemplatesResponse | null>(null)
-  const [selectedKey, setSelectedKey] = useState<ResultKey>('direct')
+  const [selectedKey, setSelectedKey] = useState<ResultKey>(null)
   const [variantMap, setVariantMap] = useState<Record<string, StructuredVariant>>({})
   const [statusMap, setStatusMap] = useState<Record<string, GenerationStatus>>({})
   const [directOutput, setDirectOutput] = useState<string | null>(null)
@@ -58,8 +58,7 @@ export function GeneratePage() {
     setResolvedCategory(response.category)
     setDirectOutput(null)
     setVariantMap({})
-    const firstTemplateId = response.templates[0]?.template_id ?? 'direct'
-    setSelectedKey(firstTemplateId)
+    setSelectedKey(response.templates[0]?.template_id ?? null)
 
     const topThreeIds = response.templates.slice(0, 3).map((template) => template.template_id)
     const nextStatus: Record<string, GenerationStatus> = { direct: 'loading' }
@@ -144,8 +143,8 @@ export function GeneratePage() {
   }
 
   const currentVariant: StructuredVariant | null =
-    selectedKey === 'direct' ? null : (variantMap[selectedKey] ?? null)
-  const selectedTemplate = selectedKey === 'direct'
+    selectedKey === null || selectedKey === 'direct' ? null : (variantMap[selectedKey] ?? null)
+  const selectedTemplate = selectedKey === null || selectedKey === 'direct'
     ? null
     : (result?.templates.find((template) => template.template_id === selectedKey) ?? null)
   const currentStatus = statusMap[selectedKey] ?? 'idle'
@@ -180,15 +179,15 @@ export function GeneratePage() {
               </div>
             </div>
           ) : null}
-          <div className="grid min-h-[420px] gap-5 lg:grid-cols-[340px_minmax(0,1fr)]">
-            <section className="rounded-lg border border-il-storm-20 bg-white">
+          <section className="grid min-h-[420px] overflow-hidden rounded-lg border border-il-storm-20 bg-white lg:grid-cols-[340px_minmax(0,1fr)]">
+            <aside className="grid min-h-0 grid-rows-[auto_minmax(0,1fr)] border-b border-il-storm-20 lg:border-b-0 lg:border-r lg:border-r-il-storm-20">
               <header className="border-b border-il-storm-20 p-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.12em] text-il-storm-60">
                   Selected Category
                 </p>
                 <p className="mt-1 text-base font-semibold text-il-blue">{resolvedCategory ?? '-'}</p>
               </header>
-              <div className="max-h-[560px] overflow-y-auto p-2">
+              <div className="min-h-0 overflow-y-auto p-2">
                 {(result?.templates ?? []).map((template) => (
                   <button
                     key={template.template_id}
@@ -199,13 +198,15 @@ export function GeneratePage() {
                     className={
                       selectedKey === template.template_id
                         ? 'mb-2 w-full rounded-md border border-il-blue bg-il-blue px-3 py-3 text-left text-white'
-                        : 'mb-2 w-full rounded-md border border-il-storm-20 bg-white px-3 py-3 text-left text-il-storm-10 hover:border-il-blue'
+                        : 'mb-2 w-full rounded-md border border-il-blue bg-white px-3 py-3 text-left text-il-blue hover:bg-il-blue hover:text-white active:bg-il-blue active:text-white'
                     }
                   >
                     <div className="flex items-center justify-between gap-3">
                       <p className="text-sm font-semibold">{template.template_name}</p>
                       {(statusMap[template.template_id] ?? 'idle') === 'loading' ? (
                         <LoaderCircle className="h-4 w-4 animate-spin" aria-hidden="true" />
+                      ) : (statusMap[template.template_id] ?? 'idle') === 'done' ? (
+                        <Check className="h-4 w-4" aria-hidden="true" />
                       ) : null}
                     </div>
                   </button>
@@ -217,23 +218,27 @@ export function GeneratePage() {
                     className={
                       selectedKey === 'direct'
                         ? 'mb-2 w-full rounded-md border border-il-blue bg-il-blue px-3 py-3 text-left text-white'
-                        : 'mb-2 w-full rounded-md border border-il-storm-20 bg-white px-3 py-3 text-left text-il-storm-10 hover:border-il-blue'
+                        : (statusMap.direct ?? 'idle') === 'done'
+                          ? 'mb-2 w-full rounded-md border-2 border-il-orange bg-white px-3 py-3 text-left text-il-orange hover:bg-il-orange hover:text-white active:bg-il-orange active:text-white'
+                          : 'mb-2 w-full rounded-md border border-il-blue bg-white px-3 py-3 text-left text-il-blue hover:bg-il-blue hover:text-white active:bg-il-blue active:text-white'
                     }
                   >
                     <div className="flex items-center justify-between gap-3">
                       <p className="text-sm font-semibold">No-template generation</p>
                       {(statusMap.direct ?? 'idle') === 'loading' ? (
                         <LoaderCircle className="h-4 w-4 animate-spin" aria-hidden="true" />
+                      ) : (statusMap.direct ?? 'idle') === 'done' ? (
+                        <Check className="h-4 w-4" aria-hidden="true" />
                       ) : null}
                     </div>
                   </button>
                 ) : null}
               </div>
-            </section>
-            <section className="rounded-lg border border-il-storm-20 bg-white">
+            </aside>
+            <section className="grid min-h-0 grid-rows-[auto_minmax(0,1fr)]">
               <header className="border-b border-il-storm-20 p-4">
                 <p className="text-sm font-semibold uppercase tracking-[0.1em] text-il-blue">
-                  {selectedKey === 'direct' ? 'Direct Result' : 'Template Result'}
+                  {selectedKey === null ? 'No Result Selected' : selectedKey === 'direct' ? 'Direct Result' : 'Template Result'}
                 </p>
                 {selectedTemplate ? (
                   <p className="mt-2 text-sm text-il-storm-60">
@@ -241,8 +246,10 @@ export function GeneratePage() {
                   </p>
                 ) : null}
               </header>
-              <div className="max-h-[560px] overflow-y-auto p-4">
-                {selectedKey === 'direct' ? (
+              <div className="min-h-0 overflow-y-auto p-4">
+                {selectedKey === null ? (
+                  <p className="text-sm text-il-storm-60">No result selected yet. Choose a template or no-template generation.</p>
+                ) : selectedKey === 'direct' ? (
                   (statusMap.direct ?? 'idle') === 'loading' ? (
                     <LoadingPanel />
                   ) : (
@@ -272,7 +279,7 @@ export function GeneratePage() {
                 )}
               </div>
             </section>
-          </div>
+          </section>
         </div>
       </section>
     </div>
@@ -280,13 +287,30 @@ export function GeneratePage() {
 }
 
 function LoadingPanel() {
+  const loadingSteps = [
+    'Analyzing template structure...',
+    'Filling sentence content...',
+    'Polishing tone and rhythm...',
+    'Balancing clarity and persuasion...',
+    'Checking sequence consistency...',
+    'Refining CTA strength...',
+    'Final pass for readability...',
+  ]
+  const [stepIndex, setStepIndex] = useState(0)
+
+  useEffect(() => {
+    const delayMs = 1800 + Math.floor(Math.random() * 500)
+    const timeoutId = window.setTimeout(() => {
+      setStepIndex((prev) => (prev + 1) % loadingSteps.length)
+    }, delayMs)
+    return () => window.clearTimeout(timeoutId)
+  }, [stepIndex, loadingSteps.length])
+
   return (
     <div className="flex min-h-[280px] flex-col items-center justify-center gap-5">
       <LoaderCircle className="h-10 w-10 animate-spin text-il-blue" aria-hidden="true" />
       <div className="text-center text-sm text-il-storm-60">
-        <p>分析模板结构...</p>
-        <p className="mt-2">填充句子内容...</p>
-        <p className="mt-2">优化表达与节奏...</p>
+        <p className="mt-2 min-h-[1.5rem] transition-opacity duration-300">{loadingSteps[stepIndex]}</p>
       </div>
     </div>
   )
