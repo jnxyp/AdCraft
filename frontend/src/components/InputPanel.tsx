@@ -52,7 +52,7 @@ export function InputPanel(props: InputPanelProps) {
     <section className="rounded-lg border border-il-storm-20 bg-white p-4">
       <div className="grid gap-3 lg:grid-cols-2">
         <label className="flex flex-col gap-2 text-sm font-medium text-il-storm-10">
-          Product Description
+          Product Description (Query String)
           <textarea
             className="h-20 rounded-md border border-il-storm-20 px-3 py-2 leading-6"
             value={props.productDesc}
