@@ -1,20 +1,21 @@
 import { useMutation } from '@tanstack/react-query'
 import { apiClient } from '../api/client'
 import type {
+  FindTemplatesResponse,
+  GenerateDirectResponse,
   GenerateRequest,
-  GenerateResponse,
   GenerateTemplateVariantRequest,
   StructuredVariant,
 } from '../types/generate'
 
-async function createGeneration(payload: GenerateRequest): Promise<GenerateResponse> {
-  const response = await apiClient.post<GenerateResponse>('/generate', payload)
+async function findTemplates(payload: GenerateRequest): Promise<FindTemplatesResponse> {
+  const response = await apiClient.post<FindTemplatesResponse>('/generate/find-templates', payload)
   return response.data
 }
 
-export function useGenerate() {
+export function useFindTemplates() {
   return useMutation({
-    mutationFn: createGeneration,
+    mutationFn: findTemplates,
   })
 }
 
@@ -26,5 +27,16 @@ async function createTemplateVariant(payload: GenerateTemplateVariantRequest): P
 export function useGenerateTemplateVariant() {
   return useMutation({
     mutationFn: createTemplateVariant,
+  })
+}
+
+async function createDirectOutput(payload: GenerateRequest): Promise<GenerateDirectResponse> {
+  const response = await apiClient.post<GenerateDirectResponse>('/generate/direct', payload)
+  return response.data
+}
+
+export function useGenerateDirect() {
+  return useMutation({
+    mutationFn: createDirectOutput,
   })
 }

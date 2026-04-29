@@ -1,10 +1,14 @@
 import { useState } from 'react'
-import { AlertCircle } from 'lucide-react'
+import { AlertCircle, LoaderCircle } from 'lucide-react'
 import { InputPanel } from '../components/InputPanel'
-import { useGenerate, useGenerateTemplateVariant } from '../hooks/useGenerate'
+import {
+  useFindTemplates,
+  useGenerateDirect,
+  useGenerateTemplateVariant,
+} from '../hooks/useGenerate'
 import type {
   CategoryOption,
-  GenerateResponse,
+  FindTemplatesResponse,
   LengthOption,
   StructuredSegment,
   StructuredVariant,
@@ -25,18 +29,21 @@ const SEGMENT_STYLE: Record<string, string> = {
 }
 
 type ResultKey = string
+type GenerationStatus = 'idle' | 'loading' | 'done' | 'error'
 
 export function GeneratePage() {
-  const generate = useGenerate()
+  const findTemplates = useFindTemplates()
+  const generateDirect = useGenerateDirect()
   const generateTemplateVariant = useGenerateTemplateVariant()
   const [category, setCategory] = useState<CategoryOption>('auto')
   const [length, setLength] = useState<LengthOption>('m')
   const [productDesc, setProductDesc] = useState('')
   const [generationPrompt, setGenerationPrompt] = useState('')
   const [resolvedCategory, setResolvedCategory] = useState<string | null>(null)
-  const [result, setResult] = useState<GenerateResponse | null>(null)
+  const [result, setResult] = useState<FindTemplatesResponse | null>(null)
   const [selectedKey, setSelectedKey] = useState<ResultKey>('direct')
   const [variantMap, setVariantMap] = useState<Record<string, StructuredVariant>>({})
+  const [statusMap, setStatusMap] = useState<Record<string, GenerationStatus>>({})
   const [directOutput, setDirectOutput] = useState<string | null>(null)
 
   const submit = async () => {
@@ -46,35 +53,102 @@ export function GeneratePage() {
       product_desc: productDesc.trim(),
       generation_prompt: generationPrompt.trim() || null,
     }
-    const response = await generate.mutateAsync(payload)
+    const response = await findTemplates.mutateAsync(payload)
     setResult(response)
     setResolvedCategory(response.category)
-    setDirectOutput(response.direct_output)
-    setSelectedKey(response.structured_variants[0]?.template_id ?? 'direct')
-    setVariantMap(
-      Object.fromEntries(
-        response.structured_variants.map((variant) => [variant.template_id, variant]),
-      ),
+    setDirectOutput(null)
+    setVariantMap({})
+    const firstTemplateId = response.templates[0]?.template_id ?? 'direct'
+    setSelectedKey(firstTemplateId)
+
+    const topThreeIds = response.templates.slice(0, 3).map((template) => template.template_id)
+    const nextStatus: Record<string, GenerationStatus> = { direct: 'loading' }
+    for (const templateId of topThreeIds) {
+      nextStatus[templateId] = 'loading'
+    }
+    setStatusMap(nextStatus)
+
+    for (const template of response.templates.slice(0, 3)) {
+      void generateTemplateFor(
+        template,
+        response.category,
+        response.product_desc,
+        response.length,
+        payload.generation_prompt,
+      )
+    }
+    void generateDirectOutput(
+      response.category as CategoryOption,
+      response.product_desc,
+      response.length,
+      payload.generation_prompt,
     )
+  }
+
+  const generateTemplateFor = async (
+    template: TemplateCandidate,
+    categoryForGeneration: string,
+    productDescForGeneration: string,
+    lengthForGeneration: LengthOption,
+    promptForGeneration: string | null,
+  ) => {
+    setStatusMap((prev) => ({ ...prev, [template.template_id]: 'loading' }))
+    try {
+      const variant = await generateTemplateVariant.mutateAsync({
+        template_id: template.template_id,
+        category: categoryForGeneration,
+        product_desc: productDescForGeneration,
+        length: lengthForGeneration,
+        generation_prompt: promptForGeneration,
+      })
+      setVariantMap((prev) => ({ ...prev, [template.template_id]: variant }))
+      setStatusMap((prev) => ({ ...prev, [template.template_id]: 'done' }))
+    } catch {
+      setStatusMap((prev) => ({ ...prev, [template.template_id]: 'error' }))
+    }
+  }
+
+  const generateDirectOutput = async (
+    selectedCategory: CategoryOption,
+    selectedProductDesc: string,
+    selectedLength: LengthOption,
+    selectedPrompt: string | null,
+  ) => {
+    setStatusMap((prev) => ({ ...prev, direct: 'loading' }))
+    try {
+      const response = await generateDirect.mutateAsync({
+        category: selectedCategory,
+        product_desc: selectedProductDesc,
+        length: selectedLength,
+        generation_prompt: selectedPrompt,
+      })
+      setDirectOutput(response.output)
+      setStatusMap((prev) => ({ ...prev, direct: 'done' }))
+    } catch {
+      setStatusMap((prev) => ({ ...prev, direct: 'error' }))
+    }
   }
 
   const selectTemplate = async (template: TemplateCandidate) => {
     setSelectedKey(template.template_id)
-    if (variantMap[template.template_id] !== undefined || resolvedCategory === null) {
+    if (variantMap[template.template_id] !== undefined || result === null || resolvedCategory === null) {
       return
     }
-    const variant = await generateTemplateVariant.mutateAsync({
-      template_id: template.template_id,
-      category: resolvedCategory,
-      product_desc: productDesc.trim(),
-      length,
-      generation_prompt: generationPrompt.trim() || null,
-    })
-    setVariantMap((prev) => ({ ...prev, [template.template_id]: variant }))
+    await generateTemplateFor(
+      template,
+      resolvedCategory,
+      result.product_desc,
+      result.length,
+      generationPrompt.trim() || null,
+    )
   }
 
   const currentVariant: StructuredVariant | null =
     selectedKey === 'direct' ? null : (variantMap[selectedKey] ?? null)
+  const selectedTemplate = selectedKey === 'direct'
+    ? null
+    : (result?.templates.find((template) => template.template_id === selectedKey) ?? null)
+  const currentStatus = statusMap[selectedKey] ?? 'idle'
 
   return (
     <div className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] pt-5">
@@ -89,7 +163,7 @@ export function GeneratePage() {
             productDesc={productDesc}
             generationPrompt={generationPrompt}
             length={length}
-            disabled={generate.isPending}
+            disabled={findTemplates.isPending}
             onCategoryChange={setCategory}
             onProductDescChange={setProductDesc}
             onGenerationPromptChange={setGenerationPrompt}
@@ -98,7 +172,7 @@ export function GeneratePage() {
               void submit()
             }}
           />
-          {generate.isError ? (
+          {findTemplates.isError ? (
             <div className="rounded-lg border border-il-altgeld bg-white p-4 text-sm text-il-altgeld">
               <div className="flex items-center gap-2">
                 <AlertCircle className="h-4 w-4" aria-hidden="true" />
@@ -128,7 +202,12 @@ export function GeneratePage() {
                         : 'mb-2 w-full rounded-md border border-il-storm-20 bg-white px-3 py-3 text-left text-il-storm-10 hover:border-il-blue'
                     }
                   >
-                    <p className="text-sm font-semibold">{template.template_name}</p>
+                    <div className="flex items-center justify-between gap-3">
+                      <p className="text-sm font-semibold">{template.template_name}</p>
+                      {(statusMap[template.template_id] ?? 'idle') === 'loading' ? (
+                        <LoaderCircle className="h-4 w-4 animate-spin" aria-hidden="true" />
+                      ) : null}
+                    </div>
                   </button>
                 ))}
                 {result !== null ? (
@@ -141,7 +220,12 @@ export function GeneratePage() {
                         : 'mb-2 w-full rounded-md border border-il-storm-20 bg-white px-3 py-3 text-left text-il-storm-10 hover:border-il-blue'
                     }
                   >
-                    <p className="text-sm font-semibold">No-template generation</p>
+                    <div className="flex items-center justify-between gap-3">
+                      <p className="text-sm font-semibold">No-template generation</p>
+                      {(statusMap.direct ?? 'idle') === 'loading' ? (
+                        <LoaderCircle className="h-4 w-4 animate-spin" aria-hidden="true" />
+                      ) : null}
+                    </div>
                   </button>
                 ) : null}
               </div>
@@ -151,17 +235,21 @@ export function GeneratePage() {
                 <p className="text-sm font-semibold uppercase tracking-[0.1em] text-il-blue">
                   {selectedKey === 'direct' ? 'Direct Result' : 'Template Result'}
                 </p>
-                {currentVariant ? (
+                {selectedTemplate ? (
                   <p className="mt-2 text-sm text-il-storm-60">
-                    Sequence: {currentVariant.sequence.join(' -> ')}
+                    Sequence: {selectedTemplate.sequence.join(' -> ')}
                   </p>
                 ) : null}
               </header>
               <div className="max-h-[560px] overflow-y-auto p-4">
                 {selectedKey === 'direct' ? (
-                  <p className="whitespace-pre-wrap leading-8 text-il-storm-10">
-                    {directOutput ?? 'Direct result will appear here.'}
-                  </p>
+                  (statusMap.direct ?? 'idle') === 'loading' ? (
+                    <LoadingPanel />
+                  ) : (
+                    <p className="whitespace-pre-wrap leading-8 text-il-storm-10">
+                      {directOutput ?? 'Direct result will appear here.'}
+                    </p>
+                  )
                 ) : currentVariant ? (
                   <div className="space-y-3">
                     {currentVariant.segments.map((segment: StructuredSegment) => (
@@ -175,8 +263,10 @@ export function GeneratePage() {
                       </div>
                     ))}
                   </div>
-                ) : generateTemplateVariant.isPending ? (
-                  <p className="text-sm text-il-storm-60">Generating selected template copy...</p>
+                ) : currentStatus === 'loading' ? (
+                  <LoadingPanel />
+                ) : currentStatus === 'error' ? (
+                  <p className="text-sm text-il-altgeld">Generation failed. Click this template again to retry.</p>
                 ) : (
                   <p className="text-sm text-il-storm-60">Select a template to generate result.</p>
                 )}
@@ -185,6 +275,19 @@ export function GeneratePage() {
           </div>
         </div>
       </section>
+    </div>
+  )
+}
+
+function LoadingPanel() {
+  return (
+    <div className="flex min-h-[280px] flex-col items-center justify-center gap-5">
+      <LoaderCircle className="h-10 w-10 animate-spin text-il-blue" aria-hidden="true" />
+      <div className="text-center text-sm text-il-storm-60">
+        <p>分析模板结构...</p>
+        <p className="mt-2">填充句子内容...</p>
+        <p className="mt-2">优化表达与节奏...</p>
+      </div>
     </div>
   )
 }

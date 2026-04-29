@@ -11,6 +11,8 @@ from fastapi import APIRouter, HTTPException, Request, status
 from openai import AsyncOpenAI
 
 from api.schemas import (
+    FindTemplatesResponse,
+    GenerateDirectResponse,
     GenerateRequest,
     GenerateResponse,
     StructuredSegmentResponse,
@@ -61,6 +63,31 @@ def create_generate_router(
     settings_override: Settings | None = None,
 ) -> APIRouter:
     router = APIRouter(prefix="/api", tags=["generate"])
+
+    @router.post("/generate/find-templates", response_model=FindTemplatesResponse)
+    async def find_templates_endpoint(payload: GenerateRequest, request: Request) -> FindTemplatesResponse:
+        retriever = retriever_override or _retriever_from_app(request)
+        resolved_category = payload.category
+        if payload.category == "auto":
+            resolved_category = await retriever.infer_category(payload.product_desc, payload.length)
+
+        candidates = await retriever.query_ranked(
+            category=resolved_category,
+            product_desc=payload.product_desc,
+            length=payload.length,
+            limit=20,
+        )
+        if not candidates:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="No candidate templates found",
+            )
+        return FindTemplatesResponse(
+            category=resolved_category,
+            product_desc=payload.product_desc,
+            length=payload.length,
+            templates=[_candidate_response(candidate) for candidate in candidates],
+        )
 
     @router.post("/generate", response_model=GenerateResponse)
     async def generate_endpoint(payload: GenerateRequest, request: Request) -> GenerateResponse:
@@ -122,6 +149,26 @@ def create_generate_router(
             structured_variants=[_variant_response(variant) for variant in structured_variants],
             direct_output=direct_output,
         )
+
+    @router.post("/generate/direct", response_model=GenerateDirectResponse)
+    async def generate_direct_endpoint(payload: GenerateRequest, request: Request) -> GenerateDirectResponse:
+        settings = settings_override or _settings_from_app(request)
+        retriever = retriever_override or _retriever_from_app(request)
+        text_generator = text_generator_override or OpenAITextGenerator(
+            client=AsyncOpenAI(api_key=settings.openai_api_key),
+            model=settings.openai_chat_model,
+        )
+        resolved_category = payload.category
+        if payload.category == "auto":
+            resolved_category = await retriever.infer_category(payload.product_desc, payload.length)
+        output = await generate_direct_output(
+            text_generator=text_generator,
+            category=resolved_category,
+            product_desc=payload.product_desc,
+            length=payload.length,
+            generation_prompt=payload.generation_prompt,
+        )
+        return GenerateDirectResponse(output=output)
 
     @router.post("/generate/template-variant", response_model=StructuredVariantResponse)
     async def generate_template_variant_endpoint(

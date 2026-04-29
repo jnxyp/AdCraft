@@ -176,3 +176,49 @@ async def test_generate_route_supports_auto_category_and_template_variant(tmp_pa
     variant = variant_response.json()
     assert variant["template_id"] == "tmpl_2"
     assert len(variant["segments"]) == 3
+
+
+@pytest.mark.asyncio
+async def test_find_templates_and_direct_routes(tmp_path: Path) -> None:
+    db_path = tmp_path / "test.db"
+    await init_schema(db_path)
+    retriever = FakeRetriever()
+    generator = FakeTextGenerator()
+
+    app = FastAPI()
+    app.include_router(
+        create_generate_router(
+            db_path,
+            retriever_override=retriever,
+            text_generator_override=generator,
+            settings_override=_settings(db_path),
+        )
+    )
+    client = TestClient(app)
+
+    find_response = client.post(
+        "/api/generate/find-templates",
+        json={
+            "category": "auto",
+            "product_desc": "No-code analytics for teams",
+            "length": "m",
+            "generation_prompt": None,
+        },
+    )
+    assert find_response.status_code == 200
+    find_payload = find_response.json()
+    assert find_payload["category"] == "tech"
+    assert len(find_payload["templates"]) == 3
+
+    direct_response = client.post(
+        "/api/generate/direct",
+        json={
+            "category": "tech",
+            "product_desc": "No-code analytics for teams",
+            "length": "m",
+            "generation_prompt": "Practical tone.",
+        },
+    )
+    assert direct_response.status_code == 200
+    direct_payload = direct_response.json()
+    assert str(direct_payload["output"]).startswith("Generated::")

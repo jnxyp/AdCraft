@@ -89,9 +89,20 @@ class GenerateResponse(BaseModel):
     direct_output: str
 
 
+class FindTemplatesResponse(BaseModel):
+    category: str
+    product_desc: str
+    length: Literal["xs", "s", "m", "l", "xl"]
+    templates: list[TemplateCandidateResponse]
+
+
 class GenerateTemplateVariantRequest(BaseModel):
     template_id: str
     category: str
     product_desc: str
     length: Literal["xs", "s", "m", "l", "xl"]
     generation_prompt: str | None = None
+
+
+class GenerateDirectResponse(BaseModel):
+    output: str

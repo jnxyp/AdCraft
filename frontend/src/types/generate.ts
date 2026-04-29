@@ -51,10 +51,21 @@ export interface GenerateResponse {
   direct_output: string
 }
 
+export interface FindTemplatesResponse {
+  category: string
+  product_desc: string
+  length: LengthOption
+  templates: TemplateCandidate[]
+}
+
 export interface GenerateTemplateVariantRequest {
   template_id: string
   category: string
   product_desc: string
   length: LengthOption
   generation_prompt: string | null
+}
+
+export interface GenerateDirectResponse {
+  output: string
 }
