@@ -42,8 +42,8 @@ function NavLink({
   children: string
 }) {
   const activeClass = isActive
-    ? 'bg-il-blue text-white'
-    : 'text-il-blue hover:bg-white hover:text-il-altgeld'
+    ? 'border border-il-blue bg-il-blue text-white'
+    : 'border border-il-blue bg-white text-il-blue hover:bg-il-blue hover:text-white active:bg-il-blue active:text-white'
   return (
     <a
       href={href}

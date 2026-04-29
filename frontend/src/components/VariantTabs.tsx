@@ -27,8 +27,8 @@ export function VariantTabs({ variants, selectedIndex, onSelect }: VariantTabsPr
               onClick={() => onSelect(index)}
               className={
                 index === selectedIndex
-                  ? 'rounded-md bg-il-blue px-3 py-2 text-xs font-semibold text-white'
-                  : 'rounded-md border border-il-storm-20 px-3 py-2 text-xs font-semibold text-il-storm-10 hover:border-il-blue'
+                  ? 'rounded-md border border-il-blue bg-il-blue px-3 py-2 text-xs font-semibold text-white'
+                  : 'rounded-md border border-il-blue bg-white px-3 py-2 text-xs font-semibold text-il-blue hover:bg-il-blue hover:text-white active:bg-il-blue active:text-white'
               }
             >
               Variant {index + 1}

@@ -37,9 +37,16 @@ interface InputPanelProps {
 }
 
 export function InputPanel(props: InputPanelProps) {
-  const selectedIndex = LENGTH_OPTIONS.findIndex((option) => option.value === props.length)
+  const rawIndex = LENGTH_OPTIONS.findIndex((option) => option.value === props.length)
+  const selectedIndex = rawIndex >= 0 ? rawIndex : 2
   const selected = LENGTH_OPTIONS[selectedIndex] ?? LENGTH_OPTIONS[2]
   const sliderPercent = `${(selectedIndex / (LENGTH_OPTIONS.length - 1)) * 100}%`
+  const bubbleLeft =
+    selectedIndex === 0
+      ? '8px'
+      : selectedIndex === LENGTH_OPTIONS.length - 1
+        ? 'calc(100% - 8px)'
+        : sliderPercent
 
   return (
     <section className="rounded-lg border border-il-storm-20 bg-white p-4">
@@ -47,7 +54,7 @@ export function InputPanel(props: InputPanelProps) {
         <label className="flex flex-col gap-2 text-sm font-medium text-il-storm-10">
           Product Description
           <textarea
-            className="h-28 rounded-md border border-il-storm-20 px-3 py-2 leading-6"
+            className="h-20 rounded-md border border-il-storm-20 px-3 py-2 leading-6"
             value={props.productDesc}
             onChange={(event) => props.onProductDescChange(event.target.value)}
             disabled={props.disabled}
@@ -56,7 +63,7 @@ export function InputPanel(props: InputPanelProps) {
         <label className="flex flex-col gap-2 text-sm font-medium text-il-storm-10">
           Additional Guidance (optional)
           <textarea
-            className="h-28 rounded-md border border-il-storm-20 px-3 py-2 leading-6"
+            className="h-20 rounded-md border border-il-storm-20 px-3 py-2 leading-6"
             value={props.generationPrompt}
             onChange={(event) => props.onGenerationPromptChange(event.target.value)}
             disabled={props.disabled}
@@ -82,30 +89,30 @@ export function InputPanel(props: InputPanelProps) {
         <div className="flex flex-col gap-2 text-sm font-medium text-il-storm-10">
           Length
           <div className="rounded-md border border-il-storm-20 px-3 py-3">
-            <div className="relative mb-2 h-5">
+            <div className="relative pt-6">
               <span
-                className="absolute -translate-x-1/2 rounded bg-il-blue px-2 py-0.5 text-xs font-semibold text-white"
-                style={{ left: sliderPercent }}
+                className="absolute top-0 -translate-x-1/2 rounded bg-il-blue px-2 py-0.5 text-xs font-semibold text-white"
+                style={{ left: bubbleLeft }}
               >
                 {selected.label}
               </span>
+              <input
+                type="range"
+                min={0}
+                max={LENGTH_OPTIONS.length - 1}
+                step={1}
+                value={selectedIndex}
+                disabled={props.disabled}
+                onChange={(event) => {
+                  const nextIndex = Number(event.target.value)
+                  const option = LENGTH_OPTIONS[nextIndex]
+                  if (option !== undefined) {
+                    props.onLengthChange(option.value)
+                  }
+                }}
+                className="h-2 w-full appearance-none rounded-full bg-il-storm-20 accent-[#13294B] [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-il-blue [&::-webkit-slider-thumb]:shadow-sm [&::-moz-range-thumb]:h-4 [&::-moz-range-thumb]:w-4 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:bg-il-blue"
+              />
             </div>
-            <input
-              type="range"
-              min={0}
-              max={LENGTH_OPTIONS.length - 1}
-              step={1}
-              value={selectedIndex}
-              disabled={props.disabled}
-              onChange={(event) => {
-                const nextIndex = Number(event.target.value)
-                const option = LENGTH_OPTIONS[nextIndex]
-                if (option !== undefined) {
-                  props.onLengthChange(option.value)
-                }
-              }}
-              className="w-full accent-[#13294B]"
-            />
             <div className="mt-2 flex items-center justify-between text-xs font-semibold text-il-storm-60">
               <span>Shorter</span>
               <span>Longer</span>
@@ -121,7 +128,7 @@ export function InputPanel(props: InputPanelProps) {
           type="button"
           onClick={props.onSubmit}
           disabled={props.disabled || props.productDesc.trim().length < 8}
-          className="h-11 rounded-md bg-il-blue px-5 text-sm font-semibold text-white transition hover:bg-il-orange hover:text-il-blue disabled:cursor-not-allowed disabled:opacity-60"
+          className="h-11 rounded-md border-2 border-il-blue bg-white px-5 text-sm font-bold text-il-blue transition hover:bg-il-blue hover:text-white active:bg-il-blue active:text-white disabled:cursor-not-allowed disabled:opacity-60"
         >
           {props.disabled ? 'Finding...' : 'Find Template'}
         </button>

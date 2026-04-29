@@ -107,7 +107,7 @@ function ErrorState({ onRetry }: { onRetry: () => void }) {
         <button
           type="button"
           onClick={onRetry}
-          className="mt-5 rounded-md border border-il-blue px-4 py-2 font-semibold text-il-blue hover:border-il-orange hover:text-il-altgeld"
+          className="mt-5 rounded-md border border-il-blue bg-white px-4 py-2 font-semibold text-il-blue transition hover:bg-il-blue hover:text-white active:bg-il-blue active:text-white"
         >
           Try again
         </button>
@@ -125,7 +125,7 @@ function CompleteState({ onRefresh }: { onRefresh: () => void }) {
         <button
           type="button"
           onClick={onRefresh}
-          className="mt-6 rounded-md bg-il-blue px-4 py-2 font-semibold text-white hover:bg-il-orange hover:text-il-blue"
+          className="mt-6 rounded-md border-2 border-il-blue bg-white px-4 py-2 font-bold text-il-blue transition hover:bg-il-blue hover:text-white active:bg-il-blue active:text-white"
         >
           Refresh
         </button>
@@ -145,7 +145,7 @@ function SubmitError() {
 function buttonClass(tone: 'primary' | 'neutral') {
   const base = 'h-16 rounded-md border px-4 text-base font-semibold transition disabled:cursor-not-allowed disabled:opacity-60'
   if (tone === 'primary') {
-    return `${base} border-il-blue text-il-blue hover:border-il-orange hover:bg-il-orange hover:text-il-blue`
+    return `${base} border-il-blue bg-white text-il-blue hover:bg-il-blue hover:text-white active:bg-il-blue active:text-white`
   }
-  return `${base} border-il-storm-20 text-il-storm-10 hover:border-il-altgeld hover:text-il-altgeld`
+  return `${base} border-il-orange bg-white text-il-orange hover:bg-il-orange hover:text-white active:bg-il-orange active:text-white`
 }
