@@ -21,11 +21,13 @@ def render_structured_system_prompt() -> str:
         "You are a professional advertising copywriter.\n"
         "Generate ad copy strictly following the given structural pattern sequence.\n"
         "Rules:\n"
-        "- Generate 1-2 sentences per pattern step, in order.\n"
+        "- Generate exactly one sentence for each pattern step, in order.\n"
+        "- Do not split a pattern step into multiple sentences.\n"
         "- Return only valid JSON, no markdown, no prose.\n"
         "- JSON schema: {\"segments\": [{\"label\": \"AH\", \"text\": \"...\"}]}\n"
         "- label must be exactly one of the sequence labels.\n"
         "- Keep the output in English.\n"
+        "- Do not use dash or hyphen characters in generated copy text.\n"
         "- Be specific and persuasive, and avoid generic filler."
     )
 
@@ -39,6 +41,7 @@ def render_structured_user_prompt(
     generation_prompt: str | None,
 ) -> str:
     sequence_text = " -> ".join(sequence)
+    target_sentence_count = len(sequence)
     label_lines = "\n".join(
         f"- {code}: {PATTERN_LABELS.get(code, 'Pattern Step')}" for code in sequence
     )
@@ -48,6 +51,8 @@ def render_structured_user_prompt(
         f"Product Description: {product_desc}\n"
         f"Template Name: {template_name}\n"
         f"Sequence: {sequence_text}\n"
+        f"Target Overall Length: about {target_sentence_count} sentences\n"
+        "Sentence Constraint: each section must contain exactly 1 sentence.\n"
         f"Pattern Labels:\n{label_lines}\n"
         f"Additional Guidance: {extra_guidance}\n"
         "Return only JSON."

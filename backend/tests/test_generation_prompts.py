@@ -22,9 +22,13 @@ def test_render_structured_prompt_contains_core_fields() -> None:
 
     assert "strictly following the given structural pattern sequence" in system_prompt
     assert "Return only valid JSON" in system_prompt
+    assert "exactly one sentence for each pattern step" in system_prompt
+    assert "Do not use dash or hyphen characters" in system_prompt
     assert "Category: tech" in user_prompt
     assert "Template Name: AH→PP→FB→CTA" in user_prompt
     assert "Sequence: AH -> PP -> FB -> CTA" in user_prompt
+    assert "Target Overall Length: about 4 sentences" in user_prompt
+    assert "Sentence Constraint: each section must contain exactly 1 sentence." in user_prompt
     assert "- AH: Attention Hook" in user_prompt
     assert "- CTA: Call To Action" in user_prompt
     assert "Use a practical, confident tone." in user_prompt
