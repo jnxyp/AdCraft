@@ -73,7 +73,8 @@ export function GeneratePage() {
     setVariantMap((prev) => ({ ...prev, [template.template_id]: variant }))
   }
 
-  const currentVariant = selectedKey === 'direct' ? null : variantMap[selectedKey]
+  const currentVariant: StructuredVariant | null =
+    selectedKey === 'direct' ? null : (variantMap[selectedKey] ?? null)
 
   return (
     <div className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] pt-5">
@@ -150,7 +151,7 @@ export function GeneratePage() {
                 <p className="text-sm font-semibold uppercase tracking-[0.1em] text-il-blue">
                   {selectedKey === 'direct' ? 'Direct Result' : 'Template Result'}
                 </p>
-                {currentVariant !== null ? (
+                {currentVariant ? (
                   <p className="mt-2 text-sm text-il-storm-60">
                     Sequence: {currentVariant.sequence.join(' -> ')}
                   </p>
@@ -161,7 +162,7 @@ export function GeneratePage() {
                   <p className="whitespace-pre-wrap leading-8 text-il-storm-10">
                     {directOutput ?? 'Direct result will appear here.'}
                   </p>
-                ) : currentVariant !== null ? (
+                ) : currentVariant ? (
                   <div className="space-y-3">
                     {currentVariant.segments.map((segment: StructuredSegment) => (
                       <div key={`${segment.label}-${segment.text}`} className="space-y-2">
