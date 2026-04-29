@@ -39,6 +39,7 @@ interface InputPanelProps {
 export function InputPanel(props: InputPanelProps) {
   const selectedIndex = LENGTH_OPTIONS.findIndex((option) => option.value === props.length)
   const selected = LENGTH_OPTIONS[selectedIndex] ?? LENGTH_OPTIONS[2]
+  const sliderPercent = `${(selectedIndex / (LENGTH_OPTIONS.length - 1)) * 100}%`
 
   return (
     <section className="rounded-lg border border-il-storm-20 bg-white p-4">
@@ -81,6 +82,14 @@ export function InputPanel(props: InputPanelProps) {
         <div className="flex flex-col gap-2 text-sm font-medium text-il-storm-10">
           Length
           <div className="rounded-md border border-il-storm-20 px-3 py-3">
+            <div className="relative mb-2 h-5">
+              <span
+                className="absolute -translate-x-1/2 rounded bg-il-blue px-2 py-0.5 text-xs font-semibold text-white"
+                style={{ left: sliderPercent }}
+              >
+                {selected.label}
+              </span>
+            </div>
             <input
               type="range"
               min={0}
@@ -97,14 +106,13 @@ export function InputPanel(props: InputPanelProps) {
               }}
               className="w-full accent-[#13294B]"
             />
-            <div className="mt-2 grid grid-cols-5 text-center text-xs font-semibold text-il-storm-60">
-              {LENGTH_OPTIONS.map((option) => (
-                <span key={option.value}>{option.label}</span>
-              ))}
+            <div className="mt-2 flex items-center justify-between text-xs font-semibold text-il-storm-60">
+              <span>Shorter</span>
+              <span>Longer</span>
             </div>
           </div>
           <p className="text-xs text-il-storm-60">
-            预计生成约 {selected.sentenceRange} 句（对应模板长度档位）。
+            Generates about {selected.sentenceRange} sentences.
           </p>
         </div>
       </div>
