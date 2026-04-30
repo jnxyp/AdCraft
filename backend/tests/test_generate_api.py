@@ -1,6 +1,4 @@
 from __future__ import annotations
-
-import json
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -10,7 +8,7 @@ from fastapi.testclient import TestClient
 
 from api.routes.generate import create_generate_router
 from core.config import Settings
-from core.database import connect, init_schema
+from core.database import init_schema
 
 
 @dataclass
@@ -76,7 +74,7 @@ def _settings(db_path: Path) -> Settings:
 
 
 @pytest.mark.asyncio
-async def test_generate_route_returns_variants_and_persists_row(tmp_path: Path) -> None:
+async def test_template_variant_route_supports_auto_find_category_and_variant_generation(tmp_path: Path) -> None:
     db_path = tmp_path / "test.db"
     await init_schema(db_path)
     retriever = FakeRetriever()
@@ -94,62 +92,7 @@ async def test_generate_route_returns_variants_and_persists_row(tmp_path: Path) 
     client = TestClient(app)
 
     response = client.post(
-        "/api/generate",
-        json={
-            "category": "tech",
-            "product_desc": "No-code analytics for teams",
-            "length": "m",
-            "generation_prompt": "Practical tone.",
-        },
-    )
-    assert response.status_code == 200
-    payload = response.json()
-
-    assert payload["category"] == "tech"
-    assert payload["product_desc"] == "No-code analytics for teams"
-    assert len(payload["structured_variants"]) == 3
-    assert len(payload["templates"]) == 3
-    assert payload["structured_variants"][0]["segments"][0]["label_full"] == "Attention Hook"
-    assert payload["direct_output"].startswith("Generated::")
-    assert len(generator.calls) == 4
-    assert retriever.calls == [("tech", "No-code analytics for teams", "m")]
-
-    async with connect(db_path) as conn:
-        row = await (
-            await conn.execute(
-                "SELECT category, product_desc, generation_prompt, variants, direct_output, image_path FROM generations"
-            )
-        ).fetchone()
-    assert row is not None
-    assert row["category"] == "tech"
-    assert row["product_desc"] == "No-code analytics for teams"
-    assert row["generation_prompt"] == "Practical tone."
-    variants = json.loads(str(row["variants"]))
-    assert len(variants) == 3
-    assert str(row["direct_output"]).startswith("Generated::")
-    assert row["image_path"] is None
-
-
-@pytest.mark.asyncio
-async def test_generate_route_supports_auto_category_and_template_variant(tmp_path: Path) -> None:
-    db_path = tmp_path / "test.db"
-    await init_schema(db_path)
-    retriever = FakeRetriever()
-    generator = FakeTextGenerator()
-
-    app = FastAPI()
-    app.include_router(
-        create_generate_router(
-            db_path,
-            retriever_override=retriever,
-            text_generator_override=generator,
-            settings_override=_settings(db_path),
-        )
-    )
-    client = TestClient(app)
-
-    response = client.post(
-        "/api/generate",
+        "/api/generate/find-templates",
         json={
             "category": "auto",
             "product_desc": "No-code analytics for teams",
@@ -160,6 +103,7 @@ async def test_generate_route_supports_auto_category_and_template_variant(tmp_pa
     assert response.status_code == 200
     payload = response.json()
     assert payload["category"] == "tech"
+    assert len(payload["templates"]) == 3
     assert retriever.infer_calls == [("No-code analytics for teams", "m")]
 
     variant_response = client.post(

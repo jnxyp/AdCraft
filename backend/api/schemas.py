@@ -80,15 +80,6 @@ class TemplateCandidateResponse(BaseModel):
     freq_score: float
 
 
-class GenerateResponse(BaseModel):
-    generation_id: str
-    category: str
-    product_desc: str
-    templates: list[TemplateCandidateResponse]
-    structured_variants: list[StructuredVariantResponse]
-    direct_output: str
-
-
 class FindTemplatesResponse(BaseModel):
     category: str
     product_desc: str

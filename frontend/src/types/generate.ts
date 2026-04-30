@@ -42,15 +42,6 @@ export interface TemplateCandidate {
   freq_score: number
 }
 
-export interface GenerateResponse {
-  generation_id: string
-  category: string
-  product_desc: string
-  templates: TemplateCandidate[]
-  structured_variants: StructuredVariant[]
-  direct_output: string
-}
-
 export interface FindTemplatesResponse {
   category: string
   product_desc: string
