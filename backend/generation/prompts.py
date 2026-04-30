@@ -15,6 +15,19 @@ PATTERN_LABELS: dict[str, str] = {
     "CTA": "Call To Action",
 }
 
+PATTERN_DEFINITIONS: dict[str, str] = {
+    "AH": "Open with an attention-grabbing first line tied to the audience or context.",
+    "PP": "State the audience's concrete pain point or friction clearly.",
+    "AG": "Intensify the cost of inaction so the pain feels immediate and important.",
+    "FB": "Present a specific feature and translate it into a user-facing benefit.",
+    "SP": "Add trust signals like customer results, adoption, ratings, or testimonials.",
+    "BA": "Contrast the current before state with the improved after state.",
+    "AU": "Reinforce credibility with expert backing, credentials, or proven authority.",
+    "UR": "Create urgency with a real reason to act now rather than later.",
+    "OF": "Make the concrete offer explicit, including what is included and value.",
+    "CTA": "Give a direct action instruction that tells the user exactly what to do next.",
+}
+
 
 def render_structured_system_prompt() -> str:
     return (
@@ -28,6 +41,8 @@ def render_structured_system_prompt() -> str:
         "- label must be exactly one of the sequence labels.\n"
         "- Keep the output in English.\n"
         "- Do not use dash or hyphen characters in generated copy text.\n"
+        "- Maintain strong coherence: each section must connect naturally from the previous one.\n"
+        "- The full copy must read as one continuous narrative, not isolated fragments.\n"
         "- Be specific and persuasive, and avoid generic filler."
     )
 
@@ -45,6 +60,10 @@ def render_structured_user_prompt(
     label_lines = "\n".join(
         f"- {code}: {PATTERN_LABELS.get(code, 'Pattern Step')}" for code in sequence
     )
+    definition_lines = "\n".join(
+        f"- {code}: {PATTERN_DEFINITIONS.get(code, 'Follow the named pattern purpose.')}"
+        for code in sequence
+    )
     extra_guidance = generation_prompt.strip() if generation_prompt else "None"
     return (
         f"Category: {category}\n"
@@ -54,6 +73,8 @@ def render_structured_user_prompt(
         f"Target Overall Length: about {target_sentence_count} sentences\n"
         "Sentence Constraint: each section must contain exactly 1 sentence.\n"
         f"Pattern Labels:\n{label_lines}\n"
+        f"Pattern Purposes:\n{definition_lines}\n"
+        "Coherence Constraint: transitions between adjacent sections must feel natural and logically connected.\n"
         f"Additional Guidance: {extra_guidance}\n"
         "Return only JSON."
     )
