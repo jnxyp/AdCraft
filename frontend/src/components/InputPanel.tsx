@@ -1,19 +1,5 @@
 import type { CategoryOption, LengthOption } from '../types/generate'
-
-const CATEGORIES = [
-  'auto',
-  'tech',
-  'beauty',
-  'health',
-  'ecommerce',
-  'finance',
-  'home',
-  'travel',
-  'food',
-  'education',
-  'entertainment',
-  'automotive',
-]
+import { CATEGORIES, getCategoryDisplayName } from '../constants/categories'
 
 const LENGTH_OPTIONS: Array<{ value: LengthOption; label: string; sentenceRange: string }> = [
   { value: 'xs', label: 'XS', sentenceRange: '1-2' },
@@ -76,7 +62,7 @@ export function InputPanel(props: InputPanelProps) {
           >
             {CATEGORIES.map((category) => (
               <option key={category} value={category}>
-                {category}
+                {getCategoryDisplayName(category)}
               </option>
             ))}
           </select>

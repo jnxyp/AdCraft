@@ -26,7 +26,7 @@ function App() {
 
   return (
     <main className="h-screen overflow-hidden bg-il-storm-95 text-il-storm-10">
-      <div className="mx-auto grid h-full w-full max-w-6xl grid-rows-[64px_minmax(0,1fr)] px-4 sm:px-6 lg:px-8">
+      <div className="grid h-full w-full grid-rows-[64px_minmax(0,1fr)] px-4 sm:px-6 lg:px-8">
         <TopNav activePage={activePage} onNavigate={navigate} />
         <section className="min-h-0">
           <div className={activePage === 'evaluate' ? 'h-full' : 'hidden'}>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { AlertCircle, Check, LoaderCircle } from 'lucide-react'
 import { InputPanel } from '../components/InputPanel'
+import { getCategoryDisplayName } from '../constants/categories'
 import {
   useFindTemplates,
   useGenerateDirect,
@@ -16,16 +17,29 @@ import type {
 } from '../types/generate'
 
 const SEGMENT_STYLE: Record<string, string> = {
-  AH: 'bg-blue-100 text-blue-900',
-  PP: 'bg-rose-100 text-rose-900',
-  AG: 'bg-orange-100 text-orange-900',
-  FB: 'bg-emerald-100 text-emerald-900',
-  SP: 'bg-violet-100 text-violet-900',
-  BA: 'bg-cyan-100 text-cyan-900',
-  AU: 'bg-amber-100 text-amber-900',
-  UR: 'bg-red-100 text-red-900',
-  OF: 'bg-teal-100 text-teal-900',
-  CTA: 'bg-indigo-100 text-indigo-900',
+  AH: 'bg-blue-100 text-blue-900 border-blue-200',
+  PP: 'bg-rose-100 text-rose-900 border-rose-200',
+  AG: 'bg-orange-100 text-orange-900 border-orange-200',
+  FB: 'bg-emerald-100 text-emerald-900 border-emerald-200',
+  SP: 'bg-violet-100 text-violet-900 border-violet-200',
+  BA: 'bg-cyan-100 text-cyan-900 border-cyan-200',
+  AU: 'bg-amber-100 text-amber-900 border-amber-200',
+  UR: 'bg-red-100 text-red-900 border-red-200',
+  OF: 'bg-teal-100 text-teal-900 border-teal-200',
+  CTA: 'bg-indigo-100 text-indigo-900 border-indigo-200',
+}
+
+const PATTERN_FULL_LABEL: Record<string, string> = {
+  AH: 'Attention Hook',
+  PP: 'Pain Point',
+  AG: 'Agitation',
+  FB: 'Feature-Benefit',
+  SP: 'Social Proof',
+  BA: 'Before-After',
+  AU: 'Authority',
+  UR: 'Urgency',
+  OF: 'Offer',
+  CTA: 'Call To Action',
 }
 
 type ResultKey = string | null
@@ -45,6 +59,7 @@ export function GeneratePage() {
   const [variantMap, setVariantMap] = useState<Record<string, StructuredVariant>>({})
   const [statusMap, setStatusMap] = useState<Record<string, GenerationStatus>>({})
   const [directOutput, setDirectOutput] = useState<string | null>(null)
+  const [hoveredSegmentIndex, setHoveredSegmentIndex] = useState<number | null>(null)
 
   const submit = async () => {
     const payload = {
@@ -152,8 +167,7 @@ export function GeneratePage() {
   return (
     <div className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] pt-5">
       <header className="rounded-lg border border-il-blue bg-il-blue px-5 py-5 text-white">
-        <p className="text-sm font-semibold uppercase tracking-[0.14em] text-white/75">Copy Generation</p>
-        <h1 className="mt-1 text-3xl font-semibold leading-tight">Generate</h1>
+        <h1 className="text-4xl font-bold tracking-[0.04em]">Copy Generation</h1>
       </header>
       <section className="min-h-0 overflow-y-auto py-5">
         <div className="space-y-5">
@@ -185,7 +199,9 @@ export function GeneratePage() {
                 <p className="text-xs font-semibold uppercase tracking-[0.12em] text-il-storm-60">
                   Selected Category
                 </p>
-                <p className="mt-1 text-base font-semibold text-il-blue">{resolvedCategory ?? '-'}</p>
+                <p className="mt-1 text-base font-semibold text-il-blue">
+                  {resolvedCategory !== null ? getCategoryDisplayName(resolvedCategory) : '-'}
+                </p>
               </header>
               <div className="min-h-0 overflow-y-auto p-2">
                 {(result?.templates ?? []).map((template) => (
@@ -241,9 +257,31 @@ export function GeneratePage() {
                   {selectedKey === null ? 'No Result Selected' : selectedKey === 'direct' ? 'Direct Result' : 'Template Result'}
                 </p>
                 {selectedTemplate ? (
-                  <p className="mt-2 text-sm text-il-storm-60">
-                    Sequence: {selectedTemplate.sequence.join(' -> ')}
-                  </p>
+                  <div className="mt-3 flex flex-wrap items-center gap-0">
+                    {selectedTemplate.sequence.map((code, index) => {
+                      const isHovered = hoveredSegmentIndex === index
+                      const tagStyle = SEGMENT_STYLE[code] ?? 'bg-gray-100 text-gray-900 border-gray-200'
+                      const label = currentVariant?.segments[index]?.label_full ?? PATTERN_FULL_LABEL[code] ?? code
+                      return (
+                        <div key={`${code}-${index}`} className="flex items-center gap-0">
+                          <button
+                            type="button"
+                            onMouseEnter={() => setHoveredSegmentIndex(index)}
+                            onMouseLeave={() => setHoveredSegmentIndex(null)}
+                            className={`rounded-full border px-3 py-1 text-xs font-semibold transition ${tagStyle} ${isHovered ? 'ring-2 ring-il-blue/35' : 'opacity-85 hover:opacity-100'}`}
+                          >
+                            {label}
+                          </button>
+                          {index < selectedTemplate.sequence.length - 1 ? (
+                            <span
+                              className="inline-block h-[2px] w-10 rounded-full bg-il-storm-10/90"
+                              aria-hidden="true"
+                            />
+                          ) : null}
+                        </div>
+                      )
+                    })}
+                  </div>
                 ) : null}
               </header>
               <div className="min-h-0 overflow-y-auto p-4">
@@ -258,18 +296,22 @@ export function GeneratePage() {
                     </p>
                   )
                 ) : currentVariant ? (
-                  <div className="space-y-3">
-                    {currentVariant.segments.map((segment: StructuredSegment) => (
-                      <div key={`${segment.label}-${segment.text}`} className="space-y-2">
-                        <p
-                          className={`inline-block rounded px-2 py-1 text-xs font-semibold ${SEGMENT_STYLE[segment.label] ?? 'bg-gray-100 text-gray-900'}`}
+                  <p className="leading-8 text-il-storm-10">
+                    {currentVariant.segments.map((segment: StructuredSegment, index) => {
+                      const isHovered = hoveredSegmentIndex === index
+                      const blockStyle = SEGMENT_STYLE[segment.label] ?? 'bg-gray-100 text-gray-900 border-gray-200'
+                      return (
+                        <span
+                          key={`${segment.label}-${segment.text}-${index}`}
+                          onMouseEnter={() => setHoveredSegmentIndex(index)}
+                          onMouseLeave={() => setHoveredSegmentIndex(null)}
+                          className={`mr-1 inline rounded px-1.5 py-0.5 box-decoration-clone transition ${blockStyle} ${isHovered ? 'ring-2 ring-il-blue/35' : 'opacity-90 hover:opacity-100'}`}
                         >
-                          {segment.label_full}
-                        </p>
-                        <p className="whitespace-pre-wrap leading-8 text-il-storm-10">{segment.text}</p>
-                      </div>
-                    ))}
-                  </div>
+                          {segment.text}
+                        </span>
+                      )
+                    })}
+                  </p>
                 ) : currentStatus === 'loading' ? (
                   <LoadingPanel />
                 ) : currentStatus === 'error' ? (

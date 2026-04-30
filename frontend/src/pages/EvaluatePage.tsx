@@ -22,14 +22,7 @@ export function EvaluatePage() {
     <div className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] pt-5">
         <header className="shrink-0 rounded-lg border border-il-blue bg-il-blue px-5 py-5 text-white">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.14em] text-white/75">
-                Human Feedback
-              </p>
-              <h1 className="mt-1 text-3xl font-semibold leading-tight">
-                Evaluate
-              </h1>
-            </div>
+            <h1 className="text-4xl font-bold tracking-[0.04em]">Evaluation</h1>
             <div className="flex flex-wrap items-center gap-3 text-sm">
               <span className="rounded border border-white/20 px-3 py-1 text-white/85">
                 {progress ? `Your evaluations: ${progress.session_done}` : 'Preparing'}
