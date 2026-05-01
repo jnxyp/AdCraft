@@ -19,7 +19,7 @@ export function EvaluatePage() {
   const hasTask = Boolean(task?.task_id && task.ads.length >= 2)
 
   return (
-    <div className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] pt-5">
+    <div className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] gap-[10px]">
         <header className="shrink-0 rounded-lg border border-il-blue bg-il-blue px-5 py-5 text-white">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <h1 className="text-4xl font-bold tracking-[0.04em]">Evaluation</h1>
@@ -41,7 +41,7 @@ export function EvaluatePage() {
           </div>
         </header>
 
-        <section className="min-h-0 pt-5">
+        <section className="min-h-0">
           {nextTask.isPending ? <LoadingState /> : null}
           {nextTask.isError ? (
             <ErrorState onRetry={() => void nextTask.refetch()} />
@@ -50,13 +50,13 @@ export function EvaluatePage() {
             <CompleteState onRefresh={() => void nextTask.refetch()} />
           ) : null}
           {hasTask && task ? (
-            <div className="relative grid h-full min-h-0 grid-rows-[minmax(0,1fr)_96px] gap-5">
+            <div className="relative grid h-full min-h-0 grid-rows-[minmax(0,1fr)_96px] gap-[10px]">
               {submitError ? (
                 <div className="absolute left-0 right-0 top-0 z-10">
                   <SubmitError />
                 </div>
               ) : null}
-              <div className="grid min-h-0 gap-5 lg:grid-cols-2">
+              <div className="grid min-h-0 gap-[10px] lg:grid-cols-2">
                 <EvalCard ad={task.ads[0]} label="A" category={task.category} />
                 <EvalCard ad={task.ads[1]} label="B" category={task.category} />
               </div>

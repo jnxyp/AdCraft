@@ -25,9 +25,11 @@ function App() {
   }
 
   return (
-    <main className="h-screen overflow-hidden bg-il-storm-95 text-il-storm-10">
-      <div className="grid h-full w-full grid-rows-[64px_minmax(0,1fr)] px-4 sm:px-6 lg:px-8">
-        <TopNav activePage={activePage} onNavigate={navigate} />
+    <main className="h-screen overflow-hidden bg-il-storm-95 p-[5px] text-il-storm-10">
+      <div className="grid h-full w-full grid-rows-[56px_minmax(0,1fr)] gap-[10px]">
+        <div>
+          <TopNav activePage={activePage} onNavigate={navigate} />
+        </div>
         <section className="min-h-0">
           <div className={activePage === 'evaluate' ? 'h-full' : 'hidden'}>
             <EvaluatePage />
@@ -49,15 +51,20 @@ function TopNav({
   onNavigate: (nextPage: 'evaluate' | 'generate') => void
 }) {
   return (
-    <nav className="flex items-center justify-between border-b border-il-storm-20">
-      <button
-        type="button"
-        onClick={() => onNavigate('evaluate')}
-        className="text-lg font-semibold tracking-wide text-il-blue"
+    <nav className="flex h-full select-none items-center justify-between rounded-lg border border-il-storm-20 bg-white px-4 shadow-sm">
+      <a
+        href="/evaluate"
+        onClick={(event) => {
+          event.preventDefault()
+          onNavigate('evaluate')
+        }}
+        className="inline-flex items-center leading-none tracking-wide"
+        style={{ fontFamily: '"Orbitron", sans-serif', fontSize: '2.25rem', fontWeight: 700 }}
       >
-        AD Craft
-      </button>
-      <div className="flex h-full items-center gap-1">
+        <span className="text-il-blue">Ad</span>
+        <span className="text-il-altgeld">Craft</span>
+      </a>
+      <div className="inline-flex items-center rounded-full border border-il-storm-20 bg-il-storm-95 p-1">
         <NavLink href="/evaluate" isActive={activePage === 'evaluate'} onClick={() => onNavigate('evaluate')}>
           Evaluate
         </NavLink>
@@ -81,8 +88,8 @@ function NavLink({
   children: string
 }) {
   const activeClass = isActive
-    ? 'border border-il-blue bg-il-blue text-white'
-    : 'border border-il-blue bg-white text-il-blue hover:bg-il-blue hover:text-white active:bg-il-blue active:text-white'
+    ? 'bg-il-blue text-white shadow-sm'
+    : 'text-il-blue hover:bg-white active:bg-white'
   return (
     <a
       href={href}
@@ -90,7 +97,7 @@ function NavLink({
         event.preventDefault()
         onClick()
       }}
-      className={`${activeClass} rounded-md px-4 py-2 text-sm font-semibold transition`}
+      className={`${activeClass} rounded-full px-4 py-1.5 text-sm font-semibold transition`}
     >
       {children}
     </a>

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -45,4 +46,8 @@ button:focus-visible,
 a:focus-visible {
   outline: 3px solid #ff5f05;
   outline-offset: 2px;
+}
+
+.font-orbitron {
+  font-family: "Orbitron", sans-serif;
 }
