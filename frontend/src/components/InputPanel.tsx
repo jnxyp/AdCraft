@@ -1,9 +1,11 @@
+import type { ReactNode } from 'react'
+import { Search } from 'lucide-react'
 import type { CategoryOption, LengthOption } from '../types/generate'
 import { CATEGORIES, getCategoryDisplayName } from '../constants/categories'
 
 const LENGTH_OPTIONS: Array<{ value: LengthOption; label: string; sentenceRange: string }> = [
   { value: 'xs', label: 'XS', sentenceRange: '1-2' },
-  { value: 's', label: 'S', sentenceRange: '3-3' },
+  { value: 's', label: 'S', sentenceRange: '3' },
   { value: 'm', label: 'M', sentenceRange: '4-5' },
   { value: 'l', label: 'L', sentenceRange: '6-8' },
   { value: 'xl', label: 'XL', sentenceRange: '9-15' },
@@ -20,6 +22,7 @@ interface InputPanelProps {
   onGenerationPromptChange: (value: string) => void
   onLengthChange: (value: LengthOption) => void
   onSubmit: () => void
+  footerLeft?: ReactNode
 }
 
 export function InputPanel(props: InputPanelProps) {
@@ -35,7 +38,7 @@ export function InputPanel(props: InputPanelProps) {
         <label className="flex flex-col gap-2 text-sm font-medium text-il-storm-10">
           Product Description (Query String)
           <textarea
-            className="h-20 rounded-md border border-il-storm-20 px-3 py-2 leading-6"
+            className="h-20 rounded-md border border-il-storm-20 px-3 py-2 leading-6 focus:border-il-blue focus:outline-none focus:ring-2 focus:ring-il-blue/20"
             value={props.productDesc}
             onChange={(event) => props.onProductDescChange(event.target.value)}
             disabled={props.disabled}
@@ -44,7 +47,7 @@ export function InputPanel(props: InputPanelProps) {
         <label className="flex flex-col gap-2 text-sm font-medium text-il-storm-10">
           Additional Guidance (optional)
           <textarea
-            className="h-20 rounded-md border border-il-storm-20 px-3 py-2 leading-6"
+            className="h-20 rounded-md border border-il-storm-20 px-3 py-2 leading-6 focus:border-il-blue focus:outline-none focus:ring-2 focus:ring-il-blue/20"
             value={props.generationPrompt}
             onChange={(event) => props.onGenerationPromptChange(event.target.value)}
             disabled={props.disabled}
@@ -55,7 +58,7 @@ export function InputPanel(props: InputPanelProps) {
         <label className="flex flex-col gap-2 text-sm font-medium text-il-storm-10">
           Category
           <select
-            className="h-11 rounded-md border border-il-storm-20 bg-white px-3"
+            className="h-11 rounded-md border border-il-storm-20 bg-white px-3 focus:border-il-blue focus:outline-none focus:ring-2 focus:ring-il-blue/20"
             value={props.category}
             onChange={(event) => props.onCategoryChange(event.target.value as CategoryOption)}
             disabled={props.disabled}
@@ -104,13 +107,15 @@ export function InputPanel(props: InputPanelProps) {
           </p>
         </div>
       </div>
-      <div className="mt-3 flex justify-end">
+      <div className="mt-3 flex items-center justify-between gap-3">
+        <div>{props.footerLeft ?? null}</div>
         <button
           type="button"
           onClick={props.onSubmit}
           disabled={props.disabled || props.productDesc.trim().length < 8}
-          className="h-11 rounded-md border-2 border-il-blue bg-white px-5 text-sm font-bold text-il-blue transition hover:bg-il-blue hover:text-white active:bg-il-blue active:text-white disabled:cursor-not-allowed disabled:opacity-60"
+          className="inline-flex h-9 items-center gap-1.5 rounded-md border border-il-blue bg-il-blue px-4 text-sm font-semibold text-white transition hover:opacity-90 active:opacity-95 disabled:cursor-not-allowed disabled:opacity-60"
         >
+          <Search className="h-3.5 w-3.5" aria-hidden="true" />
           {props.disabled ? 'Finding...' : 'Find Template'}
         </button>
       </div>
