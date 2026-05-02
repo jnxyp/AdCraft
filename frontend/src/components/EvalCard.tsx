@@ -1,4 +1,5 @@
 import type { EvalAd } from '../types/eval'
+import { getCategoryDisplayName } from '../constants/categories'
 
 interface EvalCardProps {
   ad: EvalAd
@@ -15,7 +16,7 @@ export function EvalCard({ ad, label, category }: EvalCardProps) {
         </h2>
         <div className="mt-3 flex flex-wrap gap-2">
           <span className="rounded border border-il-storm-20 px-2 py-1 text-xs font-medium text-il-storm-60">
-            {category ?? 'Loading'}
+            {category ? getCategoryDisplayName(category) : 'Loading'}
           </span>
           <span className="rounded border border-il-storm-20 px-2 py-1 text-xs font-medium text-il-storm-60">
             {ad.ad_id}
