@@ -177,15 +177,15 @@ async def test_run_sync_initial_writes_then_skips(tmp_path: Path) -> None:
     assert json.loads(rows[0][3]) == ["tech", "ecommerce"]
 
     async with connect(db_path) as conn:
-        task_rows = await (await conn.execute("SELECT id, pair_scope, category, ads FROM eval_tasks")).fetchall()
+        task_rows = await (
+            await conn.execute("SELECT id, pair_scope, category, cluster_id, ads FROM eval_tasks")
+        ).fetchall()
     assert task_rows[0][0] == "eval_t1"
     assert task_rows[0][1] == "same_cluster"
-    ads_payload = json.loads(task_rows[0][3])
+    assert task_rows[0][3] == "tech-0001"
+    ads_payload = json.loads(task_rows[0][4])
     assert ads_payload[0]["ad_id"] == "ad_1"
     assert ads_payload[0]["template_id"] == "tmpl_aaa"
-
-    # cluster_id must NOT appear in stored ads payload
-    assert "cluster_id" not in task_rows[0]
 
     # Run again with no changes — chroma should not rebuild
     create_calls_before = client.create_calls

@@ -21,9 +21,16 @@ function getSessionId(): string {
   return next
 }
 
-async function fetchNextTask(sessionId: string): Promise<EvalNextResponse> {
+async function fetchNextTask(
+  sessionId: string,
+  options?: { excludeTaskId?: string; randomize?: boolean },
+): Promise<EvalNextResponse> {
   const response = await apiClient.get<EvalNextResponse>('/eval/next', {
-    params: { session_id: sessionId },
+    params: {
+      session_id: sessionId,
+      exclude_task_id: options?.excludeTaskId,
+      randomize: options?.randomize ?? false,
+    },
   })
   return response.data
 }
@@ -66,10 +73,17 @@ export function useEval() {
     })
   }
 
+  const shufflePair = async () => {
+    const currentTaskId = nextTask.data?.task_id ?? undefined
+    const next = await fetchNextTask(sessionId, { excludeTaskId: currentTaskId, randomize: true })
+    queryClient.setQueryData(['eval-next', sessionId], next)
+  }
+
   return {
     sessionId,
     nextTask,
     vote,
+    shufflePair,
     isSubmitting: submit.isPending,
     submitError: submit.error,
   }

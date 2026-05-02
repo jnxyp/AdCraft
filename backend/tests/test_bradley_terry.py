@@ -131,8 +131,8 @@ async def _insert_eval_task(
     ]
     await conn.execute(
         """
-        INSERT INTO eval_tasks (id, task_type, pair_scope, category, ads)
-        VALUES (?, ?, ?, ?, ?)
+        INSERT INTO eval_tasks (id, task_type, pair_scope, category, cluster_id, ads)
+        VALUES (?, ?, ?, ?, ?, ?)
         """,
-        (task_id, "pair", "same_cluster", "tech", json.dumps(ads)),
+        (task_id, "pair", "same_cluster", "tech", "", json.dumps(ads)),
     )

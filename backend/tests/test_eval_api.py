@@ -31,6 +31,8 @@ async def test_next_returns_unresolved_task_and_progress(tmp_path: Path) -> None
     assert response.status_code == 200
     payload = response.json()
     assert payload["task_id"] == "task_2"
+    assert payload["pair_scope"] == "same_cluster"
+    assert payload["cluster_id"] == "cluster_task_2"
     assert payload["progress"] == {"session_done": 1, "resolved": 0, "total": 2}
     assert payload["ads"] == [
         {"slot": "a", "ad_id": "task_2_ad_a", "body": "Body A"},
@@ -87,6 +89,23 @@ async def test_submit_resolves_tie_after_five_votes_without_strict_majority(tmp_
     assert resolved["vote_summary"] == {"a": 2, "b": 2, "tie": 1}
 
 
+@pytest.mark.asyncio
+async def test_next_supports_exclude_task_id_and_randomize(tmp_path: Path) -> None:
+    db_path = tmp_path / "test.db"
+    await init_schema(db_path)
+    await _insert_eval_task(db_path, "task_1")
+    await _insert_eval_task(db_path, "task_2")
+    client = _client(db_path)
+
+    response = client.get(
+        "/api/eval/next",
+        params={"session_id": "session_x", "exclude_task_id": "task_1", "randomize": "true"},
+    )
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["task_id"] == "task_2"
+
+
 def _client(db_path: Path, max_votes: int = 5) -> TestClient:
     app = FastAPI()
     app.include_router(create_eval_router(db_path, max_votes=max_votes))
@@ -122,9 +141,9 @@ async def _insert_eval_task(db_path: Path, task_id: str) -> None:
     async with connect(db_path) as conn:
         await conn.execute(
             """
-            INSERT INTO eval_tasks (id, task_type, pair_scope, category, ads)
-            VALUES (?, ?, ?, ?, ?)
+            INSERT INTO eval_tasks (id, task_type, pair_scope, category, cluster_id, ads)
+            VALUES (?, ?, ?, ?, ?, ?)
             """,
-            (task_id, "pair", "same_cluster", "tech", json.dumps(ads)),
+            (task_id, "pair", "same_cluster", "tech", f"cluster_{task_id}", json.dumps(ads)),
         )
         await conn.commit()

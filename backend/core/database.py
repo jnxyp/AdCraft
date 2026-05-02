@@ -29,6 +29,7 @@ SCHEMA_STATEMENTS: tuple[str, ...] = (
       task_type TEXT NOT NULL,
       pair_scope TEXT NOT NULL,
       category TEXT NOT NULL,
+      cluster_id TEXT NOT NULL DEFAULT '',
       ads TEXT NOT NULL
     )
     """,
@@ -93,7 +94,15 @@ async def init_schema(db_path: Path) -> None:
         await conn.execute("PRAGMA foreign_keys=ON")
         for stmt in SCHEMA_STATEMENTS:
             await conn.execute(stmt)
+        await _ensure_eval_tasks_columns(conn)
         await conn.commit()
+
+
+async def _ensure_eval_tasks_columns(conn: aiosqlite.Connection) -> None:
+    rows = await (await conn.execute("PRAGMA table_info(eval_tasks)")).fetchall()
+    existing = {str(row[1]) for row in rows}
+    if "cluster_id" not in existing:
+        await conn.execute("ALTER TABLE eval_tasks ADD COLUMN cluster_id TEXT NOT NULL DEFAULT ''")
 
 
 @asynccontextmanager

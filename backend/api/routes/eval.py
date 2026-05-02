@@ -26,16 +26,23 @@ def create_eval_router(db_path: Path, max_votes: int = 5) -> APIRouter:
     router = APIRouter(prefix="/api/eval", tags=["eval"])
 
     @router.get("/next", response_model=EvalNextResponse)
-    async def next_eval_task(session_id: str = Query(min_length=1)) -> EvalNextResponse:
+    async def next_eval_task(
+        session_id: str = Query(min_length=1),
+        exclude_task_id: str | None = Query(default=None),
+        randomize: bool = Query(default=False),
+    ) -> EvalNextResponse:
         async with connect(db_path) as conn:
             progress = await _load_progress(conn, session_id)
+            order_clause = "RANDOM()" if randomize else "vote_count DESC, e.id"
             row = await (
                 await conn.execute(
-                    """
+                    f"""
                     SELECT
                       e.id,
                       e.task_type,
+                      e.pair_scope,
                       e.category,
+                      e.cluster_id,
                       e.ads,
                       (SELECT COUNT(*) FROM eval_responses r WHERE r.task_id = e.id) AS vote_count
                     FROM eval_tasks e
@@ -46,10 +53,11 @@ def create_eval_router(db_path: Path, max_votes: int = 5) -> APIRouter:
                       SELECT 1 FROM eval_responses mine
                       WHERE mine.task_id = e.id AND mine.session_id = ?
                     )
-                    ORDER BY vote_count DESC, e.id
+                    AND (? IS NULL OR e.id != ?)
+                    ORDER BY {order_clause}
                     LIMIT 1
                     """,
-                    (session_id,),
+                    (session_id, exclude_task_id, exclude_task_id),
                 )
             ).fetchone()
 
@@ -58,6 +66,8 @@ def create_eval_router(db_path: Path, max_votes: int = 5) -> APIRouter:
                 task_id=None,
                 task_type=None,
                 category=None,
+                pair_scope=None,
+                cluster_id=None,
                 progress=progress,
                 ads=[],
             )
@@ -66,6 +76,8 @@ def create_eval_router(db_path: Path, max_votes: int = 5) -> APIRouter:
             task_id=str(row["id"]),
             task_type=str(row["task_type"]),
             category=str(row["category"]),
+            pair_scope=str(row["pair_scope"]),
+            cluster_id=str(row["cluster_id"]),
             progress=progress,
             ads=_public_ads(str(row["ads"])),
         )

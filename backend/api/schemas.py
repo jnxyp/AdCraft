@@ -24,6 +24,8 @@ class EvalNextResponse(BaseModel):
     task_id: str | None
     task_type: str | None
     category: str | None
+    pair_scope: str | None
+    cluster_id: str | None
     progress: EvalProgress
     ads: list[EvalAd]
 

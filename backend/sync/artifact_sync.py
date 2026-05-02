@@ -4,7 +4,7 @@ Reads pipeline JSON artifacts (`ds0_templates.json`, `ds0_eval_tasks.json`),
 hashes each, and only touches runtime storage when the hash changed:
 
 - templates JSON change   -> upsert SQLite `templates`, rebuild ChromaDB `ad_templates`
-- eval_tasks JSON change  -> upsert SQLite `eval_tasks` (drop `cluster_id`)
+- eval_tasks JSON change  -> upsert SQLite `eval_tasks` (keep `pair_scope` + `cluster_id`)
 
 Never deletes or overwrites runtime feedback data
 (`eval_responses`, `resolved_eval_tasks`, `template_bt_scores`, `generations`).
@@ -208,12 +208,13 @@ async def upsert_eval_tasks(db_path: Path, tasks: list[EvalTaskRow]) -> None:
             ]
             await conn.execute(
                 """
-                INSERT INTO eval_tasks (id, task_type, pair_scope, category, ads)
-                VALUES (?, ?, ?, ?, ?)
+                INSERT INTO eval_tasks (id, task_type, pair_scope, category, cluster_id, ads)
+                VALUES (?, ?, ?, ?, ?, ?)
                 ON CONFLICT(id) DO UPDATE SET
                   task_type = excluded.task_type,
                   pair_scope = excluded.pair_scope,
                   category = excluded.category,
+                  cluster_id = excluded.cluster_id,
                   ads = excluded.ads
                 """,
                 (
@@ -221,6 +222,7 @@ async def upsert_eval_tasks(db_path: Path, tasks: list[EvalTaskRow]) -> None:
                     task["task_type"],
                     task["pair_scope"],
                     task["category"],
+                    task["cluster_id"],
                     json.dumps(ads_payload, ensure_ascii=False),
                 ),
             )

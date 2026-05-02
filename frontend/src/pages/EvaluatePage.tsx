@@ -10,8 +10,8 @@ const ACTIONS: Array<{ winner: WinnerSlot; label: string; tone: 'primary' | 'neu
   { winner: 'b', label: 'B is better', tone: 'primary' },
 ]
 
-export function EvaluatePage() {
-  const { nextTask, vote, isSubmitting, submitError } = useEval()
+export function EvaluatePage({ showDetails }: { showDetails: boolean }) {
+  const { nextTask, vote, shufflePair, isSubmitting, submitError } = useEval()
   const task = nextTask.data
   const progress = task?.progress
   const [plusOneVisible, setPlusOneVisible] = useState(false)
@@ -83,9 +83,50 @@ export function EvaluatePage() {
                   <SubmitError />
                 </div>
               ) : null}
-              <div className="grid min-h-0 gap-[10px] lg:grid-cols-2">
-                <EvalCard ad={task.ads[0]} label="A" category={task.category} />
-                <EvalCard ad={task.ads[1]} label="B" category={task.category} />
+              <div className="flex min-h-0 flex-col gap-[10px] rounded-lg border border-il-storm-20 bg-il-storm-95/40 p-3">
+                <div className="flex items-center justify-between gap-3 rounded-md border border-il-storm-20 bg-white px-3 py-2">
+                  <div className="min-w-0">
+                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-il-blue">Pair Evaluation</p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    {showDetails ? (
+                      <>
+                        <span className="rounded border border-il-storm-20 px-2 py-1 text-xs font-semibold text-il-storm-60">
+                          Task Type: pair
+                        </span>
+                        <span className="rounded border border-il-storm-20 px-2 py-1 text-xs font-semibold text-il-storm-60">
+                          Task Scope: {task.pair_scope === 'cross_cluster' ? 'Cross Cluster' : 'Same Cluster'}
+                        </span>
+                      </>
+                    ) : null}
+                    <button
+                      type="button"
+                      onClick={() => {
+                        void shufflePair()
+                      }}
+                      className="inline-flex h-8 items-center gap-1.5 rounded-md border border-il-storm-20 bg-white px-3 text-xs font-semibold text-il-storm-60 transition hover:border-il-blue hover:text-il-blue"
+                    >
+                      <RefreshCw className="h-3.5 w-3.5" aria-hidden="true" />
+                      Switch Pair
+                    </button>
+                  </div>
+                </div>
+                <div className="grid min-h-0 gap-[10px] lg:grid-cols-2">
+                  <EvalCard
+                    ad={task.ads[0]}
+                    label="A"
+                    category={task.category}
+                    showDetails={showDetails}
+                    clusterId={task.cluster_id}
+                  />
+                  <EvalCard
+                    ad={task.ads[1]}
+                    label="B"
+                    category={task.category}
+                    showDetails={showDetails}
+                    clusterId={task.cluster_id}
+                  />
+                </div>
               </div>
               <div className="grid h-24 shrink-0 items-center gap-3 rounded-lg border border-il-storm-20 bg-white p-4 shadow-sm sm:grid-cols-3">
                 {ACTIONS.map((action) => (

@@ -16,6 +16,8 @@ export interface EvalNextResponse {
   task_id: string | null
   task_type: string | null
   category: string | null
+  pair_scope: string | null
+  cluster_id: string | null
   progress: EvalProgress
   ads: EvalAd[]
 }

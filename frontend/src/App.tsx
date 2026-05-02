@@ -63,7 +63,7 @@ function App() {
         </div>
         <section className="min-h-0">
           <div className={activePage === 'evaluate' ? 'h-full' : 'hidden'}>
-            <EvaluatePage />
+            <EvaluatePage showDetails={showExplainability} />
           </div>
           <div className={activePage === 'generate' ? 'h-full' : 'hidden'}>
             <GeneratePage showExplainability={showExplainability} />
@@ -108,7 +108,7 @@ function TopNav({
               ? 'rounded-full border border-il-blue bg-il-blue px-4 py-1.5 text-sm font-semibold text-white'
               : 'rounded-full border border-il-storm-20 bg-white px-4 py-1.5 text-sm font-semibold text-il-storm-60'
           }
-          title="Toggle ranking explanation metrics"
+          title="Show or hide detailed scores and evaluation metadata"
         >
           Show Details
         </button>
