@@ -709,13 +709,17 @@ export function GeneratePage() {
                           : 'mb-2 w-full rounded-md border border-il-blue bg-white px-3 py-3 text-left text-il-blue hover:bg-il-blue hover:text-white active:bg-il-blue active:text-white'
                       }
                     >
-                      <div className="flex items-center justify-between gap-3">
-                        <p className="text-sm font-semibold">{template.template_name}</p>
-                        {(currentLengthState.statusMap[template.template_id] ?? 'idle') === 'loading' ? (
-                          <LoaderCircle className="h-4 w-4 animate-spin" aria-hidden="true" />
-                        ) : (currentLengthState.statusMap[template.template_id] ?? 'idle') === 'done' ? (
-                          <Check className="h-4 w-4" aria-hidden="true" />
-                        ) : null}
+                      <div className="flex items-start gap-3">
+                        <span className="mt-0.5 inline-flex h-4 w-4 shrink-0 items-center justify-center">
+                          {(currentLengthState.statusMap[template.template_id] ?? 'idle') === 'loading' ? (
+                            <LoaderCircle className="h-4 w-4 animate-spin" aria-hidden="true" />
+                          ) : (currentLengthState.statusMap[template.template_id] ?? 'idle') === 'done' ? (
+                            <Check className="h-4 w-4" aria-hidden="true" />
+                          ) : null}
+                        </span>
+                        <p className="min-w-0 flex-1 whitespace-normal break-words text-sm font-semibold">
+                          {template.template_name}
+                        </p>
                       </div>
                     </button>
                   ))}
@@ -731,13 +735,17 @@ export function GeneratePage() {
                             : 'mb-2 w-full rounded-md border border-il-blue bg-white px-3 py-3 text-left text-il-blue hover:bg-il-blue hover:text-white active:bg-il-blue active:text-white'
                       }
                     >
-                      <div className="flex items-center justify-between gap-3">
-                        <p className="text-sm font-semibold">No-template generation</p>
-                        {(currentLengthState.statusMap.direct ?? 'idle') === 'loading' ? (
-                          <LoaderCircle className="h-4 w-4 animate-spin" aria-hidden="true" />
-                        ) : (currentLengthState.statusMap.direct ?? 'idle') === 'done' ? (
-                          <Check className="h-4 w-4" aria-hidden="true" />
-                        ) : null}
+                      <div className="flex items-start gap-3">
+                        <span className="mt-0.5 inline-flex h-4 w-4 shrink-0 items-center justify-center">
+                          {(currentLengthState.statusMap.direct ?? 'idle') === 'loading' ? (
+                            <LoaderCircle className="h-4 w-4 animate-spin" aria-hidden="true" />
+                          ) : (currentLengthState.statusMap.direct ?? 'idle') === 'done' ? (
+                            <Check className="h-4 w-4" aria-hidden="true" />
+                          ) : null}
+                        </span>
+                        <p className="min-w-0 flex-1 whitespace-normal break-words text-sm font-semibold">
+                          No-template generation
+                        </p>
                       </div>
                     </button>
                   ) : null}
