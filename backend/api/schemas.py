@@ -77,7 +77,13 @@ class TemplateCandidateResponse(BaseModel):
     template_name: str
     sequence: list[str]
     category_tags: list[str]
+    semantic_distance: float | None
+    semantic_rank: int
+    length: Literal["xs", "s", "m", "l", "xl"]
+    bt_score: float | None
     freq_score: float
+    final_score: float
+    final_rank: int
 
 
 class FindTemplatesResponse(BaseModel):

@@ -25,6 +25,7 @@ class QueryResult(TypedDict, total=False):
     ids: list[list[str]]
     documents: list[list[str | None]]
     metadatas: list[list[Mapping[str, MetadataValue] | None]]
+    distances: list[list[float]]
 
 
 class ChromaCollection(Protocol):
@@ -33,6 +34,7 @@ class ChromaCollection(Protocol):
         query_texts: list[str],
         n_results: int,
         where: Where,
+        include: list[str] | None = None,
     ) -> QueryResult: ...
 
 
@@ -40,13 +42,21 @@ class ChromaClient(Protocol):
     def get_collection(self, name: str) -> ChromaCollection: ...
 
 
-class Template(TypedDict):
+class TemplateBase(TypedDict):
     id: str
     name: str
     categories: str
     freq_score: float
     seq_len: int
     example_product_desc: str
+
+
+class Template(TemplateBase, total=False):
+    semantic_distance: float | None
+    semantic_rank: int
+    bt_score: float | None
+    final_score: float
+    final_rank: int
 
 
 class Retriever:
@@ -88,7 +98,14 @@ class Retriever:
             candidates = self._query_candidates(category, product_desc, max(1, min_len - 1), max_len + 1)
 
         ranked = rank_candidates([dict(candidate) for candidate in candidates], self._bt_scores, top_k=limit)
-        return [_coerce_template(candidate) for candidate in ranked]
+        templates = [_coerce_template(candidate) for candidate in ranked]
+        for idx, template in enumerate(templates):
+            template_id = template["id"]
+            bt_score = self._bt_scores.get(template_id)
+            template["bt_score"] = bt_score if bt_score is not None else None
+            template["final_score"] = bt_score if bt_score is not None else template["freq_score"]
+            template["final_rank"] = idx + 1
+        return templates
 
     async def infer_category(
         self,
@@ -100,6 +117,7 @@ class Retriever:
             query_texts=[product_desc],
             n_results=SEMANTIC_CANDIDATES,
             where=_seq_len_filter(min_len, max_len),
+            include=["metadatas", "documents", "distances"],
         )
         candidates = _templates_from_query_result(result)
         counts: dict[str, int] = {}
@@ -122,6 +140,7 @@ class Retriever:
             query_texts=[product_desc],
             n_results=SEMANTIC_CANDIDATES,
             where=_where_filter(category, min_len, max_len),
+            include=["metadatas", "documents", "distances"],
         )
         candidates = _templates_from_query_result(result)
         category_matches = [candidate for candidate in candidates if _category_matches(category, candidate)]
@@ -132,6 +151,7 @@ class Retriever:
             query_texts=[product_desc],
             n_results=SEMANTIC_CANDIDATES,
             where=_seq_len_filter(min_len, max_len),
+            include=["metadatas", "documents", "distances"],
         )
         return [
             candidate
@@ -171,6 +191,7 @@ def _templates_from_query_result(result: QueryResult) -> list[Template]:
     ids = _first_str_batch(result.get("ids", []))
     documents = _first_document_batch(result.get("documents", []))
     metadatas = _first_metadata_batch(result.get("metadatas", []))
+    distances = _first_distance_batch(result.get("distances", []))
 
     templates: list[Template] = []
     for idx, template_id in enumerate(ids):
@@ -187,6 +208,8 @@ def _templates_from_query_result(result: QueryResult) -> list[Template]:
                 freq_score=_metadata_float(metadata, "freq_score"),
                 seq_len=_metadata_int(metadata, "seq_len"),
                 example_product_desc=document,
+                semantic_distance=distances[idx] if idx < len(distances) else None,
+                semantic_rank=idx + 1,
             )
         )
     return templates
@@ -206,8 +229,12 @@ def _first_metadata_batch(
     return values[0] if values else []
 
 
+def _first_distance_batch(values: list[list[float]]) -> list[float]:
+    return values[0] if values else []
+
+
 def _coerce_template(candidate: dict[str, object]) -> Template:
-    return Template(
+    template = Template(
         id=_object_str(candidate["id"]),
         name=_object_str(candidate["name"]),
         categories=_object_str(candidate["categories"]),
@@ -215,6 +242,19 @@ def _coerce_template(candidate: dict[str, object]) -> Template:
         seq_len=_object_int(candidate["seq_len"]),
         example_product_desc=_object_str(candidate["example_product_desc"]),
     )
+    if "semantic_distance" in candidate:
+        distance = candidate["semantic_distance"]
+        template["semantic_distance"] = _object_float(distance) if distance is not None else None
+    if "semantic_rank" in candidate:
+        template["semantic_rank"] = _object_int(candidate["semantic_rank"])
+    if "bt_score" in candidate:
+        bt_score = candidate["bt_score"]
+        template["bt_score"] = _object_float(bt_score) if bt_score is not None else None
+    if "final_score" in candidate:
+        template["final_score"] = _object_float(candidate["final_score"])
+    if "final_rank" in candidate:
+        template["final_rank"] = _object_int(candidate["final_rank"])
+    return template
 
 
 def _category_matches(category: str, template: Template) -> bool:

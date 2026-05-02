@@ -25,9 +25,45 @@ class FakeRetriever:
     ) -> list[dict[str, object]]:
         self.calls.append((category, product_desc, length))
         return [
-            {"id": "tmpl_1", "name": "AH→PP→FB→CTA", "categories": "tech", "freq_score": 0.8, "seq_len": 4, "example_product_desc": "a"},
-            {"id": "tmpl_2", "name": "AH→FB→CTA", "categories": "tech", "freq_score": 0.6, "seq_len": 3, "example_product_desc": "b"},
-            {"id": "tmpl_3", "name": "PP→FB→SP→CTA", "categories": "tech", "freq_score": 0.5, "seq_len": 4, "example_product_desc": "c"},
+            {
+                "id": "tmpl_1",
+                "name": "AH→PP→FB→CTA",
+                "categories": "tech",
+                "freq_score": 0.8,
+                "seq_len": 4,
+                "example_product_desc": "a",
+                "semantic_distance": 0.11,
+                "semantic_rank": 1,
+                "bt_score": 1.2,
+                "final_score": 1.2,
+                "final_rank": 1,
+            },
+            {
+                "id": "tmpl_2",
+                "name": "AH→FB→CTA",
+                "categories": "tech",
+                "freq_score": 0.6,
+                "seq_len": 3,
+                "example_product_desc": "b",
+                "semantic_distance": 0.13,
+                "semantic_rank": 2,
+                "bt_score": 0.7,
+                "final_score": 0.7,
+                "final_rank": 2,
+            },
+            {
+                "id": "tmpl_3",
+                "name": "PP→FB→SP→CTA",
+                "categories": "tech",
+                "freq_score": 0.5,
+                "seq_len": 4,
+                "example_product_desc": "c",
+                "semantic_distance": 0.21,
+                "semantic_rank": 3,
+                "bt_score": None,
+                "final_score": 0.5,
+                "final_rank": 3,
+            },
         ][:limit]
 
     async def infer_category(self, product_desc: str, length: str) -> str:
@@ -153,6 +189,9 @@ async def test_find_templates_and_direct_routes(tmp_path: Path) -> None:
     find_payload = find_response.json()
     assert find_payload["category"] == "tech"
     assert len(find_payload["templates"]) == 3
+    assert find_payload["templates"][0]["semantic_distance"] == 0.11
+    assert find_payload["templates"][0]["semantic_rank"] == 1
+    assert find_payload["templates"][0]["final_rank"] == 1
 
     direct_response = client.post(
         "/api/generate/direct",

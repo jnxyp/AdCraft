@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Protocol, cast
+from typing import Literal, Protocol, cast
 
 from fastapi import APIRouter, HTTPException, Request, status
 from openai import AsyncOpenAI
@@ -80,7 +80,10 @@ def create_generate_router(
             category=resolved_category,
             product_desc=payload.product_desc,
             length=payload.length,
-            templates=[_candidate_response(candidate) for candidate in candidates],
+            templates=[
+                _candidate_response(candidate, length=payload.length)
+                for candidate in candidates
+            ],
         )
 
     @router.post("/generate/direct", response_model=GenerateDirectResponse)
@@ -168,14 +171,43 @@ def _retriever_from_app(request: Request) -> RetrieverLike:
     return cast(RetrieverLike, retriever_obj)
 
 
-def _candidate_response(candidate: Template) -> TemplateCandidateResponse:
+def _candidate_response(
+    candidate: Template,
+    *,
+    length: Literal["xs", "s", "m", "l", "xl"],
+) -> TemplateCandidateResponse:
     sequence = candidate["name"].split("→")
+    semantic_rank = candidate.get("semantic_rank")
+    if not isinstance(semantic_rank, int):
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="semantic_rank missing from retriever result",
+        )
+    final_rank = candidate.get("final_rank")
+    if not isinstance(final_rank, int):
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="final_rank missing from retriever result",
+        )
+    final_score = candidate.get("final_score")
+    if not isinstance(final_score, int | float):
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="final_score missing from retriever result",
+        )
+    bt_score = candidate.get("bt_score")
     return TemplateCandidateResponse(
         template_id=candidate["id"],
         template_name=candidate["name"],
         sequence=sequence,
         category_tags=[item for item in candidate["categories"].split("|") if item],
+        semantic_distance=candidate.get("semantic_distance"),
+        semantic_rank=semantic_rank,
+        length=length,
+        bt_score=bt_score if isinstance(bt_score, int | float) else None,
         freq_score=candidate["freq_score"],
+        final_score=float(final_score),
+        final_rank=final_rank,
     )
 
 

@@ -23,9 +23,17 @@ class FakeChromaCollection:
     templates: list[FakeTemplate]
     contains_mode: Literal["substring", "empty"] = "substring"
     calls: list[Where] = field(default_factory=list)
+    includes: list[list[str] | None] = field(default_factory=list)
 
-    def query(self, query_texts: list[str], n_results: int, where: Where) -> QueryResult:
+    def query(
+        self,
+        query_texts: list[str],
+        n_results: int,
+        where: Where,
+        include: list[str] | None = None,
+    ) -> QueryResult:
         self.calls.append(where)
+        self.includes.append(include)
         matches = [template for template in self.templates if self._matches(template, where)]
         limited = matches[:n_results]
         return {
@@ -42,6 +50,7 @@ class FakeChromaCollection:
                     for template in limited
                 ]
             ],
+            "distances": [[float(index) / 10.0 for index, _ in enumerate(limited, start=1)]],
         }
 
     def _matches(self, template: FakeTemplate, where: Where) -> bool:
@@ -102,6 +111,7 @@ async def test_query_reranks_candidates_with_bt_scores() -> None:
     results = await retriever.query("tech", "wireless keyboard", "m")
 
     assert [template["id"] for template in results] == ["tmpl_c", "tmpl_a", "tmpl_b"]
+    assert collection.includes[0] == ["metadatas", "documents", "distances"]
     assert collection.calls[0] == {
         "$and": [
             {"categories": {"$contains": "tech"}},
@@ -109,6 +119,8 @@ async def test_query_reranks_candidates_with_bt_scores() -> None:
             {"seq_len": {"$lte": 5}},
         ]
     }
+    assert results[0]["semantic_rank"] == 3
+    assert results[0]["semantic_distance"] == 0.3
 
 
 @pytest.mark.asyncio
@@ -125,6 +137,8 @@ async def test_query_widens_seq_len_when_fewer_than_three_candidates_match() -> 
     results = await retriever.query("tech", "wireless keyboard", "m")
 
     assert [template["id"] for template in results] == ["tmpl_a", "tmpl_b", "tmpl_c"]
+    assert collection.includes[0] == ["metadatas", "documents", "distances"]
+    assert collection.includes[1] == ["metadatas", "documents", "distances"]
     assert collection.calls[1] == {
         "$and": [
             {"categories": {"$contains": "tech"}},
@@ -149,6 +163,8 @@ async def test_query_falls_back_to_local_category_filter_when_contains_returns_e
     results = await retriever.query("tech", "wireless keyboard", "m")
 
     assert [template["id"] for template in results] == ["tmpl_c", "tmpl_a"]
+    assert collection.includes[0] == ["metadatas", "documents", "distances"]
+    assert collection.includes[1] == ["metadatas", "documents", "distances"]
     assert "categories" in collection.calls[0]["$and"][0]
     assert collection.calls[1] == {
         "$and": [
