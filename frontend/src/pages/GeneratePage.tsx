@@ -70,6 +70,10 @@ interface SlotData {
 const DEFAULT_SLOT_TITLE = 'New Ad Copy'
 const TITLE_LIMIT = 24
 const SESSION_ID_KEY = 'adcraft_session_id'
+const EXPLAIN_VISIBILITY_KEY_PREFIX = 'adcraft_explain_visibility_'
+const GENERATE_CACHE_SCHEMA_VERSION = '2'
+const GENERATE_CACHE_SCHEMA_KEY = 'adcraft_generate_cache_schema_version'
+const GENERATION_TIMEOUT_MS = 25000
 
 function isLengthOption(value: string | null): value is LengthOption {
   return value === 'xs' || value === 's' || value === 'm' || value === 'l' || value === 'xl'
@@ -141,6 +145,26 @@ function getOrCreateSessionId(): string {
   return created
 }
 
+function clearLegacyGenerateCacheIfNeeded() {
+  const current = window.localStorage.getItem(GENERATE_CACHE_SCHEMA_KEY)
+  if (current === GENERATE_CACHE_SCHEMA_VERSION) {
+    return
+  }
+  const keys: string[] = []
+  for (let index = 0; index < window.localStorage.length; index += 1) {
+    const key = window.localStorage.key(index)
+    if (key !== null) {
+      keys.push(key)
+    }
+  }
+  for (const key of keys) {
+    if (key.startsWith('adcraft_generate_slots_') || key.startsWith(EXPLAIN_VISIBILITY_KEY_PREFIX)) {
+      window.localStorage.removeItem(key)
+    }
+  }
+  window.localStorage.setItem(GENERATE_CACHE_SCHEMA_KEY, GENERATE_CACHE_SCHEMA_VERSION)
+}
+
 function parseGenerateLocation(): { slotId: string | null; length: LengthOption } {
   const path = window.location.pathname
   const prefix = '/generate'
@@ -184,17 +208,57 @@ function formatTime(value: string): string {
   return `${date.getFullYear()}/${date.getMonth() + 1}`
 }
 
-export function GeneratePage() {
+function getCurrentResultText(
+  selectedKey: ResultKey,
+  directOutput: string | null,
+  currentVariant: StructuredVariant | null,
+): string {
+  if (selectedKey === 'direct') {
+    return directOutput ?? ''
+  }
+  if (selectedKey && currentVariant) {
+    return currentVariant.output
+  }
+  return ''
+}
+
+class GenerationTimeoutError extends Error {
+  constructor(message: string) {
+    super(message)
+    this.name = 'GenerationTimeoutError'
+  }
+}
+
+async function withTimeout<T>(promise: Promise<T>, timeoutMs: number, message: string): Promise<T> {
+  let timer: number | null = null
+  try {
+    return await Promise.race([
+      promise,
+      new Promise<T>((_, reject) => {
+        timer = window.setTimeout(() => reject(new GenerationTimeoutError(message)), timeoutMs)
+      }),
+    ])
+  } finally {
+    if (timer !== null) {
+      window.clearTimeout(timer)
+    }
+  }
+}
+
+export function GeneratePage({ showExplainability }: { showExplainability: boolean }) {
   const findTemplates = useFindTemplates()
   const generateDirect = useGenerateDirect()
   const generateTemplateVariant = useGenerateTemplateVariant()
 
-  const [sessionId] = useState<string>(() => getOrCreateSessionId())
+  const [sessionId] = useState<string>(() => {
+    clearLegacyGenerateCacheIfNeeded()
+    return getOrCreateSessionId()
+  })
   const storageKey = `adcraft_generate_slots_${sessionId}`
 
   const [{ slots: initialSlots, slotId: initialSlotId, length: initialLength }] = useState(() => {
     const route = parseGenerateLocation()
-    const raw = window.localStorage.getItem(`adcraft_generate_slots_${getOrCreateSessionId()}`)
+    const raw = window.localStorage.getItem(`adcraft_generate_slots_${sessionId}`)
     if (raw) {
       try {
         const parsed = JSON.parse(raw) as SlotData[]
@@ -218,6 +282,7 @@ export function GeneratePage() {
   const [length, setLength] = useState<LengthOption>(initialLength)
   const [slots, setSlots] = useState<SlotData[]>(initialSlots)
   const [hoveredSegmentIndex, setHoveredSegmentIndex] = useState<number | null>(null)
+  const [copied, setCopied] = useState(false)
 
   const cancelEpochRef = useRef(0)
 
@@ -473,13 +538,17 @@ export function GeneratePage() {
       statusMap: { ...prev.statusMap, [template.template_id]: 'loading' },
     }))
     try {
-      const variant = await generateTemplateVariant.mutateAsync({
-        template_id: template.template_id,
-        category: categoryForGeneration,
-        product_desc: productDescForGeneration,
-        length: lengthForGeneration,
-        generation_prompt: promptForGeneration,
-      })
+      const variant = await withTimeout(
+        generateTemplateVariant.mutateAsync({
+          template_id: template.template_id,
+          category: categoryForGeneration,
+          product_desc: productDescForGeneration,
+          length: lengthForGeneration,
+          generation_prompt: promptForGeneration,
+        }),
+        GENERATION_TIMEOUT_MS,
+        `Template ${template.template_id} generation timed out`,
+      )
       if (epoch !== cancelEpochRef.current) {
         return
       }
@@ -489,14 +558,21 @@ export function GeneratePage() {
         statusMap: { ...prev.statusMap, [template.template_id]: 'done' },
       }))
       updateSlot(slotId, (slot) => ({ ...slot, updatedAt: new Date().toISOString() }))
-    } catch {
+    } catch (error) {
       if (epoch !== cancelEpochRef.current) {
         return
       }
-      updateSlotLengthState(slotId, lengthKey, (prev) => ({
-        ...prev,
-        statusMap: { ...prev.statusMap, [template.template_id]: 'error' },
-      }))
+      if (error instanceof GenerationTimeoutError) {
+        updateSlotLengthState(slotId, lengthKey, (prev) => ({
+          ...prev,
+          statusMap: { ...prev.statusMap, [template.template_id]: 'idle' },
+        }))
+      } else {
+        updateSlotLengthState(slotId, lengthKey, (prev) => ({
+          ...prev,
+          statusMap: { ...prev.statusMap, [template.template_id]: 'error' },
+        }))
+      }
     }
   }
 
@@ -514,12 +590,16 @@ export function GeneratePage() {
       statusMap: { ...prev.statusMap, direct: 'loading' },
     }))
     try {
-      const response = await generateDirect.mutateAsync({
-        category: selectedCategory,
-        product_desc: selectedProductDesc,
-        length: selectedLength,
-        generation_prompt: selectedPrompt,
-      })
+      const response = await withTimeout(
+        generateDirect.mutateAsync({
+          category: selectedCategory,
+          product_desc: selectedProductDesc,
+          length: selectedLength,
+          generation_prompt: selectedPrompt,
+        }),
+        GENERATION_TIMEOUT_MS,
+        'Direct generation timed out',
+      )
       if (epoch !== cancelEpochRef.current) {
         return
       }
@@ -529,14 +609,22 @@ export function GeneratePage() {
         statusMap: { ...prev.statusMap, direct: 'done' },
       }))
       updateSlot(slotId, (slot) => ({ ...slot, updatedAt: new Date().toISOString() }))
-    } catch {
+    } catch (error) {
       if (epoch !== cancelEpochRef.current) {
         return
       }
-      updateSlotLengthState(slotId, lengthKey, (prev) => ({
-        ...prev,
-        statusMap: { ...prev.statusMap, direct: 'error' },
-      }))
+      if (error instanceof GenerationTimeoutError) {
+        updateSlotLengthState(slotId, lengthKey, (prev) => ({
+          ...prev,
+          directOutput: null,
+          statusMap: { ...prev.statusMap, direct: 'idle' },
+        }))
+      } else {
+        updateSlotLengthState(slotId, lengthKey, (prev) => ({
+          ...prev,
+          statusMap: { ...prev.statusMap, direct: 'error' },
+        }))
+      }
     }
   }
 
@@ -575,10 +663,23 @@ export function GeneratePage() {
   const selectedTemplate = currentLengthState.selectedKey === null || currentLengthState.selectedKey === 'direct'
     ? null
     : (currentLengthState.result?.templates.find((template) => template.template_id === currentLengthState.selectedKey) ?? null)
-
   const currentStatus = currentLengthState.selectedKey
     ? currentLengthState.statusMap[currentLengthState.selectedKey] ?? 'idle'
     : 'idle'
+  const currentResultText = getCurrentResultText(
+    currentLengthState.selectedKey,
+    currentLengthState.directOutput,
+    currentVariant,
+  )
+
+  const copyCurrentResult = async () => {
+    if (currentResultText.trim().length === 0) {
+      return
+    }
+    await navigator.clipboard.writeText(currentResultText)
+    setCopied(true)
+    window.setTimeout(() => setCopied(false), 1200)
+  }
 
   return (
     <div className="flex h-full min-h-0 items-stretch gap-[10px]">
@@ -731,7 +832,7 @@ export function GeneratePage() {
                         currentLengthState.selectedKey === 'direct'
                           ? 'mb-2 w-full rounded-md border border-il-blue bg-il-blue px-3 py-3 text-left text-white'
                           : (currentLengthState.statusMap.direct ?? 'idle') === 'done'
-                            ? 'mb-2 w-full rounded-md border-2 border-il-orange bg-white px-3 py-3 text-left text-il-orange hover:bg-il-orange hover:text-white active:bg-il-orange active:text-white'
+                            ? 'mb-2 w-full rounded-md border border-il-storm-10 bg-white px-3 py-3 text-left text-il-storm-10 hover:bg-il-storm-10 hover:text-white active:bg-il-storm-10 active:text-white'
                             : 'mb-2 w-full rounded-md border border-il-blue bg-white px-3 py-3 text-left text-il-blue hover:bg-il-blue hover:text-white active:bg-il-blue active:text-white'
                       }
                     >
@@ -754,13 +855,42 @@ export function GeneratePage() {
 
               <section className="flex min-h-0 flex-1 flex-col">
                 <header className="border-b border-il-storm-20 p-4">
-                  <p className="text-sm font-semibold uppercase tracking-[0.1em] text-il-blue">
-                    {currentLengthState.selectedKey === null
-                      ? 'No Result Selected'
-                      : currentLengthState.selectedKey === 'direct'
-                        ? 'Direct Result'
-                        : 'Template Structure'}
-                  </p>
+                  <div className="flex items-start justify-between gap-3">
+                    <p className="text-sm font-semibold uppercase tracking-[0.1em] text-il-blue">
+                      {currentLengthState.selectedKey === null
+                        ? 'No Result Selected'
+                        : currentLengthState.selectedKey === 'direct'
+                          ? 'Direct Result'
+                          : 'Template'}
+                    </p>
+                    {showExplainability && selectedTemplate ? (
+                      <div className="flex flex-wrap justify-end gap-1">
+                        <MetricBadge short="SD" value={selectedTemplate.semantic_distance ?? null} title="Semantic Distance: lower means more semantically similar to query." />
+                        <MetricBadge
+                          short="SR"
+                          value={selectedTemplate.semantic_rank}
+                          title="Semantic Rank: position in raw semantic retrieval before reranking."
+                        />
+                        <MetricBadge
+                          short="L"
+                          value={selectedTemplate.sequence.length}
+                          title="Template sequence length (number of structure steps)."
+                        />
+                        <MetricBadge short="BT" value={selectedTemplate.bt_score ?? null} title="Bradley Terry score learned from evaluation votes." />
+                        <MetricBadge short="FQ" value={selectedTemplate.freq_score} title="Template frequency prior score from dataset." />
+                        <MetricBadge
+                          short="FS"
+                          value={selectedTemplate.final_score ?? selectedTemplate.bt_score ?? selectedTemplate.freq_score}
+                          title="Final ranking score used in current ordering."
+                        />
+                        <MetricBadge
+                          short="FR"
+                          value={selectedTemplate.final_rank}
+                          title="Final rank after reranking."
+                        />
+                      </div>
+                    ) : null}
+                  </div>
                   {selectedTemplate ? (
                     <div className="mt-3 flex flex-wrap items-center gap-0">
                       {selectedTemplate.sequence.map((code, index) => {
@@ -791,6 +921,33 @@ export function GeneratePage() {
                 </header>
 
                 <div className="min-h-0 overflow-y-auto p-4">
+                  {currentLengthState.selectedKey !== null ? (
+                    <div className="mb-4 flex items-center justify-between gap-3">
+                      <p className="text-sm font-semibold uppercase tracking-[0.1em] text-il-blue">
+                        Generation Result
+                      </p>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          void copyCurrentResult()
+                        }}
+                        disabled={currentResultText.trim().length === 0}
+                        className="inline-flex h-7 items-center gap-1 rounded-md border border-il-storm-20 bg-white px-2.5 text-xs font-semibold text-il-storm-60 transition hover:border-il-blue hover:text-il-blue disabled:cursor-not-allowed disabled:opacity-50"
+                      >
+                        {copied ? (
+                          <>
+                            <Check className="h-3.5 w-3.5" aria-hidden="true" />
+                            Copied
+                          </>
+                        ) : (
+                          <>
+                            <Copy className="h-3.5 w-3.5" aria-hidden="true" />
+                            Copy
+                          </>
+                        )}
+                      </button>
+                    </div>
+                  ) : null}
                   {currentLengthState.selectedKey === null ? (
                     <p className="text-sm text-il-storm-60">No result selected yet. Choose a template or no-template generation.</p>
                   ) : currentLengthState.selectedKey === 'direct' ? (
@@ -819,7 +976,7 @@ export function GeneratePage() {
                       })}
                     </p>
                   ) : currentStatus === 'loading' ? (
-                    <LoadingPanel />
+                    <LoadingPanel sequence={selectedTemplate?.sequence ?? null} />
                   ) : currentStatus === 'error' ? (
                     <p className="text-sm text-il-altgeld">Generation failed. Click this template again to retry.</p>
                   ) : (
@@ -834,15 +991,17 @@ export function GeneratePage() {
   )
 }
 
-function LoadingPanel() {
+function LoadingPanel({ sequence }: { sequence?: string[] | null }) {
+  const genericSteps = [
+    'Analyzing product intent...',
+    'Drafting core narrative...',
+  ]
+  const templateSteps =
+    sequence?.map((code) => `Generating ${PATTERN_FULL_LABEL[code] ?? code}...`) ?? []
   const loadingSteps = [
-    'Analyzing template structure...',
-    'Filling sentence content...',
-    'Polishing tone and rhythm...',
-    'Balancing clarity and persuasion...',
-    'Checking sequence consistency...',
-    'Refining CTA strength...',
-    'Final pass for readability...',
+    ...genericSteps,
+    ...templateSteps,
+    'Polishing tone and readability...',
   ]
   const [stepIndex, setStepIndex] = useState(0)
 
@@ -855,11 +1014,41 @@ function LoadingPanel() {
   }, [stepIndex, loadingSteps.length])
 
   return (
-    <div className="flex min-h-[280px] flex-col items-center justify-center gap-5">
+    <div className="flex h-full min-h-0 flex-col items-center justify-center gap-5 py-6">
       <LoaderCircle className="h-10 w-10 animate-spin text-il-blue" aria-hidden="true" />
       <div className="text-center text-sm text-il-storm-60">
         <p className="mt-2 min-h-[1.5rem] transition-opacity duration-300">{loadingSteps[stepIndex]}</p>
       </div>
     </div>
+  )
+}
+
+function MetricBadge(props: {
+  short: string
+  value: number | string | null | undefined
+  title: string
+}) {
+  const precision = props.short === 'BT' || props.short === 'FQ' || props.short === 'FS' ? 6 : 3
+  const content =
+    props.value === null || props.value === undefined || props.value === ''
+      ? 'NA'
+      : typeof props.value === 'number'
+        ? Number.isInteger(props.value)
+          ? String(props.value)
+          : props.value.toFixed(precision)
+        : props.value
+  const highlightClass =
+    props.short === 'BT'
+      ? 'border-il-blue bg-blue-50 text-il-blue'
+      : props.short === 'SD'
+        ? 'border-il-altgeld bg-orange-50 text-il-altgeld'
+        : 'border-il-storm-20 bg-white text-il-storm-60'
+  return (
+    <span
+      className={`rounded border px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.06em] ${highlightClass}`}
+      title={props.title}
+    >
+      {props.short}:{content}
+    </span>
   )
 }

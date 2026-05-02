@@ -2,10 +2,36 @@ import { useEffect, useState } from 'react'
 import { EvaluatePage } from './pages/EvaluatePage'
 import { GeneratePage } from './pages/GeneratePage'
 
+const SESSION_ID_KEY = 'adcraft_session_id'
+const EXPLAIN_VISIBILITY_KEY_PREFIX = 'adcraft_explain_visibility_'
+
+function getOrCreateSessionId(): string {
+  const existing = window.localStorage.getItem(SESSION_ID_KEY)
+  if (existing && existing.trim().length > 0) {
+    return existing
+  }
+  const created = crypto.randomUUID()
+  window.localStorage.setItem(SESSION_ID_KEY, created)
+  return created
+}
+
 function App() {
+  const [sessionId] = useState<string>(() => getOrCreateSessionId())
+  const explainVisibilityKey = `${EXPLAIN_VISIBILITY_KEY_PREFIX}${sessionId}`
   const [activePage, setActivePage] = useState<'evaluate' | 'generate'>(() =>
     window.location.pathname.startsWith('/generate') ? 'generate' : 'evaluate',
   )
+  const [showExplainability, setShowExplainability] = useState<boolean>(() => {
+    const raw = window.localStorage.getItem(explainVisibilityKey)
+    if (raw === null) {
+      return true
+    }
+    return raw === '1'
+  })
+
+  useEffect(() => {
+    window.localStorage.setItem(explainVisibilityKey, showExplainability ? '1' : '0')
+  }, [explainVisibilityKey, showExplainability])
 
   useEffect(() => {
     const onPopState = () => {
@@ -28,14 +54,19 @@ function App() {
     <main className="h-screen overflow-hidden bg-il-storm-95 p-[5px] text-il-storm-10">
       <div className="grid h-full w-full grid-rows-[56px_minmax(0,1fr)] gap-[10px]">
         <div>
-          <TopNav activePage={activePage} onNavigate={navigate} />
+          <TopNav
+            activePage={activePage}
+            onNavigate={navigate}
+            showExplainability={showExplainability}
+            onToggleExplainability={() => setShowExplainability((prev) => !prev)}
+          />
         </div>
         <section className="min-h-0">
           <div className={activePage === 'evaluate' ? 'h-full' : 'hidden'}>
             <EvaluatePage />
           </div>
           <div className={activePage === 'generate' ? 'h-full' : 'hidden'}>
-            <GeneratePage />
+            <GeneratePage showExplainability={showExplainability} />
           </div>
         </section>
       </div>
@@ -46,9 +77,13 @@ function App() {
 function TopNav({
   activePage,
   onNavigate,
+  showExplainability,
+  onToggleExplainability,
 }: {
   activePage: 'evaluate' | 'generate'
   onNavigate: (nextPage: 'evaluate' | 'generate') => void
+  showExplainability: boolean
+  onToggleExplainability: () => void
 }) {
   return (
     <nav className="flex h-full select-none items-center justify-between rounded-lg border border-il-storm-20 bg-white px-4 shadow-sm">
@@ -64,13 +99,27 @@ function TopNav({
         <span className="text-il-blue">Ad</span>
         <span className="text-il-altgeld">Craft</span>
       </a>
-      <div className="inline-flex items-center rounded-full border border-il-storm-20 bg-il-storm-95 p-1">
+      <div className="inline-flex items-center gap-2">
+        <button
+          type="button"
+          onClick={onToggleExplainability}
+          className={
+            showExplainability
+              ? 'rounded-full border border-il-blue bg-il-blue px-4 py-1.5 text-sm font-semibold text-white'
+              : 'rounded-full border border-il-storm-20 bg-white px-4 py-1.5 text-sm font-semibold text-il-storm-60'
+          }
+          title="Toggle ranking explanation metrics"
+        >
+          Show Details
+        </button>
+        <div className="inline-flex items-center rounded-full border border-il-storm-20 bg-il-storm-95 p-1">
         <NavLink href="/evaluate" isActive={activePage === 'evaluate'} onClick={() => onNavigate('evaluate')}>
           Evaluate
         </NavLink>
         <NavLink href="/generate" isActive={activePage === 'generate'} onClick={() => onNavigate('generate')}>
           Generate
         </NavLink>
+        </div>
       </div>
     </nav>
   )

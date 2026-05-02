@@ -39,7 +39,13 @@ export interface TemplateCandidate {
   template_name: string
   sequence: string[]
   category_tags: string[]
+  semantic_distance: number | null
+  semantic_rank: number
+  length: LengthOption
+  bt_score: number | null
   freq_score: number
+  final_score: number
+  final_rank: number
 }
 
 export interface FindTemplatesResponse {
