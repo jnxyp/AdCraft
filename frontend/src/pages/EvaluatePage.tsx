@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react'
 import { AlertCircle, CheckCircle2, RefreshCw } from 'lucide-react'
 import { EvalCard } from '../components/EvalCard'
 import { useEval } from '../hooks/useEval'
@@ -13,20 +14,46 @@ export function EvaluatePage() {
   const { nextTask, vote, isSubmitting, submitError } = useEval()
   const task = nextTask.data
   const progress = task?.progress
+  const [plusOneVisible, setPlusOneVisible] = useState(false)
+  const prevSessionDoneRef = useRef<number | null>(null)
   const resolvedPercent = progress && progress.total > 0
     ? Math.min(100, Math.round((progress.resolved / progress.total) * 100))
     : 0
   const hasTask = Boolean(task?.task_id && task.ads.length >= 2)
+
+  useEffect(() => {
+    const current = progress?.session_done
+    if (typeof current !== 'number') {
+      return
+    }
+    const prev = prevSessionDoneRef.current
+    if (prev !== null && current > prev) {
+      setPlusOneVisible(false)
+      const raf = window.requestAnimationFrame(() => setPlusOneVisible(true))
+      const timer = window.setTimeout(() => setPlusOneVisible(false), 1100)
+      prevSessionDoneRef.current = current
+      return () => {
+        window.cancelAnimationFrame(raf)
+        window.clearTimeout(timer)
+      }
+    }
+    prevSessionDoneRef.current = current
+  }, [progress?.session_done])
 
   return (
     <div className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] gap-[10px]">
         <header className="shrink-0 rounded-lg border border-il-blue bg-il-blue px-5 py-5 text-white">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <h1 className="text-4xl font-bold tracking-[0.04em]">Evaluation</h1>
-            <div className="flex flex-wrap items-center gap-3 text-sm">
-              <span className="rounded border border-white/20 px-3 py-1 text-white/85">
-                {progress ? `Your evaluations: ${progress.session_done}` : 'Preparing'}
+            <div className="relative flex items-center justify-end">
+              <span className="rounded border border-white/20 px-4 py-1.5 text-xl font-semibold text-white">
+                {progress ? `Your Contributions: ${progress.session_done}` : 'Preparing'}
               </span>
+              {plusOneVisible ? (
+                <span className="plus-one-float pointer-events-none absolute -top-5 right-2 text-sm font-bold text-il-orange">
+                  +1
+                </span>
+              ) : null}
             </div>
           </div>
           <div className="mt-5 flex items-center justify-between gap-4 text-sm text-white/80">
