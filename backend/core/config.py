@@ -43,7 +43,7 @@ def load_settings() -> Settings:
         static_images_dir=data_dir / "images",
         pipeline_data_dir=pipeline_data_dir,
         openai_api_key=os.environ.get("OPENAI_API_KEY", ""),
-        openai_chat_model=os.environ.get("OPENAI_CHAT_MODEL", "gpt-5-mini"),
+        openai_chat_model=os.environ.get("OPENAI_CHAT_MODEL", "gpt-5.5"),
         openai_embedding_model=os.environ.get("OPENAI_EMBEDDING_MODEL", "text-embedding-3-small"),
         openai_image_model=os.environ.get("OPENAI_IMAGE_MODEL", "gpt-image-2"),
         bt_refit_interval_seconds=int(os.environ.get("ADFRAME_BT_REFIT_INTERVAL", "600")),

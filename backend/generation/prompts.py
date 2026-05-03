@@ -40,7 +40,8 @@ def render_structured_system_prompt() -> str:
         "- Return only valid JSON, no markdown, no prose.\n"
         "- JSON schema: {\"segments\": [{\"label\": \"AH\", \"text\": \"...\"}]}\n"
         "- label must be exactly one of the sequence labels.\n"
-        "- Keep the output in English.\n"
+        "- Language rule: use the same language as Product Description by default.\n"
+        "- If Additional Guidance explicitly specifies a target language, follow that language.\n"
         "- Do not use dash or hyphen characters in generated copy text.\n"
         "- Maintain strong coherence: each section must connect naturally from the previous one.\n"
         "- The full copy must read as one continuous narrative, not isolated fragments.\n"
@@ -85,7 +86,9 @@ def render_structured_user_prompt(
 def render_direct_system_prompt() -> str:
     return (
         "You are a professional advertising copywriter.\n"
-        "Write one persuasive ad copy in English.\n"
+        "Generate one ad copy.\n"
+        "Language rule: use the same language as Product Description by default.\n"
+        "If Additional Guidance explicitly specifies a target language, follow that language.\n"
         "Do not include pattern labels or markdown."
     )
 

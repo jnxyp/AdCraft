@@ -41,6 +41,7 @@ class OpenAITextGenerator:
     async def generate(self, *, system_prompt: str, user_prompt: str) -> str:
         response = await self._client.responses.create(
             model=self._model,
+            reasoning={"effort": "high"},
             input=[
                 {"role": "system", "content": [{"type": "input_text", "text": system_prompt}]},
                 {"role": "user", "content": [{"type": "input_text", "text": user_prompt}]},

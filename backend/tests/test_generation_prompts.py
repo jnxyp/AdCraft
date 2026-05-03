@@ -49,7 +49,9 @@ def test_render_direct_prompt_uses_length_range() -> None:
         generation_prompt=None,
     )
 
-    assert "one persuasive ad copy in English" in system_prompt
+    assert "Generate one ad copy." in system_prompt
+    assert "use the same language as Product Description by default" in system_prompt
+    assert "Additional Guidance explicitly specifies a target language" in system_prompt
     assert "Target Length: m (64-100 words)" in user_prompt
     assert "Additional Guidance: None" in user_prompt
 
