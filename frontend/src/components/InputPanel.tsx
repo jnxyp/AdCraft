@@ -33,9 +33,12 @@ export function InputPanel(props: InputPanelProps) {
   const bubbleLeft = `calc(${sliderRatio * 100}% + ${(0.5 - sliderRatio) * 16}px)`
 
   return (
-    <section className="rounded-lg border border-il-storm-20 bg-white p-4">
-      <div className="grid gap-3 lg:grid-cols-2">
-        <label className="flex flex-col gap-2 text-sm font-medium text-il-storm-10">
+    <section className="rounded-lg border border-il-storm-20 bg-white p-3">
+      <header className="mb-2">
+        <p className="text-sm font-semibold uppercase tracking-[0.1em] text-il-blue">Query Configuration</p>
+      </header>
+      <div className="grid gap-2 lg:grid-cols-2">
+        <label className="flex flex-col gap-2 text-xs font-bold text-il-storm-10">
           Product Description (Query String)
           <textarea
             className="h-20 rounded-md border border-il-storm-20 px-3 py-2 leading-6 focus:border-il-blue focus:outline-none focus:ring-2 focus:ring-il-blue/20"
@@ -43,8 +46,9 @@ export function InputPanel(props: InputPanelProps) {
             onChange={(event) => props.onProductDescChange(event.target.value)}
             disabled={props.disabled}
           />
+          <span className="text-xs font-medium text-il-storm-60">Used for semantic retrieval to find matching templates.</span>
         </label>
-        <label className="flex flex-col gap-2 text-sm font-medium text-il-storm-10">
+        <label className="flex flex-col gap-2 text-xs font-bold text-il-storm-10">
           Additional Guidance (optional)
           <textarea
             className="h-20 rounded-md border border-il-storm-20 px-3 py-2 leading-6 focus:border-il-blue focus:outline-none focus:ring-2 focus:ring-il-blue/20"
@@ -52,10 +56,11 @@ export function InputPanel(props: InputPanelProps) {
             onChange={(event) => props.onGenerationPromptChange(event.target.value)}
             disabled={props.disabled}
           />
+          <span className="text-xs font-medium text-il-storm-60">Controls style, tone, and constraints during generation.</span>
         </label>
       </div>
-      <div className="mt-3 grid gap-4 md:grid-cols-2">
-        <label className="flex flex-col gap-2 text-sm font-medium text-il-storm-10">
+      <div className="mt-2 grid gap-3 md:grid-cols-2">
+        <label className="flex flex-col gap-2 text-xs font-bold text-il-storm-10">
           Category
           <select
             className="h-11 rounded-md border border-il-storm-20 bg-white px-3 focus:border-il-blue focus:outline-none focus:ring-2 focus:ring-il-blue/20"
@@ -69,10 +74,11 @@ export function InputPanel(props: InputPanelProps) {
               </option>
             ))}
           </select>
+          <span className="text-xs font-medium text-il-storm-60">Filters template candidates before ranking.</span>
         </label>
-        <div className="flex flex-col gap-2 text-sm font-medium text-il-storm-10">
+        <div className="flex flex-col gap-2 text-xs font-bold text-il-storm-10">
           Length
-          <div className="px-1 pt-1">
+          <div className="px-1 pt-0.5">
             <div className="relative pt-5">
               <span
                 className="absolute top-0 -translate-x-1/2 rounded bg-il-blue px-2 py-0.5 text-xs font-semibold text-white"
@@ -102,12 +108,13 @@ export function InputPanel(props: InputPanelProps) {
               <span>Longer</span>
             </div>
           </div>
-          <p className="text-xs text-il-storm-60">
+          <p className="text-xs font-medium text-il-storm-60">
             Generates about {selected.sentenceRange} sentences.
           </p>
+          <p className="text-xs font-medium text-il-storm-60">Sets expected structure depth for retrieval and generation.</p>
         </div>
       </div>
-      <div className="mt-3 flex items-center justify-between gap-3">
+      <div className="mt-2 flex items-center justify-between gap-2">
         <div>{props.footerLeft ?? null}</div>
         <button
           type="button"

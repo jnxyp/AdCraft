@@ -124,6 +124,24 @@ function nextDefaultSlotTitle(slots: SlotData[]): string {
   return `${DEFAULT_SLOT_TITLE} ${maxIndex + 1}`
 }
 
+function nextCopiedSlotTitle(sourceTitle: string, slots: SlotData[]): string {
+  const existingTitles = new Set(slots.map((slot) => slot.title))
+  const match = sourceTitle.match(/^(.*?)(?: \(Copy(?: (\d+))?\))?$/)
+  const baseTitle = match?.[1]?.trim() || sourceTitle
+  const currentCopyIndex = match?.[2] ? Number(match[2]) : sourceTitle.endsWith(' (Copy)') ? 1 : 0
+  let nextIndex = currentCopyIndex > 0 ? currentCopyIndex + 1 : 1
+
+  while (true) {
+    const candidate = nextIndex === 1
+      ? `${baseTitle} (Copy)`
+      : `${baseTitle} (Copy ${nextIndex})`
+    if (!existingTitles.has(candidate)) {
+      return candidate
+    }
+    nextIndex += 1
+  }
+}
+
 function deriveTitle(productDesc: string): string {
   const trimmed = productDesc.trim()
   if (trimmed.length === 0) {
@@ -376,7 +394,7 @@ export function GeneratePage({ showExplainability }: { showExplainability: boole
       id: crypto.randomUUID(),
       createdAt: now,
       updatedAt: now,
-      title: `${source.title} (Copy)`,
+      title: nextCopiedSlotTitle(source.title, slots),
       byLength: JSON.parse(JSON.stringify(source.byLength)) as Partial<Record<LengthOption, SlotLengthState>>,
       lastSearchSignature: source.lastSearchSignature,
     }
@@ -683,7 +701,7 @@ export function GeneratePage({ showExplainability }: { showExplainability: boole
 
   return (
     <div className="flex h-full min-h-0 items-stretch gap-[10px]">
-      <aside className="flex h-full min-h-0 select-none flex-col rounded-lg border border-il-storm-20 bg-white p-3">
+      <aside className="flex h-full min-h-0 w-[20vw] shrink-0 select-none flex-col rounded-lg border border-il-storm-20 bg-white p-3">
         <div className="mb-2 text-xs font-semibold uppercase tracking-[0.1em] text-il-storm-60">Copy Sessions</div>
         <div className="flex-1 space-y-2 overflow-y-auto pr-1">
           {sortedSlots.map((slot) => {
@@ -703,7 +721,12 @@ export function GeneratePage({ showExplainability }: { showExplainability: boole
                     onClick={() => handleSelectSlot(slot.id)}
                     className="min-w-0 flex-1 text-left"
                   >
-                    <p className="truncate pr-2 text-sm font-semibold text-il-storm-10">{slot.title}</p>
+                    <p
+                      className="truncate pr-2 text-sm font-semibold text-il-storm-10"
+                      title={slot.title}
+                    >
+                      {slot.title}
+                    </p>
                     <p className="mt-1 text-xs text-il-storm-60">
                       {getCategoryDisplayName(slot.category)} · {slot.lastLength.toUpperCase()}
                     </p>
