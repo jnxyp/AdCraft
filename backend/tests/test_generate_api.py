@@ -205,3 +205,63 @@ async def test_find_templates_and_direct_routes(tmp_path: Path) -> None:
     assert direct_response.status_code == 200
     direct_payload = direct_response.json()
     assert str(direct_payload["output"]).startswith("Generated::")
+
+
+@pytest.mark.asyncio
+async def test_template_editing_routes(tmp_path: Path) -> None:
+    db_path = tmp_path / "test.db"
+    await init_schema(db_path)
+    retriever = FakeRetriever()
+    generator = FakeTextGenerator()
+
+    app = FastAPI()
+    app.include_router(
+        create_generate_router(
+            db_path,
+            retriever_override=retriever,
+            text_generator_override=generator,
+            settings_override=_settings(db_path),
+        )
+    )
+    client = TestClient(app)
+
+    full_response = client.post(
+        "/api/generate/template-regenerate-full",
+        json={
+            "template_id": "tmpl_2",
+            "category": "tech",
+            "product_desc": "No-code analytics for teams",
+            "length": "m",
+            "generation_prompt": "Plain tone.",
+        },
+    )
+    assert full_response.status_code == 200
+    full_payload = full_response.json()
+    assert full_payload["template_id"] == "tmpl_2"
+    assert len(full_payload["segments"]) == 3
+
+    apply_response = client.post(
+        "/api/generate/template-apply-instructions",
+        json={
+            "template_id": "tmpl_2",
+            "category": "tech",
+            "product_desc": "No-code analytics for teams",
+            "length": "m",
+            "generation_prompt": "Plain tone.",
+            "current_segments": [
+                {"label": "AH", "label_full": "Attention Hook", "text": "Keep this."},
+                {"label": "FB", "label_full": "Feature-Benefit", "text": "Middle line."},
+                {"label": "CTA", "label_full": "Call To Action", "text": "Close now."},
+            ],
+            "instructions": [
+                {"mode": "none", "prompt": None},
+                {"mode": "disable", "prompt": None},
+                {"mode": "regenerate", "prompt": "Make it urgent."},
+            ],
+        },
+    )
+    assert apply_response.status_code == 200
+    apply_payload = apply_response.json()
+    assert apply_payload["segments"][0]["text"] == "Keep this."
+    assert apply_payload["segments"][1]["text"] == ""
+    assert apply_payload["segments"][2]["text"] == "CTA line."

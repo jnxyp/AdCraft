@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from collections.abc import Sequence
+
 from retrieval.retriever import LENGTH_RANGES
 
 PATTERN_LABELS: dict[str, str] = {
@@ -90,6 +92,56 @@ def render_direct_system_prompt() -> str:
         "Language rule: use the same language as Product Description by default.\n"
         "If Additional Guidance explicitly specifies a target language, follow that language.\n"
         "Do not include pattern labels or markdown."
+    )
+
+
+def render_structured_apply_system_prompt() -> str:
+    return (
+        "You are a professional advertising copywriter.\n"
+        "You are editing an existing structured ad copy.\n"
+        "Rules:\n"
+        "- Return only valid JSON, no markdown, no prose.\n"
+        "- JSON schema: {\"segments\": [{\"label\": \"AH\", \"text\": \"...\"}]}\n"
+        "- Keep labels in original sequence order.\n"
+        "- For untouched segments, keep text exactly unchanged.\n"
+        "- For mode disable, output empty text for that segment.\n"
+        "- For mode regenerate, rewrite that segment using optional prompt.\n"
+        "- For mode longer/shorter, rewrite only that segment length accordingly.\n"
+        "- Maintain global coherence across the full copy.\n"
+        "- Keep AH and CTA short and punchy unless longer is explicitly requested.\n"
+        "- Do not use dash or hyphen characters in generated copy text.\n"
+        "- Language rule: use Product Description language by default; follow Additional Guidance language if specified.\n"
+    )
+
+
+def render_structured_apply_user_prompt(
+    *,
+    category: str,
+    product_desc: str,
+    template_name: str,
+    sequence: list[str],
+    generation_prompt: str | None,
+    current_segments: Sequence[tuple[str, str]],
+    instructions: Sequence[tuple[str, str | None]],
+) -> str:
+    sequence_text = " -> ".join(sequence)
+    extra_guidance = generation_prompt.strip() if generation_prompt else "None"
+    current_lines = "\n".join(
+        f"- {label}: {text}" for label, text in current_segments
+    )
+    instruction_lines = "\n".join(
+        f"- {idx + 1}. {sequence[idx]} mode={mode} prompt={prompt or 'None'}"
+        for idx, (mode, prompt) in enumerate(instructions)
+    )
+    return (
+        f"Category: {category}\n"
+        f"Product Description: {product_desc}\n"
+        f"Template Name: {template_name}\n"
+        f"Sequence: {sequence_text}\n"
+        f"Additional Guidance: {extra_guidance}\n"
+        f"Current Segments:\n{current_lines}\n"
+        f"Segment Instructions:\n{instruction_lines}\n"
+        "Return only JSON."
     )
 
 

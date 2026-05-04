@@ -10,6 +10,8 @@ from api.schemas import (
     FindTemplatesResponse,
     GenerateDirectResponse,
     GenerateRequest,
+    RegenerateTemplateWithInstructionsRequest,
+    SegmentEditInstruction,
     StructuredSegmentResponse,
     GenerateTemplateVariantRequest,
     StructuredVariantResponse,
@@ -17,7 +19,7 @@ from api.schemas import (
 )
 from core.config import Settings
 from generation.direct import generate_direct_output
-from generation.structured import StructuredVariant, generate_structured_variants
+from generation.structured import SegmentEdit, StructuredVariant, apply_structured_instructions, generate_structured_variants
 from retrieval.retriever import Template
 
 
@@ -144,6 +146,80 @@ def create_generate_router(
             )
         return _variant_response(variants[0])
 
+    @router.post("/generate/template-regenerate-full", response_model=StructuredVariantResponse)
+    async def regenerate_template_full_endpoint(
+        payload: GenerateTemplateVariantRequest,
+        request: Request,
+    ) -> StructuredVariantResponse:
+        settings = settings_override or _settings_from_app(request)
+        retriever = retriever_override or _retriever_from_app(request)
+        text_generator = text_generator_override or OpenAITextGenerator(
+            client=AsyncOpenAI(api_key=settings.openai_api_key),
+            model=settings.openai_chat_model,
+        )
+        target = await _find_template_or_404(
+            retriever=retriever,
+            template_id=payload.template_id,
+            category=payload.category,
+            product_desc=payload.product_desc,
+            length=payload.length,
+        )
+        variants = await generate_structured_variants(
+            text_generator=text_generator,
+            category=payload.category,
+            product_desc=payload.product_desc,
+            generation_prompt=payload.generation_prompt,
+            templates=[target],
+        )
+        if not variants:
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail="Failed to regenerate variant",
+            )
+        return _variant_response(variants[0])
+
+    @router.post("/generate/template-apply-instructions", response_model=StructuredVariantResponse)
+    async def apply_template_instructions_endpoint(
+        payload: RegenerateTemplateWithInstructionsRequest,
+        request: Request,
+    ) -> StructuredVariantResponse:
+        settings = settings_override or _settings_from_app(request)
+        retriever = retriever_override or _retriever_from_app(request)
+        text_generator = text_generator_override or OpenAITextGenerator(
+            client=AsyncOpenAI(api_key=settings.openai_api_key),
+            model=settings.openai_chat_model,
+        )
+        target = await _find_template_or_404(
+            retriever=retriever,
+            template_id=payload.template_id,
+            category=payload.category,
+            product_desc=payload.product_desc,
+            length=payload.length,
+        )
+        sequence = target["name"].split("→")
+        if len(payload.current_segments) != len(sequence) or len(payload.instructions) != len(sequence):
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="segments/instructions length must match template sequence",
+            )
+        variant = await apply_structured_instructions(
+            text_generator=text_generator,
+            category=payload.category,
+            product_desc=payload.product_desc,
+            generation_prompt=payload.generation_prompt,
+            template=target,
+            current_segments=[
+                {
+                    "label": segment.label,
+                    "label_full": segment.label_full,
+                    "text": segment.text,
+                }
+                for segment in payload.current_segments
+            ],
+            instructions=[_coerce_instruction(item) for item in payload.instructions],
+        )
+        return _variant_response(variant)
+
     return router
 
 
@@ -227,3 +303,30 @@ def _variant_response(variant: StructuredVariant) -> StructuredVariantResponse:
         ],
         output=variant["output"],
     )
+
+
+async def _find_template_or_404(
+    *,
+    retriever: RetrieverLike,
+    template_id: str,
+    category: str,
+    product_desc: str,
+    length: Literal["xs", "s", "m", "l", "xl"],
+) -> Template:
+    candidates = await retriever.query_ranked(
+        category=category,
+        product_desc=product_desc,
+        length=length,
+        limit=50,
+    )
+    target = next((candidate for candidate in candidates if candidate["id"] == template_id), None)
+    if target is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Template not found in current category",
+        )
+    return target
+
+
+def _coerce_instruction(item: SegmentEditInstruction) -> SegmentEdit:
+    return {"mode": item.mode, "prompt": item.prompt}

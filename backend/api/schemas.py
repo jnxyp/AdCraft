@@ -12,6 +12,7 @@ class EvalAd(BaseModel):
     slot: str
     ad_id: str
     body: str
+    cluster_id: str | None = None
 
 
 class EvalProgress(BaseModel):
@@ -105,3 +106,21 @@ class GenerateTemplateVariantRequest(BaseModel):
 
 class GenerateDirectResponse(BaseModel):
     output: str
+
+
+SegmentEditMode = Literal["none", "disable", "regenerate", "longer", "shorter"]
+
+
+class SegmentEditInstruction(BaseModel):
+    mode: SegmentEditMode
+    prompt: str | None = None
+
+
+class RegenerateTemplateWithInstructionsRequest(BaseModel):
+    template_id: str
+    category: str
+    product_desc: str
+    length: Literal["xs", "s", "m", "l", "xl"]
+    generation_prompt: str | None = None
+    current_segments: list[StructuredSegmentResponse]
+    instructions: list[SegmentEditInstruction]
