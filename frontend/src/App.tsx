@@ -41,6 +41,10 @@ function App() {
     return () => window.removeEventListener('popstate', onPopState)
   }, [])
 
+  useEffect(() => {
+    document.title = activePage === 'generate' ? 'AdCraft · Generate' : 'AdCraft · Evaluate'
+  }, [activePage])
+
   const navigate = (nextPage: 'evaluate' | 'generate') => {
     if (nextPage === activePage) {
       return

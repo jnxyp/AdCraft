@@ -1,16 +1,34 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
-import { AlertCircle, Check, Copy, LoaderCircle, Plus, Trash2 } from 'lucide-react'
+import { type MouseEvent, useEffect, useMemo, useRef, useState } from 'react'
+import {
+  AlertCircle,
+  Ban,
+  Check,
+  Copy,
+  Eraser,
+  LoaderCircle,
+  Pencil,
+  Plus,
+  RefreshCcw,
+  Scissors,
+  Sparkles,
+  StretchHorizontal,
+  Trash2,
+} from 'lucide-react'
 import { InputPanel } from '../components/InputPanel'
 import { getCategoryDisplayName } from '../constants/categories'
 import {
+  useApplyTemplateInstructions,
   useFindTemplates,
   useGenerateDirect,
   useGenerateTemplateVariant,
+  useRegenerateTemplateFull,
 } from '../hooks/useGenerate'
 import type {
   CategoryOption,
   FindTemplatesResponse,
   LengthOption,
+  SegmentEditInstruction,
+  SegmentEditMode,
   StructuredSegment,
   StructuredVariant,
   TemplateCandidate,
@@ -52,6 +70,7 @@ interface SlotLengthState {
   variantMap: Record<string, StructuredVariant>
   statusMap: Record<string, GenerationStatus>
   directOutput: string | null
+  editInstructionsMap: Record<string, SegmentEditInstruction[]>
 }
 
 interface SlotData {
@@ -71,7 +90,7 @@ const DEFAULT_SLOT_TITLE = 'New Ad Copy'
 const TITLE_LIMIT = 24
 const SESSION_ID_KEY = 'adcraft_session_id'
 const EXPLAIN_VISIBILITY_KEY_PREFIX = 'adcraft_explain_visibility_'
-const GENERATE_CACHE_SCHEMA_VERSION = '2'
+const GENERATE_CACHE_SCHEMA_VERSION = '3'
 const GENERATE_CACHE_SCHEMA_KEY = 'adcraft_generate_cache_schema_version'
 const GENERATION_TIMEOUT_MS = 25000
 
@@ -87,6 +106,7 @@ function defaultLengthState(): SlotLengthState {
     variantMap: {},
     statusMap: {},
     directOutput: null,
+    editInstructionsMap: {},
   }
 }
 
@@ -226,6 +246,23 @@ function formatTime(value: string): string {
   return `${date.getFullYear()}/${date.getMonth() + 1}`
 }
 
+function formatMetricNumber(value: number, fullPrecision = false): string {
+  if (!Number.isFinite(value)) {
+    return String(value)
+  }
+  if (!fullPrecision) {
+    if (Number.isInteger(value)) {
+      return String(value)
+    }
+    return value.toFixed(3)
+  }
+  const absolute = Math.abs(value)
+  if ((absolute > 0 && absolute < 1e-4) || absolute >= 1e6) {
+    return value.toExponential(12)
+  }
+  return value.toPrecision(15).replace(/(?:\.0+|(\.\d+?)0+)$/, '$1')
+}
+
 function getCurrentResultText(
   selectedKey: ResultKey,
   directOutput: string | null,
@@ -238,6 +275,40 @@ function getCurrentResultText(
     return currentVariant.output
   }
   return ''
+}
+
+function defaultInstructionList(sequence: string[]): SegmentEditInstruction[] {
+  return sequence.map(() => ({ mode: 'none', prompt: null }))
+}
+
+function hasAnyInstruction(items: SegmentEditInstruction[]): boolean {
+  return items.some((item) => item.mode !== 'none')
+}
+
+function instructionForIndex(
+  editMap: Record<string, SegmentEditInstruction[]>,
+  templateId: string,
+  sequence: string[],
+  index: number,
+): SegmentEditInstruction {
+  const list = editMap[templateId] ?? defaultInstructionList(sequence)
+  return list[index] ?? { mode: 'none', prompt: null }
+}
+
+function retainDisableInstructions(
+  previous: SegmentEditInstruction[] | undefined,
+  sequence: string[],
+): SegmentEditInstruction[] {
+  const next = defaultInstructionList(sequence)
+  if (!previous) {
+    return next
+  }
+  for (let index = 0; index < sequence.length; index += 1) {
+    if (previous[index]?.mode === 'disable') {
+      next[index] = { mode: 'disable', prompt: null }
+    }
+  }
+  return next
 }
 
 class GenerationTimeoutError extends Error {
@@ -267,6 +338,8 @@ export function GeneratePage({ showExplainability }: { showExplainability: boole
   const findTemplates = useFindTemplates()
   const generateDirect = useGenerateDirect()
   const generateTemplateVariant = useGenerateTemplateVariant()
+  const regenerateTemplateFull = useRegenerateTemplateFull()
+  const applyTemplateInstructions = useApplyTemplateInstructions()
 
   const [sessionId] = useState<string>(() => {
     clearLegacyGenerateCacheIfNeeded()
@@ -301,6 +374,18 @@ export function GeneratePage({ showExplainability }: { showExplainability: boole
   const [slots, setSlots] = useState<SlotData[]>(initialSlots)
   const [hoveredSegmentIndex, setHoveredSegmentIndex] = useState<number | null>(null)
   const [copied, setCopied] = useState(false)
+  const [editMenu, setEditMenu] = useState<{ templateId: string; index: number; x: number; y: number } | null>(null)
+  const [segmentPromptModal, setSegmentPromptModal] = useState<{
+    templateId: string
+    index: number
+    value: string
+  } | null>(null)
+  const [overwriteModal, setOverwriteModal] = useState<{
+    templateId: string
+    index: number
+    mode: SegmentEditMode
+  } | null>(null)
+  const editMenuRef = useRef<HTMLDivElement | null>(null)
 
   const cancelEpochRef = useRef(0)
 
@@ -309,6 +394,20 @@ export function GeneratePage({ showExplainability }: { showExplainability: boole
       window.localStorage.setItem(storageKey, JSON.stringify(slots))
     }
   }, [slots, storageKey])
+
+  useEffect(() => {
+    if (!editMenu) {
+      return
+    }
+    const onPointerDown = (event: MouseEvent | globalThis.MouseEvent) => {
+      const target = event.target as Node | null
+      if (editMenuRef.current && target && !editMenuRef.current.contains(target)) {
+        setEditMenu(null)
+      }
+    }
+    document.addEventListener('mousedown', onPointerDown)
+    return () => document.removeEventListener('mousedown', onPointerDown)
+  }, [editMenu])
 
   useEffect(() => {
     const onPopState = () => {
@@ -515,6 +614,7 @@ export function GeneratePage({ showExplainability }: { showExplainability: boole
       variantMap: {},
       statusMap: nextStatus,
       directOutput: null,
+      editInstructionsMap: {},
     }))
 
     for (const template of response.templates.slice(0, 3)) {
@@ -574,6 +674,11 @@ export function GeneratePage({ showExplainability }: { showExplainability: boole
         ...prev,
         variantMap: { ...prev.variantMap, [template.template_id]: variant },
         statusMap: { ...prev.statusMap, [template.template_id]: 'done' },
+        editInstructionsMap: {
+          ...prev.editInstructionsMap,
+          [template.template_id]:
+            prev.editInstructionsMap[template.template_id] ?? defaultInstructionList(variant.sequence),
+        },
       }))
       updateSlot(slotId, (slot) => ({ ...slot, updatedAt: new Date().toISOString() }))
     } catch (error) {
@@ -689,6 +794,193 @@ export function GeneratePage({ showExplainability }: { showExplainability: boole
     currentLengthState.directOutput,
     currentVariant,
   )
+  const currentTemplateInstructions =
+    currentVariant && selectedTemplate
+      ? (currentLengthState.editInstructionsMap[selectedTemplate.template_id] ??
+          defaultInstructionList(currentVariant.sequence))
+      : []
+  const hasTemplateInstructions = hasAnyInstruction(currentTemplateInstructions)
+  const isTemplateGenerating = selectedTemplate !== null && currentStatus === 'loading'
+
+  const setTemplateInstruction = (
+    templateId: string,
+    sequence: string[],
+    index: number,
+    nextMode: SegmentEditMode,
+    nextPrompt: string | null,
+  ) => {
+    if (!currentSlot) {
+      return
+    }
+    updateSlotLengthState(currentSlot.id, length, (prev) => {
+      const list = [...(prev.editInstructionsMap[templateId] ?? defaultInstructionList(sequence))]
+      list[index] = { mode: nextMode, prompt: nextPrompt }
+      return {
+        ...prev,
+        editInstructionsMap: {
+          ...prev.editInstructionsMap,
+          [templateId]: list,
+        },
+      }
+    })
+  }
+
+  const regenerateAllForSelectedTemplate = async () => {
+    if (!currentSlot || !selectedTemplate || !currentVariant || !currentLengthState.result) {
+      return
+    }
+    updateSlotLengthState(currentSlot.id, length, (prev) => ({
+      ...prev,
+      statusMap: { ...prev.statusMap, [selectedTemplate.template_id]: 'loading' },
+    }))
+    try {
+      const response = await regenerateTemplateFull.mutateAsync({
+        template_id: selectedTemplate.template_id,
+        category: currentLengthState.result.category,
+        product_desc: currentLengthState.result.product_desc,
+        length: currentLengthState.result.length,
+        generation_prompt: currentSlot.generationPrompt.trim() || null,
+      })
+      updateSlotLengthState(currentSlot.id, length, (prev) => ({
+        ...prev,
+        variantMap: { ...prev.variantMap, [selectedTemplate.template_id]: response },
+        editInstructionsMap: {
+          ...prev.editInstructionsMap,
+          [selectedTemplate.template_id]: retainDisableInstructions(
+            prev.editInstructionsMap[selectedTemplate.template_id],
+            response.sequence,
+          ),
+        },
+        statusMap: { ...prev.statusMap, [selectedTemplate.template_id]: 'done' },
+      }))
+    } catch {
+      updateSlotLengthState(currentSlot.id, length, (prev) => ({
+        ...prev,
+        statusMap: { ...prev.statusMap, [selectedTemplate.template_id]: 'error' },
+      }))
+    }
+  }
+
+  const applyInstructionsForSelectedTemplate = async () => {
+    if (!currentSlot || !selectedTemplate || !currentVariant || !currentLengthState.result) {
+      return
+    }
+    const instructions =
+      currentLengthState.editInstructionsMap[selectedTemplate.template_id] ??
+      defaultInstructionList(currentVariant.sequence)
+    if (!hasAnyInstruction(instructions)) {
+      return
+    }
+    updateSlotLengthState(currentSlot.id, length, (prev) => ({
+      ...prev,
+      statusMap: { ...prev.statusMap, [selectedTemplate.template_id]: 'loading' },
+    }))
+    try {
+      const response = await applyTemplateInstructions.mutateAsync({
+        template_id: selectedTemplate.template_id,
+        category: currentLengthState.result.category,
+        product_desc: currentLengthState.result.product_desc,
+        length: currentLengthState.result.length,
+        generation_prompt: currentSlot.generationPrompt.trim() || null,
+        current_segments: currentVariant.segments,
+        instructions,
+      })
+      updateSlotLengthState(currentSlot.id, length, (prev) => ({
+        ...prev,
+        variantMap: { ...prev.variantMap, [selectedTemplate.template_id]: response },
+        editInstructionsMap: {
+          ...prev.editInstructionsMap,
+          [selectedTemplate.template_id]: retainDisableInstructions(
+            prev.editInstructionsMap[selectedTemplate.template_id],
+            response.sequence,
+          ),
+        },
+        statusMap: { ...prev.statusMap, [selectedTemplate.template_id]: 'done' },
+      }))
+    } catch {
+      updateSlotLengthState(currentSlot.id, length, (prev) => ({
+        ...prev,
+        statusMap: { ...prev.statusMap, [selectedTemplate.template_id]: 'error' },
+      }))
+    }
+  }
+
+  const openEditMenu = (event: MouseEvent<HTMLButtonElement>, templateId: string, index: number) => {
+    const rect = event.currentTarget.getBoundingClientRect()
+    const menuWidth = 220
+    const menuHeight = 192
+    const gap = 6
+    const maxX = window.innerWidth - menuWidth - 8
+    const maxY = window.innerHeight - menuHeight - 8
+    const preferredX = rect.right + gap
+    const fallbackX = rect.left - menuWidth - gap
+    const x = preferredX <= maxX ? preferredX : Math.max(8, fallbackX)
+    const y = Math.min(Math.max(8, rect.top), Math.max(8, maxY))
+    setEditMenu({
+      templateId,
+      index,
+      x,
+      y,
+    })
+  }
+
+  const runMenuAction = (mode: SegmentEditMode, source: { templateId: string; index: number }) => {
+    if (!selectedTemplate) {
+      return
+    }
+    if (mode === 'regenerate') {
+      setSegmentPromptModal({
+        templateId: source.templateId,
+        index: source.index,
+        value: '',
+      })
+      return
+    }
+    if (mode === 'disable') {
+      const current = instructionForIndex(
+        currentLengthState.editInstructionsMap,
+        selectedTemplate.template_id,
+        selectedTemplate.sequence,
+        source.index,
+      )
+      const nextMode: SegmentEditMode = current.mode === 'disable' ? 'none' : 'disable'
+      setTemplateInstruction(source.templateId, selectedTemplate.sequence, source.index, nextMode, null)
+      return
+    }
+    setTemplateInstruction(source.templateId, selectedTemplate.sequence, source.index, mode, null)
+  }
+
+  const clearMenuAction = (source: { templateId: string; index: number }) => {
+    if (!selectedTemplate) {
+      return
+    }
+    setTemplateInstruction(source.templateId, selectedTemplate.sequence, source.index, 'none', null)
+  }
+
+  const applyMenuAction = (mode: SegmentEditMode) => {
+    if (!editMenu || !selectedTemplate) {
+      return
+    }
+    const currentInstruction = instructionForIndex(
+      currentLengthState.editInstructionsMap,
+      selectedTemplate.template_id,
+      selectedTemplate.sequence,
+      editMenu.index,
+    )
+    const overwrite =
+      currentInstruction.mode !== 'none' &&
+      !(mode === 'disable' && currentInstruction.mode === 'disable')
+    setEditMenu(null)
+    if (overwrite) {
+      setOverwriteModal({
+        templateId: editMenu.templateId,
+        index: editMenu.index,
+        mode,
+      })
+      return
+    }
+    runMenuAction(mode, editMenu)
+  }
 
   const copyCurrentResult = async () => {
     if (currentResultText.trim().length === 0) {
@@ -790,7 +1082,7 @@ export function GeneratePage({ showExplainability }: { showExplainability: boole
                     className="inline-flex h-9 items-center gap-1.5 rounded-md border border-il-storm-20 bg-white px-4 text-sm font-semibold text-il-storm-60 transition hover:border-il-blue hover:text-il-blue"
                   >
                     <Copy className="h-3.5 w-3.5" aria-hidden="true" />
-                    Create New Session with Params
+                    Fork New Session
                   </button>
                 }
               />
@@ -888,6 +1180,12 @@ export function GeneratePage({ showExplainability }: { showExplainability: boole
                     </p>
                     {showExplainability && selectedTemplate ? (
                       <div className="flex flex-wrap justify-end gap-1">
+                        {(() => {
+                          const hasBTScore =
+                            selectedTemplate.bt_score !== null &&
+                            selectedTemplate.bt_score !== undefined
+                          return (
+                            <>
                         <MetricBadge short="SD" value={selectedTemplate.semantic_distance ?? null} title="Semantic Distance: lower means more semantically similar to query." />
                         <MetricBadge
                           short="SR"
@@ -899,18 +1197,33 @@ export function GeneratePage({ showExplainability }: { showExplainability: boole
                           value={selectedTemplate.sequence.length}
                           title="Template sequence length (number of structure steps)."
                         />
-                        <MetricBadge short="BT" value={selectedTemplate.bt_score ?? null} title="Bradley Terry score learned from evaluation votes." />
-                        <MetricBadge short="FQ" value={selectedTemplate.freq_score} title="Template frequency prior score from dataset." />
+                        <MetricBadge
+                          short="BT"
+                          value={selectedTemplate.bt_score ?? null}
+                          title="Bradley Terry score learned from evaluation votes."
+                          fullPrecision
+                        />
+                        <MetricBadge
+                          short="FQ"
+                          value={selectedTemplate.freq_score}
+                          title="Template frequency prior score from dataset."
+                          fullPrecision
+                          strikeThrough={hasBTScore}
+                        />
                         <MetricBadge
                           short="FS"
                           value={selectedTemplate.final_score ?? selectedTemplate.bt_score ?? selectedTemplate.freq_score}
                           title="Final ranking score used in current ordering."
+                          fullPrecision
                         />
                         <MetricBadge
                           short="FR"
                           value={selectedTemplate.final_rank}
                           title="Final rank after reranking."
                         />
+                            </>
+                          )
+                        })()}
                       </div>
                     ) : null}
                   </div>
@@ -920,16 +1233,32 @@ export function GeneratePage({ showExplainability }: { showExplainability: boole
                         const isHovered = hoveredSegmentIndex === index
                         const tagStyle = SEGMENT_STYLE[code] ?? 'bg-gray-100 text-gray-900 border-gray-200'
                         const label = currentVariant?.segments[index]?.label_full ?? PATTERN_FULL_LABEL[code] ?? code
+                        const instruction = instructionForIndex(
+                          currentLengthState.editInstructionsMap,
+                          selectedTemplate.template_id,
+                          selectedTemplate.sequence,
+                          index,
+                        )
+                        const isDisabled = instruction.mode === 'disable'
+                        const isEdited = instruction.mode !== 'none'
                         return (
                           <div key={`${code}-${index}`} className="flex items-center gap-0">
-                            <button
-                              type="button"
+                            <div
                               onMouseEnter={() => setHoveredSegmentIndex(index)}
                               onMouseLeave={() => setHoveredSegmentIndex(null)}
-                              className={`rounded-full border px-3 py-1 text-xs font-semibold transition ${tagStyle} ${isHovered ? 'ring-2 ring-il-blue/35' : 'opacity-85 hover:opacity-100'}`}
+                              className={`inline-flex items-center gap-1 rounded-full border px-3 py-1 text-xs font-semibold transition ${tagStyle} ${isHovered ? 'ring-2 ring-il-blue/35' : 'opacity-85 hover:opacity-100'} ${isDisabled ? 'line-through opacity-50' : ''} ${isEdited ? 'border-2 border-il-orange' : ''}`}
                             >
                               {label}
-                            </button>
+                              <button
+                                type="button"
+                                disabled={!currentVariant || currentStatus !== 'done' || isTemplateGenerating}
+                                onClick={(event) => openEditMenu(event, selectedTemplate.template_id, index)}
+                                className="inline-flex h-4 w-4 cursor-pointer items-center justify-center bg-transparent text-il-storm-60 hover:text-il-blue disabled:cursor-not-allowed disabled:opacity-30"
+                                aria-label={`Edit ${label}`}
+                              >
+                                <Pencil className="h-3 w-3" aria-hidden="true" />
+                              </button>
+                            </div>
                             {index < selectedTemplate.sequence.length - 1 ? (
                               <span
                                 className="inline-block h-[2px] w-10 rounded-full bg-il-storm-10/90"
@@ -949,26 +1278,59 @@ export function GeneratePage({ showExplainability }: { showExplainability: boole
                       <p className="text-sm font-semibold uppercase tracking-[0.1em] text-il-blue">
                         Generation Result
                       </p>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          void copyCurrentResult()
-                        }}
-                        disabled={currentResultText.trim().length === 0}
-                        className="inline-flex h-7 items-center gap-1 rounded-md border border-il-storm-20 bg-white px-2.5 text-xs font-semibold text-il-storm-60 transition hover:border-il-blue hover:text-il-blue disabled:cursor-not-allowed disabled:opacity-50"
-                      >
-                        {copied ? (
-                          <>
-                            <Check className="h-3.5 w-3.5" aria-hidden="true" />
-                            Copied
-                          </>
-                        ) : (
-                          <>
-                            <Copy className="h-3.5 w-3.5" aria-hidden="true" />
-                            Copy
-                          </>
-                        )}
-                      </button>
+                      <div className="flex items-center gap-2">
+                        <div>
+                          <button
+                            type="button"
+                            onClick={() => {
+                              void regenerateAllForSelectedTemplate()
+                            }}
+                            disabled={!selectedTemplate || !currentVariant || isTemplateGenerating}
+                            title="Create a fresh full rewrite."
+                            className="inline-flex h-7 items-center gap-1 rounded-md border border-il-storm-20 bg-white px-2.5 text-xs font-semibold text-il-storm-60 transition hover:border-il-blue hover:text-il-blue disabled:cursor-not-allowed disabled:opacity-50"
+                          >
+                            <RefreshCcw className="h-3.5 w-3.5" aria-hidden="true" />
+                            Regenerate All
+                          </button>
+                        </div>
+                        <div>
+                          <button
+                            type="button"
+                            onClick={() => {
+                              void applyInstructionsForSelectedTemplate()
+                            }}
+                            disabled={!selectedTemplate || !currentVariant || !hasTemplateInstructions || isTemplateGenerating}
+                            title="Apply only section edits."
+                            className="inline-flex h-7 items-center gap-1 rounded-md border border-il-storm-20 bg-white px-2.5 text-xs font-semibold text-il-storm-60 transition hover:border-il-blue hover:text-il-blue disabled:cursor-not-allowed disabled:opacity-50"
+                          >
+                            <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
+                            Apply Instructions
+                          </button>
+                        </div>
+                        <div>
+                          <button
+                            type="button"
+                            onClick={() => {
+                              void copyCurrentResult()
+                            }}
+                            disabled={currentResultText.trim().length === 0 || isTemplateGenerating}
+                            title="Copy current text output."
+                            className="inline-flex h-7 items-center gap-1 rounded-md border border-il-storm-20 bg-white px-2.5 text-xs font-semibold text-il-storm-60 transition hover:border-il-blue hover:text-il-blue disabled:cursor-not-allowed disabled:opacity-50"
+                          >
+                            {copied ? (
+                              <>
+                                <Check className="h-3.5 w-3.5" aria-hidden="true" />
+                                Copied
+                              </>
+                            ) : (
+                              <>
+                                <Copy className="h-3.5 w-3.5" aria-hidden="true" />
+                                Copy
+                              </>
+                            )}
+                          </button>
+                        </div>
+                      </div>
                     </div>
                   ) : null}
                   {currentLengthState.selectedKey === null ? (
@@ -981,35 +1343,202 @@ export function GeneratePage({ showExplainability }: { showExplainability: boole
                         {currentLengthState.directOutput ?? 'Direct result will appear here.'}
                       </p>
                     )
+                  ) : currentStatus === 'loading' ? (
+                    <LoadingPanel sequence={selectedTemplate?.sequence ?? null} />
                   ) : currentVariant ? (
                     <p className="leading-8 text-il-storm-10">
                       {currentVariant.segments.map((segment: StructuredSegment, index) => {
                         const isHovered = hoveredSegmentIndex === index
                         const blockStyle = SEGMENT_STYLE[segment.label] ?? 'bg-gray-100 text-gray-900 border-gray-200'
+                        const instruction = selectedTemplate
+                          ? instructionForIndex(
+                              currentLengthState.editInstructionsMap,
+                              selectedTemplate.template_id,
+                              selectedTemplate.sequence,
+                              index,
+                            )
+                          : { mode: 'none' as SegmentEditMode, prompt: null }
+                        const isDisabled = instruction.mode === 'disable'
+                        const isEdited = instruction.mode !== 'none'
+                        if (isDisabled) {
+                          return null
+                        }
                         return (
-                          <span
-                            key={`${segment.label}-${segment.text}-${index}`}
-                            onMouseEnter={() => setHoveredSegmentIndex(index)}
-                            onMouseLeave={() => setHoveredSegmentIndex(null)}
-                            className={`mr-1 inline rounded px-1.5 py-0.5 box-decoration-clone transition ${blockStyle} ${isHovered ? 'ring-2 ring-il-blue/35' : 'opacity-90 hover:opacity-100'}`}
-                          >
-                            {segment.text}
+                          <span key={`${segment.label}-${segment.text}-${index}`} className="mr-1 inline align-middle">
+                            <span
+                              onMouseEnter={() => setHoveredSegmentIndex(index)}
+                              onMouseLeave={() => setHoveredSegmentIndex(null)}
+                              className={`inline rounded px-1.5 py-0.5 box-decoration-clone transition ${blockStyle} ${isHovered ? 'ring-2 ring-il-blue/35' : 'opacity-90 hover:opacity-100'} ${isDisabled ? 'line-through opacity-50' : ''} ${isEdited ? 'border border-il-orange' : ''}`}
+                            >
+                              {segment.text}
+                              {selectedTemplate ? (
+                                <button
+                                  type="button"
+                                  disabled={!currentVariant || currentStatus !== 'done' || isTemplateGenerating}
+                                  onClick={(event) => openEditMenu(event, selectedTemplate.template_id, index)}
+                                  className="-translate-y-[1px] ml-1 inline-flex h-4 w-4 cursor-pointer items-center justify-center bg-transparent align-middle text-il-storm-60 transition-transform hover:text-il-blue disabled:cursor-not-allowed disabled:opacity-30"
+                                  aria-label={`Edit ${segment.label_full}`}
+                                >
+                                  <Pencil className="h-3 w-3" aria-hidden="true" />
+                                </button>
+                              ) : null}
+                            </span>
                           </span>
                         )
                       })}
                     </p>
-                  ) : currentStatus === 'loading' ? (
-                    <LoadingPanel sequence={selectedTemplate?.sequence ?? null} />
                   ) : currentStatus === 'error' ? (
                     <p className="text-sm text-il-altgeld">Generation failed. Click this template again to retry.</p>
                   ) : (
                     <p className="text-sm text-il-storm-60">Select a template to generate result.</p>
                   )}
+                  {editMenu && selectedTemplate ? (
+                    <div
+                      ref={editMenuRef}
+                      className="fixed z-40 inline-flex flex-col rounded-md border border-il-storm-20 bg-white p-1 shadow-lg"
+                      style={{ left: `${editMenu.x}px`, top: `${editMenu.y}px` }}
+                    >
+                      <button
+                        type="button"
+                        onClick={() => applyMenuAction('disable')}
+                        className={`inline-flex items-center gap-2 rounded px-2 py-1 text-left text-xs font-semibold ${
+                          instructionForIndex(
+                            currentLengthState.editInstructionsMap,
+                            selectedTemplate.template_id,
+                            selectedTemplate.sequence,
+                            editMenu.index,
+                          ).mode === 'disable'
+                            ? 'text-emerald-700 hover:bg-emerald-50'
+                            : 'text-il-altgeld hover:bg-rose-50'
+                        }`}
+                      >
+                        {instructionForIndex(
+                          currentLengthState.editInstructionsMap,
+                          selectedTemplate.template_id,
+                          selectedTemplate.sequence,
+                          editMenu.index,
+                        ).mode === 'disable'
+                          ? (
+                            <>
+                              <Check className="h-3.5 w-3.5" aria-hidden="true" />
+                              Enable this section
+                            </>
+                          ) : (
+                            <>
+                              <Ban className="h-3.5 w-3.5" aria-hidden="true" />
+                              Disable this section
+                            </>
+                          )}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => applyMenuAction('regenerate')}
+                        className="inline-flex items-center gap-2 rounded px-2 py-1 text-left text-xs font-semibold text-il-blue hover:bg-sky-50"
+                      >
+                        <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
+                        Regenerate this section
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => applyMenuAction('longer')}
+                        className="inline-flex items-center gap-2 rounded px-2 py-1 text-left text-xs font-semibold text-emerald-700 hover:bg-emerald-50"
+                      >
+                        <StretchHorizontal className="h-3.5 w-3.5" aria-hidden="true" />
+                        Make it longer
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => applyMenuAction('shorter')}
+                        className="inline-flex items-center gap-2 rounded px-2 py-1 text-left text-xs font-semibold text-amber-700 hover:bg-amber-50"
+                      >
+                        <Scissors className="h-3.5 w-3.5" aria-hidden="true" />
+                        Make it shorter
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          clearMenuAction(editMenu)
+                          setEditMenu(null)
+                        }}
+                        className="inline-flex items-center gap-2 rounded px-2 py-1 text-left text-xs font-semibold text-il-storm-60 hover:bg-il-storm-95"
+                      >
+                        <Eraser className="h-3.5 w-3.5" aria-hidden="true" />
+                        Clear edit instruction
+                      </button>
+                    </div>
+                  ) : null}
                 </div>
               </section>
             </section>
         
       </div>
+      {overwriteModal ? (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 p-4">
+          <div className="w-full max-w-sm rounded-lg border border-il-storm-20 bg-white p-4 shadow-xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.1em] text-il-blue">Replace Existing Instruction</p>
+            <p className="mt-2 text-sm text-il-storm-60">This section already has an instruction. Replace it?</p>
+            <div className="mt-3 flex items-center justify-end gap-2">
+              <button
+                type="button"
+                onClick={() => setOverwriteModal(null)}
+                className="inline-flex h-8 items-center rounded-md border border-il-storm-20 bg-white px-3 text-xs font-semibold text-il-storm-60 hover:border-il-blue hover:text-il-blue"
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  runMenuAction(overwriteModal.mode, overwriteModal)
+                  setOverwriteModal(null)
+                }}
+                className="inline-flex h-8 items-center rounded-md border border-il-blue bg-il-blue px-3 text-xs font-semibold text-white"
+              >
+                Replace
+              </button>
+            </div>
+          </div>
+        </div>
+      ) : null}
+      {segmentPromptModal && selectedTemplate ? (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 p-4">
+          <div className="w-full max-w-md rounded-lg border border-il-storm-20 bg-white p-4 shadow-xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.1em] text-il-blue">Regenerate Section</p>
+            <p className="mt-2 text-xs text-il-storm-60">Optional prompt for this segment (can be empty).</p>
+            <textarea
+              value={segmentPromptModal.value}
+              onChange={(event) =>
+                setSegmentPromptModal((prev) => (prev ? { ...prev, value: event.target.value } : prev))
+              }
+              className="mt-3 h-24 w-full rounded-md border border-il-storm-20 px-3 py-2 text-sm leading-6 focus:border-il-blue focus:outline-none"
+            />
+            <div className="mt-3 flex items-center justify-end gap-2">
+              <button
+                type="button"
+                onClick={() => setSegmentPromptModal(null)}
+                className="inline-flex h-8 items-center rounded-md border border-il-storm-20 bg-white px-3 text-xs font-semibold text-il-storm-60 hover:border-il-blue hover:text-il-blue"
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setTemplateInstruction(
+                    segmentPromptModal.templateId,
+                    selectedTemplate.sequence,
+                    segmentPromptModal.index,
+                    'regenerate',
+                    segmentPromptModal.value.trim().length > 0 ? segmentPromptModal.value.trim() : null,
+                  )
+                  setSegmentPromptModal(null)
+                }}
+                className="inline-flex h-8 items-center rounded-md border border-il-blue bg-il-blue px-3 text-xs font-semibold text-white hover:bg-il-blue"
+              >
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
+      ) : null}
     </div>
   )
 }
@@ -1037,7 +1566,7 @@ function LoadingPanel({ sequence }: { sequence?: string[] | null }) {
   }, [stepIndex, loadingSteps.length])
 
   return (
-    <div className="flex h-full min-h-0 flex-col items-center justify-center gap-5 py-6">
+    <div className="flex flex-col items-center justify-center gap-3 py-3">
       <LoaderCircle className="h-10 w-10 animate-spin text-il-blue" aria-hidden="true" />
       <div className="text-center text-sm text-il-storm-60">
         <p className="mt-2 min-h-[1.5rem] transition-opacity duration-300">{loadingSteps[stepIndex]}</p>
@@ -1050,15 +1579,14 @@ function MetricBadge(props: {
   short: string
   value: number | string | null | undefined
   title: string
+  fullPrecision?: boolean
+  strikeThrough?: boolean
 }) {
-  const precision = props.short === 'BT' || props.short === 'FQ' || props.short === 'FS' ? 6 : 3
   const content =
     props.value === null || props.value === undefined || props.value === ''
       ? 'NA'
       : typeof props.value === 'number'
-        ? Number.isInteger(props.value)
-          ? String(props.value)
-          : props.value.toFixed(precision)
+        ? formatMetricNumber(props.value, props.fullPrecision ?? false)
         : props.value
   const highlightClass =
     props.short === 'BT'
@@ -1068,10 +1596,10 @@ function MetricBadge(props: {
         : 'border-il-storm-20 bg-white text-il-storm-60'
   return (
     <span
-      className={`rounded border px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.06em] ${highlightClass}`}
+      className={`rounded border px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.06em] ${highlightClass} ${props.strikeThrough ? 'line-through opacity-70' : ''}`}
       title={props.title}
     >
-      {props.short}:{content}
+      {props.short}: {content}
     </span>
   )
 }

@@ -109,13 +109,12 @@ export function InputPanel(props: InputPanelProps) {
             </div>
           </div>
           <p className="text-xs font-medium text-il-storm-60">
-            Generates about {selected.sentenceRange} sentences.
+            Generates about {selected.sentenceRange} sentences. Sets expected structure depth for retrieval and generation.
           </p>
-          <p className="text-xs font-medium text-il-storm-60">Sets expected structure depth for retrieval and generation.</p>
         </div>
       </div>
-      <div className="mt-2 flex items-center justify-between gap-2">
-        <div>{props.footerLeft ?? null}</div>
+      <div className="mt-2 flex items-center justify-end gap-2">
+        {props.footerLeft ?? null}
         <button
           type="button"
           onClick={props.onSubmit}

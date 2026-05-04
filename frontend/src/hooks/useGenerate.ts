@@ -4,6 +4,7 @@ import type {
   FindTemplatesResponse,
   GenerateDirectResponse,
   GenerateRequest,
+  RegenerateTemplateWithInstructionsRequest,
   GenerateTemplateVariantRequest,
   StructuredVariant,
 } from '../types/generate'
@@ -38,5 +39,27 @@ async function createDirectOutput(payload: GenerateRequest): Promise<GenerateDir
 export function useGenerateDirect() {
   return useMutation({
     mutationFn: createDirectOutput,
+  })
+}
+
+async function regenerateTemplateFull(payload: GenerateTemplateVariantRequest): Promise<StructuredVariant> {
+  const response = await apiClient.post<StructuredVariant>('/generate/template-regenerate-full', payload)
+  return response.data
+}
+
+export function useRegenerateTemplateFull() {
+  return useMutation({
+    mutationFn: regenerateTemplateFull,
+  })
+}
+
+async function applyTemplateInstructions(payload: RegenerateTemplateWithInstructionsRequest): Promise<StructuredVariant> {
+  const response = await apiClient.post<StructuredVariant>('/generate/template-apply-instructions', payload)
+  return response.data
+}
+
+export function useApplyTemplateInstructions() {
+  return useMutation({
+    mutationFn: applyTemplateInstructions,
   })
 }

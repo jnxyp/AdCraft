@@ -66,3 +66,20 @@ export interface GenerateTemplateVariantRequest {
 export interface GenerateDirectResponse {
   output: string
 }
+
+export type SegmentEditMode = 'none' | 'disable' | 'regenerate' | 'longer' | 'shorter'
+
+export interface SegmentEditInstruction {
+  mode: SegmentEditMode
+  prompt: string | null
+}
+
+export interface RegenerateTemplateWithInstructionsRequest {
+  template_id: string
+  category: string
+  product_desc: string
+  length: LengthOption
+  generation_prompt: string | null
+  current_segments: StructuredSegment[]
+  instructions: SegmentEditInstruction[]
+}
