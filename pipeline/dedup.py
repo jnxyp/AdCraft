@@ -15,6 +15,7 @@ from __future__ import annotations
 import argparse
 import json
 import logging
+import re
 import sys
 from pathlib import Path
 from typing import Any
@@ -28,6 +29,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(mess
 EMBED_MODEL: str = "text-embedding-3-small"
 EMBED_BATCH: int = 200      # inputs per embedding API call
 NEAR_THRESHOLD: float = 0.97
+DEFAULT_EXCLUDE_LANGS: tuple[str, ...] = ("hi", "ar", "es", "ja")
 
 
 # ── Embedding ─────────────────────────────────────────────────────────────────
@@ -89,6 +91,83 @@ def near_dedup(ads: list[dict[str, Any]], client: OpenAI, threshold: float) -> l
     return kept
 
 
+# ── Language filtering ───────────────────────────────────────────────────────
+
+_SPANISH_STOPWORDS: set[str] = {
+    "de", "la", "el", "en", "y", "por", "para", "con", "una", "un", "los", "las",
+    "que", "del", "al", "como", "más", "mas", "sus", "tu", "tus", "mi", "mis",
+    "hoy", "ahora", "oferta", "comprar", "envio", "envío", "gratis", "descuento",
+}
+
+_SPANISH_WORD_RE = re.compile(r"[a-záéíóúñü]+", re.IGNORECASE)
+
+
+def _looks_hindi(text: str) -> bool:
+    return any("\u0900" <= ch <= "\u097F" for ch in text)
+
+
+def _looks_arabic(text: str) -> bool:
+    return any(
+        ("\u0600" <= ch <= "\u06FF")
+        or ("\u0750" <= ch <= "\u077F")
+        or ("\u08A0" <= ch <= "\u08FF")
+        for ch in text
+    )
+
+
+def _looks_japanese(text: str) -> bool:
+    return any(
+        ("\u3040" <= ch <= "\u309F")   # Hiragana
+        or ("\u30A0" <= ch <= "\u30FF")  # Katakana
+        for ch in text
+    )
+
+
+def _looks_spanish(text: str) -> bool:
+    lowered = text.lower()
+    # Strong indicator characters.
+    if any(ch in lowered for ch in ("ñ", "á", "é", "í", "ó", "ú", "ü", "¿", "¡")):
+        return True
+    words = _SPANISH_WORD_RE.findall(lowered)
+    if len(words) < 6:
+        return False
+    hits = sum(1 for w in words if w in _SPANISH_STOPWORDS)
+    return hits >= 3
+
+
+def detect_language_bucket(text: str) -> str | None:
+    if _looks_hindi(text):
+        return "hi"
+    if _looks_arabic(text):
+        return "ar"
+    if _looks_japanese(text):
+        return "ja"
+    if _looks_spanish(text):
+        return "es"
+    return None
+
+
+def filter_languages(ads: list[dict[str, Any]], exclude_langs: set[str]) -> list[dict[str, Any]]:
+    if not exclude_langs:
+        return ads
+    kept: list[dict[str, Any]] = []
+    removed_counts: dict[str, int] = {}
+    for ad in ads:
+        body = str(ad.get("body", ""))
+        lang = detect_language_bucket(body)
+        if lang is not None and lang in exclude_langs:
+            removed_counts[lang] = removed_counts.get(lang, 0) + 1
+            continue
+        kept.append(ad)
+    removed_total = len(ads) - len(kept)
+    if removed_total > 0:
+        details = ", ".join(f"{lang}={count}" for lang, count in sorted(removed_counts.items()))
+        log.info("Language filter: removed %d / %d (%s)", removed_total, len(ads), details)
+    else:
+        log.info("Language filter: removed 0 / %d", len(ads))
+    return kept
+
+
 # ── Main ─────────────────────────────────────────────────────────────────────
 
 def main() -> None:
@@ -100,6 +179,12 @@ def main() -> None:
     parser.add_argument("--output",    default="data/ds0_dedup.json", help="Output deduped JSON")
     parser.add_argument("--threshold", type=float, default=NEAR_THRESHOLD,
                         help=f"Cosine similarity cutoff for near-dedup (default {NEAR_THRESHOLD})")
+    parser.add_argument(
+        "--exclude-langs",
+        default=",".join(DEFAULT_EXCLUDE_LANGS),
+        help="Comma-separated language buckets to drop before dedup (supported: hi,ar,es,ja). "
+             "Set empty string to disable.",
+    )
     args = parser.parse_args()
 
     input_path  = Path(args.input)
@@ -107,6 +192,8 @@ def main() -> None:
 
     ads: list[dict[str, Any]] = json.loads(input_path.read_text(encoding="utf-8"))
     log.info("Loaded %d ads from %s", len(ads), input_path)
+    exclude_langs = {item.strip().lower() for item in args.exclude_langs.split(",") if item.strip()}
+    ads = filter_languages(ads, exclude_langs)
 
     ads = exact_dedup(ads)
 

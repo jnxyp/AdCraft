@@ -449,6 +449,36 @@ def _normalize_for_output(ads: list[dict[str, Any]]) -> None:
     ads.sort(key=lambda item: str(item.get("ad_id", "")))
 
 
+def _merge_input_with_cached_annotations(
+    input_ads: list[dict[str, Any]],
+    cached_ads: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    by_id: dict[str, dict[str, Any]] = {}
+    by_body: dict[str, dict[str, Any]] = {}
+    for ad in cached_ads:
+        ad_id = str(ad.get("ad_id", "")).strip()
+        body = str(ad.get("body", "")).strip()
+        if ad_id:
+            by_id[ad_id] = ad
+        if body:
+            by_body[body] = ad
+
+    merged: list[dict[str, Any]] = []
+    for raw in input_ads:
+        base = dict(raw)
+        ad_id = str(base.get("ad_id", "")).strip()
+        body = str(base.get("body", "")).strip()
+        cached = by_id.get(ad_id) if ad_id else None
+        if cached is None and body:
+            cached = by_body.get(body)
+        if cached is not None:
+            for key in ("product_desc", "categories", "sequence"):
+                if key in cached and cached.get(key):
+                    base[key] = cached[key]
+        merged.append(base)
+    return merged
+
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 async def annotate(
@@ -459,6 +489,17 @@ async def annotate(
     if checkpoint_path.exists():
         ads: list[dict[str, Any]] = json.loads(checkpoint_path.read_text(encoding="utf-8"))
         log.info("Resuming from checkpoint: %d ads loaded", len(ads))
+    elif output_path.exists() and input_path.exists():
+        input_ads = json.loads(input_path.read_text(encoding="utf-8"))
+        _normalize(input_ads)
+        cached_ads = json.loads(output_path.read_text(encoding="utf-8"))
+        _normalize(cached_ads)
+        ads = _merge_input_with_cached_annotations(input_ads, cached_ads)
+        log.info(
+            "Loaded %d input ads and merged cached annotations from %s",
+            len(ads),
+            output_path,
+        )
     elif output_path.exists():
         ads = json.loads(output_path.read_text(encoding="utf-8"))
         _normalize(ads)

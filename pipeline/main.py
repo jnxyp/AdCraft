@@ -58,6 +58,12 @@ def read_json(path: Path) -> object:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def is_stale(output_path: Path, upstream_path: Path) -> bool:
+    if not output_path.exists() or not upstream_path.exists():
+        return True
+    return output_path.stat().st_mtime < upstream_path.stat().st_mtime
+
+
 def is_dedup_ready(path: Path) -> bool:
     if not path.exists():
         return False
@@ -134,7 +140,7 @@ def write_ads_sorted(path: Path, rows: list[dict[str, object]]) -> None:
 
 
 def run_dedup(paths: PipelinePaths, force: bool) -> None:
-    if is_dedup_ready(paths["deduped"]) and not force:
+    if is_dedup_ready(paths["deduped"]) and not force and not is_stale(paths["deduped"], paths["raw"]):
         log.info("Step 1.5 dedup: cache hit -> %s", paths["deduped"])
         return
     if not paths["raw"].exists():
@@ -152,7 +158,12 @@ def run_dedup(paths: PipelinePaths, force: bool) -> None:
 
 def run_annotate(paths: PipelinePaths, force: bool) -> None:
     checkpoint_path = paths["annotated"].with_suffix("").with_suffix(".checkpoint.json")
-    if is_annotated_ready(paths["annotated"]) and not force and not checkpoint_path.exists():
+    if (
+        is_annotated_ready(paths["annotated"])
+        and not force
+        and not checkpoint_path.exists()
+        and not is_stale(paths["annotated"], paths["deduped"])
+    ):
         log.info("Step 2/4 annotation: LLM cache hit -> %s", paths["annotated"])
         return
     if force and paths["annotated"].exists():
@@ -161,7 +172,7 @@ def run_annotate(paths: PipelinePaths, force: bool) -> None:
 
 
 def run_clusters(paths: PipelinePaths, force: bool) -> None:
-    if is_cluster_ready(paths["clusters"]) and not force:
+    if is_cluster_ready(paths["clusters"]) and not force and not is_stale(paths["clusters"], paths["annotated"]):
         log.info("Step 3 clusters: cache hit -> %s", paths["clusters"])
         return
     ads = cluster_builder.load_ads(paths["annotated"])
@@ -184,7 +195,7 @@ def run_clusters(paths: PipelinePaths, force: bool) -> None:
 
 
 def run_templates(paths: PipelinePaths, force: bool) -> None:
-    if is_template_ready(paths["templates"]) and not force:
+    if is_template_ready(paths["templates"]) and not force and not is_stale(paths["templates"], paths["annotated"]):
         log.info("Step 5 templates: cache hit -> %s", paths["templates"])
         return
     ads = template_builder.load_ads(paths["annotated"])
@@ -194,7 +205,13 @@ def run_templates(paths: PipelinePaths, force: bool) -> None:
 
 
 def run_eval_tasks(paths: PipelinePaths, force: bool) -> None:
-    if is_eval_task_ready(paths["eval_tasks"]) and not force:
+    if (
+        is_eval_task_ready(paths["eval_tasks"])
+        and not force
+        and not is_stale(paths["eval_tasks"], paths["templates"])
+        and not is_stale(paths["eval_tasks"], paths["clusters"])
+        and not is_stale(paths["eval_tasks"], paths["annotated"])
+    ):
         log.info("Step 6 eval tasks: cache hit -> %s", paths["eval_tasks"])
         return
     ads_by_id = eval_task_builder.read_ads(paths["annotated"])
