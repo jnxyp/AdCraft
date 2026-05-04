@@ -4,6 +4,7 @@ export interface EvalAd {
   slot: string
   ad_id: string
   body: string
+  cluster_id: string | null
 }
 
 export interface EvalProgress {

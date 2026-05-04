@@ -247,6 +247,7 @@ def _public_ads(raw_ads: str) -> list[EvalAd]:
                 slot=str(item["slot"]),
                 ad_id=str(item["ad_id"]),
                 body=str(item["body"]),
+                cluster_id=str(item["cluster_id"]) if item.get("cluster_id") is not None else None,
             )
         )
     return ads

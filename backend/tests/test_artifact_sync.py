@@ -125,6 +125,40 @@ def _eval_tasks_payload() -> dict[str, Any]:
     }
 
 
+def _eval_tasks_cross_payload() -> dict[str, Any]:
+    return {
+        "source_ads": "data/ds0_annotated.json",
+        "source_clusters": "data/ds0_clusters.json",
+        "source_templates": "data/ds0_templates.json",
+        "task_count": 1,
+        "tasks": [
+            {
+                "id": "eval_cross_t1",
+                "task_type": "pair",
+                "pair_scope": "cross_cluster",
+                "category": "tech",
+                "cluster_id": "cross:tech-0001|tech-0002",
+                "ads": [
+                    {
+                        "slot": "a",
+                        "ad_id": "ad_1",
+                        "body": "Body A",
+                        "template_id": "tmpl_aaa",
+                        "sequence": ["AH", "FB"],
+                    },
+                    {
+                        "slot": "b",
+                        "ad_id": "ad_2",
+                        "body": "Body B",
+                        "template_id": "tmpl_bbb",
+                        "sequence": ["PP", "FB", "CTA"],
+                    },
+                ],
+            }
+        ],
+    }
+
+
 def test_categories_metadata_sorted_pipe_join() -> None:
     assert categories_metadata(["tech", "ecommerce", "tech"]) == "ecommerce|tech"
     assert categories_metadata([]) == ""
@@ -233,3 +267,28 @@ async def test_run_sync_preserves_runtime_feedback(tmp_path: Path) -> None:
     assert bt_row is not None and bt_row[0] == 1.5
     assert resp_row is not None and resp_row[0] == "a"
     assert tmpl_row is not None and tmpl_row[0] == pytest.approx(0.65)
+
+
+@pytest.mark.asyncio
+async def test_run_sync_cross_cluster_splits_cluster_id_for_slots(tmp_path: Path) -> None:
+    db_path = tmp_path / "test.db"
+    await init_schema(db_path)
+
+    templates_path = tmp_path / "templates.json"
+    eval_tasks_path = tmp_path / "eval_tasks.json"
+    templates_path.write_text(json.dumps(_templates_payload()), encoding="utf-8")
+    eval_tasks_path.write_text(json.dumps(_eval_tasks_cross_payload()), encoding="utf-8")
+
+    client = FakeChromaClient()
+    await run_sync(db_path, templates_path, eval_tasks_path, client, "ad_templates", embedding_function=None)  # type: ignore[arg-type]
+
+    async with connect(db_path) as conn:
+        task_row = await (await conn.execute("SELECT pair_scope, cluster_id, ads FROM eval_tasks WHERE id = ?", ("eval_cross_t1",))).fetchone()
+    assert task_row is not None
+    assert task_row[0] == "cross_cluster"
+    assert task_row[1] == "cross:tech-0001|tech-0002"
+    ads_payload = json.loads(task_row[2])
+    assert ads_payload[0]["slot"] == "a"
+    assert ads_payload[0]["cluster_id"] == "tech-0001"
+    assert ads_payload[1]["slot"] == "b"
+    assert ads_payload[1]["cluster_id"] == "tech-0002"

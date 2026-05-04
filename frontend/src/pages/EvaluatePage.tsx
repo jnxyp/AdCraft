@@ -44,7 +44,7 @@ export function EvaluatePage({ showDetails }: { showDetails: boolean }) {
     <div className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] gap-[10px]">
         <header className="shrink-0 rounded-lg border border-il-blue bg-il-blue px-5 py-5 text-white">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-            <h1 className="text-4xl font-bold tracking-[0.04em]">Evaluation</h1>
+            <h1 className="text-4xl font-bold tracking-[0.04em]">Global Evaluation Progress</h1>
             <div className="relative flex items-center justify-end">
               <span className="rounded border border-white/20 px-4 py-1.5 text-xl font-semibold text-white">
                 {progress ? `Your Contributions: ${progress.session_done}` : 'Preparing'}
@@ -85,20 +85,23 @@ export function EvaluatePage({ showDetails }: { showDetails: boolean }) {
               ) : null}
               <div className="flex min-h-0 flex-col gap-[10px] rounded-lg border border-il-storm-20 bg-il-storm-95/40 p-3">
                 <div className="flex items-center justify-between gap-3 rounded-md border border-il-storm-20 bg-white px-3 py-2">
-                  <div className="min-w-0">
-                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-il-blue">Pair Evaluation</p>
-                  </div>
-                  <div className="flex items-center gap-2">
+                  <div className="min-w-0 flex items-center gap-2">
+                    <p className="text-sm font-semibold uppercase tracking-[0.12em] text-il-blue">Pair Evaluation</p>
                     {showDetails ? (
-                      <>
-                        <span className="rounded border border-il-storm-20 px-2 py-1 text-xs font-semibold text-il-storm-60">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span className="rounded border border-il-storm-20 bg-white px-2 py-0.5 text-xs font-semibold text-il-storm-60">
+                          Task ID: {task.task_id}
+                        </span>
+                        <span className="rounded border border-il-storm-20 bg-white px-2 py-0.5 text-xs font-semibold text-il-storm-60">
                           Task Type: pair
                         </span>
-                        <span className="rounded border border-il-storm-20 px-2 py-1 text-xs font-semibold text-il-storm-60">
+                        <span className="rounded border border-il-storm-20 bg-white px-2 py-0.5 text-xs font-semibold text-il-storm-60">
                           Task Scope: {task.pair_scope === 'cross_cluster' ? 'Cross Cluster' : 'Same Cluster'}
                         </span>
-                      </>
+                      </div>
                     ) : null}
+                  </div>
+                  <div className="flex items-center gap-2">
                     <button
                       type="button"
                       onClick={() => {
@@ -117,14 +120,12 @@ export function EvaluatePage({ showDetails }: { showDetails: boolean }) {
                     label="A"
                     category={task.category}
                     showDetails={showDetails}
-                    clusterId={task.cluster_id}
                   />
                   <EvalCard
                     ad={task.ads[1]}
                     label="B"
                     category={task.category}
                     showDetails={showDetails}
-                    clusterId={task.cluster_id}
                   />
                 </div>
               </div>

@@ -42,6 +42,7 @@ class EvalTaskAd(TypedDict):
     body: str
     template_id: str
     sequence: list[str]
+    cluster_id: str
 
 
 class EvalTaskRow(TypedDict):
@@ -119,27 +120,45 @@ def _coerce_eval_task(item: object) -> EvalTaskRow:
     ads_raw = item["ads"]
     if not isinstance(ads_raw, list):
         raise ValueError(f"eval task ads not list: {item!r}")
+    task_cluster_id = str(item.get("cluster_id", ""))
+    pair_scope = str(item["pair_scope"])
+    slot_cluster_map = _slot_cluster_ids(task_cluster_id, pair_scope)
     ads: list[EvalTaskAd] = []
     for ad in ads_raw:
         if not isinstance(ad, dict):
             raise ValueError(f"ad entry not object: {ad!r}")
+        slot = str(ad["slot"])
         ads.append(
             EvalTaskAd(
-                slot=str(ad["slot"]),
+                slot=slot,
                 ad_id=str(ad["ad_id"]),
                 body=str(ad["body"]),
                 template_id=str(ad["template_id"]),
                 sequence=[str(x) for x in ad["sequence"]],
+                cluster_id=slot_cluster_map.get(slot, task_cluster_id),
             )
         )
     return EvalTaskRow(
         id=str(item["id"]),
         task_type=str(item["task_type"]),
-        pair_scope=str(item["pair_scope"]),
+        pair_scope=pair_scope,
         category=str(item["category"]),
-        cluster_id=str(item.get("cluster_id", "")),
+        cluster_id=task_cluster_id,
         ads=ads,
     )
+
+
+def _slot_cluster_ids(cluster_id: str, pair_scope: str) -> dict[str, str]:
+    if pair_scope != "cross_cluster":
+        return {"a": cluster_id, "b": cluster_id}
+    prefix = "cross:"
+    if not cluster_id.startswith(prefix):
+        return {"a": cluster_id, "b": cluster_id}
+    pair = cluster_id[len(prefix):]
+    left, sep, right = pair.partition("|")
+    if not sep:
+        return {"a": cluster_id, "b": cluster_id}
+    return {"a": left, "b": right}
 
 
 async def get_recorded_hash(db_path: Path, name: str) -> str | None:
@@ -203,6 +222,7 @@ async def upsert_eval_tasks(db_path: Path, tasks: list[EvalTaskRow]) -> None:
                     "body": ad["body"],
                     "template_id": ad["template_id"],
                     "sequence": ad["sequence"],
+                    "cluster_id": ad["cluster_id"],
                 }
                 for ad in task["ads"]
             ]

@@ -35,8 +35,8 @@ async def test_next_returns_unresolved_task_and_progress(tmp_path: Path) -> None
     assert payload["cluster_id"] == "cluster_task_2"
     assert payload["progress"] == {"session_done": 1, "resolved": 0, "total": 2}
     assert payload["ads"] == [
-        {"slot": "a", "ad_id": "task_2_ad_a", "body": "Body A"},
-        {"slot": "b", "ad_id": "task_2_ad_b", "body": "Body B"},
+        {"slot": "a", "ad_id": "task_2_ad_a", "body": "Body A", "cluster_id": "cluster_task_2"},
+        {"slot": "b", "ad_id": "task_2_ad_b", "body": "Body B", "cluster_id": "cluster_task_2"},
     ]
 
 
@@ -129,6 +129,7 @@ async def _insert_eval_task(db_path: Path, task_id: str) -> None:
             "body": "Body A",
             "template_id": f"{task_id}_tmpl_a",
             "sequence": ["AH"],
+            "cluster_id": f"cluster_{task_id}",
         },
         {
             "slot": "b",
@@ -136,6 +137,7 @@ async def _insert_eval_task(db_path: Path, task_id: str) -> None:
             "body": "Body B",
             "template_id": f"{task_id}_tmpl_b",
             "sequence": ["CTA"],
+            "cluster_id": f"cluster_{task_id}",
         },
     ]
     async with connect(db_path) as conn:
