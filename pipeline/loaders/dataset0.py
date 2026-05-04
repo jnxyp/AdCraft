@@ -20,26 +20,90 @@ import httpx
 CONFIG_PATH = Path(__file__).parent.parent / "fb_config.json"
 OUTPUT_PATH = Path(__file__).parent.parent / "data" / "ds0_raw.json"
 
-# Keywords chosen to cover all 10 target categories
+# Keywords chosen to cover all 10 target categories.
+# Expanded with stronger purchase-intent and vertical-specific phrases
+# to increase unique ad coverage.
 QUERY_KEYWORDS: list[str] = [
+    # ecommerce / general
     "buy",          # ecommerce / general
     "shop now",     # ecommerce
+    "best seller",
+    "limited time",
+    "flash sale",
+    "free shipping",
+    "discount code",
+    "bundle deal",
+    "clearance",
+    "new arrival",
+    "gift ideas",
+    "subscription box",
+
+    # health / wellness / beauty
     "wellness",     # health
     "supplement",   # health
     "skincare",     # beauty
     "hair",         # beauty
+    "anti aging",
+    "weight loss",
+    "protein powder",
+    "vitamins",
+    "collagen",
+    "gut health",
+    "acne treatment",
+    "hair growth",
+
+    # education
     "learn",        # education
     "course",       # education
+    "online class",
+    "certification",
+    "bootcamp",
+    "tutoring",
+    "masterclass",
+
+    # finance / insurance
     "invest",       # finance
     "insurance",    # finance
+    "credit card",
+    "personal loan",
+    "mortgage rates",
+    "retirement plan",
+    "tax filing",
+
+    # food / local services
     "restaurant",   # food
     "delivery",     # food
+    "meal prep",
+    "coffee shop",
+    "catering",
+
+    # travel
     "travel",       # travel
     "hotel",        # travel
+    "flight deals",
+    "vacation package",
+    "car rental",
+    "resort",
+
+    # tech / app
     "software",     # tech
     "app",          # tech
+    "saas",
+    "crm",
+    "ai tool",
+    "project management",
+    "automation",
+    "cybersecurity",
+
+    # automotive / fitness
     "car",          # automotive
     "fitness",      # health
+    "auto repair",
+    "used cars",
+    "home workout",
+    "gym membership",
+
+    # broad conversion terms
     "sale",         # ecommerce
     "offer",        # ecommerce
 ]
