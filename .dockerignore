@@ -1,0 +1,16 @@
+.git
+.vscode
+.codex
+.agents
+.claude
+**/__pycache__
+**/.pytest_cache
+**/.mypy_cache
+**/.ruff_cache
+**/.venv
+frontend/node_modules
+backend/.venv
+pipeline/.venv
+pipeline/data
+data
+*.log

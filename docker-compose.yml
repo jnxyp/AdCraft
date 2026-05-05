@@ -1,0 +1,26 @@
+services:
+  adcraft-backend:
+    container_name: adcraft-backend
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    env_file:
+      - .env
+    environment:
+      ADFRAME_DATA_DIR: /app/data
+      ADFRAME_PIPELINE_DATA_DIR: /app/pipeline_data
+    volumes:
+      - ./data:/app/data
+      - ./pipeline/data:/app/pipeline_data:ro
+    ports:
+      - "8000:8000"
+
+  adcraft-frontend:
+    container_name: adcraft-frontend
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    depends_on:
+      - adcraft-backend
+    ports:
+      - "5173:80"
