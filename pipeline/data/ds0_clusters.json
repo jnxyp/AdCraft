@@ -1,5 +1,5 @@
 {
-  "source": "data\\ds0_annotated.json",
+  "source": "data/ds0_annotated.json",
   "embedding_model": "text-embedding-3-small",
   "similarity_threshold": 0.6,
   "distance_threshold": 0.4,
@@ -9,36 +9,138 @@
     {
       "cluster_id": "automotive-0001",
       "category": "automotive",
-      "size": 5,
+      "size": 6,
       "ad_ids": [
+        "0c0e3c24-d34b-4a15-ad44-f4b243f887b0",
         "28339657-399c-41f7-b5b2-abb9ca6e2179",
         "387587ca-7340-4564-b7ff-9184bd9af092",
         "434c1066-7b63-4af0-889f-a1a26dce2e21",
-        "726aa5fc-c69f-44b3-b0f0-e4838ca323b2",
-        "7d59e726-ba7c-4416-934b-2988b4289bfa"
+        "6a28afae-910c-43da-93cc-b6547195b25a",
+        "726aa5fc-c69f-44b3-b0f0-e4838ca323b2"
       ]
     },
     {
       "cluster_id": "automotive-0002",
       "category": "automotive",
-      "size": 5,
+      "size": 6,
       "ad_ids": [
+        "7d59e726-ba7c-4416-934b-2988b4289bfa",
         "85899aba-fdc4-426d-80de-188fd7c302dd",
-        "9a4580b2-e9e2-43a9-903a-6be0f41ca847",
+        "95b11b4c-8065-4f29-933d-6342e8c62adf",
         "bd3cdb1d-0b13-48e9-8307-3b3bda2263ed",
         "cffcc1e1-f88d-406d-95a3-55ba0d045136",
         "dc50d5ee-dfbd-4f96-9075-bdb148e79a10"
       ]
     },
     {
-      "cluster_id": "beauty-0001",
-      "category": "beauty",
+      "cluster_id": "automotive-0003",
+      "category": "automotive",
       "size": 9,
       "ad_ids": [
+        "14f0f8ce-0e54-4d17-b35e-5e37f8c1b8d0",
+        "34ffdc62-9767-430d-a59d-d97de0691f25",
+        "69be88d0-3d5d-4d16-9132-f967728f17e0",
+        "71c7135a-3532-49ce-88ca-c702fdff92ed",
+        "7e752a5f-68d9-4b58-85d9-dec4c2cc2e9d",
+        "b332ac39-3503-40ac-ba78-173e08ed239c",
+        "c89f2d9f-0f1c-4cd5-ab13-8caae011dfb2",
+        "d2f467d9-92d2-41b3-92ac-3cceb13da759",
+        "de62006e-fd71-42b0-8a9e-afc12542e37f"
+      ]
+    },
+    {
+      "cluster_id": "automotive-0004",
+      "category": "automotive",
+      "size": 5,
+      "ad_ids": [
+        "0c2692c9-b78a-47a2-9ad2-02f554588239",
+        "600a83e4-0a90-4ed8-9a46-8e2acc2cf671",
+        "82f7e312-7e46-4f0e-9bfe-1d24929c18e4",
+        "856e0c52-3a5a-4d53-8f2f-b00e1d5a2a7e",
+        "efc6cc5b-b35b-425d-a0f5-e05a8fae00fe"
+      ]
+    },
+    {
+      "cluster_id": "automotive-0005",
+      "category": "automotive",
+      "size": 5,
+      "ad_ids": [
+        "69ec529c-52f4-44a6-802e-6a7ed5dfcb13",
+        "8f0196a0-ac94-44f7-8385-2d8b63381897",
+        "bef6cf70-d7d0-48f8-b541-4468086ca444",
+        "c5c87d06-170d-4d3f-862e-853e90dcad9a",
+        "de85aa3e-cedd-4fcf-b7ef-20be7dc45194"
+      ]
+    },
+    {
+      "cluster_id": "beauty-0001",
+      "category": "beauty",
+      "size": 6,
+      "ad_ids": [
+        "01926c6d-51ba-4fa1-8fb3-158ca906b3a0",
+        "1b98a883-fbea-40cd-9e54-03d4735f4675",
+        "1d164419-6467-41d2-bc9e-7e2610b8cf7e",
+        "2d0e6124-b48a-4e4f-8b75-e1461fe55a55",
+        "44d2a2b2-b4d3-4663-9e00-80c710652b5e",
+        "546ec870-6cf5-4c56-8c84-174365e92791"
+      ]
+    },
+    {
+      "cluster_id": "beauty-0002",
+      "category": "beauty",
+      "size": 7,
+      "ad_ids": [
+        "61d995d0-e250-47f7-9c10-4af1a68b9570",
+        "71624f95-5e81-4cad-b9db-6089601cd97d",
+        "9a509f45-2b57-452a-8d56-f443e1eea95c",
+        "a6b8e3c6-a695-425d-b75c-78a364a24407",
+        "bb7307b6-e5ce-4d5d-83c0-e5098f235d18",
+        "c1895c7a-f29a-48e9-a783-6d313643a82e",
+        "fd4cba33-0e1a-4d4a-936c-ee8d1ee80cee"
+      ]
+    },
+    {
+      "cluster_id": "beauty-0003",
+      "category": "beauty",
+      "size": 6,
+      "ad_ids": [
+        "00de1dec-ef10-4277-88dd-4e90b6e27b04",
+        "2e70c27e-2f3d-49dd-84d3-a2f36e4e12c6",
+        "477a6ea3-daeb-464b-af7a-6e83300f8390",
+        "561d6785-5d5b-43ec-9b43-81fac401e6bf",
+        "803b8fa6-1914-4245-ab6a-4d3ada86c6d9",
+        "8050016b-8759-4f09-b3ea-7c5e308f42a4"
+      ]
+    },
+    {
+      "cluster_id": "beauty-0004",
+      "category": "beauty",
+      "size": 5,
+      "ad_ids": [
+        "960e37ec-3ec3-4ae0-99fe-da070a649a41",
+        "9e6416dd-7717-4e35-9419-11325f581112",
+        "a13e63d1-a542-44dd-a6db-dcbddd000207",
+        "e5b7e564-39fc-4b3c-83bb-afd21d7b9246",
+        "ff208fcc-3691-45f3-a0a0-83e1eddeac3d"
+      ]
+    },
+    {
+      "cluster_id": "beauty-0005",
+      "category": "beauty",
+      "size": 5,
+      "ad_ids": [
+        "45ccecaf-925f-4180-9391-ba74d30f67c8",
         "8539bf9a-2a47-428b-96a1-c9780bf3fa03",
         "9f0b2ebf-3ce8-418e-b9b7-d2d63abc792d",
         "a349a0b3-a7b4-4770-8ea8-d267450244ff",
-        "a4e1c608-077c-4ead-9d4b-363820e569f8",
+        "a4e1c608-077c-4ead-9d4b-363820e569f8"
+      ]
+    },
+    {
+      "cluster_id": "beauty-0006",
+      "category": "beauty",
+      "size": 5,
+      "ad_ids": [
         "ab0ff202-3878-49e1-82b5-1013fd26effd",
         "b52501aa-21e4-4e0c-b439-79ef11ba3dcd",
         "bf17871d-c3c8-49b9-9661-8965f7c5c84f",
@@ -47,7 +149,23 @@
       ]
     },
     {
-      "cluster_id": "beauty-0002",
+      "cluster_id": "beauty-0007",
+      "category": "beauty",
+      "size": 9,
+      "ad_ids": [
+        "15fd7050-56af-4107-96b9-d8973d406d44",
+        "3a7a84b6-568a-43b9-a5bd-01972b41ad94",
+        "41cbad6f-951c-416a-9976-65572ed4b16c",
+        "458430b3-5d70-4acb-a0af-6b57d25c81f4",
+        "4b90db0f-d556-4bae-85e7-e7586bda58a6",
+        "7e2da44d-46da-4d9c-87e1-d7cc72389281",
+        "8cbba11e-8294-4e6f-a240-7e30def35cb0",
+        "9bef77f3-2487-4207-8c3e-e5f135ae06fa",
+        "e4de8824-85dd-42ce-a20c-e44208da3780"
+      ]
+    },
+    {
+      "cluster_id": "beauty-0008",
       "category": "beauty",
       "size": 8,
       "ad_ids": [
@@ -62,27 +180,40 @@
       ]
     },
     {
-      "cluster_id": "beauty-0003",
+      "cluster_id": "beauty-0009",
       "category": "beauty",
-      "size": 8,
+      "size": 7,
       "ad_ids": [
-        "3a7a84b6-568a-43b9-a5bd-01972b41ad94",
-        "41cbad6f-951c-416a-9976-65572ed4b16c",
-        "458430b3-5d70-4acb-a0af-6b57d25c81f4",
-        "4b90db0f-d556-4bae-85e7-e7586bda58a6",
-        "7e2da44d-46da-4d9c-87e1-d7cc72389281",
-        "8cbba11e-8294-4e6f-a240-7e30def35cb0",
-        "9bef77f3-2487-4207-8c3e-e5f135ae06fa",
-        "e4de8824-85dd-42ce-a20c-e44208da3780"
+        "005853b6-7ae6-4065-bf23-43e19f9929d4",
+        "a0e04223-e876-4d7c-bc54-f1e621980686",
+        "a11bbef4-23a6-463b-bd5d-5a180c67cbe1",
+        "b61b4636-f57a-4c85-9c1f-9edf2445f46a",
+        "c4a34b67-48f1-4609-bb5f-1323636e9b2c",
+        "e83667d4-34f7-4041-a333-7ad02b63e449",
+        "fd91dc07-912a-4f2d-b8f2-e77ca7616983"
       ]
     },
     {
-      "cluster_id": "beauty-0004",
+      "cluster_id": "beauty-0010",
+      "category": "beauty",
+      "size": 7,
+      "ad_ids": [
+        "12e1a6ec-dd90-4498-86f6-96a94b471057",
+        "16de799e-d640-4791-b683-2f92e8a32e7a",
+        "63b45d3c-eef6-45a4-8d7e-4f52bf0807e6",
+        "8f7a866f-d532-4a88-803d-92bc6661b2ac",
+        "a7d3e3cc-6f27-4948-983f-f928e483e59b",
+        "d1011b5c-1caf-4184-800f-d0e1135b8a93",
+        "d782ebbd-d205-466b-b135-5958d8d8bbf4"
+      ]
+    },
+    {
+      "cluster_id": "beauty-0011",
       "category": "beauty",
       "size": 6,
       "ad_ids": [
         "0d83f4e4-8ca2-4be6-9338-770b8a1cba61",
-        "38586f23-c99b-4652-8194-151bfc57be92",
+        "10df1ca9-fea1-4e13-b63f-2bc54424c7ce",
         "42faec5c-be65-4c69-a4e5-da4811dfbb19",
         "49976818-cd51-4eec-ad07-b47757414bc5",
         "bee48639-baed-4a24-bbbb-5f803b844af4",
@@ -90,81 +221,128 @@
       ]
     },
     {
-      "cluster_id": "beauty-0005",
+      "cluster_id": "beauty-0012",
       "category": "beauty",
       "size": 6,
       "ad_ids": [
-        "1b98a883-fbea-40cd-9e54-03d4735f4675",
-        "44d2a2b2-b4d3-4663-9e00-80c710652b5e",
-        "546ec870-6cf5-4c56-8c84-174365e92791",
-        "71624f95-5e81-4cad-b9db-6089601cd97d",
-        "bb7307b6-e5ce-4d5d-83c0-e5098f235d18",
-        "fd4cba33-0e1a-4d4a-936c-ee8d1ee80cee"
+        "14a76184-59ec-41e6-8bae-837d54bf6dda",
+        "1e0d0841-afb6-4f70-927e-d709849ba8c7",
+        "3ce8c925-4adc-4648-b38a-9dc9c6a7a541",
+        "6669e6cb-7492-40f0-86c0-c416b312572a",
+        "aefcf2db-efdb-477b-be8f-4ddccb78d7d0",
+        "c93720be-b92b-4398-a3c9-146daf244ad5"
       ]
     },
     {
-      "cluster_id": "beauty-0006",
+      "cluster_id": "beauty-0013",
       "category": "beauty",
       "size": 6,
       "ad_ids": [
-        "2e70c27e-2f3d-49dd-84d3-a2f36e4e12c6",
-        "42eeaf0e-3d67-44f8-b2a3-db7b15ca2a17",
-        "477a6ea3-daeb-464b-af7a-6e83300f8390",
-        "803b8fa6-1914-4245-ab6a-4d3ada86c6d9",
-        "960e37ec-3ec3-4ae0-99fe-da070a649a41",
-        "e5b7e564-39fc-4b3c-83bb-afd21d7b9246"
+        "2843fa91-f8c6-4118-8da5-e29a82347f48",
+        "36543470-0efc-4538-bccb-31c0cdf382d5",
+        "3c73f311-8a1c-437f-b37c-957ea0a63710",
+        "3db66494-c10f-408e-8900-d13db1a8ac77",
+        "44ac4dd5-6b2f-4568-92c5-bc18967dfdc5",
+        "e00497ef-ee8e-43c5-b51f-aa96b6b6a07b"
       ]
     },
     {
-      "cluster_id": "beauty-0007",
+      "cluster_id": "beauty-0014",
+      "category": "beauty",
+      "size": 6,
+      "ad_ids": [
+        "34725d54-b704-4d83-b196-76656bcd63bc",
+        "720aa239-3e44-4b19-be21-f155daeae125",
+        "8c597607-231d-4684-964a-a9a3f80ed502",
+        "c18974e4-0db0-4d84-b2cf-0d43ae46f7e2",
+        "dbef7a8e-89f9-45cc-9d6c-4a3591f60d8a",
+        "e475e77d-560b-42f6-ab02-bd19a3c67782"
+      ]
+    },
+    {
+      "cluster_id": "beauty-0015",
+      "category": "beauty",
+      "size": 5,
+      "ad_ids": [
+        "0c5814bf-e15c-4735-98ae-7d33c26b6f92",
+        "647fc79a-d295-4aa2-8697-8831636bd334",
+        "66d885b6-1e5f-4894-b9f2-c092b68ba3fd",
+        "7710f425-5017-4320-866c-62fbac6cbeed",
+        "dd459318-628f-4006-969e-521868577d33"
+      ]
+    },
+    {
+      "cluster_id": "beauty-0016",
       "category": "beauty",
       "size": 5,
       "ad_ids": [
         "10a03a96-9c0c-404b-8718-40c73bbab9ae",
         "26b88ecf-53a9-4d56-b53b-2979125a438e",
         "38f4f7ec-63fd-4731-9e60-46bef2282a9d",
-        "d29e8d01-a4fe-4479-857a-0f31dfd4b9f9",
-        "f9a37a75-44ba-42e5-a7ef-b3d10df59c02"
+        "cb2e9cf0-d6e2-42a3-aa26-65479ee4c3f4",
+        "d29e8d01-a4fe-4479-857a-0f31dfd4b9f9"
       ]
     },
     {
-      "cluster_id": "beauty-0008",
+      "cluster_id": "beauty-0017",
       "category": "beauty",
       "size": 5,
       "ad_ids": [
-        "2843fa91-f8c6-4118-8da5-e29a82347f48",
-        "3c73f311-8a1c-437f-b37c-957ea0a63710",
-        "3db66494-c10f-408e-8900-d13db1a8ac77",
-        "44ac4dd5-6b2f-4568-92c5-bc18967dfdc5",
-        "d9659a0a-dea6-4202-acf1-4742c0f1970b"
+        "16e41db6-ec80-43eb-a93a-7751886fa97c",
+        "3557bbc0-061f-4cbc-b299-8ce120ebdea6",
+        "7362eb24-4504-4e84-95d1-8ac0672374e5",
+        "847eeb47-b43a-49fb-8b91-aa99bf92d9b4",
+        "dfbad67f-415e-4dea-87d9-a8cd1254e657"
       ]
     },
     {
-      "cluster_id": "beauty-0009",
+      "cluster_id": "beauty-0018",
       "category": "beauty",
       "size": 5,
       "ad_ids": [
-        "34725d54-b704-4d83-b196-76656bcd63bc",
-        "720aa239-3e44-4b19-be21-f155daeae125",
-        "8c597607-231d-4684-964a-a9a3f80ed502",
-        "dbef7a8e-89f9-45cc-9d6c-4a3591f60d8a",
-        "e475e77d-560b-42f6-ab02-bd19a3c67782"
+        "1ddf87d9-d362-44fa-9f5d-0986cb0e0903",
+        "25a84a8a-3d9c-4112-9f7a-f6e758faf6eb",
+        "9054c3b2-fd08-484f-a31d-d174ec0a2932",
+        "b2f68c7a-45ed-4266-aca5-79c3bf337b71",
+        "ca6905b7-ea2c-48dd-abf5-9a9dbbbdd0a7"
+      ]
+    },
+    {
+      "cluster_id": "beauty-0019",
+      "category": "beauty",
+      "size": 5,
+      "ad_ids": [
+        "2639fbf3-79b9-44ad-932c-de099aeeb47d",
+        "5bfb33a3-52db-4e05-92b8-16cf49f0cbf2",
+        "64aa97ba-c404-4851-839a-3a4ee4d5cadf",
+        "b56e518d-9ba6-46f9-8208-5040b802ccf4",
+        "d13bf4cf-2424-4635-8ef0-5fa674c5b377"
+      ]
+    },
+    {
+      "cluster_id": "beauty-0020",
+      "category": "beauty",
+      "size": 5,
+      "ad_ids": [
+        "35e54366-e28f-4c96-9b33-d5cf6a430f8a",
+        "65ffbc59-fcf5-4374-909c-1259ab95e1b2",
+        "931c1592-c3fb-4b09-96e7-33fc840aa1ca",
+        "bcc3b370-1998-4c72-acf2-0d91575adc6a",
+        "ea342bd4-deda-499e-94f0-04c14473d77f"
       ]
     },
     {
       "cluster_id": "ecommerce-0001",
       "category": "ecommerce",
-      "size": 9,
+      "size": 7,
       "ad_ids": [
-        "1104f6dc-0c3d-4dc9-b5fb-e006a4de2509",
-        "2f9adcd8-3e8a-4c80-b060-e013896da005",
-        "334814ff-9123-48b9-9fb3-3fde26f5b2c6",
-        "471cae57-2fc6-4f8d-97ee-bd9eee6acb9d",
-        "a0d41958-87e0-4d90-a262-e469b0fa530f",
-        "c996e0fb-3fa7-43ce-af9b-c48dd5620142",
-        "d1011b5c-1caf-4184-800f-d0e1135b8a93",
-        "d51d7e7d-4914-4f98-8ee6-df707397e13a",
-        "daf427f0-77d1-4dd1-a2c8-61d694f546df"
+        "070e1686-4f4c-44e2-935d-ba9b2e8c28eb",
+        "19f28bba-9991-4e18-a4fa-8d9d2510ae43",
+        "40fc4ad9-8339-4925-9147-147dcd12915d",
+        "4997bdc2-12e5-4678-90d3-c0f991bff65d",
+        "612ef4eb-69ad-425e-b103-814bf736834f",
+        "73ce0d7f-cc8d-45f1-95ce-3414de825346",
+        "80eefd0c-6fb2-442c-a95e-00c6cc0a1a26"
       ]
     },
     {
@@ -172,30 +350,257 @@
       "category": "ecommerce",
       "size": 7,
       "ad_ids": [
-        "27b5105d-d700-4b65-8429-facc20e3f168",
-        "31cf6f51-4e25-4776-b680-c1f6d4f723ba",
-        "42b19421-1ff8-4f30-99fd-7d342f1e2a09",
-        "557e36a8-2c7b-4868-8b4c-07c85e70c0a1",
-        "8a3fb15f-650a-410b-8448-fff571b408ff",
-        "8bc91ab0-86d9-4b75-97d2-adac86bbf09e",
-        "dc2a35a1-611f-47ea-bcd6-1ce649c2bfa7"
+        "a3262726-d592-471e-8b7a-70a2a7700c5c",
+        "a8f4c0c5-b152-450b-ad79-8cba5a5dd743",
+        "bc51a8d3-37b4-4721-9ff2-67eaa3db69a3",
+        "c8f10a0c-b2fd-4b6d-95ba-7b3a6e60ce7d",
+        "cdacc8cf-5927-4c8f-92ef-1a1ce852ed78",
+        "d0624452-e709-42f7-998a-8626624d63af",
+        "d9767309-14e6-4b21-a9e4-017adb50a09a"
       ]
     },
     {
       "cluster_id": "ecommerce-0003",
       "category": "ecommerce",
+      "size": 7,
+      "ad_ids": [
+        "0ddf08d9-83ca-4d83-a7fd-d220e692cdf7",
+        "1104f6dc-0c3d-4dc9-b5fb-e006a4de2509",
+        "330ec9b0-9634-4dcd-ab21-cc5d9069577c",
+        "334814ff-9123-48b9-9fb3-3fde26f5b2c6",
+        "33758de3-425f-4a36-b577-2a55660a2190",
+        "3c06c89f-479d-423e-8688-ac669274f551",
+        "454a0612-bbcd-419c-8a4c-0c29e2aa3dc7"
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0004",
+      "category": "ecommerce",
+      "size": 7,
+      "ad_ids": [
+        "471cae57-2fc6-4f8d-97ee-bd9eee6acb9d",
+        "8f3b605d-977d-4315-9811-c150b72a0b84",
+        "92b424bb-e44e-4967-b3b2-6c33ea8d261c",
+        "a0d41958-87e0-4d90-a262-e469b0fa530f",
+        "c996e0fb-3fa7-43ce-af9b-c48dd5620142",
+        "d1011b5c-1caf-4184-800f-d0e1135b8a93",
+        "d52ec956-9fb9-4e43-b4c3-cf8698316d9c"
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0005",
+      "category": "ecommerce",
       "size": 6,
       "ad_ids": [
+        "01dc31c9-20c6-473d-a472-f8f5d7fdab16",
+        "092057f8-91bb-472d-9898-6cd76ced0919",
         "101ac020-ba5c-42be-9a02-5fa76b2fb3dc",
-        "733570b8-1517-46f3-9e67-6a0a326fc80d",
+        "15455c35-c94d-4b83-a259-3156035b747a",
+        "2cea236b-a086-441a-8f66-21395d8e92b9",
+        "521842aa-b235-4c6f-af71-4efee7572f12"
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0006",
+      "category": "ecommerce",
+      "size": 7,
+      "ad_ids": [
+        "52d9e980-3956-4087-a47e-fe4da7333eeb",
+        "5b0c7f00-bfeb-42b3-8b30-ba64871d4b32",
+        "94a46247-8113-4e46-a2ec-0819487bd5fa",
+        "95198361-4812-42be-8187-e1a31357bee8",
         "992ce2bf-604b-4baf-a3da-57cde7ff3be1",
-        "a043fd25-b8fe-47d7-a399-635a555873d9",
         "b7c57d6b-3286-4a36-b0d9-a7a1fe519879",
         "cd78deb6-e676-48ce-a951-63d0f9624d71"
       ]
     },
     {
-      "cluster_id": "ecommerce-0004",
+      "cluster_id": "ecommerce-0007",
+      "category": "ecommerce",
+      "size": 6,
+      "ad_ids": [
+        "0557baeb-bf85-4f88-8c49-4c055f02d7ff",
+        "27015b80-d5e4-4ccf-bf4b-52d15f8a2b30",
+        "42689834-7869-4205-a04e-3b3349645593",
+        "587b6a0e-5c93-4e70-9af2-d0e96988272d",
+        "5a06326e-9978-41c4-8205-45f501be3206",
+        "86946abb-efb8-49c5-a89d-1f051c45ca3a"
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0008",
+      "category": "ecommerce",
+      "size": 6,
+      "ad_ids": [
+        "8d617d3e-ea2a-4007-a278-ca9bc2a813ce",
+        "9156acd5-6261-4c66-8582-9c29d23dddf7",
+        "a7028643-adf9-45de-baac-6d64cae971d0",
+        "ed082e66-4144-4503-a188-2cb51ba78ca7",
+        "f1ae44f6-1b40-42ad-82e1-d1a1061ab632",
+        "fd706a2a-8652-4aca-aa07-a4fe14cb1d59"
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0009",
+      "category": "ecommerce",
+      "size": 6,
+      "ad_ids": [
+        "56c89c2e-77eb-471a-bba0-1563921d0a6a",
+        "73a81dde-121e-451d-9540-1267683bd2ee",
+        "7e52c4a3-3453-4ffa-8bfa-5a41a9160dd7",
+        "86050d09-8f5f-4d49-866d-4f1340a5aac0",
+        "92a22e03-3b0b-43d9-bf84-507cd87076e2",
+        "a646c135-793e-419c-b63f-40834721558d"
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0010",
+      "category": "ecommerce",
+      "size": 5,
+      "ad_ids": [
+        "b3728d38-02b4-4e2c-8ee5-80ba67e45236",
+        "e80df649-190f-4370-a067-85cc3e92e252",
+        "eddcd0fb-869e-421c-a85b-34545b07c961",
+        "ee9415f5-b02e-43d9-9a73-44456c2e8af6",
+        "f22c8f95-ee16-4fe3-8084-acab1de7226f"
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0011",
+      "category": "ecommerce",
+      "size": 5,
+      "ad_ids": [
+        "50075053-62ee-4ec0-9e8e-4af9b557f6b9",
+        "61780b08-d032-42f6-b0f6-af76f2f07bd4",
+        "77e463bc-30d9-449a-a16a-63a6a83e8b06",
+        "afa9b538-7e11-4be5-9db9-b0e2ebbda51c",
+        "bb9cdd0c-dad6-4c7c-80aa-95b6aa4289bf"
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0012",
+      "category": "ecommerce",
+      "size": 5,
+      "ad_ids": [
+        "beee4543-8069-47c8-aa03-0d12e29439ad",
+        "bf3c322c-ada3-4ecf-8d3f-ae1be079d9c8",
+        "c0688827-97fe-4b0a-b7a0-dadf1c1f118c",
+        "e0541fd7-58ab-41bb-88fb-d3a70a580b50",
+        "ee18010a-c016-4615-ba92-3ed84191efa4"
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0013",
+      "category": "ecommerce",
+      "size": 9,
+      "ad_ids": [
+        "146e626d-82a7-417a-bbc5-d10432277103",
+        "27cbdf18-ae92-4480-a8e6-37a6b580da0e",
+        "828b0767-6509-4363-8948-00ebb3f56c7a",
+        "87f5623a-fc11-4049-ba78-4fbccf4aeff7",
+        "8b53f4c7-65d8-4d75-a3b5-e9c747e68e50",
+        "92e40844-d7e9-45bb-b946-7c0b1379a712",
+        "aaa35ec8-c53f-4876-a2ff-45aaa3673302",
+        "aef90463-894a-4965-b752-73c56dc24755",
+        "efd9536b-be46-43e9-b715-80a53fb40e5f"
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0014",
+      "category": "ecommerce",
+      "size": 8,
+      "ad_ids": [
+        "387375c3-65e6-4cec-ac16-9a3c0b6fd262",
+        "3bca789c-ce50-49a7-8ff0-1cfa6d465b1b",
+        "3fe39cfc-5c08-4355-bb2f-90cc51d31b69",
+        "4b4e5c07-4d05-422e-aa79-52955ab5c0d9",
+        "56371c1d-3024-4a6a-9c3e-dd7539384268",
+        "690adf1e-7a62-4e80-822d-ea44be646de0",
+        "c9c8552a-1675-4497-9948-06fa8c69570a",
+        "cc681322-d380-4c89-9370-838a6ab9077f"
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0015",
+      "category": "ecommerce",
+      "size": 7,
+      "ad_ids": [
+        "2e8e4ef3-4940-4e5f-8307-94e6b3bba345",
+        "4f6f65d8-b5f8-4f3c-8217-35f5bbb02a1e",
+        "6d5c31f2-05bc-4db8-8d0f-52082b76a47e",
+        "907d7eb4-127f-40dd-af98-0d251b9df015",
+        "9622b7c3-0197-41ee-98c4-c0c59806d1fa",
+        "97f9c018-5cde-4d90-815b-ee73f041e17d",
+        "9b94fb00-3cda-47fe-a1b0-0fddb4e590e0"
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0016",
+      "category": "ecommerce",
+      "size": 6,
+      "ad_ids": [
+        "0b31d80a-dc4d-450f-857c-9ef455c17b00",
+        "1415eead-e379-478c-a2bc-58faabb697cb",
+        "331436c2-c78c-4582-8f85-8d63142a11e7",
+        "6cbefd6b-8e26-43ef-a29f-32f1d841f7a0",
+        "77504c9a-0833-4863-b8d3-772838b71eb7",
+        "886aa044-5943-44cc-b3a0-f8a9df8810f4"
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0017",
+      "category": "ecommerce",
+      "size": 6,
+      "ad_ids": [
+        "12e1a6ec-dd90-4498-86f6-96a94b471057",
+        "16de799e-d640-4791-b683-2f92e8a32e7a",
+        "63b45d3c-eef6-45a4-8d7e-4f52bf0807e6",
+        "8f7a866f-d532-4a88-803d-92bc6661b2ac",
+        "a7d3e3cc-6f27-4948-983f-f928e483e59b",
+        "d782ebbd-d205-466b-b135-5958d8d8bbf4"
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0018",
+      "category": "ecommerce",
+      "size": 6,
+      "ad_ids": [
+        "1fec200a-16c7-4eba-b8f3-fec7e77e38db",
+        "31cf6f51-4e25-4776-b680-c1f6d4f723ba",
+        "557e36a8-2c7b-4868-8b4c-07c85e70c0a1",
+        "5eca048a-c522-42e1-8743-a213f66df75c",
+        "8bc91ab0-86d9-4b75-97d2-adac86bbf09e",
+        "f6549efc-0a2a-4c65-a8b5-75a0040c81b4"
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0019",
+      "category": "ecommerce",
+      "size": 6,
+      "ad_ids": [
+        "2e0640a3-acae-45e2-a90c-a3ff661781ba",
+        "59f6ffb0-d1f4-4176-9807-d7e8bf62f910",
+        "76407412-3efd-440e-baba-192d0ca98385",
+        "7c9488b9-0021-4412-91f6-be7e09228677",
+        "95171631-5684-409b-8c56-5a565bf15e8d",
+        "f0c96615-b995-49c7-80b5-747dcfc8947e"
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0020",
+      "category": "ecommerce",
+      "size": 6,
+      "ad_ids": [
+        "5e518791-d4d5-467b-ba50-a95ef92ef5fe",
+        "820b30f9-0609-4632-9f5c-d6ba77fccc62",
+        "b91f7c67-c320-45b7-a837-33beb42c81b3",
+        "db13e4e3-e417-4d06-845c-c69d8d771893",
+        "df789016-50c8-4825-b7de-4d4d3aafbb93",
+        "f24f42df-e6b9-4e0b-b5a6-e345ede5a1b6"
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0021",
       "category": "ecommerce",
       "size": 6,
       "ad_ids": [
@@ -208,63 +613,75 @@
       ]
     },
     {
-      "cluster_id": "ecommerce-0005",
+      "cluster_id": "ecommerce-0022",
       "category": "ecommerce",
       "size": 5,
       "ad_ids": [
-        "19f28bba-9991-4e18-a4fa-8d9d2510ae43",
-        "824047f0-4e29-45af-8280-74ff2447a326",
-        "86aed7eb-c9b0-4183-9edf-7b19953b7241",
-        "d79128eb-5eeb-4b9b-a9ad-abcdf67d16e8",
-        "d9767309-14e6-4b21-a9e4-017adb50a09a"
+        "05faacd1-8e38-41b0-a644-f1f240a064b6",
+        "10087cee-1c10-4e7b-b860-4e4d9ef19b99",
+        "11d79214-3c8a-4c43-b112-f3d4a90cd07d",
+        "c246c7b7-4906-40f8-9dfd-5d979aa83f01",
+        "e21c010f-c336-490e-84f2-d9a1984d4a72"
       ]
     },
     {
-      "cluster_id": "ecommerce-0006",
+      "cluster_id": "ecommerce-0023",
       "category": "ecommerce",
       "size": 5,
       "ad_ids": [
-        "3d8a4399-2387-4e48-8428-c64fe87fc632",
-        "6d5c31f2-05bc-4db8-8d0f-52082b76a47e",
-        "97f9c018-5cde-4d90-815b-ee73f041e17d",
-        "9b94fb00-3cda-47fe-a1b0-0fddb4e590e0",
-        "a2015da9-49d6-4953-a92e-f2a8e2332f12"
+        "0f1baa63-1284-44ee-aa7c-b1091e8196e4",
+        "1e0ba9ab-4b34-4127-aa77-79a1f2bc0dbe",
+        "28895460-515a-4844-9a9a-4fc3a216265c",
+        "333d077e-acea-48ab-b989-b345fda4bdc1",
+        "47e32fcb-4e18-4fee-b1a8-29a6be062ac1"
       ]
     },
     {
-      "cluster_id": "ecommerce-0007",
+      "cluster_id": "ecommerce-0024",
       "category": "ecommerce",
       "size": 5,
       "ad_ids": [
-        "5e518791-d4d5-467b-ba50-a95ef92ef5fe",
-        "820b30f9-0609-4632-9f5c-d6ba77fccc62",
-        "db13e4e3-e417-4d06-845c-c69d8d771893",
-        "df789016-50c8-4825-b7de-4d4d3aafbb93",
-        "f24f42df-e6b9-4e0b-b5a6-e345ede5a1b6"
+        "18fa3ae3-3e17-4565-a9c3-209640462bd2",
+        "392263cd-a7df-4df9-9e13-1d44af6d5916",
+        "b7f186ff-1ad3-43b3-8b3b-7526c3205cbc",
+        "d86ff3e8-1e58-47ab-9921-a61dab15f515",
+        "df48c925-fe1f-46d6-b6d3-d0c0fed51e38"
       ]
     },
     {
-      "cluster_id": "ecommerce-0008",
+      "cluster_id": "ecommerce-0025",
       "category": "ecommerce",
       "size": 5,
       "ad_ids": [
-        "612ef4eb-69ad-425e-b103-814bf736834f",
-        "73ce0d7f-cc8d-45f1-95ce-3414de825346",
-        "a3262726-d592-471e-8b7a-70a2a7700c5c",
-        "bc51a8d3-37b4-4721-9ff2-67eaa3db69a3",
-        "c8f10a0c-b2fd-4b6d-95ba-7b3a6e60ce7d"
+        "27b5105d-d700-4b65-8429-facc20e3f168",
+        "3e56b223-548a-412a-b696-6efda555041d",
+        "42b19421-1ff8-4f30-99fd-7d342f1e2a09",
+        "8a3fb15f-650a-410b-8448-fff571b408ff",
+        "dc2a35a1-611f-47ea-bcd6-1ce649c2bfa7"
       ]
     },
     {
-      "cluster_id": "ecommerce-0009",
+      "cluster_id": "ecommerce-0026",
       "category": "ecommerce",
       "size": 5,
       "ad_ids": [
-        "63b45d3c-eef6-45a4-8d7e-4f52bf0807e6",
-        "77e463bc-30d9-449a-a16a-63a6a83e8b06",
-        "afa9b538-7e11-4be5-9db9-b0e2ebbda51c",
-        "beee4543-8069-47c8-aa03-0d12e29439ad",
-        "ee18010a-c016-4615-ba92-3ed84191efa4"
+        "40148a9d-4d98-4e6d-9f02-a96c0fb7c1e9",
+        "4cbb0aee-c601-4b47-856c-88b481aac83e",
+        "70a06180-f034-4a7a-8053-1acdf07be9ed",
+        "78f26cfb-3752-404f-91b0-a9d13e68f727",
+        "f3e72b0c-7b34-43a1-86a8-b28d198ca2b3"
+      ]
+    },
+    {
+      "cluster_id": "ecommerce-0027",
+      "category": "ecommerce",
+      "size": 5,
+      "ad_ids": [
+        "72250a54-682d-40f7-aac7-c65afd824b6a",
+        "7959ae29-b422-48d0-96b8-5009fac9f6a7",
+        "7fb48697-24f2-4438-8402-e54878bfd745",
+        "a5932f9a-7a31-4559-902f-506e8c0a8b3a",
+        "e22c831c-9d1e-4bc0-be42-a12b75a1996c"
       ]
     },
     {
@@ -293,16 +710,40 @@
       ]
     },
     {
+      "cluster_id": "education-0003",
+      "category": "education",
+      "size": 5,
+      "ad_ids": [
+        "2cc57e6c-534a-4d5d-a910-fa572e930def",
+        "93689ca5-1ca9-4815-a6cd-757fbcc656d4",
+        "afee557b-6ca3-48cb-a8a0-6e4e07b4c73f",
+        "bb1b6c61-7842-47aa-b947-f92036ac43fe",
+        "bc4940fb-be78-4c05-9a40-c25df56dc3fa"
+      ]
+    },
+    {
+      "cluster_id": "education-0004",
+      "category": "education",
+      "size": 5,
+      "ad_ids": [
+        "40670341-e535-4674-b64b-d02e212efefa",
+        "445544bd-5dd5-4801-ab36-68b9d67d79d3",
+        "83ac070a-78f2-4932-b2b2-e6dd813f7467",
+        "bac2fcc4-97ed-4337-b648-5098774d27b9",
+        "fb78a0e1-29a9-4e7f-8fc6-51df66c60ed3"
+      ]
+    },
+    {
       "cluster_id": "entertainment-0001",
       "category": "entertainment",
       "size": 6,
       "ad_ids": [
         "1f74b3a9-3253-4c34-a917-744009c0dd62",
         "216e26d7-6120-458e-906c-0880e91f9111",
-        "5525412f-3427-4e10-9608-91e336b0a520",
-        "8289f9dc-b6ca-4aee-bdaf-5c46a55eed41",
-        "86223fcb-cc32-4457-b026-1e83fe5aaf20",
-        "955166dc-ace4-4d96-afb4-7844d0a34f26"
+        "35536052-4c63-475b-851b-e212698177b0",
+        "36572482-6c2e-4756-8a93-f2920954c1f2",
+        "48240c8d-3511-4aa7-960e-9a2acb41fe49",
+        "5525412f-3427-4e10-9608-91e336b0a520"
       ]
     },
     {
@@ -310,13 +751,13 @@
       "category": "entertainment",
       "size": 7,
       "ad_ids": [
-        "a2b08f5c-db32-46c5-b4dd-4a0356e2df6c",
-        "b3892949-20f5-4e32-b93e-23c4d36aa2c9",
+        "66c0be99-6527-48e1-82e2-a03630d95106",
+        "8289f9dc-b6ca-4aee-bdaf-5c46a55eed41",
+        "955166dc-ace4-4d96-afb4-7844d0a34f26",
         "b80a3309-4e1c-49be-81d5-8cd7f3fe9ac1",
         "ceb7f47f-35d5-429c-b10c-e4650ff44a68",
         "cf58e42f-df88-493d-9536-3a1ec8c1da24",
-        "efb2bd73-135f-4cc4-907c-617f7a67eac1",
-        "f7c93ec6-c1e9-4dae-b43f-4e4ac94a6160"
+        "efb2bd73-135f-4cc4-907c-617f7a67eac1"
       ]
     },
     {
@@ -325,14 +766,53 @@
       "size": 9,
       "ad_ids": [
         "00c1e978-5651-4d42-9049-ec5f4dea31e8",
-        "603b28f6-5632-4c2a-adbe-33f973a35a40",
         "61dec012-1884-4ab9-88ef-39670d8ac895",
         "6661e37b-fb3e-4350-84f0-b03cd7329466",
         "89be85e5-c2a6-4dd9-855c-0502bd1e8b8b",
         "bfb93f7d-a038-4591-bc5e-a06de2cea807",
         "ca5bbc92-96da-4cb5-be16-c88c4f10ef98",
+        "ce2c6f83-cc24-488e-bdc4-696b55921bc2",
         "f4a2ef2e-ce35-454c-a921-c46f4bd644b6",
         "f6ef0f10-1efa-4028-8844-7d71d26c05b4"
+      ]
+    },
+    {
+      "cluster_id": "entertainment-0004",
+      "category": "entertainment",
+      "size": 7,
+      "ad_ids": [
+        "0240b884-152c-45ec-88ad-71c5f15427c6",
+        "4aa7e978-4747-4e6e-867b-0785e26a93ad",
+        "4b369353-73d0-4133-83b5-586500d97fd7",
+        "5aae9a32-6683-42c7-aa5c-38591cfc0fcc",
+        "7421914e-42df-4dfc-a0f0-7ecb408b8291",
+        "9de33101-0e14-4bf2-928e-2692a44fe44c",
+        "caa0b892-506d-4d34-9db5-cdd68d92f933"
+      ]
+    },
+    {
+      "cluster_id": "entertainment-0005",
+      "category": "entertainment",
+      "size": 6,
+      "ad_ids": [
+        "131950b8-2ce8-4f1e-a3a8-38429aa2eb8b",
+        "387375c3-65e6-4cec-ac16-9a3c0b6fd262",
+        "4d139238-5a72-4557-a315-5482f422f972",
+        "56371c1d-3024-4a6a-9c3e-dd7539384268",
+        "690adf1e-7a62-4e80-822d-ea44be646de0",
+        "cc681322-d380-4c89-9370-838a6ab9077f"
+      ]
+    },
+    {
+      "cluster_id": "entertainment-0006",
+      "category": "entertainment",
+      "size": 5,
+      "ad_ids": [
+        "04ef8392-c46d-45cc-9004-7fe711e17b07",
+        "0e87f90a-8283-4f67-b927-07691ac3e0c4",
+        "1bca605b-0f45-47e1-bb46-0660220b8f13",
+        "4264a34c-2bc8-444d-9738-c053c0f00510",
+        "54ff3dbf-4f83-4933-9587-2d0d843ac18a"
       ]
     },
     {
@@ -362,35 +842,102 @@
     {
       "cluster_id": "food-0001",
       "category": "food",
-      "size": 8,
+      "size": 6,
       "ad_ids": [
         "079bee3b-43ba-40af-86c0-a028bd881908",
+        "0da0df3e-d97a-4019-acc8-0966c46d955b",
+        "0dc7afae-3374-40ec-ba16-9238f6eb7964",
         "112c7c8d-3d76-4c88-8f5e-b181f44b5fa5",
         "1380b040-8701-40ad-ac3a-0a167f3e5fff",
+        "14c89a6e-60b0-4ab0-b2d7-73b9a15babe8"
+      ]
+    },
+    {
+      "cluster_id": "food-0002",
+      "category": "food",
+      "size": 6,
+      "ad_ids": [
+        "2338c19a-ba90-4c27-88dc-f922c7930847",
+        "254b55c0-8001-4d76-a2f0-12348cc46a6c",
+        "384b44d1-3560-416c-87a9-e35c0c4efb32",
         "3dc76217-dd3f-4cf5-b586-110cc1f1f7cf",
-        "551a5c42-1e52-4c05-b5af-8ca709bd0515",
-        "a8aa656d-26ff-4e01-b7e6-f1e1bda900fd",
+        "48b24c7d-e558-4d80-9de0-6929a1144a5b",
+        "551a5c42-1e52-4c05-b5af-8ca709bd0515"
+      ]
+    },
+    {
+      "cluster_id": "food-0003",
+      "category": "food",
+      "size": 6,
+      "ad_ids": [
+        "60906f4a-2100-49df-835e-c28d9e076991",
+        "6e8f4931-34aa-4678-aa43-5cd0976faf8d",
+        "8f0b9db7-39f1-4641-bc93-4b41d0c7481b",
+        "a6725579-fd17-4722-802a-0b82c9b7c3e0",
+        "a85ee1c9-edcd-4252-a84a-cec0aaa577a9",
+        "a8aa656d-26ff-4e01-b7e6-f1e1bda900fd"
+      ]
+    },
+    {
+      "cluster_id": "food-0004",
+      "category": "food",
+      "size": 6,
+      "ad_ids": [
+        "b0525314-16ee-47e4-a5cc-0edc1298ac5a",
+        "ca3baa6c-4e77-4980-a138-527fcf2b5798",
+        "d14ca10c-843a-4cf4-854f-b208006822b5",
         "d202f5a9-16e1-4c3d-9449-ca6130f35573",
-        "e9468abf-516e-4d62-a561-4e9f4ff22812"
+        "e9468abf-516e-4d62-a561-4e9f4ff22812",
+        "fed40b66-fa36-4ae8-aff0-41fcf014880e"
       ]
     },
     {
       "cluster_id": "health-0001",
       "category": "health",
-      "size": 5,
+      "size": 7,
       "ad_ids": [
-        "6647cba2-f244-4d17-ae5a-45505b9cc93f",
-        "8539bf9a-2a47-428b-96a1-c9780bf3fa03",
-        "9f0b2ebf-3ce8-418e-b9b7-d2d63abc792d",
-        "a349a0b3-a7b4-4770-8ea8-d267450244ff",
-        "a4e1c608-077c-4ead-9d4b-363820e569f8"
+        "05fb3cbf-2cf5-4ea6-84a9-8f514b8b9613",
+        "15a3c5bd-c0e8-4591-86f5-a021df2004dd",
+        "25d6c521-95ab-4181-b476-92b54329b86f",
+        "309db707-16aa-4f5b-a7af-1d3ee882b718",
+        "3775c607-a559-4f90-ade3-07313d941ce7",
+        "405119d1-b4a3-4449-91bb-37794a23611d",
+        "5a9b8fa7-2b13-42f3-a972-2dce79d15a96"
       ]
     },
     {
       "cluster_id": "health-0002",
       "category": "health",
-      "size": 5,
+      "size": 7,
       "ad_ids": [
+        "706b678a-958b-49a1-84b6-d36a1b0b1537",
+        "7ef95b8c-d408-48bb-a080-5d6a82161f38",
+        "94bf1b59-b3df-4a9e-8f9c-709b98d1563f",
+        "b0f955b5-286f-4a79-be02-eb87862f83f7",
+        "c257c96b-eddc-44f1-b237-b96b57f8831a",
+        "f7faeee1-cbe7-4e59-8991-1f0d27e21717",
+        "fd27761d-a85b-4035-8e6b-507ced4f7ab1"
+      ]
+    },
+    {
+      "cluster_id": "health-0003",
+      "category": "health",
+      "size": 6,
+      "ad_ids": [
+        "45ccecaf-925f-4180-9391-ba74d30f67c8",
+        "52591e2f-a6bf-44a7-ba0d-98a496afc5e2",
+        "6647cba2-f244-4d17-ae5a-45505b9cc93f",
+        "8539bf9a-2a47-428b-96a1-c9780bf3fa03",
+        "9f0b2ebf-3ce8-418e-b9b7-d2d63abc792d",
+        "a349a0b3-a7b4-4770-8ea8-d267450244ff"
+      ]
+    },
+    {
+      "cluster_id": "health-0004",
+      "category": "health",
+      "size": 6,
+      "ad_ids": [
+        "a4e1c608-077c-4ead-9d4b-363820e569f8",
         "ab0ff202-3878-49e1-82b5-1013fd26effd",
         "b52501aa-21e4-4e0c-b439-79ef11ba3dcd",
         "bf17871d-c3c8-49b9-9661-8965f7c5c84f",
@@ -399,7 +946,7 @@
       ]
     },
     {
-      "cluster_id": "health-0003",
+      "cluster_id": "health-0005",
       "category": "health",
       "size": 8,
       "ad_ids": [
@@ -414,108 +961,220 @@
       ]
     },
     {
-      "cluster_id": "health-0004",
+      "cluster_id": "health-0006",
       "category": "health",
       "size": 8,
       "ad_ids": [
-        "15a3c5bd-c0e8-4591-86f5-a021df2004dd",
-        "25d6c521-95ab-4181-b476-92b54329b86f",
-        "309db707-16aa-4f5b-a7af-1d3ee882b718",
-        "3775c607-a559-4f90-ade3-07313d941ce7",
-        "706b678a-958b-49a1-84b6-d36a1b0b1537",
-        "94bf1b59-b3df-4a9e-8f9c-709b98d1563f",
-        "b5b70022-561c-4440-bd1e-3db2598aa273",
-        "fd27761d-a85b-4035-8e6b-507ced4f7ab1"
+        "1672f36e-f3a5-48a6-b283-6b583fa92ac1",
+        "34725d54-b704-4d83-b196-76656bcd63bc",
+        "720aa239-3e44-4b19-be21-f155daeae125",
+        "8550c98f-2e66-4621-ae89-21479e6354f0",
+        "8c597607-231d-4684-964a-a9a3f80ed502",
+        "c18974e4-0db0-4d84-b2cf-0d43ae46f7e2",
+        "dbef7a8e-89f9-45cc-9d6c-4a3591f60d8a",
+        "e475e77d-560b-42f6-ab02-bd19a3c67782"
       ]
     },
     {
-      "cluster_id": "health-0005",
+      "cluster_id": "health-0007",
       "category": "health",
-      "size": 6,
+      "size": 8,
+      "ad_ids": [
+        "193a8e5e-aa07-46cb-bd36-e38afcb008f3",
+        "5190047c-43f5-4a6e-b368-e8490806b748",
+        "57bb9008-9394-414b-92d2-43f7bbcda549",
+        "7b712c96-40ef-4494-9e15-7cc6f84770f8",
+        "95a6b3af-bfa8-4b51-8e51-2f3408534968",
+        "b2199c9d-4fde-4b60-8437-c15404b773fa",
+        "c1235fc0-1280-4b7d-8614-271cdc914e3e",
+        "f81a7e3a-b030-4a3b-a7f6-8346acee4595"
+      ]
+    },
+    {
+      "cluster_id": "health-0008",
+      "category": "health",
+      "size": 8,
       "ad_ids": [
         "28b3a266-cee6-46c3-8250-99fd37d46da2",
         "2d17ef0c-8bec-40bc-ac74-374f104f9a32",
+        "4a6dd58d-2dba-46a6-ad75-5c82c01754f9",
         "67bf5d20-d8d9-4036-9f46-fef4937b8887",
-        "8dbcfde0-05ce-481d-9602-d6c6e98ccedf",
+        "8aa8a56c-df59-4996-a15f-78d3857f4ca3",
+        "8ae97dc4-024b-4d8d-a4f6-5acfd9f68228",
         "d159361e-47ba-4c94-88fe-6683e23ad0be",
         "ee02d485-90f8-44d5-a153-0210cd76783c"
       ]
     },
     {
-      "cluster_id": "health-0006",
+      "cluster_id": "health-0009",
+      "category": "health",
+      "size": 7,
+      "ad_ids": [
+        "403d5003-6870-43cd-a0b9-7b1bda2047ec",
+        "4d692109-484d-4134-a825-7f6ae3572cfd",
+        "81e6bdb1-f859-43b3-a55b-0dc3170dd966",
+        "b463f125-450f-4f66-af6c-152d4747a83b",
+        "b89848cc-0269-4f49-81b3-7089eedf8834",
+        "ce24bd19-05c2-494e-aa01-e7833abb5522",
+        "dcdb0961-0a5c-4667-b425-28159c64a29f"
+      ]
+    },
+    {
+      "cluster_id": "health-0010",
+      "category": "health",
+      "size": 7,
+      "ad_ids": [
+        "afa9b538-7e11-4be5-9db9-b0e2ebbda51c",
+        "bb9cdd0c-dad6-4c7c-80aa-95b6aa4289bf",
+        "beee4543-8069-47c8-aa03-0d12e29439ad",
+        "bf3c322c-ada3-4ecf-8d3f-ae1be079d9c8",
+        "c0688827-97fe-4b0a-b7a0-dadf1c1f118c",
+        "e0541fd7-58ab-41bb-88fb-d3a70a580b50",
+        "ee18010a-c016-4615-ba92-3ed84191efa4"
+      ]
+    },
+    {
+      "cluster_id": "health-0011",
+      "category": "health",
+      "size": 6,
+      "ad_ids": [
+        "00591a0b-95c0-455d-9767-782e64de7a72",
+        "298cf857-837b-4bdc-8a16-cddf96dbf660",
+        "6f4edf6a-8747-4f72-bb12-852bb6e1e2e1",
+        "8799eb89-6e77-4be3-af81-e13f2fc20329",
+        "a0811b2b-688f-4bdc-bcb1-c730c446cc9c",
+        "bc7f35fa-e2a9-42ce-8779-9c69ef7d1ea5"
+      ]
+    },
+    {
+      "cluster_id": "health-0012",
+      "category": "health",
+      "size": 6,
+      "ad_ids": [
+        "01926c6d-51ba-4fa1-8fb3-158ca906b3a0",
+        "1b98a883-fbea-40cd-9e54-03d4735f4675",
+        "4f157a16-f086-40af-bc03-3c3a39150b6c",
+        "546ec870-6cf5-4c56-8c84-174365e92791",
+        "71624f95-5e81-4cad-b9db-6089601cd97d",
+        "bb7307b6-e5ce-4d5d-83c0-e5098f235d18"
+      ]
+    },
+    {
+      "cluster_id": "health-0013",
+      "category": "health",
+      "size": 5,
+      "ad_ids": [
+        "067ef068-3b72-4746-a8d7-a26601730928",
+        "881adbee-e2e5-449a-a220-56d3c860f638",
+        "a7905619-b8d9-4ec2-82c4-115cf7e8f5d0",
+        "b1cbe1b1-192b-4be6-923d-47196691301d",
+        "d46e05ff-fbaa-477a-9f7f-91355efa643c"
+      ]
+    },
+    {
+      "cluster_id": "health-0014",
       "category": "health",
       "size": 5,
       "ad_ids": [
         "0d83f4e4-8ca2-4be6-9338-770b8a1cba61",
-        "38586f23-c99b-4652-8194-151bfc57be92",
+        "10df1ca9-fea1-4e13-b63f-2bc54424c7ce",
         "42faec5c-be65-4c69-a4e5-da4811dfbb19",
         "bee48639-baed-4a24-bbbb-5f803b844af4",
         "d3d651e4-e2cb-4e92-b5e5-df5c560bfabf"
       ]
     },
     {
-      "cluster_id": "health-0007",
+      "cluster_id": "health-0015",
+      "category": "health",
+      "size": 5,
+      "ad_ids": [
+        "11dc8713-2605-47f0-84d4-42a244dc9aec",
+        "50075053-62ee-4ec0-9e8e-4af9b557f6b9",
+        "61780b08-d032-42f6-b0f6-af76f2f07bd4",
+        "8dbcfde0-05ce-481d-9602-d6c6e98ccedf",
+        "ea6c7446-c3ae-4af7-9f8c-7784dac17b40"
+      ]
+    },
+    {
+      "cluster_id": "health-0016",
+      "category": "health",
+      "size": 5,
+      "ad_ids": [
+        "14a76184-59ec-41e6-8bae-837d54bf6dda",
+        "1e0d0841-afb6-4f70-927e-d709849ba8c7",
+        "3ce8c925-4adc-4648-b38a-9dc9c6a7a541",
+        "6669e6cb-7492-40f0-86c0-c416b312572a",
+        "aefcf2db-efdb-477b-be8f-4ddccb78d7d0"
+      ]
+    },
+    {
+      "cluster_id": "health-0017",
+      "category": "health",
+      "size": 5,
+      "ad_ids": [
+        "1b8cc6cf-d9ef-408c-9e58-9ad218e4ccaf",
+        "33e7f729-ec56-4e96-801f-28961b16f740",
+        "ae39738e-68a6-45d0-a130-885fb796155d",
+        "bf41ec77-a64e-47a3-95d4-5990bc6bfad2",
+        "dd55ae26-e88f-41f3-86dc-1e8e1b282fb0"
+      ]
+    },
+    {
+      "cluster_id": "health-0018",
       "category": "health",
       "size": 5,
       "ad_ids": [
         "2421f4f0-96e2-4e07-8cb5-3cedd171a3bb",
+        "4087e188-c6a9-4603-a10e-3ec4a0e1ead2",
         "4f36a984-74ee-4226-9590-652bf9438bdf",
-        "cb5d4166-781e-4bee-8c38-9cc33fda5dfb",
         "d314bda4-7d46-402a-bc06-1fb7dc893699",
         "e0b95e88-a3ee-4476-8605-494fb61be946"
       ]
     },
     {
-      "cluster_id": "health-0008",
+      "cluster_id": "health-0019",
       "category": "health",
       "size": 5,
       "ad_ids": [
-        "34725d54-b704-4d83-b196-76656bcd63bc",
-        "720aa239-3e44-4b19-be21-f155daeae125",
-        "8c597607-231d-4684-964a-a9a3f80ed502",
-        "dbef7a8e-89f9-45cc-9d6c-4a3591f60d8a",
-        "e475e77d-560b-42f6-ab02-bd19a3c67782"
-      ]
-    },
-    {
-      "cluster_id": "health-0009",
-      "category": "health",
-      "size": 5,
-      "ad_ids": [
-        "41d9d6a6-3c22-46bc-8342-6cda659c86bc",
-        "b2199c9d-4fde-4b60-8437-c15404b773fa",
-        "c1235fc0-1280-4b7d-8614-271cdc914e3e",
-        "ca971ccc-5d7f-4c05-a772-7aacf6da6c16",
-        "f81a7e3a-b030-4a3b-a7f6-8346acee4595"
-      ]
-    },
-    {
-      "cluster_id": "health-0010",
-      "category": "health",
-      "size": 5,
-      "ad_ids": [
-        "468b1596-d142-4702-b18d-a0d919b68514",
-        "50075053-62ee-4ec0-9e8e-4af9b557f6b9",
-        "91f4dcca-79ac-49d6-90b5-521cbb8b32f9",
-        "e46c2bbe-0496-4d4a-ab70-27b9b930f686",
-        "ea6c7446-c3ae-4af7-9f8c-7784dac17b40"
+        "77e228de-2e98-4522-8a15-9aa32d2b3a83",
+        "a1f5c09f-b400-4dc4-bc2a-931d0c5aa667",
+        "bec3fe36-6d1e-4b01-83d7-8534c64444ca",
+        "cd203082-696b-4c85-a0f0-ad5495eae2bb",
+        "e3b288f7-d7c7-410c-9d74-9a56efa1e171"
       ]
     },
     {
       "cluster_id": "home-0001",
       "category": "home",
-      "size": 6,
+      "size": 9,
       "ad_ids": [
-        "114362a7-d99a-4433-89a0-3954c162e68e",
-        "3f8a08e5-7d16-43d9-a988-c0c4746363c6",
-        "678b4e9a-c749-4f78-aeb1-362a47ce6e40",
-        "ae2e743e-ab55-44dd-a729-5e6b4db572f8",
-        "b2025385-f26f-44e3-bf75-664d6d0c4704",
-        "c1bdbb7f-a661-4953-9dc4-122930650a28"
+        "346a14d0-5756-4024-bb39-dec4b503c1da",
+        "64b141dd-1ebe-471f-8106-08d53b5bbd44",
+        "80eae1ab-80a5-4d86-b78b-8c75ed97d35e",
+        "93e68c84-f785-43a7-8d3a-0c5be07c8e0d",
+        "9ebb5f26-805f-42d6-88c4-fdf9b5b84f52",
+        "cd87a586-e1f2-43ee-8af5-dfc6382ceb19",
+        "da788925-71b4-40f7-93a0-526c20b5d07a",
+        "e96074d8-8278-450a-916c-e4cf236e19c6",
+        "ed48e41c-34bc-4d9a-ab87-36b01633a899"
       ]
     },
     {
       "cluster_id": "home-0002",
+      "category": "home",
+      "size": 7,
+      "ad_ids": [
+        "0aa26c1f-7c20-4412-95f8-797584a15c51",
+        "114362a7-d99a-4433-89a0-3954c162e68e",
+        "3f8a08e5-7d16-43d9-a988-c0c4746363c6",
+        "54569d8e-e62a-4b07-95c4-f8303d04347f",
+        "678b4e9a-c749-4f78-aeb1-362a47ce6e40",
+        "ae2e743e-ab55-44dd-a729-5e6b4db572f8",
+        "c1bdbb7f-a661-4953-9dc4-122930650a28"
+      ]
+    },
+    {
+      "cluster_id": "home-0003",
       "category": "home",
       "size": 6,
       "ad_ids": [
@@ -528,16 +1187,28 @@
       ]
     },
     {
+      "cluster_id": "home-0004",
+      "category": "home",
+      "size": 5,
+      "ad_ids": [
+        "12a9e517-a47d-4c0a-8b12-8883deffb33e",
+        "2d6f0333-bd1d-4518-8f89-ff35e9706cad",
+        "72544d4c-fcf3-4e60-9f60-699a2d44c021",
+        "d47fdfba-40ce-45fc-acb8-45f81e253014",
+        "f7fe26cf-23d6-445b-a241-1182cd5752e0"
+      ]
+    },
+    {
       "cluster_id": "tech-0001",
       "category": "tech",
       "size": 6,
       "ad_ids": [
         "0cc057f5-3705-45f3-8e6f-16db8a80496f",
+        "0f9a6311-0ad5-4b63-8ccc-f47d57ce0c83",
         "18d9af62-b99b-4449-8411-9bbcecc7b689",
         "2145b7e4-0c86-4c46-a5ed-53f88b5041d6",
-        "23fe1d13-cfae-40bf-ba55-96417f3ab219",
-        "2f696198-f2cb-4efb-8df0-1b46b61533cd",
-        "469d2d4c-b712-4435-b2fd-d50267e4ed1c"
+        "23e4ce04-ae44-42b2-acad-afb430c9f345",
+        "23fe1d13-cfae-40bf-ba55-96417f3ab219"
       ]
     },
     {
@@ -545,12 +1216,12 @@
       "category": "tech",
       "size": 6,
       "ad_ids": [
-        "502aae81-6f1e-4de3-bfbb-449d617f8d94",
+        "2436197d-4664-45cd-9372-da09f69287e4",
+        "2f696198-f2cb-4efb-8df0-1b46b61533cd",
+        "469d2d4c-b712-4435-b2fd-d50267e4ed1c",
         "59146dcc-52a9-4bc1-a1a3-eb05ca7f5755",
         "6e51390c-480b-4113-9cea-ff9ca650108b",
-        "6f6b8d37-787a-402d-9679-e72be5be9a8c",
-        "7444c358-8a78-4fbb-a071-61b582d55029",
-        "74a8931a-167c-4e76-b41d-1629895c87ff"
+        "6f6b8d37-787a-402d-9679-e72be5be9a8c"
       ]
     },
     {
@@ -558,12 +1229,12 @@
       "category": "tech",
       "size": 6,
       "ad_ids": [
+        "7444c358-8a78-4fbb-a071-61b582d55029",
         "7ffc0edf-0648-49fb-ba94-6a3fd616cad8",
         "8a947618-c543-4c58-b803-6da34d719227",
         "8af86e8c-a904-4642-8327-202d1c18d304",
         "8fb2c6e0-7207-44fc-8e5b-d675166a798c",
-        "98db8304-18e5-48ef-ad5f-f06507c3bfbc",
-        "a9f22c9e-c690-46c2-8f77-5e4a622939ce"
+        "98db8304-18e5-48ef-ad5f-f06507c3bfbc"
       ]
     },
     {
@@ -571,10 +1242,10 @@
       "category": "tech",
       "size": 6,
       "ad_ids": [
+        "9ecf273b-717d-49bb-af41-22a312206515",
+        "a9f22c9e-c690-46c2-8f77-5e4a622939ce",
         "a9f6a4c9-c85c-4b21-99f9-4cfb2ef8dc85",
         "adbb4f24-8e89-44a9-bfcf-44e57ed524a3",
-        "bc405e31-2858-4e35-93a0-4985a1e92837",
-        "bf864d4a-f1b9-4ced-80fb-7b55c6b0f6bd",
         "c1c5e9d0-472e-49bc-acd1-20e60dac0e04",
         "c1f0e535-87dd-40b2-ac94-5110ecad3586"
       ]
@@ -596,15 +1267,14 @@
     {
       "cluster_id": "tech-0006",
       "category": "tech",
-      "size": 7,
+      "size": 6,
       "ad_ids": [
         "1f74b3a9-3253-4c34-a917-744009c0dd62",
         "216e26d7-6120-458e-906c-0880e91f9111",
         "2670ee28-f21c-4012-a2cb-ee3eea96ad2f",
-        "5525412f-3427-4e10-9608-91e336b0a520",
-        "8289f9dc-b6ca-4aee-bdaf-5c46a55eed41",
-        "85362ce5-ab37-4ddc-87d1-20cdccae7b0f",
-        "86223fcb-cc32-4457-b026-1e83fe5aaf20"
+        "35536052-4c63-475b-851b-e212698177b0",
+        "36572482-6c2e-4756-8a93-f2920954c1f2",
+        "48240c8d-3511-4aa7-960e-9a2acb41fe49"
       ]
     },
     {
@@ -612,12 +1282,12 @@
       "category": "tech",
       "size": 6,
       "ad_ids": [
+        "5525412f-3427-4e10-9608-91e336b0a520",
+        "66c0be99-6527-48e1-82e2-a03630d95106",
+        "8289f9dc-b6ca-4aee-bdaf-5c46a55eed41",
+        "85362ce5-ab37-4ddc-87d1-20cdccae7b0f",
         "86d3a1ff-b704-485f-91e3-9291e63d6547",
-        "955166dc-ace4-4d96-afb4-7844d0a34f26",
-        "96a84677-7b89-4ce2-8644-4b370b723592",
-        "a2b08f5c-db32-46c5-b4dd-4a0356e2df6c",
-        "a3be2df7-16b8-4717-8af2-a83c45a0bf94",
-        "b3892949-20f5-4e32-b93e-23c4d36aa2c9"
+        "955166dc-ace4-4d96-afb4-7844d0a34f26"
       ]
     },
     {
@@ -625,12 +1295,12 @@
       "category": "tech",
       "size": 7,
       "ad_ids": [
+        "96a84677-7b89-4ce2-8644-4b370b723592",
         "b80a3309-4e1c-49be-81d5-8cd7f3fe9ac1",
         "b83b15f2-33b3-4546-ac92-e740f9566241",
         "ceb7f47f-35d5-429c-b10c-e4650ff44a68",
         "cf58e42f-df88-493d-9536-3a1ec8c1da24",
         "efb2bd73-135f-4cc4-907c-617f7a67eac1",
-        "f7c93ec6-c1e9-4dae-b43f-4e4ac94a6160",
         "fb844242-e35d-4eee-b175-423b7f9a54aa"
       ]
     },
@@ -641,10 +1311,10 @@
       "ad_ids": [
         "05ddbb7c-5731-4ef4-9883-06900de40827",
         "14a370b8-b4b2-427d-b49a-ba76dbb2db20",
+        "16e8ec5f-9675-424a-ad05-c4e05a4054a6",
         "1bee393b-92c4-45fd-913b-6c39deac5772",
-        "2629f567-58b3-4de2-a0fa-eef917289e06",
-        "41802dfe-58ac-4a89-963e-7a3706953bac",
-        "49986be2-e3ca-447a-9faa-2d3958b96d39"
+        "22aed1c5-c19e-4a31-84a5-c3be1526d165",
+        "29ae1979-5789-4c98-b026-14783feb1330"
       ]
     },
     {
@@ -652,12 +1322,12 @@
       "category": "tech",
       "size": 6,
       "ad_ids": [
+        "41802dfe-58ac-4a89-963e-7a3706953bac",
+        "49986be2-e3ca-447a-9faa-2d3958b96d39",
         "58534063-18ef-4542-a14f-ad397ed7b45a",
         "67348ee4-3156-4636-8012-7ab89cae4640",
         "7382881c-d11c-48e4-b8be-c9aec9fabc27",
-        "7525e5a9-e73e-4807-a3f2-a0d36897a3e6",
-        "a2d8d4ab-70db-4f31-bc33-248f79b0ac92",
-        "a5041905-2423-4f3f-93db-03c21fbeeff4"
+        "7525e5a9-e73e-4807-a3f2-a0d36897a3e6"
       ]
     },
     {
@@ -665,9 +1335,9 @@
       "category": "tech",
       "size": 5,
       "ad_ids": [
-        "adbf4828-d85f-4a2e-85a2-dcec8fb3770e",
-        "b5438a69-269a-4608-b1cf-a7ead7cd824a",
-        "c061e03d-bf80-428a-91a7-1e2294ab26f5",
+        "91c2a55e-b185-4bbc-b78b-877bd4e81928",
+        "9d7969e8-fd4c-4259-a0e9-3ffe2cb5c1c4",
+        "a2d8d4ab-70db-4f31-bc33-248f79b0ac92",
         "d4681eff-73b8-491d-ae00-e929a54d621e",
         "d4f5b20c-cce0-448a-a9b7-66c8bbf7f78e"
       ]
@@ -700,7 +1370,7 @@
     {
       "cluster_id": "tech-0014",
       "category": "tech",
-      "size": 8,
+      "size": 9,
       "ad_ids": [
         "02a9129b-4da3-4c62-818d-839bee99c976",
         "3ec993ad-42ec-4aa2-b508-c64e5e6fb8e5",
@@ -709,6 +1379,7 @@
         "5cc429cb-aab4-493a-9ffc-479101ba999d",
         "998d870e-ca84-40ee-8006-6bbd23089120",
         "aeb5ddcc-c956-4fd2-8391-402dd2213831",
+        "b3ba1d28-5e65-4d42-bd00-40234ce17c36",
         "ef98b3f9-da80-4cdb-9ef7-f5b4b374237e"
       ]
     },
@@ -744,14 +1415,15 @@
     {
       "cluster_id": "tech-0017",
       "category": "tech",
-      "size": 6,
+      "size": 7,
       "ad_ids": [
-        "005c0ca1-809d-4ec3-835f-a68f6ed6d7e9",
-        "144efd43-7076-43d3-adc5-7c934d240582",
-        "26ad5e58-dea1-46bd-85df-dc59895322a5",
-        "8e550fa6-990e-4ab9-8a0e-1bfc8180a40a",
-        "b873152b-7a02-4775-a288-d9d3d04a3e54",
-        "bc22f0d4-2bb2-4057-8e2f-3c682c9ae2ac"
+        "1104f6dc-0c3d-4dc9-b5fb-e006a4de2509",
+        "3c06c89f-479d-423e-8688-ac669274f551",
+        "454a0612-bbcd-419c-8a4c-0c29e2aa3dc7",
+        "471cae57-2fc6-4f8d-97ee-bd9eee6acb9d",
+        "92b424bb-e44e-4967-b3b2-6c33ea8d261c",
+        "a0d41958-87e0-4d90-a262-e469b0fa530f",
+        "c996e0fb-3fa7-43ce-af9b-c48dd5620142"
       ]
     },
     {
@@ -759,12 +1431,12 @@
       "category": "tech",
       "size": 6,
       "ad_ids": [
-        "1104f6dc-0c3d-4dc9-b5fb-e006a4de2509",
-        "471cae57-2fc6-4f8d-97ee-bd9eee6acb9d",
-        "a0d41958-87e0-4d90-a262-e469b0fa530f",
-        "c996e0fb-3fa7-43ce-af9b-c48dd5620142",
-        "daf427f0-77d1-4dd1-a2c8-61d694f546df",
-        "f0ada02a-598f-4bb6-ad0a-92ff35f56853"
+        "005c0ca1-809d-4ec3-835f-a68f6ed6d7e9",
+        "075067b8-6822-4efa-9725-631842294b7c",
+        "144efd43-7076-43d3-adc5-7c934d240582",
+        "26ad5e58-dea1-46bd-85df-dc59895322a5",
+        "b873152b-7a02-4775-a288-d9d3d04a3e54",
+        "bc22f0d4-2bb2-4057-8e2f-3c682c9ae2ac"
       ]
     },
     {
@@ -860,7 +1532,7 @@
         "1afcaa7d-90d8-49fe-b8c5-a3e017a97563",
         "1de81ca7-da4f-4ea3-8c10-d1fce1dc2e34",
         "86492a3a-11da-44c9-b6c8-64bd817c64ee",
-        "be6bc9a0-8b38-4ca8-a958-473c3dd2bb8f"
+        "96dec95d-6ba7-4ba1-bc41-6aacb7f1de50"
       ]
     }
   ]
