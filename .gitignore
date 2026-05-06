@@ -24,6 +24,8 @@ pip-wheel-metadata/
 
 # pytest
 .pytest_cache/
+backend/.pytest_tmp/
+backend/test_tmp_*/
 htmlcov/
 .coverage
 .coverage.*

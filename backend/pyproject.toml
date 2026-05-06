@@ -26,6 +26,7 @@ dev = [
 asyncio_mode = "auto"
 testpaths = ["tests"]
 pythonpath = ["."]
+addopts = "--basetemp=.pytest_tmp"
 
 [tool.mypy]
 strict = true
