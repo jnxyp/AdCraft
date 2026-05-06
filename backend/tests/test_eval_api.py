@@ -33,10 +33,10 @@ async def test_next_returns_unresolved_task_and_progress(tmp_path: Path) -> None
     assert payload["task_id"] == "task_2"
     assert payload["pair_scope"] == "same_cluster"
     assert payload["cluster_id"] == "cluster_task_2"
-    assert payload["progress"] == {"session_done": 1, "resolved": 0, "total": 2}
+    assert payload["progress"] == {"session_done": 1, "responses": 1, "resolved": 0, "total": 2}
     assert payload["ads"] == [
-        {"slot": "a", "ad_id": "task_2_ad_a", "body": "Body A", "cluster_id": "cluster_task_2"},
-        {"slot": "b", "ad_id": "task_2_ad_b", "body": "Body B", "cluster_id": "cluster_task_2"},
+        {"slot": "a", "ad_id": "task_2_ad_a", "body": "Body A", "sequence": ["AH"], "seq_len": 1, "length_bucket": "xs", "cluster_id": "cluster_task_2"},
+        {"slot": "b", "ad_id": "task_2_ad_b", "body": "Body B", "sequence": ["CTA"], "seq_len": 1, "length_bucket": "xs", "cluster_id": "cluster_task_2"},
     ]
 
 

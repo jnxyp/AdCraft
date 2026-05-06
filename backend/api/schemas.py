@@ -12,11 +12,15 @@ class EvalAd(BaseModel):
     slot: str
     ad_id: str
     body: str
+    sequence: list[str]
+    seq_len: int
+    length_bucket: Literal["xs", "s", "m", "l", "xl"]
     cluster_id: str | None = None
 
 
 class EvalProgress(BaseModel):
     session_done: int
+    responses: int
     resolved: int
     total: int
 

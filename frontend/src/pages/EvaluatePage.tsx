@@ -14,8 +14,10 @@ export function EvaluatePage({ showDetails }: { showDetails: boolean }) {
   const { nextTask, vote, shufflePair, isSubmitting, submitError } = useEval()
   const task = nextTask.data
   const progress = task?.progress
-  const [plusOneVisible, setPlusOneVisible] = useState(false)
+  const [sessionPlusOneVisible, setSessionPlusOneVisible] = useState(false)
+  const [globalPlusOneVisible, setGlobalPlusOneVisible] = useState(false)
   const prevSessionDoneRef = useRef<number | null>(null)
+  const prevResponsesRef = useRef<number | null>(null)
   const resolvedPercent = progress && progress.total > 0
     ? Math.min(100, Math.round((progress.resolved / progress.total) * 100))
     : 0
@@ -28,9 +30,9 @@ export function EvaluatePage({ showDetails }: { showDetails: boolean }) {
     }
     const prev = prevSessionDoneRef.current
     if (prev !== null && current > prev) {
-      setPlusOneVisible(false)
-      const raf = window.requestAnimationFrame(() => setPlusOneVisible(true))
-      const timer = window.setTimeout(() => setPlusOneVisible(false), 1100)
+      setSessionPlusOneVisible(false)
+      const raf = window.requestAnimationFrame(() => setSessionPlusOneVisible(true))
+      const timer = window.setTimeout(() => setSessionPlusOneVisible(false), 1100)
       prevSessionDoneRef.current = current
       return () => {
         window.cancelAnimationFrame(raf)
@@ -40,20 +42,41 @@ export function EvaluatePage({ showDetails }: { showDetails: boolean }) {
     prevSessionDoneRef.current = current
   }, [progress?.session_done])
 
+  useEffect(() => {
+    const current = progress?.responses
+    if (typeof current !== 'number') {
+      return
+    }
+    const prev = prevResponsesRef.current
+    if (prev !== null && current > prev) {
+      setGlobalPlusOneVisible(false)
+      const raf = window.requestAnimationFrame(() => setGlobalPlusOneVisible(true))
+      const timer = window.setTimeout(() => setGlobalPlusOneVisible(false), 1100)
+      prevResponsesRef.current = current
+      return () => {
+        window.cancelAnimationFrame(raf)
+        window.clearTimeout(timer)
+      }
+    }
+    prevResponsesRef.current = current
+  }, [progress?.responses])
+
   return (
     <div className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] gap-[10px]">
         <header className="shrink-0 rounded-lg border border-il-blue bg-il-blue px-5 py-5 text-white">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <h1 className="text-4xl font-bold tracking-[0.04em]">Global Evaluation Progress</h1>
-            <div className="relative flex items-center justify-end">
-              <span className="rounded border border-white/20 px-4 py-1.5 text-xl font-semibold text-white">
-                {progress ? `Your Contributions: ${progress.session_done}` : 'Preparing'}
-              </span>
-              {plusOneVisible ? (
-                <span className="plus-one-float pointer-events-none absolute -top-5 right-2 text-sm font-bold text-il-orange">
-                  +1
-                </span>
-              ) : null}
+            <div className="flex flex-wrap items-center justify-end gap-2">
+              <ContributionBadge
+                label="Your Contributions"
+                value={progress?.session_done}
+                plusOneVisible={sessionPlusOneVisible}
+              />
+              <ContributionBadge
+                label="Global Contributions"
+                value={progress?.responses}
+                plusOneVisible={globalPlusOneVisible}
+              />
             </div>
           </div>
           <div className="mt-5 flex items-center justify-between gap-4 text-sm text-white/80">
@@ -146,6 +169,29 @@ export function EvaluatePage({ showDetails }: { showDetails: boolean }) {
           ) : null}
         </section>
       </div>
+  )
+}
+
+function ContributionBadge({
+  label,
+  value,
+  plusOneVisible,
+}: {
+  label: string
+  value: number | undefined
+  plusOneVisible: boolean
+}) {
+  return (
+    <div className="relative flex items-center justify-end">
+      <span className="rounded border border-white/20 px-3 py-1 text-base font-semibold text-white">
+        {typeof value === 'number' ? `${label}: ${value}` : 'Preparing'}
+      </span>
+      {plusOneVisible ? (
+        <span className="plus-one-float pointer-events-none absolute -top-5 right-2 text-sm font-bold text-il-orange">
+          +1
+        </span>
+      ) : null}
+    </div>
   )
 }
 

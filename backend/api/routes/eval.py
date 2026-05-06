@@ -164,6 +164,7 @@ async def _load_progress(conn: aiosqlite.Connection, session_id: str) -> EvalPro
             "SELECT COUNT(*) FROM eval_responses WHERE session_id = ?",
             (session_id,),
         ),
+        responses=await _count(conn, "SELECT COUNT(*) FROM eval_responses"),
         resolved=await _count(conn, "SELECT COUNT(*) FROM resolved_eval_tasks"),
         total=await _count(conn, "SELECT COUNT(*) FROM eval_tasks"),
     )
@@ -247,10 +248,34 @@ def _public_ads(raw_ads: str) -> list[EvalAd]:
                 slot=str(item["slot"]),
                 ad_id=str(item["ad_id"]),
                 body=str(item["body"]),
+                sequence=[str(part) for part in item["sequence"]] if isinstance(item.get("sequence"), list) else [],
+                seq_len=_sequence_length(item),
+                length_bucket=_length_bucket(_sequence_length(item)),
                 cluster_id=str(item["cluster_id"]) if item.get("cluster_id") is not None else None,
             )
         )
     return ads
+
+
+def _sequence_length(item: dict[str, object]) -> int:
+    sequence = item.get("sequence")
+    if not isinstance(sequence, list):
+        raise ValueError("eval task ad sequence must be a JSON array")
+    return len(sequence)
+
+
+def _length_bucket(seq_len: int) -> Literal["xs", "s", "m", "l", "xl"]:
+    if 1 <= seq_len <= 2:
+        return "xs"
+    if seq_len == 3:
+        return "s"
+    if 4 <= seq_len <= 5:
+        return "m"
+    if 6 <= seq_len <= 8:
+        return "l"
+    if 9 <= seq_len <= 15:
+        return "xl"
+    raise ValueError(f"unsupported eval task sequence length: {seq_len}")
 
 
 def _winner_slot(value: str) -> WinnerSlot:

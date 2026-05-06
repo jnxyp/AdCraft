@@ -4,11 +4,15 @@ export interface EvalAd {
   slot: string
   ad_id: string
   body: string
+  sequence: string[]
+  seq_len: number
+  length_bucket: 'xs' | 's' | 'm' | 'l' | 'xl'
   cluster_id: string | null
 }
 
 export interface EvalProgress {
   session_done: number
+  responses: number
   resolved: number
   total: number
 }
