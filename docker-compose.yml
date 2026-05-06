@@ -4,6 +4,7 @@ services:
     build:
       context: .
       dockerfile: backend/Dockerfile
+    restart: unless-stopped
     env_file:
       - .env
     environment:
@@ -14,13 +15,33 @@ services:
       - ./pipeline/data:/app/pipeline_data:ro
     ports:
       - "8000:8000"
+    cpus: 1.0
+    mem_limit: 1200m
+    mem_reservation: 768m
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/docs', timeout=3)"]
+      interval: 20s
+      timeout: 5s
+      retries: 5
+      start_period: 25s
 
   adcraft-frontend:
     container_name: adcraft-frontend
     build:
       context: .
       dockerfile: frontend/Dockerfile
+    restart: unless-stopped
     depends_on:
-      - adcraft-backend
+      adcraft-backend:
+        condition: service_healthy
     ports:
       - "5173:80"
+    cpus: 0.5
+    mem_limit: 256m
+    mem_reservation: 128m
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1/"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
