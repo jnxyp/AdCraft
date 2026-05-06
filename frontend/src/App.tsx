@@ -4,6 +4,8 @@ import { GeneratePage } from './pages/GeneratePage'
 
 const SESSION_ID_KEY = 'adcraft_session_id'
 const EXPLAIN_VISIBILITY_KEY_PREFIX = 'adcraft_explain_visibility_'
+const GIT_COMMIT = import.meta.env.VITE_GIT_COMMIT?.trim() || 'unknown'
+const DISPLAY_GIT_COMMIT = GIT_COMMIT === 'unknown' ? 'Build.unknown' : `Build.${GIT_COMMIT.slice(0, 8)}`
 
 function getOrCreateSessionId(): string {
   const existing = window.localStorage.getItem(SESSION_ID_KEY)
@@ -91,18 +93,26 @@ function TopNav({
 }) {
   return (
     <nav className="flex h-full select-none items-center justify-between rounded-lg border border-il-storm-20 bg-white px-4 shadow-sm">
-      <a
-        href="/evaluate"
-        onClick={(event) => {
-          event.preventDefault()
-          onNavigate('evaluate')
-        }}
-        className="inline-flex items-center leading-none tracking-wide"
-        style={{ fontFamily: '"Orbitron", sans-serif', fontSize: '2.25rem', fontWeight: 700 }}
-      >
-        <span className="text-il-blue">Ad</span>
-        <span className="text-il-altgeld">Craft</span>
-      </a>
+      <div className="inline-flex min-w-0 items-baseline gap-3">
+        <a
+          href="/evaluate"
+          onClick={(event) => {
+            event.preventDefault()
+            onNavigate('evaluate')
+          }}
+          className="inline-flex items-center leading-none tracking-wide"
+          style={{ fontFamily: '"Orbitron", sans-serif', fontSize: '2.25rem', fontWeight: 700 }}
+        >
+          <span className="text-il-blue">Ad</span>
+          <span className="text-il-altgeld">Craft</span>
+        </a>
+        <span
+          className="hidden font-mono text-xs font-semibold text-il-storm-60 sm:inline-flex"
+          title={`Git commit: ${GIT_COMMIT}`}
+        >
+          {DISPLAY_GIT_COMMIT}
+        </span>
+      </div>
       <div className="inline-flex items-center gap-2">
         <button
           type="button"
