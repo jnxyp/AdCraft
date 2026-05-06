@@ -106,6 +106,30 @@ async def test_next_supports_exclude_task_id_and_randomize(tmp_path: Path) -> No
     assert payload["task_id"] == "task_2"
 
 
+@pytest.mark.asyncio
+async def test_next_can_use_priority_order_when_randomize_false(tmp_path: Path) -> None:
+    db_path = tmp_path / "test.db"
+    await init_schema(db_path)
+    await _insert_eval_task(db_path, "task_1")
+    await _insert_eval_task(db_path, "task_2")
+    async with connect(db_path) as conn:
+        await conn.execute(
+            "INSERT INTO eval_responses (id, task_id, session_id, winner_slot, created_at) "
+            "VALUES (?, ?, ?, ?, datetime('now'))",
+            ("resp_1", "task_2", "other_session", "a"),
+        )
+        await conn.commit()
+    client = _client(db_path)
+
+    response = client.get(
+        "/api/eval/next",
+        params={"session_id": "session_x", "randomize": "false"},
+    )
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["task_id"] == "task_2"
+
+
 def _client(db_path: Path, max_votes: int = 5) -> TestClient:
     app = FastAPI()
     app.include_router(create_eval_router(db_path, max_votes=max_votes))

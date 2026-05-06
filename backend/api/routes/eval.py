@@ -29,7 +29,7 @@ def create_eval_router(db_path: Path, max_votes: int = 5) -> APIRouter:
     async def next_eval_task(
         session_id: str = Query(min_length=1),
         exclude_task_id: str | None = Query(default=None),
-        randomize: bool = Query(default=False),
+        randomize: bool = Query(default=True),
     ) -> EvalNextResponse:
         async with connect(db_path) as conn:
             progress = await _load_progress(conn, session_id)

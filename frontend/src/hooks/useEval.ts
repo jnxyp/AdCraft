@@ -29,7 +29,7 @@ async function fetchNextTask(
     params: {
       session_id: sessionId,
       exclude_task_id: options?.excludeTaskId,
-      randomize: options?.randomize ?? false,
+      randomize: options?.randomize ?? true,
     },
   })
   return response.data
@@ -46,7 +46,7 @@ export function useEval() {
 
   const nextTask = useQuery({
     queryKey: ['eval-next', sessionId],
-    queryFn: () => fetchNextTask(sessionId),
+    queryFn: () => fetchNextTask(sessionId, { randomize: true }),
   })
 
   const submit = useMutation({
