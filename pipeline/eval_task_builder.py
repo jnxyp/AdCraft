@@ -22,8 +22,8 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(mess
 Slot = Literal["a", "b"]
 RANDOM_SEED: int = 20260501
 MAX_AD_USES_PER_CLUSTER: int = 3
-CROSS_CLUSTER_RATIO: float = 0.20
-MAX_CROSS_CLUSTER_AD_USES: int = 1
+TARGET_TOTAL_TASKS: int = 1000
+MAX_CROSS_CLUSTER_AD_USES: int = 3
 
 
 class Ad(TypedDict):
@@ -67,6 +67,8 @@ class Candidate(TypedDict):
     sequence_key: str
     template_id: str
     template_count: int
+    seq_len: int
+    length_bucket: str
     category: str
     cluster_id: str
 
@@ -117,6 +119,20 @@ def task_id(ads: list[TaskAd]) -> str:
     return f"eval_{digest}"
 
 
+def length_bucket(seq_len: int) -> str | None:
+    if 1 <= seq_len <= 2:
+        return "xs"
+    if seq_len == 3:
+        return "s"
+    if 4 <= seq_len <= 5:
+        return "m"
+    if 6 <= seq_len <= 8:
+        return "l"
+    if 9 <= seq_len <= 15:
+        return "xl"
+    return None
+
+
 def candidates_for_cluster(
     cluster: Cluster,
     ads_by_id: dict[str, Ad],
@@ -131,6 +147,9 @@ def candidates_for_cluster(
         template = templates_by_sequence.get(seq_key)
         if template is None:
             continue
+        bucket = length_bucket(template["seq_len"])
+        if bucket is None:
+            continue
         candidates.append({
             "ad_id": ad["ad_id"],
             "body": ad["body"],
@@ -138,6 +157,8 @@ def candidates_for_cluster(
             "sequence_key": seq_key,
             "template_id": template["id"],
             "template_count": template["count"],
+            "seq_len": template["seq_len"],
+            "length_bucket": bucket,
             "category": cluster["category"],
             "cluster_id": cluster["cluster_id"],
         })
@@ -158,6 +179,9 @@ def choose_pair(candidates: list[Candidate], ad_use_counts: dict[str, int], used
     for combo in combinations(available, 2):
         sequence_keys = {candidate["sequence_key"] for candidate in combo}
         if len(sequence_keys) != 2:
+            continue
+        buckets = {candidate["length_bucket"] for candidate in combo}
+        if len(buckets) != 1:
             continue
         ad_ids = tuple(candidate["ad_id"] for candidate in combo)
         pair_key = tuple(sorted(ad_ids))
@@ -203,12 +227,16 @@ def pair_key_for(candidates: list[Candidate]) -> tuple[str, str]:
     return tuple(sorted(candidate["ad_id"] for candidate in candidates))
 
 
-def grouped_candidates_by_category(clusters: list[Cluster], ads_by_id: dict[str, Ad], templates_by_sequence: dict[str, Template]) -> dict[str, list[Candidate]]:
-    grouped: dict[str, list[Candidate]] = {}
+def grouped_candidates_by_category_and_bucket(
+    clusters: list[Cluster],
+    ads_by_id: dict[str, Ad],
+    templates_by_sequence: dict[str, Template],
+) -> dict[tuple[str, str], list[Candidate]]:
+    grouped: dict[tuple[str, str], list[Candidate]] = {}
     for cluster in clusters:
-        grouped.setdefault(cluster["category"], []).extend(
-            candidates_for_cluster(cluster, ads_by_id, templates_by_sequence)
-        )
+        for candidate in candidates_for_cluster(cluster, ads_by_id, templates_by_sequence):
+            key = (cluster["category"], candidate["length_bucket"])
+            grouped.setdefault(key, []).append(candidate)
     return grouped
 
 
@@ -226,6 +254,8 @@ def choose_cross_cluster_pair(
     for combo in combinations(available, 2):
         left, right = combo
         if left["cluster_id"] == right["cluster_id"]:
+            continue
+        if left["length_bucket"] != right["length_bucket"]:
             continue
         if left["sequence_key"] == right["sequence_key"] or left["template_id"] == right["template_id"]:
             continue
@@ -268,11 +298,41 @@ def build_eval_tasks(
             skipped += 1
 
     same_cluster_count = len(tasks)
-    cross_target = round(same_cluster_count * CROSS_CLUSTER_RATIO)
+    cross_target = max(0, TARGET_TOTAL_TASKS - same_cluster_count)
     cross_use_counts: dict[str, int] = {}
     cross_tasks = 0
-    for category, candidates in grouped_candidates_by_category(clusters, ads_by_id, templates_by_sequence).items():
-        category_target = round(sum(1 for task in tasks if task["category"] == category) * CROSS_CLUSTER_RATIO)
+    grouped = grouped_candidates_by_category_and_bucket(clusters, ads_by_id, templates_by_sequence)
+    bucket_keys = sorted(grouped)
+    same_cluster_counts: dict[tuple[str, str], int] = {}
+    for category, length in bucket_keys:
+        same_cluster_counts[(category, length)] = sum(
+            1
+            for task in tasks
+            if task["category"] == category
+            and all(length_bucket(len(ad["sequence"])) == length for ad in task["ads"])
+        )
+    total_same_cluster = sum(same_cluster_counts.values())
+    allocated_targets: dict[tuple[str, str], int] = {}
+    remainders: list[tuple[float, tuple[str, str]]] = []
+    allocated_total = 0
+    for key in bucket_keys:
+        same_count = same_cluster_counts[key]
+        if total_same_cluster == 0 or same_count == 0:
+            allocated_targets[key] = 0
+            continue
+        raw_target = cross_target * same_count / total_same_cluster
+        base_target = int(raw_target)
+        allocated_targets[key] = base_target
+        allocated_total += base_target
+        remainders.append((raw_target - base_target, key))
+    for _, key in sorted(remainders, reverse=True):
+        if allocated_total >= cross_target:
+            break
+        allocated_targets[key] += 1
+        allocated_total += 1
+
+    for (category, _), candidates in grouped.items():
+        category_target = allocated_targets[(category, candidates[0]["length_bucket"])] if candidates else 0
         for _ in range(category_target):
             pair = choose_cross_cluster_pair(candidates, cross_use_counts, used_pair_keys)
             if pair is None:
