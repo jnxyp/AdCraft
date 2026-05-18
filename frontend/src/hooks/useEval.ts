@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useMemo, useRef } from 'react'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { AxiosError } from 'axios'
 import { apiClient } from '../api/client'
@@ -23,15 +23,17 @@ function getSessionId(): string {
 
 async function fetchNextTask(
   sessionId: string,
-  options?: { excludeTaskId?: string; randomize?: boolean },
+  options?: { excludeTaskId?: string; randomize?: boolean; scopes?: string[] },
 ): Promise<EvalNextResponse> {
-  const response = await apiClient.get<EvalNextResponse>('/eval/next', {
-    params: {
-      session_id: sessionId,
-      exclude_task_id: options?.excludeTaskId,
-      randomize: options?.randomize ?? true,
-    },
-  })
+  const params: Record<string, string | boolean | undefined> = {
+    session_id: sessionId,
+    exclude_task_id: options?.excludeTaskId,
+    randomize: options?.randomize ?? true,
+  }
+  if (options?.scopes && options.scopes.length > 0) {
+    params.scopes = options.scopes.join(',')
+  }
+  const response = await apiClient.get<EvalNextResponse>('/eval/next', { params })
   return response.data
 }
 
@@ -40,13 +42,18 @@ async function submitFeedback(payload: EvalSubmitRequest): Promise<EvalSubmitRes
   return response.data
 }
 
-export function useEval() {
+export function useEval(scopes?: string[]) {
   const queryClient = useQueryClient()
   const sessionId = useMemo(() => getSessionId(), [])
 
+  // Keep scopes in a ref so vote/shufflePair always use the latest value
+  // without causing a refetch when the user flips the toggles.
+  const scopesRef = useRef(scopes)
+  scopesRef.current = scopes
+
   const nextTask = useQuery({
     queryKey: ['eval-next', sessionId],
-    queryFn: () => fetchNextTask(sessionId, { randomize: true }),
+    queryFn: () => fetchNextTask(sessionId, { randomize: true, scopes: scopesRef.current }),
   })
 
   const submit = useMutation({
@@ -75,7 +82,11 @@ export function useEval() {
 
   const shufflePair = async () => {
     const currentTaskId = nextTask.data?.task_id ?? undefined
-    const next = await fetchNextTask(sessionId, { excludeTaskId: currentTaskId, randomize: true })
+    const next = await fetchNextTask(sessionId, {
+      excludeTaskId: currentTaskId,
+      randomize: true,
+      scopes: scopesRef.current,
+    })
     queryClient.setQueryData(['eval-next', sessionId], next)
   }
 

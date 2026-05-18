@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { AlertCircle, CheckCircle2, RefreshCw } from 'lucide-react'
 import { EvalCard } from '../components/EvalCard'
 import { useEval } from '../hooks/useEval'
@@ -11,7 +11,18 @@ const ACTIONS: Array<{ winner: WinnerSlot; label: string; tone: 'primary' | 'neu
 ]
 
 export function EvaluatePage({ showDetails }: { showDetails: boolean }) {
-  const { nextTask, vote, shufflePair, isSubmitting, submitError } = useEval()
+  const [includeRanking, setIncludeRanking] = useState(true)
+  const [includeGenerated, setIncludeGenerated] = useState(true)
+
+  const scopes = useMemo(() => [
+    ...(includeRanking ? ['same_cluster', 'cross_cluster'] : []),
+    ...(includeGenerated ? ['template_vs_direct'] : []),
+  ], [includeRanking, includeGenerated])
+
+  const toggleRanking = () => setIncludeRanking(v => !v)
+  const toggleGenerated = () => setIncludeGenerated(v => !v)
+
+  const { nextTask, vote, shufflePair, isSubmitting, submitError } = useEval(scopes)
   const task = nextTask.data
   const progress = task?.progress
   const [sessionPlusOneVisible, setSessionPlusOneVisible] = useState(false)
@@ -21,6 +32,8 @@ export function EvaluatePage({ showDetails }: { showDetails: boolean }) {
   const resolvedPercent = progress && progress.total > 0
     ? Math.min(100, Math.round((progress.resolved / progress.total) * 100))
     : 0
+  const resolvedOriginal = progress ? progress.resolved - (progress.resolved_generated ?? 0) : 0
+  const totalOriginal = progress ? progress.total - (progress.total_generated ?? 0) : 0
   const hasTask = Boolean(task?.task_id && task.ads.length >= 2)
 
   useEffect(() => {
@@ -79,9 +92,17 @@ export function EvaluatePage({ showDetails }: { showDetails: boolean }) {
               />
             </div>
           </div>
-          <div className="mt-5 flex items-center justify-between gap-4 text-sm text-white/80">
-            <span>{progress ? `Globally resolved: ${progress.resolved} / ${progress.total}` : 'Globally resolved'}</span>
-            <span>{resolvedPercent}%</span>
+          <div className="mt-5 flex flex-wrap items-center justify-between gap-x-4 gap-y-1.5 text-sm text-white/80">
+            <span className="font-semibold">Globally resolved</span>
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="rounded border border-white/20 px-2 py-0.5 text-xs font-semibold">
+                Ad Template Ranking: {progress ? `${resolvedOriginal} / ${totalOriginal}` : '—'}
+              </span>
+              <span className="rounded border border-white/20 px-2 py-0.5 text-xs font-semibold">
+                Structured vs. Direct: {progress ? `${progress.resolved_generated} / ${progress.total_generated}` : '—'}
+              </span>
+              <span>{resolvedPercent}%</span>
+            </div>
           </div>
           <div className="mt-2 h-2 overflow-hidden rounded-full bg-white/20">
             <div
@@ -96,21 +117,18 @@ export function EvaluatePage({ showDetails }: { showDetails: boolean }) {
           {nextTask.isError ? (
             <ErrorState onRetry={() => void nextTask.refetch()} />
           ) : null}
-          {!nextTask.isPending && !nextTask.isError && task && !hasTask ? (
-            <CompleteState onRefresh={() => void nextTask.refetch()} />
-          ) : null}
-          {hasTask && task ? (
-            <div className="relative grid h-full min-h-0 grid-rows-[minmax(0,1fr)_96px] gap-[10px]">
+          {!nextTask.isPending && !nextTask.isError ? (
+            <div className="relative flex h-full min-h-0 flex-col gap-[10px]">
               {submitError ? (
                 <div className="absolute left-0 right-0 top-0 z-10">
                   <SubmitError />
                 </div>
               ) : null}
-              <div className="flex min-h-0 flex-col gap-[10px] rounded-lg border border-il-storm-20 bg-il-storm-95/40 p-3">
+              <div className="flex min-h-0 flex-1 flex-col gap-[10px] rounded-lg border border-il-storm-20 bg-il-storm-95/40 p-3">
                 <div className="flex items-center justify-between gap-3 rounded-md border border-il-storm-20 bg-white px-3 py-2">
                   <div className="min-w-0 flex items-center gap-2">
                     <p className="text-sm font-semibold uppercase tracking-[0.12em] text-il-blue">Pair Evaluation</p>
-                    {showDetails ? (
+                    {showDetails && task ? (
                       <div className="flex flex-wrap items-center gap-2">
                         <span className="rounded border border-il-storm-20 bg-white px-2 py-0.5 text-xs font-semibold text-il-storm-60">
                           Task ID: {task.task_id}
@@ -119,12 +137,22 @@ export function EvaluatePage({ showDetails }: { showDetails: boolean }) {
                           Task Type: pair
                         </span>
                         <span className="rounded border border-il-storm-20 bg-white px-2 py-0.5 text-xs font-semibold text-il-storm-60">
-                          Task Scope: {task.pair_scope === 'cross_cluster' ? 'Cross Cluster' : 'Same Cluster'}
+                          Task Scope: {task.pair_scope === 'cross_cluster' ? 'Cross Cluster' : task.pair_scope === 'template_vs_direct' ? 'Structured vs. Direct' : 'Same Cluster'}
                         </span>
                       </div>
                     ) : null}
                   </div>
                   <div className="flex items-center gap-2">
+                    <ScopeToggle
+                      label="Ad Template Ranking"
+                      active={includeRanking}
+                      onToggle={toggleRanking}
+                    />
+                    <ScopeToggle
+                      label="Structured vs. Direct"
+                      active={includeGenerated}
+                      onToggle={toggleGenerated}
+                    />
                     <button
                       type="button"
                       onClick={() => {
@@ -137,34 +165,42 @@ export function EvaluatePage({ showDetails }: { showDetails: boolean }) {
                     </button>
                   </div>
                 </div>
-                <div className="grid min-h-0 gap-[10px] lg:grid-cols-2">
-                  <EvalCard
-                    ad={task.ads[0]}
-                    label="A"
-                    category={task.category}
-                    showDetails={showDetails}
-                  />
-                  <EvalCard
-                    ad={task.ads[1]}
-                    label="B"
-                    category={task.category}
-                    showDetails={showDetails}
-                  />
+                {scopes.length === 0 ? (
+                  <NoScopeState />
+                ) : !hasTask ? (
+                  <CompleteState onRefresh={() => void nextTask.refetch()} />
+                ) : task ? (
+                  <div className="grid min-h-0 gap-[10px] lg:grid-cols-2">
+                    <EvalCard
+                      ad={task.ads[0]}
+                      label="A"
+                      category={task.category}
+                      showDetails={showDetails}
+                    />
+                    <EvalCard
+                      ad={task.ads[1]}
+                      label="B"
+                      category={task.category}
+                      showDetails={showDetails}
+                    />
+                  </div>
+                ) : null}
+              </div>
+              {hasTask && task ? (
+                <div className="grid h-24 shrink-0 items-center gap-3 rounded-lg border border-il-storm-20 bg-white p-4 shadow-sm sm:grid-cols-3">
+                  {ACTIONS.map((action) => (
+                    <button
+                      key={action.winner}
+                      type="button"
+                      disabled={isSubmitting}
+                      onClick={() => vote(action.winner)}
+                      className={buttonClass(action.tone)}
+                    >
+                      {isSubmitting ? 'Submitting...' : action.label}
+                    </button>
+                  ))}
                 </div>
-              </div>
-              <div className="grid h-24 shrink-0 items-center gap-3 rounded-lg border border-il-storm-20 bg-white p-4 shadow-sm sm:grid-cols-3">
-                {ACTIONS.map((action) => (
-                  <button
-                    key={action.winner}
-                    type="button"
-                    disabled={isSubmitting}
-                    onClick={() => vote(action.winner)}
-                    className={buttonClass(action.tone)}
-                  >
-                    {isSubmitting ? 'Submitting...' : action.label}
-                  </button>
-                ))}
-              </div>
+              ) : null}
             </div>
           ) : null}
         </section>
@@ -247,6 +283,46 @@ function SubmitError() {
     <div className="rounded-lg border border-il-altgeld bg-white px-4 py-3 text-sm font-medium text-il-altgeld">
       This response was not saved. Please try again.
     </div>
+  )
+}
+
+function NoScopeState() {
+  return (
+    <div className="flex flex-1 items-center justify-center rounded-lg border border-il-storm-20 bg-white p-8 text-center">
+      <p className="text-sm font-medium text-il-storm-40">Please select at least one task type above.</p>
+    </div>
+  )
+}
+
+function ScopeToggle({
+  label,
+  active,
+  onToggle,
+}: {
+  label: string
+  active: boolean
+  onToggle: () => void
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onToggle}
+      className={[
+        'inline-flex h-8 items-center rounded-md border px-3 text-xs font-semibold transition',
+        active
+          ? 'border-il-blue bg-white text-il-blue'
+          : 'border-il-storm-20 bg-white text-il-storm-40',
+      ].join(' ')}
+    >
+      <span
+        className={[
+          'mr-1.5 inline-block h-2 w-2 rounded-full',
+          active ? 'bg-il-blue' : 'bg-il-storm-40',
+        ].join(' ')}
+        aria-hidden="true"
+      />
+      {label}
+    </button>
   )
 }
 

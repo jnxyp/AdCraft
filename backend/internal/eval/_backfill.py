@@ -108,6 +108,7 @@ async def run_ai_eval(
     max_votes: int,
     judge: PairJudge,
     max_parallel_tasks: int = DEFAULT_MAX_PARALLEL_TASKS,
+    scope: str | None = None,
 ) -> AiEvalSummary:
     if target_resolved_count <= 0:
         return AiEvalSummary(
@@ -120,6 +121,7 @@ async def run_ai_eval(
     candidate_tasks = await _list_pending_tasks(
         db_path=db_path,
         limit=max(target_resolved_count, max_parallel_tasks),
+        scope=scope,
     )
     selected_tasks = candidate_tasks[:target_resolved_count]
     if not selected_tasks:
@@ -217,11 +219,15 @@ async def _submit_ai_vote(
         return True, resolved_winner
 
 
-async def _list_pending_tasks(*, db_path: Path, limit: int) -> list[PendingEvalTask]:
+async def _list_pending_tasks(
+    *, db_path: Path, limit: int, scope: str | None = None
+) -> list[PendingEvalTask]:
     async with connect(db_path) as conn:
+        scope_clause = "AND e.pair_scope = ?" if scope else ""
+        params: tuple[object, ...] = (limit,) if not scope else (scope, limit)
         rows = await (
             await conn.execute(
-                """
+                f"""
                 SELECT
                   e.id,
                   e.category,
@@ -233,10 +239,11 @@ async def _list_pending_tasks(*, db_path: Path, limit: int) -> list[PendingEvalT
                 WHERE NOT EXISTS (
                   SELECT 1 FROM resolved_eval_tasks rt WHERE rt.task_id = e.id
                 )
+                {scope_clause}
                 ORDER BY vote_count DESC, e.id
                 LIMIT ?
                 """,
-                (limit,),
+                params,
             )
         ).fetchall()
 
@@ -297,6 +304,18 @@ def _parse_ads(raw_ads: str) -> tuple[EvalTaskAd, EvalTaskAd]:
 
 def _render_task_prompt(*, task: PendingEvalTask, session_id: str) -> str:
     ad_a, ad_b = task.ads
+    blind = task.pair_scope == "template_vs_direct"
+    if blind:
+        return (
+            f"Session ID: {session_id}\n"
+            f"Category: {task.category}\n\n"
+            f"Ad A\n"
+            f"- Body:\n{ad_a.body}\n\n"
+            f"Ad B\n"
+            f"- Body:\n{ad_b.body}\n\n"
+            "Choose which ad is more effective overall as ad copy. "
+            "Reply with only A or B."
+        )
     return (
         f"Session ID: {session_id}\n"
         f"Category: {task.category}\n"
@@ -352,6 +371,11 @@ async def main() -> None:
         default=DEFAULT_MAX_PARALLEL_TASKS,
         help="How many tasks to evaluate concurrently",
     )
+    parser.add_argument(
+        "--scope",
+        default=None,
+        help="Restrict to a specific pair_scope value (e.g. template_vs_direct)",
+    )
     args = parser.parse_args()
 
     settings = load_settings()
@@ -366,6 +390,7 @@ async def main() -> None:
         max_votes=settings.eval_max_votes,
         judge=judge,
         max_parallel_tasks=args.parallel,
+        scope=args.scope,
     )
     await _print_summary(settings.db_path, summary)
 

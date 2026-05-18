@@ -15,6 +15,8 @@ export interface EvalProgress {
   responses: number
   resolved: number
   total: number
+  resolved_generated: number
+  total_generated: number
 }
 
 export interface EvalNextResponse {
