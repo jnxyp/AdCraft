@@ -30,10 +30,18 @@ def create_eval_router(db_path: Path, max_votes: int = 5) -> APIRouter:
         session_id: str = Query(min_length=1),
         exclude_task_id: str | None = Query(default=None),
         randomize: bool = Query(default=True),
+        scopes: str | None = Query(default=None),
     ) -> EvalNextResponse:
+        scope_list = [s.strip() for s in scopes.split(",") if s.strip()] if scopes else []
         async with connect(db_path) as conn:
             progress = await _load_progress(conn, session_id)
             order_clause = "RANDOM()" if randomize else "vote_count DESC, e.id"
+            scope_clause = ""
+            base_params: list[str | None] = [session_id, exclude_task_id, exclude_task_id]
+            if scope_list:
+                placeholders = ",".join("?" * len(scope_list))
+                scope_clause = f"AND e.pair_scope IN ({placeholders})"
+            query_params = tuple(base_params) + tuple(scope_list)
             row = await (
                 await conn.execute(
                     f"""
@@ -54,10 +62,11 @@ def create_eval_router(db_path: Path, max_votes: int = 5) -> APIRouter:
                       WHERE mine.task_id = e.id AND mine.session_id = ?
                     )
                     AND (? IS NULL OR e.id != ?)
+                    {scope_clause}
                     ORDER BY {order_clause}
                     LIMIT 1
                     """,
-                    (session_id, exclude_task_id, exclude_task_id),
+                    query_params,
                 )
             ).fetchone()
 
@@ -167,6 +176,18 @@ async def _load_progress(conn: aiosqlite.Connection, session_id: str) -> EvalPro
         responses=await _count(conn, "SELECT COUNT(*) FROM eval_responses"),
         resolved=await _count(conn, "SELECT COUNT(*) FROM resolved_eval_tasks"),
         total=await _count(conn, "SELECT COUNT(*) FROM eval_tasks"),
+        total_generated=await _count(
+            conn,
+            "SELECT COUNT(*) FROM eval_tasks WHERE pair_scope = 'template_vs_direct'",
+        ),
+        resolved_generated=await _count(
+            conn,
+            """
+            SELECT COUNT(*) FROM resolved_eval_tasks rt
+            JOIN eval_tasks e ON rt.task_id = e.id
+            WHERE e.pair_scope = 'template_vs_direct'
+            """,
+        ),
     )
 
 
@@ -243,14 +264,24 @@ def _public_ads(raw_ads: str) -> list[EvalAd]:
     for item in data:
         if not isinstance(item, dict):
             raise ValueError("eval task ad must be a JSON object")
+        # Generated tasks store seq_len and length_bucket explicitly to avoid
+        # crashing on direct-output ads that have an empty sequence.
+        raw_seq_len = item.get("seq_len")
+        seq_len = int(raw_seq_len) if isinstance(raw_seq_len, int) else _sequence_length(item)
+        stored_bucket = item.get("length_bucket")
+        length_bucket = (
+            stored_bucket
+            if stored_bucket in ("xs", "s", "m", "l", "xl")
+            else _length_bucket(seq_len)
+        )
         ads.append(
             EvalAd(
                 slot=str(item["slot"]),
                 ad_id=str(item["ad_id"]),
                 body=str(item["body"]),
                 sequence=[str(part) for part in item["sequence"]] if isinstance(item.get("sequence"), list) else [],
-                seq_len=_sequence_length(item),
-                length_bucket=_length_bucket(_sequence_length(item)),
+                seq_len=seq_len,
+                length_bucket=length_bucket,
                 cluster_id=str(item["cluster_id"]) if item.get("cluster_id") is not None else None,
             )
         )

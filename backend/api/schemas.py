@@ -23,6 +23,8 @@ class EvalProgress(BaseModel):
     responses: int
     resolved: int
     total: int
+    resolved_generated: int = 0
+    total_generated: int = 0
 
 
 class EvalNextResponse(BaseModel):
